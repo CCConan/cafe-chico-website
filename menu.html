@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Menu · Café Chico</title>
+  <meta name="description" content="The full Café Chico menu — breakfast, brunch, subs, spuds and drinks. Prices from £1.25." />
+  <meta name="theme-color" content="#3b2418" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/shared.css" />
+  <link rel="stylesheet" href="assets/css/menu.css" />
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-squiggle" viewBox="0 0 120 8">
+        <path d="M2 5 Q 30 1 60 4 T 118 4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </symbol>
+      <symbol id="i-utensils" viewBox="0 0 64 64">
+        <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <path d="M24 8 v18 a4 4 0 0 1 -8 0 v-18"/>
+          <path d="M20 26 v32"/>
+          <path d="M44 8 q-6 6 -6 16 a6 6 0 0 0 12 0 q0 -10 -6 -16"/>
+        </g>
+      </symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24">
+        <path d="M5 12 h14 M13 6 l6 6 l-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+    </defs>
+  </svg>
+</head>
+<body>
+
+<!-- ============================================================ STICKY NAV -->
+<nav class="site-nav" aria-label="Primary">
+  <div class="site-nav__inner">
+    <a href="index.html" class="brand" aria-label="Café Chico, back to home">
+      <span class="brand__mark">C</span>
+      <span>Café Chico</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    <ul class="nav-tabs" role="list">
+      <li><a href="index.html#hero">Home</a></li>
+      <li><a href="index.html#story">Story</a></li>
+      <li><a href="menu.html" class="active">Menu</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============================================================ HERO -->
+<section class="menu-hero">
+  <div class="menu-hero__inner">
+    <p class="kicker" style="color:var(--gold); margin-bottom:var(--space-4);">Brunch · Lunch · Drinks</p>
+    <h1>The Menu.</h1>
+    <p class="lede">Brunch and lunch, made close to home. £1–10 per person — most plates around £5–7.</p>
+    <div class="menu-hero__stats">
+      <div><strong>36</strong>Dishes</div>
+      <div><strong>6</strong>Categories</div>
+      <div><strong>£1.25</strong>From</div>
+      <div><strong>8.95</strong>To</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================== CATEGORY NAV -->
+<nav class="cat-nav" aria-label="Menu categories">
+  <div class="cat-nav__inner">
+    <button type="button" class="cat-nav__btn active" data-target="#cat-breakfast">Breakfast</button>
+    <button type="button" class="cat-nav__btn" data-target="#cat-brunch">Brunch</button>
+    <button type="button" class="cat-nav__btn" data-target="#cat-subs">Subs</button>
+    <button type="button" class="cat-nav__btn" data-target="#cat-spuds">Spuds</button>
+    <button type="button" class="cat-nav__btn" data-target="#cat-littleones">Little Ones</button>
+    <button type="button" class="cat-nav__btn" data-target="#cat-drinks">Drinks</button>
+  </div>
+</nav>
+
+<!-- ====================================================== 3D VIEWER -->
+<section class="viewer" aria-label="Featured dish">
+  <div class="viewer__stage">
+    <div class="viewer__plate" aria-label="Drag to rotate">
+      <div class="viewer__dish" role="img" aria-label="Featured dish photo">
+        <img src="" alt="" />
+      </div>
+      <div class="viewer__hint" aria-hidden="true">
+        <span class="dot"></span>
+        <span>Drag to rotate · Click for next</span>
+      </div>
+    </div>
+
+    <div class="viewer__info">
+      <p class="cat">Featured dish</p>
+      <h2>—</h2>
+      <p class="desc">—</p>
+      <div class="price">—</div>
+      <div class="viewer__controls">
+        <button class="viewer__btn" type="button" data-dir="prev" aria-label="Previous dish">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12 H5 M11 18 l-6 -6 l6 -6"/></svg>
+        </button>
+        <button class="viewer__btn" type="button" data-dir="next" aria-label="Next dish">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12 h14 M13 6 l6 6 l-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================== MENU GRID -->
+<main>
+
+  <section id="cat-breakfast" class="menu-section">
+    <div class="menu-section__head">
+      <div>
+        <p class="kicker">Breakfast · 9 dishes</p>
+        <h2>Breakfast</h2>
+      </div>
+    </div>
+    <div class="menu-grid" data-cat="breakfast"></div>
+  </section>
+
+  <section id="cat-brunch" class="menu-section">
+    <div class="menu-section__head">
+      <div>
+        <p class="kicker">Brunch · 10 dishes</p>
+        <h2>Brunch &amp; Sweet</h2>
+      </div>
+    </div>
+    <div class="menu-grid" data-cat="brunch"></div>
+  </section>
+
+  <section id="cat-subs" class="menu-section">
+    <div class="menu-section__head">
+      <div>
+        <p class="kicker">Subs · 2 dishes</p>
+        <h2>Subs</h2>
+      </div>
+    </div>
+    <div class="menu-grid" data-cat="subs"></div>
+  </section>
+
+  <section id="cat-spuds" class="menu-section">
+    <div class="menu-section__head">
+      <div>
+        <p class="kicker">Spuds · 2 dishes</p>
+        <h2>Spuds</h2>
+      </div>
+    </div>
+    <div class="menu-grid" data-cat="spuds"></div>
+  </section>
+
+  <section id="cat-littleones" class="menu-section">
+    <div class="menu-section__head">
+      <div>
+        <p class="kicker">For the little ones · 1 dish</p>
+        <h2>For the Little Ones</h2>
+      </div>
+    </div>
+    <div class="menu-grid" data-cat="littleones"></div>
+  </section>
+
+  <section id="cat-drinks" class="menu-section">
+    <div class="menu-section__head">
+      <div>
+        <p class="kicker">Drinks · 12 drinks</p>
+        <h2>Drinks</h2>
+      </div>
+    </div>
+    <div class="menu-grid" data-cat="drinks"></div>
+  </section>
+
+</main>
+
+<!-- ========================================================== MENU NOTE -->
+<section class="menu-note">
+  <div class="container-narrow">
+    <p>
+      Menu &amp; prices accurate as of July 2026.
+      Live ordering &amp; the most up-to-date menu:
+      <a href="https://cafe-chico.choiceqr.com/en/section:menu" target="_blank" rel="noopener">cafe-chico.choiceqr.com →</a>
+    </p>
+    <p style="color:oklch(70% 0.012 80); margin-top:var(--space-3); font-size:13px;">
+      Allergens &amp; dietary info on request — just ask when you order.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================ FOOTER -->
+<footer class="site-footer">
+  <div class="site-footer__grid">
+    <div>
+      <p class="site-footer__tag">Café Chico</p>
+      <p style="color:oklch(85% 0.012 80); font-size:14px; line-height:1.6;">
+        A small, family-run café on St Helens Rd, Bolton. Honest food, made close to home.
+      </p>
+    </div>
+    <div>
+      <h5>Visit</h5>
+      <ul>
+        <li>185 St Helens Rd</li>
+        <li>Bolton BL3 3PS</li>
+        <li><a href="tel:+441204934467">01204 934 467</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Hours</h5>
+      <ul>
+        <li>Tue–Sun · 10–16</li>
+        <li style="color:var(--muted);">Closed Monday</li>
+        <li><a href="https://cafe-chico.choiceqr.com/en/section:menu" target="_blank" rel="noopener">Order online</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Follow</h5>
+      <ul>
+        <li><a href="https://instagram.com/cafechico_uk" target="_blank" rel="noopener">Instagram · @cafechico_uk</a></li>
+        <li><a href="https://tiktok.com/@cafechico" target="_blank" rel="noopener">TikTok · @cafechico</a></li>
+        <li><a href="https://maps.app.goo.gl/vYhYXEfkkgfor3qBA?g_st=ic" target="_blank" rel="noopener">Google Maps</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <span>© 2026 Café Chico. Made with care in Bolton.</span>
+    <span>Photos: Google Maps · © respective photographers.</span>
+  </div>
+</footer>
+
+<!-- Menu data + render -->
+<script>
+  // Inline menu data — built from research/menu-clean.json (June 2026 snapshot)
+  window.__menuData__ = [{"id": "64d237f7bc0207372fe61861", "cat_id": "64d23762bc02076c56e61859", "cat_name": "BREAKFAST", "cat_slug": "breakfast", "name": "FULL ENGLISH BREAKFAST", "slug": "full-english-breakfast", "desc": "2 x Lamb Macon, 2 x Sausages, 2 × Eggs, 2 x Hash Browns, Mushroom, Tomato, Beans, Toast", "price": 8.95, "image": "assets/photos/raw/menu-items/full-english-breakfast.webp", "available": true}, {"id": "64d4cb32b3af0963627ce67c", "cat_id": "64d23762bc02076c56e61859", "cat_name": "BREAKFAST", "cat_slug": "breakfast", "name": "DESI BREAKFAST", "slug": "desi-breakfast", "desc": "Desi Omelette, 2 x Spicy Sausages, 2 x Lamb Macon, Mushroom, Tomato, Spicy Beans, Paratha ", "price": 8.95, "image": "assets/photos/raw/menu-items/desi-breakfast.webp", "available": true}, {"id": "64d4cc48b3af09f9557ce709", "cat_id": "64d23762bc02076c56e61859", "cat_name": "BREAKFAST", "cat_slug": "breakfast", "name": "VEGGIE BREAKFAST", "slug": "veggie-breakfast", "desc": "2x Veg Sausages, 2x Veg Rashers, 2x Eggs, 2x Hash Browns, Mushroom, Tomato, Beans, Toast", "price": 8.95, "image": "assets/photos/raw/menu-items/veggie-breakfast.webp", "available": true}, {"id": "64d4cb8ab3af09e2827ce69b", "cat_id": "64d23762bc02076c56e61859", "cat_name": "BREAKFAST", "cat_slug": "breakfast", "name": "BREAKFAST STACKER", "slug": "breakfast-stacker", "desc": "2x Lamb Macon, 2x Waffles, Salami, Hash Brown, Egg, Beans, Cheese", "price": 7.95, "image": "assets/photos/raw/menu-items/breakfast-stacker.webp", "available": true}, {"id": "64d4c3e7ceecb11131ff2da0", "cat_id": "64d23762bc02076c56e61859", "cat_name": "BREAKFAST", "cat_slug": "breakfast", "name": "HALF ENGLISH BREAKFAST", "slug": "half-english-breakfast", "desc": "1x Lamb Macon, 1x Sausage, 1x Egg, Hash Brown, Mushroom, Tomato, Beans, Toast", "price": 6.45, "image": "", "available": true}, {"id": "64d4cbc9b3af098ea77ce69c", "cat_id": "64d23762bc02076c56e61859", "cat_name": "BREAKFAST", "cat_slug": "breakfast", "name": "BREAKFAST BAP", "slug": "breakfast-bap", "desc": "2x Sausage, 1x Lamb Macon, 1x Egg, 1x Hash Brown, Mushroom, Tomato, Cheese", "price": 5.95, "image": "assets/photos/raw/menu-items/breakfast-bap.webp", "available": true}, {"id": "64d4cc8db3af0971207ce70b", "cat_id": "64d23762bc02076c56e61859", "cat_name": "BREAKFAST", "cat_slug": "breakfast", "name": "VEGAN BREAKFAST", "slug": "vegan-breakfast", "desc": "2 x Vegan Sausages, 2x Vegan Rashers, Tofu, Mushroom, Eggplant, Tomato, Vegan Paratha", "price": 8.95, "image": "assets/photos/raw/menu-items/vegan-breakfast.webp", "available": true}, {"id": "64d4d0f9b3af092e317ce7b1", "cat_id": "64d23762bc02076c56e61859", "cat_name": "BREAKFAST", "cat_slug": "breakfast", "name": "BREAKFAST MUFFIN", "slug": "breakfast-muffin", "desc": "Sausage, Egg, Hash Brown, Cheese ", "price": 4.45, "image": "assets/photos/raw/menu-items/breakfast-muffin.webp", "available": true}, {"id": "64d4d18cb3af0961d37ce7b8", "cat_id": "64d23762bc02076c56e61859", "cat_name": "BREAKFAST", "cat_slug": "breakfast", "name": "EGG & CHEESE MUFFIN", "slug": "egg-cheese-muffin", "desc": "Egg & Cheese", "price": 3.95, "image": "assets/photos/raw/menu-items/egg-cheese-muffin.webp", "available": true}, {"id": "64d4d9ebb3af0955bd7cea22", "cat_id": "64d4ccd8b3af09a8747ce70f", "cat_name": "BRUNCH", "cat_slug": "brunch", "name": "STIR FRY NOODLES", "slug": "stir-fry-noodles", "desc": "Extras: Chicken £1.00 or Beef £2.00 ", "price": 5.95, "image": "assets/photos/raw/menu-items/stir-fry-noodles.webp", "available": true}, {"id": "64d4d807b3af09fc727ce990", "cat_id": "64d4ccd8b3af09a8747ce70f", "cat_name": "BRUNCH", "cat_slug": "brunch", "name": "SOURDOUGH TOAST", "slug": "sourdough-toast", "desc": "Topped with Avocado, 2x Poached Eggs and a choice of Salmon, Lamb Macon or Mushroom ", "price": 6.45, "image": "assets/photos/raw/menu-items/sourdough-toast.webp", "available": true}, {"id": "64d4d839b3af095d687ce99a", "cat_id": "64d4ccd8b3af09a8747ce70f", "cat_name": "BRUNCH", "cat_slug": "brunch", "name": "EGGS BENEDICT", "slug": "eggs-benedict", "desc": "2x Poached Eggs served with choice of,  Smoked Salmon or Lamb Macon or Spinach, Served on Muffins with Hollandaise Sauce", "price": 6.45, "image": "assets/photos/raw/menu-items/eggs-benedict.webp", "available": true}, {"id": "64d4d9e3b3af09324c7cea21", "cat_id": "64d4ccd8b3af09a8747ce70f", "cat_name": "BRUNCH", "cat_slug": "brunch", "name": "GRILLED HALLOUMI SALAD", "slug": "grilled-halloumi-salad", "desc": "", "price": 5.95, "image": "assets/photos/raw/menu-items/grilled-halloumi-salad.webp", "available": true}, {"id": "64d4d872b3af09aedd7ce9a0", "cat_id": "64d4ccd8b3af09a8747ce70f", "cat_name": "BRUNCH", "cat_slug": "brunch", "name": "AMERICAN SPECIAL", "slug": "american-special", "desc": "Pancakes, Scrambled Egg, Lamb Macon Rashers and Maple Syrup", "price": 6.95, "image": "assets/photos/raw/menu-items/american-special.webp", "available": true}, {"id": "64d4ced0b3af0905c17ce788", "cat_id": "64d4ccd8b3af09a8747ce70f", "cat_name": "BRUNCH", "cat_slug": "brunch", "name": "OMELETTE WITH 3 TOPPINGS", "slug": "omelette-with-3-toppings", "desc": "Choose 3 from:\nCheese | Tomato | Turkey Ham | Salami | Mushroom | Chilli + Toast ", "price": 5.95, "image": "assets/photos/raw/menu-items/omelette-with-3-toppings.webp", "available": true}, {"id": "64d4d998b3af091f7c7cea1a", "cat_id": "64d4ccd8b3af09a8747ce70f", "cat_name": "BRUNCH", "cat_slug": "brunch", "name": "TOASTIES", "slug": "toasties", "desc": "Choose 2 from: Chicken | Ham | Cheese | Tuna | Mushroom | Tomato | Onion | Chilli ", "price": 4.95, "image": "assets/photos/raw/menu-items/toasties.webp", "available": true}, {"id": "64d4d9f8b3af0928927cea25", "cat_id": "64d4ccd8b3af09a8747ce70f", "cat_name": "BRUNCH", "cat_slug": "brunch", "name": "SCRAMBLED EGG ON CROISSANT", "slug": "scrambled-egg-on-croissant", "desc": "", "price": 3.95, "image": "", "available": true}, {"id": "64d4d9beb3af09c7b77cea1e", "cat_id": "64d4ccd8b3af09a8747ce70f", "cat_name": "BRUNCH", "cat_slug": "brunch", "name": "FRENCH TOAST", "slug": "french-toast", "desc": "Served with Whipped Cream, Fresh Fruit and a choice of: Nutella, Lotus or Maple Syrup", "price": 5.95, "image": "assets/photos/raw/menu-items/french-toast.webp", "available": true}, {"id": "64d4d9d4b3af09fc417cea20", "cat_id": "64d4ccd8b3af09a8747ce70f", "cat_name": "BRUNCH", "cat_slug": "brunch", "name": "PANCAKES", "slug": "pancakes", "desc": "Served with Whipped Cream, Fresh Fruit and a choice of: Nutella | Lotus | Lemon & Sugar | Maple Syrup | Oreo ", "price": 5.95, "image": "assets/photos/raw/menu-items/pancakes.webp", "available": true}, {"id": "64d4dab4b3af094f077cea40", "cat_id": "64d4da1cb3af09acfe7cea2b", "cat_name": "SUBS", "cat_slug": "subs", "name": "SIGNATURE SUBS", "slug": "signature-subs", "desc": "CHOOSE FROM:\nChicken | Beef | Tuna\nCheese (includes salad) ", "price": 4.95, "image": "assets/photos/raw/menu-items/signature-subs.webp", "available": true}, {"id": "64d4db1227ee524d3408582e", "cat_id": "64d4da1cb3af09acfe7cea2b", "cat_name": "SUBS", "cat_slug": "subs", "name": "SIGNATURE SUBS MEAL DEAL", "slug": "signature-subs-meal-deal", "desc": "CHOOSE FROM\n\nMeatballs | Chicken | Tuna\nCheese + Bag of Crisp + Selected Drink", "price": 6.45, "image": "assets/photos/raw/menu-items/signature-subs-meal-deal.webp", "available": true}, {"id": "64d4db7f27ee52ae0a085838", "cat_id": "64d4db2927ee52bd2008582f", "cat_name": "SPUDS", "cat_slug": "spuds", "name": "SIGNATURE SPUDS", "slug": "signature-spuds", "desc": "CHOOSE FROM\nCheese & Beans | Tuna Mayo | Tuna Cheese |\nChicken & Cheese, Add Salad & Coleslaw £1\n", "price": 4.95, "image": "assets/photos/raw/menu-items/signature-spuds.webp", "available": true}, {"id": "64d4dbbe27ee528247085842", "cat_id": "64d4db2927ee52bd2008582f", "cat_name": "SPUDS", "cat_slug": "spuds", "name": "SIGNATURE SPUDS MEAL DEAL", "slug": "signature-spuds-meal-deal", "desc": "CHOOSE FROM\nCheese & Beans | Tuna Mayo | Tuna Cheese |\nChicken & Cheese,, Crisp + Selected Drink\nAdd Salad & Coleslaw £1 ", "price": 6.45, "image": "assets/photos/raw/menu-items/signature-spuds-meal-deal.webp", "available": true}, {"id": "64d4dc3027ee52e111085847", "cat_id": "64d4dc0827ee5265b8085845", "cat_name": "FOR THE LITTLE ONES", "cat_slug": "for-the-little-ones", "name": "KIDS MEAL DEAL", "slug": "kids-meal-deal", "desc": "Choose from: \nBreakfast (4 items) | Cheese and Tomato Pasta | Half Spud with Cheese & Beans | Cheesy Omelette | Veg Rice Box \n+ Organic Fruit Juice or Juice Cartons + Fruit Stick \n\n", "price": 4.95, "image": "assets/photos/raw/menu-items/kids-meal-deal.webp", "available": true}, {"id": "651c1a93665992e739d301f0", "cat_id": "651c1a33665992e739d301ec", "cat_name": "DRINKS", "cat_slug": "drinks", "name": "AMERICANO", "slug": "americano", "desc": "A shot of espresso slowly infused with hot water to create a long black coffee", "price": 2.25, "image": "", "available": true}, {"id": "651c1ab4665992e739d301f2", "cat_id": "651c1a33665992e739d301ec", "cat_name": "DRINKS", "cat_slug": "drinks", "name": "ESPRESSO", "slug": "espresso", "desc": "A short invigorating shot of coffee with intense flavour", "price": 2.25, "image": "", "available": true}, {"id": "651c1adb665992e739d301f3", "cat_id": "651c1a33665992e739d301ec", "cat_name": "DRINKS", "cat_slug": "drinks", "name": "CAFE LATTE", "slug": "cafe-latte", "desc": "A luxurious mix of espresso and steamed milk, crowned with a layer of milk froth", "price": 2.25, "image": "assets/photos/raw/menu-items/cafe-latte.webp", "available": true}, {"id": "651c1aee665992e739d301f4", "cat_id": "651c1a33665992e739d301ec", "cat_name": "DRINKS", "cat_slug": "drinks", "name": "CAPPUCCINO", "slug": "cappuccino", "desc": "A luxurious mix of espresso steamed milk and velvety froth", "price": 2.25, "image": "assets/photos/raw/menu-items/cappuccino.webp", "available": true}, {"id": "651c1b2b665992e739d301f7", "cat_id": "651c1a33665992e739d301ec", "cat_name": "DRINKS", "cat_slug": "drinks", "name": "LATTE MACCHIATO", "slug": "latte-macchiato", "desc": "A tall combination of hot steamed milk, stained with espresso", "price": 2.25, "image": "", "available": true}, {"id": "651c1b67665992e739d301f9", "cat_id": "651c1a33665992e739d301ec", "cat_name": "DRINKS", "cat_slug": "drinks", "name": "MOCHACCINO", "slug": "mochaccino", "desc": "A wonderful fusion of espresso steamed milk and chocolate", "price": 2.25, "image": "assets/photos/raw/menu-items/mochaccino.webp", "available": true}, {"id": "651c1b86665992e739d301fe", "cat_id": "651c1a33665992e739d301ec", "cat_name": "DRINKS", "cat_slug": "drinks", "name": "HOT CHOCOLATE", "slug": "hot-chocolate", "desc": "A delightfully indulgent combination of chocolate and steamed milk, topped with milk froth", "price": 2.25, "image": "assets/photos/raw/menu-items/hot-chocolate.webp", "available": true}, {"id": "651c1b9c665992e739d301ff", "cat_id": "651c1a33665992e739d301ec", "cat_name": "DRINKS", "cat_slug": "drinks", "name": "ENGLISH BREAKFAST TEA", "slug": "english-breakfast-tea", "desc": "A cup of freshly brewed tea served with milk", "price": 2.25, "image": "assets/photos/raw/menu-items/english-breakfast-tea.webp", "available": true}, {"id": "651c1c07665992e739d3020b", "cat_id": "651c1a33665992e739d301ec", "cat_name": "DRINKS", "cat_slug": "drinks", "name": "CHICO'S SPICED CHAI", "slug": "chico-s-spiced-chai", "desc": "", "price": 2.5, "image": "assets/photos/raw/menu-items/chico-s-spiced-chai.webp", "available": true}, {"id": "651c1c37665992e739d3021d", "cat_id": "651c1a33665992e739d301ec", "cat_name": "DRINKS", "cat_slug": "drinks", "name": "CHICO'S SPECIAL COFFEE", "slug": "chico-s-special-coffee", "desc": "", "price": 0.0, "image": "assets/photos/raw/menu-items/chico-s-special-coffee.webp", "available": true}, {"id": "651c1c9b665992e739d30247", "cat_id": "651c1a33665992e739d301ec", "cat_name": "DRINKS", "cat_slug": "drinks", "name": "ORANGE JUICE", "slug": "orange-juice", "desc": "", "price": 1.25, "image": "assets/photos/raw/menu-items/orange-juice.webp", "available": true}, {"id": "651c1cac665992e739d3024f", "cat_id": "651c1a33665992e739d301ec", "cat_name": "DRINKS", "cat_slug": "drinks", "name": "APPLE JUICE", "slug": "apple-juice", "desc": "", "price": 1.25, "image": "assets/photos/raw/menu-items/apple-juice.webp", "available": true}];
+</script>
+<script src="assets/js/shared.js"></script>
+<script src="assets/js/menu.js"></script>
+<script>
+  // Render menu grid
+  (function () {
+    const slugToCatId = {
+      'breakfast': 'cat-breakfast',
+      'brunch':    'cat-brunch',
+      'subs':      'cat-subs',
+      'spuds':     'cat-spuds',
+      'for-the-little-ones': 'cat-littleones',
+      'drinks':    'cat-drinks',
+    };
+
+    const groups = {};
+    (window.__menuData__ || []).forEach(it => {
+      const catKey = slugToCatId[it.cat_slug] ? it.cat_slug : 'brunch';
+      (groups[catKey] = groups[catKey] || []).push(it);
+    });
+
+    Object.keys(groups).forEach(catSlug => {
+      const catId = slugToCatId[catSlug];
+      const grid = document.querySelector(`#${catId} .menu-grid`);
+      if (!grid) return;
+      const items = groups[catSlug];
+
+      grid.innerHTML = items.map(it => {
+        const priceHtml = it.price != null
+          ? `<span class="dish__price">£${Number(it.price).toFixed(2)}</span>`
+          : `<span class="dish__price dish__price--placeholder">Ask in café</span>`;
+
+        const photoHtml = it.image
+          ? `<div class="dish__photo"><img src="${it.image}" alt="${escapeHtml(it.name)}" loading="lazy"/></div>`
+          : '';
+
+        return `
+          <article class="dish ${it.image ? '' : 'dish--no-photo'}" data-reveal>
+            ${photoHtml}
+            <div class="dish__info">
+              <h3>${escapeHtml(it.name)}</h3>
+              ${it.desc ? `<p>${escapeHtml(it.desc)}</p>` : ''}
+            </div>
+            ${priceHtml}
+          </article>
+        `;
+      }).join('');
+    });
+
+    function escapeHtml(s) {
+      return String(s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+
+    // Initialise reveal observer for newly-inserted [data-reveal]
+    if ('IntersectionObserver' in window) {
+      const ro = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            ro.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('[data-reveal]').forEach(el => ro.observe(el));
+    } else {
+      document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('is-visible'));
+    }
+  })();
+</script>
+</body>
+</html>

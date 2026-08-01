@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Café Chico · Family-run café in Bolton</title>
+  <meta name="description" content="Café Chico — a small, family-run café in Bolton serving honest breakfast, brunch and lunch. Made close to home." />
+  <meta name="theme-color" content="#3b2418" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/shared.css" />
+  <link rel="stylesheet" href="assets/css/index.css" />
+
+  <!-- Inline SVG defs (hand-drawn library) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <!-- Squiggle separator -->
+      <symbol id="i-squiggle" viewBox="0 0 120 8">
+        <path d="M2 5 Q 30 1 60 4 T 118 4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </symbol>
+      <!-- Heart wreath -->
+      <symbol id="i-wreath" viewBox="0 0 64 64">
+        <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <path d="M14 32 q0 -10 8 -14 q-2 6 4 10 q6 -4 4 -10 q8 4 8 14" />
+          <path d="M50 32 q0 -10 -8 -14 q2 6 -4 10 q-6 -4 -4 -10 q-8 4 -8 14" />
+          <path d="M32 14 q-4 -4 -2 -8 M32 14 q4 -4 2 -8" />
+          <path d="M14 38 q-6 8 -2 14 M50 38 q6 8 2 14" />
+          <circle cx="20" cy="22" r="1.5" fill="currentColor"/>
+          <circle cx="44" cy="22" r="1.5" fill="currentColor"/>
+        </g>
+      </symbol>
+      <!-- Spoon-fork cross -->
+      <symbol id="i-utensils" viewBox="0 0 64 64">
+        <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <path d="M24 8 v18 a4 4 0 0 1 -8 0 v-18" />
+          <path d="M20 26 v32" />
+          <path d="M44 8 q-6 6 -6 16 a6 6 0 0 0 12 0 q0 -10 -6 -16" />
+        </g>
+      </symbol>
+      <!-- Bicycle silhouette -->
+      <symbol id="i-bike" viewBox="0 0 80 40">
+        <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <circle cx="14" cy="28" r="9"/>
+          <circle cx="66" cy="28" r="9"/>
+          <path d="M14 28 L36 28 L52 12 L60 28 M52 12 L46 12"/>
+          <path d="M36 28 L46 12"/>
+        </g>
+      </symbol>
+      <!-- Coffee cup with steam -->
+      <symbol id="i-coffee" viewBox="0 0 64 64">
+        <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <path d="M16 28 h32 v14 a10 10 0 0 1 -10 10 h-12 a10 10 0 0 1 -10 -10 z"/>
+          <path d="M48 32 h4 a4 4 0 0 1 0 8 h-4"/>
+          <path d="M22 22 q-2 -4 0 -8 M30 22 q-2 -4 0 -8 M38 22 q-2 -4 0 -8"/>
+        </g>
+      </symbol>
+      <!-- Down-arrow squiggle -->
+      <symbol id="i-arrow-down" viewBox="0 0 24 24">
+        <path d="M12 4 v14 M5 12 q3 4 7 8 q4 -4 7 -8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+    </defs>
+  </svg>
+</head>
+<body>
+
+<!-- ============================================================ STICKY NAV -->
+<nav class="site-nav" aria-label="Primary">
+  <div class="site-nav__inner">
+    <a href="#hero" class="brand" aria-label="Café Chico, home">
+      <span class="brand__mark">C</span>
+      <span>Café Chico</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    <ul class="nav-tabs" role="list">
+      <li><a href="#hero" class="active">Home</a></li>
+      <li><a href="#story">Story</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============================================================== HERO -->
+<header id="hero" class="hero" aria-label="Welcome">
+  <div class="hero__photo">
+    <img src="assets/photos/candidates/01-cover-interior-bench-brickwall.jpg"
+         alt="Inside Café Chico — exposed brick wall, vintage bicycle and warm Edison-bulb lighting" />
+  </div>
+  <div class="hero__scrim" aria-hidden="true"></div>
+
+  <div class="hero__inner">
+    <span class="hero__kicker">Bolton · Est. 2024</span>
+    <h1>Family-run.<br/><span class="underline">Made close to home.</span></h1>
+    <p class="hero__sub">A small, cosy café in Bolton serving honest breakfast, brunch and lunch — plus a hot chocolate that takes its time.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="menu.html">View the menu</a>
+      <a class="btn btn--ghost" href="https://maps.app.goo.gl/vYhYXEfkkgfor3qBA?g_st=ic" target="_blank" rel="noopener">Get directions</a>
+    </div>
+  </div>
+
+  <div class="hero__scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow-down"/></svg>
+  </div>
+</header>
+
+<!-- ================================================== HIGHLIGHTS (Home) -->
+<section id="highlights" class="highlights">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <svg class="squiggle" aria-hidden="true" style="color:var(--accent)"><use href="#i-squiggle"/></svg>
+      <p class="kicker">What we're known for</p>
+      <h2>Three plates that bring people back.</h2>
+      <p class="lede">Fresh, generous, made from scratch every morning. If you only try three things, start here.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card" data-reveal data-reveal-delay="1">
+        <div class="card__photo">
+          <img src="assets/photos/candidates/07-pancakes-berries-fragaria.jpg"
+               alt="Stack of pancakes with whipped cream, strawberries, blueberries and raspberries" loading="lazy"/>
+        </div>
+        <div class="card__body">
+          <p class="kicker">Brunch</p>
+          <h3>Pancakes</h3>
+          <p>Whipped cream, fresh fruit — Nutella, Lotus, lemon &amp; sugar, maple or Oreo.</p>
+          <p class="card__price">£5.95</p>
+        </div>
+      </article>
+
+      <article class="card" data-reveal data-reveal-delay="2">
+        <div class="card__photo">
+          <img src="assets/photos/candidates/06-hot-chocolate-marshmallow-tower.jpg"
+               alt="Hot chocolate topped with whipped cream, mini marshmallows and chocolate drizzle" loading="lazy"/>
+        </div>
+        <div class="card__body">
+          <p class="kicker">Signature drink</p>
+          <h3>Hot Chocolate</h3>
+          <p>The one customers take photos of. Rich, slow-pour, with everything on top.</p>
+          <p class="card__price">£2.25</p>
+        </div>
+      </article>
+
+      <article class="card" data-reveal data-reveal-delay="3">
+        <div class="card__photo">
+          <img src="assets/photos/candidates/05-american-special-pancakes-bacon.jpg"
+               alt="American Special — pancakes with crispy bacon and scrambled eggs" loading="lazy"/>
+        </div>
+        <div class="card__body">
+          <p class="kicker">Hearty</p>
+          <h3>American Special</h3>
+          <p>Sweet and savoury on one plate. Pancakes, crispy bacon, scrambled eggs, maple syrup.</p>
+          <p class="card__price">£6.95</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================== VISIT INFO STRIP -->
+<section class="visit-strip" aria-label="Visit us">
+  <div class="visit-strip__grid">
+    <div class="visit-strip__cell">
+      <h4>Address</h4>
+      <p><strong>185 St Helens Rd</strong></p>
+      <p>Bolton BL3 3PS</p>
+    </div>
+    <div class="visit-strip__cell">
+      <h4>Hours</h4>
+      <p><strong>Tue–Sun</strong> · 10:00 – 16:00</p>
+      <p>Closed Monday</p>
+    </div>
+    <div class="visit-strip__cell">
+      <h4>Phone</h4>
+      <p><strong><a href="tel:+441204934467">01204 934 467</a></strong></p>
+      <p>Walk-ins welcome</p>
+    </div>
+    <div class="visit-strip__cell">
+      <h4>Service</h4>
+      <div class="chips">
+        <span class="chip"><span class="chip__dot"></span>Dine-in</span>
+        <span class="chip"><span class="chip__dot chip__dot--amber"></span>Kerbside pickup</span>
+        <span class="chip"><span class="chip__dot chip__dot--amber"></span>Delivery</span>
+      </div>
+      <p style="margin-top:8px;"><a href="https://cafe-chico.choiceqr.com/en/section:menu" target="_blank" rel="noopener" style="border-bottom:1px solid currentColor;">Order online →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ STORY -->
+<section id="story" class="story">
+  <div class="container">
+
+    <div class="split" data-reveal>
+      <div class="split__photo">
+        <img src="assets/photos/candidates/02-vibe-interior-wooden-chairs.jpg"
+             alt="Café Chico interior — wooden tables, chairs, warm light, a globe and a chalk menu board" loading="lazy"/>
+      </div>
+      <div class="split__copy">
+        <p class="kicker">Our story</p>
+        <h2>We treat every plate like we mean it.</h2>
+        <p>Café Chico started with a family decision: bring proper, honest food to our neighbourhood. We upcycled the seating from an old church, grew the herbs we cook with, and slowly built a menu around breakfast and brunch that we'd want to eat ourselves.</p>
+        <p>Three years on, the chairs still creak in the same spot. The food still comes out hot, every time. And the regulars still come in like they're walking into a friend's front room.</p>
+      </div>
+    </div>
+
+    <div class="story__quote" data-reveal>
+      <p>"Small and cosy place, the food is delicious. You can feel they actually care."</p>
+      <span class="author">— Aliyah · 5★ Google review</span>
+    </div>
+
+    <div class="flourish" aria-hidden="true" style="color:var(--accent)">
+      <svg width="44" height="44"><use href="#i-wreath"/></svg>
+    </div>
+
+    <!-- Values -->
+    <div class="values">
+      <div class="section-head section-head--left" data-reveal>
+        <p class="kicker">What you'll find here</p>
+        <h2>Three things we won't compromise on.</h2>
+      </div>
+
+      <div class="values__grid">
+        <div class="value-card" data-reveal data-reveal-delay="1">
+          <svg class="value-card__icon" aria-hidden="true"><use href="#i-coffee"/></svg>
+          <h3>Made close to home</h3>
+          <p>Everything on the plate is made in our kitchen that morning — no reheats, no shortcuts, no "from a packet."</p>
+        </div>
+
+        <div class="value-card" data-reveal data-reveal-delay="2">
+          <svg class="value-card__icon" aria-hidden="true" style="color:var(--green)"><use href="#i-bike"/></svg>
+          <h3>Generous, honest portions</h3>
+          <p>If you've ordered a Full English, you'll know — the plate comes with two of everything, because we know you're hungry.</p>
+        </div>
+
+        <div class="value-card" data-reveal data-reveal-delay="3">
+          <svg class="value-card__icon" aria-hidden="true" style="color:var(--accent)"><use href="#i-utensils"/></svg>
+          <h3>A seat for everyone</h3>
+          <p>Vegan, gluten-free, halal, family-friendly — the menu has options, and the welcome is the same for all of them.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================== CONTACT -->
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <svg class="squiggle" aria-hidden="true" style="color:var(--accent)"><use href="#i-squiggle"/></svg>
+      <p class="kicker">Plan a visit</p>
+      <h2>Find us in Bolton.</h2>
+    </div>
+
+    <div class="contact__grid">
+      <div class="contact__hours" data-reveal>
+        <h3>Hours</h3>
+        <table class="hours-table">
+          <tbody>
+            <tr data-day="Mon"><th>Monday</th>     <td class="closed">Closed</td></tr>
+            <tr data-day="Tue"><th>Tuesday</th>    <td>09:30 – 16:00</td></tr>
+            <tr data-day="Wed"><th>Wednesday</th>  <td>10:00 – 16:00</td></tr>
+            <tr data-day="Thu"><th>Thursday</th>   <td>10:00 – 16:00</td></tr>
+            <tr data-day="Fri"><th>Friday</th>     <td>10:00 – 16:00</td></tr>
+            <tr data-day="Sat"><th>Saturday</th>   <td>10:00 – 16:00</td></tr>
+            <tr data-day="Sun"><th>Sunday</th>     <td>10:00 – 16:00</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:var(--space-3);">
+          <a href="tel:+441204934467" class="contact__phone">01204 934 467</a>
+        </p>
+        <p style="color:var(--muted); font-size:14px;">
+          Walk-ins welcome. For groups of 6+, please call ahead.
+        </p>
+      </div>
+
+      <div class="contact__where" data-reveal data-reveal-delay="1">
+        <h3>Where</h3>
+        <p class="contact__address">
+          185 St Helens Rd<br/>
+          Bolton BL3 3PS<br/>
+          Greater Manchester
+        </p>
+
+        <a href="https://maps.app.goo.gl/vYhYXEfkkgfor3qBA?g_st=ic" target="_blank" rel="noopener" class="map-embed" aria-label="Open Café Chico on Google Maps">
+          <img src="https://maps.googleapis.com/maps/api/staticmap?center=Cafe+Chico+185+St+Helens+Rd+Bolton+BL3+3PS&zoom=16&size=640x480&scale=2&maptype=roadmap&markers=color:red%7CCafe+Chico"
+               alt="Map showing 185 St Helens Rd, Bolton"
+               onerror="this.onerror=null;this.parentElement.style.background='linear-gradient(135deg, #d4a373, #6b4423)';this.remove();" />
+        </a>
+
+        <div class="chips">
+          <span class="chip"><span class="chip__dot"></span>Dine-in</span>
+          <span class="chip"><span class="chip__dot chip__dot--amber"></span>Kerbside pickup</span>
+          <span class="chip"><span class="chip__dot chip__dot--amber"></span>Delivery</span>
+          <span class="chip"><span class="chip__dot chip__dot--grey"></span>Order online</span>
+        </div>
+
+        <p style="margin-top:var(--space-4); font-size:14px;">
+          <a href="https://cafe-chico.choiceqr.com/en/section:menu" target="_blank" rel="noopener" style="border-bottom:1px solid var(--accent); color:var(--fg);">
+            Order via our menu →
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================== MENU PREVIEW -->
+<section class="menu-preview" aria-label="A taste of the menu">
+  <div class="container">
+    <div class="menu-preview__head" data-reveal>
+      <div>
+        <p class="kicker">From the kitchen</p>
+        <h2>A taste of the menu.</h2>
+      </div>
+      <a href="menu.html">View full menu →</a>
+    </div>
+
+    <div class="menu-preview__grid">
+      <a class="menu-preview__item" href="menu.html">
+        <div class="menu-preview__photo">
+          <img src="assets/photos/raw/menu-items/french-toast.webp" alt="" loading="lazy"/>
+        </div>
+        <div>
+          <h3 class="menu-preview__name">French Toast</h3>
+          <p style="font-size:12px;color:var(--muted);margin:0;">Whipped cream · fresh fruit</p>
+        </div>
+        <span class="menu-preview__price">£5.95</span>
+      </a>
+      <a class="menu-preview__item" href="menu.html">
+        <div class="menu-preview__photo">
+          <img src="assets/photos/raw/menu-items/american-special.webp" alt="" loading="lazy"/>
+        </div>
+        <div>
+          <h3 class="menu-preview__name">American Special</h3>
+          <p style="font-size:12px;color:var(--muted);margin:0;">Pancakes · bacon · eggs</p>
+        </div>
+        <span class="menu-preview__price">£6.95</span>
+      </a>
+      <a class="menu-preview__item" href="menu.html">
+        <div class="menu-preview__photo">
+          <img src="assets/photos/raw/menu-items/full-english-breakfast.webp" alt="" loading="lazy"/>
+        </div>
+        <div>
+          <h3 class="menu-preview__name">Full English Breakfast</h3>
+          <p style="font-size:12px;color:var(--muted);margin:0;">Lamb macon · sausages · eggs</p>
+        </div>
+        <span class="menu-preview__price">£8.95</span>
+      </a>
+      <a class="menu-preview__item" href="menu.html">
+        <div class="menu-preview__photo">
+          <img src="assets/photos/raw/menu-items/hot-chocolate.webp" alt="" loading="lazy"/>
+        </div>
+        <div>
+          <h3 class="menu-preview__name">Hot Chocolate</h3>
+          <p style="font-size:12px;color:var(--muted);margin:0;">Cream · marshmallows</p>
+        </div>
+        <span class="menu-preview__price">£2.25</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FOOTER -->
+<footer class="site-footer">
+  <div class="site-footer__grid">
+    <div>
+      <p class="site-footer__tag">Café Chico</p>
+      <p style="color:oklch(85% 0.012 80); font-size:14px; line-height:1.6;">
+        A small, family-run café on St Helens Rd, Bolton. Honest food, made close to home.
+      </p>
+    </div>
+
+    <div>
+      <h5>Visit</h5>
+      <ul>
+        <li>185 St Helens Rd</li>
+        <li>Bolton BL3 3PS</li>
+        <li><a href="tel:+441204934467">01204 934 467</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h5>Hours</h5>
+      <ul>
+        <li>Tue–Sun · 10–16</li>
+        <li style="color:var(--muted);">Closed Monday</li>
+        <li><a href="https://cafe-chico.choiceqr.com/en/section:menu" target="_blank" rel="noopener">Order online</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h5>Follow</h5>
+      <ul>
+        <li><a href="https://instagram.com/cafechico_uk" target="_blank" rel="noopener">Instagram · @cafechico_uk</a></li>
+        <li><a href="https://tiktok.com/@cafechico" target="_blank" rel="noopener">TikTok · @cafechico</a></li>
+        <li><a href="https://maps.app.goo.gl/vYhYXEfkkgfor3qBA?g_st=ic" target="_blank" rel="noopener">Google Maps</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="site-footer__bottom">
+    <span>© 2026 Café Chico. Made with care in Bolton.</span>
+    <span>Photos: Google Maps · © respective photographers.</span>
+  </div>
+</footer>
+
+<script src="assets/js/shared.js"></script>
+</body>
+</html>

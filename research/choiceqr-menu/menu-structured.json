@@ -1,0 +1,488 @@
+{
+  "source": "https://cafe-chico.choiceqr.com/en/section:menu",
+  "scraped_via": "curl + __NEXT_DATA__ JSON parse",
+  "place": {
+    "name": "Cafe Chico ",
+    "type": "restaurant",
+    "placeType": "SIMPLE",
+    "address": "185 St Helens Rd, Bolton BL3 3PS",
+    "phone": "01204 934467",
+    "email": "cafechico185@gmail.com",
+    "currency": "GBP",
+    "timezone": "Europe/London",
+    "social": {
+      "instagram": "https://www.instagram.com/cafechico_uk/",
+      "google_maps": "https://www.google.com/maps/place/Cafe+Chico/@53.56284,-2.451785,15z/"
+    },
+    "hours": {
+      "Sun": "10:00-16:00",
+      "Mon": "Closed",
+      "Tue": "10:00-16:00",
+      "Wed": "10:00-16:00",
+      "Thu": "10:00-16:00",
+      "Fri": "10:00-16:00",
+      "Sat": "10:00-16:00"
+    },
+    "template": {
+      "primaryColor": "#62e130",
+      "background": "#3f3f3f",
+      "theme": "dark",
+      "companyImageMobile": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/IzXTmgx-txhCHFe-bnGlcGa.jpeg"
+    }
+  },
+  "categories": [
+    {
+      "id": "64d23762bc02076c56e61859",
+      "name": "BREAKFAST",
+      "slug": "breakfast",
+      "description": "Tuesday - Friday Served From: 10:00am - 15:00pm \nSaturday Sunday Served All Day ",
+      "items": [
+        {
+          "id": "64d237f7bc0207372fe61861",
+          "name": "FULL ENGLISH BREAKFAST ",
+          "slug": "full-english-breakfast",
+          "description": "2 x Lamb Macon, 2 x Sausages, 2 × Eggs, 2 x Hash Browns, Mushroom, Tomato, Beans, Toast",
+          "price_gbp": 8.95,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/BEndekS-ACBrBCV-dBJUCgC.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_BEndekS-ACBrBCV-dBJUCgC_y-N-V.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/BEndekS-ACBrBCV-dBJUCgC_original.jpeg.webp"
+        },
+        {
+          "id": "64d4cb32b3af0963627ce67c",
+          "name": "DESI BREAKFAST ",
+          "slug": "desi-breakfast",
+          "description": "Desi Omelette, 2 x Spicy Sausages, 2 x Lamb Macon, Mushroom, Tomato, Spicy Beans, Paratha ",
+          "price_gbp": 8.95,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/yKdFtgW-nlHuwkU-vrXbAcO.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_yKdFtgW-nlHuwkU-vrXbAcO_Y-b-C.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/yKdFtgW-nlHuwkU-vrXbAcO_original.jpeg.webp"
+        },
+        {
+          "id": "64d4cc48b3af09f9557ce709",
+          "name": "VEGGIE BREAKFAST ",
+          "slug": "veggie-breakfast",
+          "description": "2x Veg Sausages, 2x Veg Rashers, 2x Eggs, 2x Hash Browns, Mushroom, Tomato, Beans, Toast",
+          "price_gbp": 8.95,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/NJFBnEV-lFDCoRY-kBbIvsM.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_NJFBnEV-lFDCoRY-kBbIvsM_C-b-c.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/NJFBnEV-lFDCoRY-kBbIvsM_original.jpeg.webp"
+        },
+        {
+          "id": "64d4cb8ab3af09e2827ce69b",
+          "name": "BREAKFAST STACKER",
+          "slug": "breakfast-stacker",
+          "description": "2x Lamb Macon, 2x Waffles, Salami, Hash Brown, Egg, Beans, Cheese",
+          "price_gbp": 7.95,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/aJGYqcR-HFQDsll-BGWsuMc.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_aJGYqcR-HFQDsll-BGWsuMc_l-a-k.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/aJGYqcR-HFQDsll-BGWsuMc_original.jpeg.webp"
+        },
+        {
+          "id": "64d4c3e7ceecb11131ff2da0",
+          "name": "HALF ENGLISH BREAKFAST ",
+          "slug": "half-english-breakfast",
+          "description": "1x Lamb Macon, 1x Sausage, 1x Egg, Hash Brown, Mushroom, Tomato, Beans, Toast",
+          "price_gbp": 6.45,
+          "available": true,
+          "image": null,
+          "image_thumb": null,
+          "image_webp": null
+        },
+        {
+          "id": "64d4cbc9b3af098ea77ce69c",
+          "name": "BREAKFAST BAP ",
+          "slug": "breakfast-bap",
+          "description": "2x Sausage, 1x Lamb Macon, 1x Egg, 1x Hash Brown, Mushroom, Tomato, Cheese",
+          "price_gbp": 5.95,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/HHRpllu-IkFXFye-FGfRFqq.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_HHRpllu-IkFXFye-FGfRFqq_E-h-y.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/HHRpllu-IkFXFye-FGfRFqq_original.jpeg.webp"
+        },
+        {
+          "id": "64d4cc8db3af0971207ce70b",
+          "name": "VEGAN BREAKFAST ",
+          "slug": "vegan-breakfast",
+          "description": "2 x Vegan Sausages, 2x Vegan Rashers, Tofu, Mushroom, Eggplant, Tomato, Vegan Paratha",
+          "price_gbp": 8.95,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/QcvFeds-GGEvQtN-CFxbZOt.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_QcvFeds-GGEvQtN-CFxbZOt_z-H-o.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/QcvFeds-GGEvQtN-CFxbZOt_original.jpeg.webp"
+        },
+        {
+          "id": "64d4d0f9b3af092e317ce7b1",
+          "name": "BREAKFAST MUFFIN ",
+          "slug": "breakfast-muffin",
+          "description": "Sausage, Egg, Hash Brown, Cheese ",
+          "price_gbp": 4.45,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/HvNrZlM-cZExDnh-ZRehlRG.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_HvNrZlM-cZExDnh-ZRehlRG_F-L-K.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/HvNrZlM-cZExDnh-ZRehlRG_original.jpeg.webp"
+        },
+        {
+          "id": "64d4d18cb3af0961d37ce7b8",
+          "name": "EGG & CHEESE MUFFIN ",
+          "slug": "egg-cheese-muffin",
+          "description": "Egg & Cheese",
+          "price_gbp": 3.95,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/SYXwSek-HxyqbGr-bunMJJz.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_SYXwSek-HxyqbGr-bunMJJz_P-P-d.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/SYXwSek-HxyqbGr-bunMJJz_original.jpeg.webp"
+        }
+      ]
+    },
+    {
+      "id": "64d4ccd8b3af09a8747ce70f",
+      "name": "BRUNCH",
+      "slug": "brunch",
+      "description": "Tuesday - Friday Served From: 15:30pm \nSaturday Sunday Served All Day ",
+      "items": [
+        {
+          "id": "64d4d9ebb3af0955bd7cea22",
+          "name": "STIR FRY NOODLES",
+          "slug": "stir-fry-noodles",
+          "description": "Extras: Chicken £1.00 or Beef £2.00 ",
+          "price_gbp": 5.95,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/cUGklRu-TGRjeHJ-OaXtZeM.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_cUGklRu-TGRjeHJ-OaXtZeM_O-p-m.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/cUGklRu-TGRjeHJ-OaXtZeM_original.jpeg.webp"
+        },
+        {
+          "id": "64d4d807b3af09fc727ce990",
+          "name": "SOURDOUGH TOAST",
+          "slug": "sourdough-toast",
+          "description": "Topped with Avocado, 2x Poached Eggs and a choice of Salmon, Lamb Macon or Mushroom ",
+          "price_gbp": 6.45,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/uBXiFJa-DjVDbkY-iahHPkD.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_uBXiFJa-DjVDbkY-iahHPkD_W-l-k.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/uBXiFJa-DjVDbkY-iahHPkD_original.jpeg.webp"
+        },
+        {
+          "id": "64d4d839b3af095d687ce99a",
+          "name": "EGGS BENEDICT",
+          "slug": "eggs-benedict",
+          "description": "2x Poached Eggs served with choice of,  Smoked Salmon or Lamb Macon or Spinach, Served on Muffins with Hollandaise Sauce",
+          "price_gbp": 6.45,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/nTISDJK-GpeUgPq-KeHDwbR.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_nTISDJK-GpeUgPq-KeHDwbR_m-i-b.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/nTISDJK-GpeUgPq-KeHDwbR_original.jpeg.webp"
+        },
+        {
+          "id": "64d4d9e3b3af09324c7cea21",
+          "name": "GRILLED HALLOUMI SALAD",
+          "slug": "grilled-halloumi-salad",
+          "description": "",
+          "price_gbp": 5.95,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/CpwfjCo-mBTFWRG-QwqsIEu.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_CpwfjCo-mBTFWRG-QwqsIEu_L-f-a.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/CpwfjCo-mBTFWRG-QwqsIEu_original.jpeg.webp"
+        },
+        {
+          "id": "64d4d872b3af09aedd7ce9a0",
+          "name": "AMERICAN SPECIAL",
+          "slug": "american-special",
+          "description": "Pancakes, Scrambled Egg, Lamb Macon Rashers and Maple Syrup",
+          "price_gbp": 6.95,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/ypTbHDY-DPEijRk-nGeynHR.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_ypTbHDY-DPEijRk-nGeynHR_H-a-C.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/ypTbHDY-DPEijRk-nGeynHR_original.jpeg.webp"
+        },
+        {
+          "id": "64d4ced0b3af0905c17ce788",
+          "name": "OMELETTE WITH 3 TOPPINGS ",
+          "slug": "omelette-with-3-toppings",
+          "description": "Choose 3 from:\nCheese | Tomato | Turkey Ham | Salami | Mushroom | Chilli + Toast ",
+          "price_gbp": 5.95,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/nTkllwI-EIdjbjP-GAADKsD.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_nTkllwI-EIdjbjP-GAADKsD_Z-o-I.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/nTkllwI-EIdjbjP-GAADKsD_original.jpeg.webp"
+        },
+        {
+          "id": "64d4d998b3af091f7c7cea1a",
+          "name": "TOASTIES",
+          "slug": "toasties",
+          "description": "Choose 2 from: Chicken | Ham | Cheese | Tuna | Mushroom | Tomato | Onion | Chilli ",
+          "price_gbp": 4.95,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/DAkhUMF-bDwJuOU-onOjEtF.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_DAkhUMF-bDwJuOU-onOjEtF_N-O-G.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/DAkhUMF-bDwJuOU-onOjEtF_original.jpeg.webp"
+        },
+        {
+          "id": "64d4d9f8b3af0928927cea25",
+          "name": "SCRAMBLED EGG ON CROISSANT ",
+          "slug": "scrambled-egg-on-croissant",
+          "description": "",
+          "price_gbp": 3.95,
+          "available": true,
+          "image": null,
+          "image_thumb": null,
+          "image_webp": null
+        },
+        {
+          "id": "64d4d9beb3af09c7b77cea1e",
+          "name": "FRENCH TOAST",
+          "slug": "french-toast",
+          "description": "Served with Whipped Cream, Fresh Fruit and a choice of: Nutella, Lotus or Maple Syrup",
+          "price_gbp": 5.95,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/JtoSGtp-lPUykfh-ShinyrY.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_JtoSGtp-lPUykfh-ShinyrY_k-S-r.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/JtoSGtp-lPUykfh-ShinyrY_original.jpeg.webp"
+        },
+        {
+          "id": "64d4d9d4b3af09fc417cea20",
+          "name": "PANCAKES",
+          "slug": "pancakes",
+          "description": "Served with Whipped Cream, Fresh Fruit and a choice of: Nutella | Lotus | Lemon & Sugar | Maple Syrup | Oreo ",
+          "price_gbp": 5.95,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/dDAXBxA-BsXZANs-eybIWia.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_dDAXBxA-BsXZANs-eybIWia_p-l-B.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/dDAXBxA-BsXZANs-eybIWia_original.jpeg.webp"
+        }
+      ]
+    },
+    {
+      "id": "64d4da1cb3af09acfe7cea2b",
+      "name": "SUBS ",
+      "slug": "subs",
+      "description": "Tuesday - Sunday From: 12:00pm - 16:00pm \n",
+      "items": [
+        {
+          "id": "64d4dab4b3af094f077cea40",
+          "name": "SIGNATURE SUBS ",
+          "slug": "signature-subs",
+          "description": "CHOOSE FROM:\nChicken | Beef | Tuna\nCheese (includes salad) ",
+          "price_gbp": 4.95,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/NbFPeVb-aeSzCJS-ChGbcbF.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_NbFPeVb-aeSzCJS-ChGbcbF_G-e-e.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/NbFPeVb-aeSzCJS-ChGbcbF_original.jpeg.webp"
+        },
+        {
+          "id": "64d4db1227ee524d3408582e",
+          "name": "SIGNATURE SUBS MEAL DEAL",
+          "slug": "signature-subs-meal-deal",
+          "description": "CHOOSE FROM\n\nMeatballs | Chicken | Tuna\nCheese + Bag of Crisp + Selected Drink",
+          "price_gbp": 6.45,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/QOlDIRO-knOGjCT-CLjbhFi.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_QOlDIRO-knOGjCT-CLjbhFi_f-T-J.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/QOlDIRO-knOGjCT-CLjbhFi_original.jpeg.webp"
+        }
+      ]
+    },
+    {
+      "id": "64d4db2927ee52bd2008582f",
+      "name": "SPUDS ",
+      "slug": "spuds",
+      "description": "Tuesday - Sunday From: 12:00pm - 16:00pm",
+      "items": [
+        {
+          "id": "64d4db7f27ee52ae0a085838",
+          "name": "SIGNATURE SPUDS ",
+          "slug": "signature-spuds",
+          "description": "CHOOSE FROM\nCheese & Beans | Tuna Mayo | Tuna Cheese |\nChicken & Cheese, Add Salad & Coleslaw £1\n",
+          "price_gbp": 4.95,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/floDoLp-fnJmJpL-EFBgNCr.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_floDoLp-fnJmJpL-EFBgNCr_B-T-G.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/floDoLp-fnJmJpL-EFBgNCr_original.jpeg.webp"
+        },
+        {
+          "id": "64d4dbbe27ee528247085842",
+          "name": "SIGNATURE SPUDS MEAL DEAL ",
+          "slug": "signature-spuds-meal-deal",
+          "description": "CHOOSE FROM\nCheese & Beans | Tuna Mayo | Tuna Cheese |\nChicken & Cheese,, Crisp + Selected Drink\nAdd Salad & Coleslaw £1 ",
+          "price_gbp": 6.45,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/IKyYlke-aQvhdKV-tKveuSH.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_IKyYlke-aQvhdKV-tKveuSH_E-E-T.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/IKyYlke-aQvhdKV-tKveuSH_original.jpeg.webp"
+        }
+      ]
+    },
+    {
+      "id": "64d4dc0827ee5265b8085845",
+      "name": "FOR THE LITTLE ONES ",
+      "slug": "for-the-little-ones",
+      "description": "Tuesday - Sunday From: 10:00am - 16:00pm",
+      "items": [
+        {
+          "id": "64d4dc3027ee52e111085847",
+          "name": "KIDS MEAL DEAL ",
+          "slug": "kids-meal-deal",
+          "description": "Choose from: \nBreakfast (4 items) | Cheese and Tomato Pasta | Half Spud with Cheese & Beans | Cheesy Omelette | Veg Rice Box \n+ Organic Fruit Juice or Juice Cartons + Fruit Stick \n\n",
+          "price_gbp": 4.95,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/VpJAGHx-mbGviGj-ufwqVFl.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_VpJAGHx-mbGviGj-ufwqVFl_b-Q-w.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/VpJAGHx-mbGviGj-ufwqVFl_original.jpeg.webp"
+        }
+      ]
+    },
+    {
+      "id": "651c1a33665992e739d301ec",
+      "name": "DRINKS",
+      "slug": "drinks",
+      "description": "",
+      "items": [
+        {
+          "id": "651c1a93665992e739d301f0",
+          "name": "AMERICANO",
+          "slug": "americano",
+          "description": "A shot of espresso slowly infused with hot water to create a long black coffee",
+          "price_gbp": 2.25,
+          "available": true,
+          "image": null,
+          "image_thumb": null,
+          "image_webp": null
+        },
+        {
+          "id": "651c1ab4665992e739d301f2",
+          "name": "ESPRESSO",
+          "slug": "espresso",
+          "description": "A short invigorating shot of coffee with intense flavour",
+          "price_gbp": 2.25,
+          "available": true,
+          "image": null,
+          "image_thumb": null,
+          "image_webp": null
+        },
+        {
+          "id": "651c1adb665992e739d301f3",
+          "name": "CAFE LATTE",
+          "slug": "cafe-latte",
+          "description": "A luxurious mix of espresso and steamed milk, crowned with a layer of milk froth",
+          "price_gbp": 2.25,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/FBvOCea-GiXHQoM-NqXdsyb.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_FBvOCea-GiXHQoM-NqXdsyb_j-P-H.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/FBvOCea-GiXHQoM-NqXdsyb_original.jpeg.webp"
+        },
+        {
+          "id": "651c1aee665992e739d301f4",
+          "name": "CAPPUCCINO",
+          "slug": "cappuccino",
+          "description": "A luxurious mix of espresso steamed milk and velvety froth",
+          "price_gbp": 2.25,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/iSATPFz-llGkKot-LRCZkeD.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_iSATPFz-llGkKot-LRCZkeD_F-l-r.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/iSATPFz-llGkKot-LRCZkeD_original.jpeg.webp"
+        },
+        {
+          "id": "651c1b2b665992e739d301f7",
+          "name": "LATTE MACCHIATO",
+          "slug": "latte-macchiato",
+          "description": "A tall combination of hot steamed milk, stained with espresso",
+          "price_gbp": 2.25,
+          "available": true,
+          "image": null,
+          "image_thumb": null,
+          "image_webp": null
+        },
+        {
+          "id": "651c1b67665992e739d301f9",
+          "name": "MOCHACCINO",
+          "slug": "mochaccino",
+          "description": "A wonderful fusion of espresso steamed milk and chocolate",
+          "price_gbp": 2.25,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/eIakbkL-SRBypmn-rDIDImE.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_eIakbkL-SRBypmn-rDIDImE_r-E-A.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/eIakbkL-SRBypmn-rDIDImE_original.jpeg.webp"
+        },
+        {
+          "id": "651c1b86665992e739d301fe",
+          "name": "HOT CHOCOLATE",
+          "slug": "hot-chocolate",
+          "description": "A delightfully indulgent combination of chocolate and steamed milk, topped with milk froth",
+          "price_gbp": 2.25,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/hsGwiUX-HWrxIIP-kQkqZAk.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_hsGwiUX-HWrxIIP-kQkqZAk_Z-p-T.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/hsGwiUX-HWrxIIP-kQkqZAk_original.jpeg.webp"
+        },
+        {
+          "id": "651c1b9c665992e739d301ff",
+          "name": "ENGLISH BREAKFAST TEA",
+          "slug": "english-breakfast-tea",
+          "description": "A cup of freshly brewed tea served with milk",
+          "price_gbp": 2.25,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/WIdKjak-SCjVJYj-xkGkLWI.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_WIdKjak-SCjVJYj-xkGkLWI_j-H-G.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/WIdKjak-SCjVJYj-xkGkLWI_original.jpeg.webp"
+        },
+        {
+          "id": "651c1c07665992e739d3020b",
+          "name": "CHICO'S SPICED CHAI",
+          "slug": "chico-s-spiced-chai",
+          "description": "",
+          "price_gbp": 2.5,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/EisQKsB-PbkIKkD-YXDArFj.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_EisQKsB-PbkIKkD-YXDArFj_J-l-S.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/EisQKsB-PbkIKkD-YXDArFj_original.jpeg.webp"
+        },
+        {
+          "id": "651c1c37665992e739d3021d",
+          "name": "CHICO'S SPECIAL COFFEE",
+          "slug": "chico-s-special-coffee",
+          "description": "",
+          "price_gbp": 0.0,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/EvYGeCK-bIeokOn-GTnObYq.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_EvYGeCK-bIeokOn-GTnObYq_p-I-O.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/EvYGeCK-bIeokOn-GTnObYq_original.jpeg.webp"
+        },
+        {
+          "id": "651c1c9b665992e739d30247",
+          "name": "ORANGE JUICE",
+          "slug": "orange-juice",
+          "description": "",
+          "price_gbp": 1.25,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/xCFsCvJ-zoLlvSW-kzWBInI.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_xCFsCvJ-zoLlvSW-kzWBInI_k-w-r.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/xCFsCvJ-zoLlvSW-kzWBInI_original.jpeg.webp"
+        },
+        {
+          "id": "651c1cac665992e739d3024f",
+          "name": "APPLE JUICE",
+          "slug": "apple-juice",
+          "description": "",
+          "price_gbp": 1.25,
+          "available": true,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/OVMBfOs-KkGCcHw-PdNgWIy.jpeg",
+          "image_thumb": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/thumbnail_OVMBfOs-KkGCcHw-PdNgWIy_H-k-C.jpeg",
+          "image_webp": "https://cdn-media.choiceqr.com/prod-eat-cafe-chico/menu/OVMBfOs-KkGCcHw-PdNgWIy_original.jpeg.webp"
+        }
+      ]
+    }
+  ],
+  "summary_stats": {
+    "total_items": 36,
+    "items_with_images": 31,
+    "categories_count": 6,
+    "price_range": {
+      "min_gbp": 1.25,
+      "max_gbp": 8.95
+    }
+  }
+}

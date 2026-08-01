@@ -1,0 +1,214 @@
+/* ==========================================================================
+   Café Chico — single-page index styles
+   Hero + Highlights + Visit-strip + Story + Values + Contact
+   ========================================================================== */
+
+/* ---------- Section backgrounds ---------- */
+.bg-cream { background: var(--bg); }
+.bg-paper { background: var(--surface); }
+.bg-dark  { background: var(--bg-dark); color: oklch(95% 0.012 80); }
+
+/* ---------- Highlights (3 dishes) ---------- */
+.highlights {
+  background: var(--bg);
+  padding-top: clamp(64px, 9vw, 128px);
+}
+
+/* ---------- Story block ---------- */
+.story {
+  background: var(--bg);
+  position: relative;
+}
+.story__quote {
+  margin: var(--space-7) auto 0;
+  max-width: 760px;
+  padding: var(--space-6) var(--space-5);
+  background: var(--accent-soft);
+  border-radius: var(--radius-md);
+  position: relative;
+}
+.story__quote::before {
+  content: "“";
+  position: absolute;
+  top: -16px; left: 24px;
+  font-family: var(--font-display);
+  font-size: 96px;
+  color: var(--accent);
+  line-height: 1;
+}
+.story__quote p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(20px, 2.2vw, 26px);
+  line-height: 1.45;
+  color: var(--fg);
+  margin: 0 0 var(--space-3);
+}
+.story__quote .author {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-style: normal;
+}
+
+/* ---------- Values (3 columns) ---------- */
+.values {
+  background: var(--bg);
+  padding-top: clamp(48px, 7vw, 96px);
+}
+.values__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+.value-card {
+  text-align: left;
+  padding: var(--space-5);
+  border-top: 1px solid var(--fg);
+}
+.value-card__icon {
+  width: 44px; height: 44px;
+  color: var(--accent);
+  margin-bottom: var(--space-4);
+}
+.value-card h3 {
+  font-size: 22px;
+  margin-bottom: var(--space-3);
+}
+.value-card p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+@media (max-width: 880px) {
+  .values__grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Contact ---------- */
+.contact {
+  background: var(--surface);
+}
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-7);
+  align-items: start;
+}
+.contact__hours h3,
+.contact__where h3 {
+  font-size: 28px;
+  margin-bottom: var(--space-4);
+}
+.contact__where a.map-embed {
+  display: block;
+  aspect-ratio: 4/3;
+  margin-top: var(--space-4);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  position: relative;
+  background: var(--accent-soft);
+}
+.contact__where a.map-embed img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 1s var(--ease-soft);
+}
+.contact__where a.map-embed:hover img { transform: scale(1.03); }
+.contact__where a.map-embed::after {
+  content: "Open in Google Maps ↗";
+  position: absolute;
+  inset: auto var(--space-3) var(--space-3) auto;
+  background: white;
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 7px 12px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-2);
+}
+.contact__address {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1.4;
+  margin: 0 0 var(--space-3);
+}
+.contact__phone {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--fg);
+  display: inline-block;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 2px;
+  margin: var(--space-2) 0;
+}
+.contact__phone:hover { color: var(--accent); }
+
+@media (max-width: 880px) {
+  .contact__grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Inline menu preview ---------- */
+.menu-preview {
+  background: var(--bg);
+  padding-bottom: clamp(48px, 7vw, 96px);
+}
+.menu-preview__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+.menu-preview__head h2 { max-width: 18ch; }
+.menu-preview__head a {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 2px;
+  color: var(--fg);
+}
+.menu-preview__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-3);
+}
+.menu-preview__item {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  align-items: center;
+  transition: transform 200ms var(--ease-soft), box-shadow 200ms var(--ease-soft);
+}
+.menu-preview__item:hover { transform: translateY(-2px); box-shadow: var(--shadow-2); }
+.menu-preview__photo {
+  width: 72px; height: 72px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--accent-soft);
+}
+.menu-preview__photo img { width: 100%; height: 100%; object-fit: cover; }
+.menu-preview__name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  margin: 0 0 2px;
+  letter-spacing: -0.01em;
+}
+.menu-preview__price {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}

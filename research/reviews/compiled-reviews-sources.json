@@ -1,0 +1,201 @@
+{
+  "source_summary": {
+    "google_maps": {
+      "rating": 4.9,
+      "total_count": 307,
+      "scraped_reviews": "3 visible (truncated by Google DOM)",
+      "scraped_topics": {
+        "french toast": 22,
+        "welcoming staff": 28,
+        "family friendly": 34,
+        "friendly owner": 28,
+        "gluten free": 8,
+        "free brownies": 2,
+        "vegan options": 6,
+        "family run cafe": 3,
+        "lamb bacon": 2,
+        "rustic decor": 2
+      }
+    },
+    "tripadvisor": {
+      "url": "https://www.tripadvisor.com/Restaurant_Review-g187053-d27129955-Reviews-Cafe_Chico-Bolton_Greater_Manchester_England.html",
+      "total_count": "8 reviews (5.0 rating)",
+      "rank_in_bolton": "#10 of 38 Coffee & Tea",
+      "travellers_choice": true,
+      "review_titles_and_quotes": [
+        {
+          "title": "Great little eatery",
+          "url": "https://www.tripadvisor.co.uk/ShowUserReviews-g187053-d27129955-r1044652936",
+          "quote": "Great food, nice atmosphere and excellent customer service. My husband and I went for breakfast with our 2 young children. We had a very nice time the atmosphere was nice and cosy, the kids loved it."
+        },
+        {
+          "title": "Food and service",
+          "url": "https://www.tripadvisor.com/ShowUserReviews-g187053-d27129955-r1007950353",
+          "quote": "From walking through the door, the attentiveness and hospitality conveyed by the staff was exemplary. The owner, Faruk took time to talk to us whist awaiting our food. Our breakfast was delicious. Have no hesitation to visit Cafe Chico, you will not be disappointed. Highly recommended."
+        },
+        {
+          "title": "Great place with exceptional staff",
+          "url": "https://www.tripadvisor.com/ShowUserReviews-g187053-d27129955-r976837210",
+          "quote": "[Title only — full text blocked]"
+        }
+      ]
+    },
+    "wanderlog": {
+      "url": "https://wanderlog.com/place/details/10842123/cafe-chico",
+      "quote": "Such a lovely cute and homely cafe. The staff were so friendly and welcoming. Had a lovely chat and giggle on many occasions. We ended up sitting for 2 hours because we enjoyed it so much.",
+      "standout_dishes": [
+        "French toast",
+        "spicy chicken noodles"
+      ],
+      "atmosphere": "cozy atmosphere created by thoughtful decor choices, friendly staff"
+    },
+    "wheree": {
+      "url": "https://cafe-chico.wheree.com/",
+      "summary": "Customer feedback suggests that Cafe Chico stands out for its welcoming atmosphere and attentive service. Many patrons praise the warm decor and friendly staff, describing it as a cozy haven in Bolton's heart."
+    },
+    "coffeeee_ai": {
+      "url": "https://www.coffeeee-ai.com/coffee-shops/bolton-cafe-chico",
+      "rank_in_bolton": "#3 (by AI ranking)",
+      "summary": "Cafe Chico is an excellent choice for those who appreciate personalized service and a peaceful atmosphere. Known for its cardamom coffee and Desi breakfast, this café excels in offering unique flavors that delight the senses. The staff's willingness to cater to dietary needs and offer off-menu items stands out."
+    },
+    "restaurant_guru": {
+      "url": "https://restaurantguru.com/Cafe-Chico-Bolton",
+      "total_count": 296,
+      "rating": 4.8,
+      "summary": "Based on the visitors' opinions, waiters serve good eggs benedict, chicken tikka and sausages here. Tasty French toasts, berry smoothies and pancakes are among the dishes to be ordered at this cafe. After a long working week, you can try great coffee or delicious tea. The cosy atmosphere of Cafe Chico makes customers feel relaxed and have a nice time. The staff is terrific that's what makes this place so good. People say that the service is fine here. This spot offers you reasonable prices for tasty meals. It is noteworthy that decor is fancy."
+    },
+    "master_manchester": {
+      "url": "https://www.mastermanchester.co.uk/best-cafes-bolton/",
+      "author": "Nina Haigh",
+      "rank": "#3 of 5 best cafes in Bolton",
+      "key_quotes": [
+        "Cafe Chico stood out to us as one of the most affordable spots in the area.",
+        "Wallet-friendly experience where an average visit only sets you back between £1 to £10.",
+        "Whether you're craving a hearty Full English Breakfast, savoury Stir Fry Noodles, or the classic American Special, there's something to tickle your taste buds.",
+        "Furthermore, we appreciate their commitment to inclusivity with vegan options. They also have a dedicated children's menu offering tempting Kids Meal Deals.",
+        "Finally, what made our experience even better was Chef Chico's exceptional staff. Their warmth and attentiveness made us feel right at home as we enjoyed our meal!"
+      ]
+    },
+    "the_bolton_news": {
+      "url_main": "https://www.theboltonnews.co.uk/news/24471125.cafe-chico-st-helens-road-heart-community",
+      "url_top5": "https://www.theboltonnews.co.uk/news/24278743.5-best-cafes-visit-food-drinks-bolton",
+      "article_quote": "Café Chico on St Helens Road is at the heart of the community. A café has shown it is at the heart of the community by serving up a free meal to the volunteers who help make the area a nicer place to live in.",
+      "owner_story": {
+        "owner": "Aaliyah Mohamed (first venture of this type)",
+        "family": "Father Farook Mohamed (Faruk) + Mother Fyroza",
+        "open_since": "Around 1 year (as of 2024)",
+        "mantra": "regenerate, reuse, renew",
+        "community_focus": "Free meals for Over Hulton Community Group volunteers (who maintain Newbrook Road shopping precinct garden for 14 years)",
+        "future": "Start growing own vegetables — farm-to-fork circular method",
+        "design_features": "Upcycled old church pews inside, candles, plants/houseplants, warm decor",
+        "loneliness_focus": "There are a lot of lonely people and it is somewhere they can come in for a chat."
+      },
+      "guest_quote": "It really is a lovely little café, with a wonderful atmosphere and decor. The owners could not make you feel more welcome. They really want to make it in to a community café. For those who haven't been, go.",
+      "popular_items": [
+        "Full English Breakfast",
+        "Sourdough toast",
+        "sandwiches"
+      ],
+      "drinks": [
+        "smoothies",
+        "Mango/Passion/Guava smoothies"
+      ]
+    },
+    "uber_eats": {
+      "url": "https://www.ubereats.com/gb/store/cafe-chico-bolton/UTbmBLKJRSyVttm3dXiPtw",
+      "rating": "4.1 (130+)",
+      "categories": [
+        "Coffee",
+        "Tea",
+        "Breakfast and brunch",
+        "American",
+        "Sandwiches",
+        "English",
+        "Halal"
+      ],
+      "delivery": "Too far to deliver (in Bolton center)",
+      "pickup_time": "Available in 51 min"
+    },
+    "food_hygiene_rating": {
+      "url": "https://ratings.food.gov.uk/business/1645548/cafe-chico-bolton",
+      "rating": "Pass (inspected 20 July 2023)"
+    }
+  },
+  "aggregate_sentiment": {
+    "average_rating_estimate": "4.7-4.9 (depending on source)",
+    "total_visible_reviews_across_sources": "700+ (Google 307 + RG 296 + TripAdvisor 8 + Uber 130+)",
+    "themes": {
+      "positive_top": [
+        "Friendly, welcoming staff (esp. Faruk + family)",
+        "Cozy, warm, candle-lit interior",
+        "Halal + vegan + gluten-free options",
+        "Photogenic food presentation (French toast, American Special, Hot Chocolate)",
+        "Affordable (£1-10 average)",
+        "Family-friendly (kids welcome)",
+        "Sense of community / not just a business",
+        "Upcycled decor (church pews, plants)",
+        "Personal attention — owner knows customers"
+      ],
+      "neutral_top": [
+        "Only 4 days a week open (per MM) — note: actually 6 days",
+        "Limited parking (Bolton town center general issue)"
+      ],
+      "negative_top": [
+        "No significant negative themes found"
+      ]
+    },
+    "unique_selling_points": [
+      "Family-run by Mohamed family (Faruk, Fyroza, Aaliyah)",
+      "Regenerate/reuse/renew mantra (upcycled church pews)",
+      "Halal + vegan + gluten-free (rare combination at this price point)",
+      "Cardamom coffee + Desi breakfast (cultural fusion)",
+      "Community giver (free meals to volunteers)",
+      "Photogenic, Instagrammable dishes (fragaria, hot chocolate towers)"
+    ]
+  },
+  "draft_quotes_for_website": [
+    {
+      "section": "Hero",
+      "quote": "A café at the heart of its community.",
+      "source": "The Bolton News, 2024"
+    },
+    {
+      "section": "Story",
+      "quote": "We want to be more than a business — we want to give back.",
+      "source": "Aaliyah Mohamed, owner"
+    },
+    {
+      "section": "Story",
+      "quote": "Regenerate, reuse, renew. That's our way.",
+      "source": "Aaliyah Mohamed"
+    },
+    {
+      "section": "Story",
+      "quote": "Faruk took time to talk to us while we waited. Our breakfast was delicious.",
+      "source": "TripAdvisor, 2024"
+    },
+    {
+      "section": "Story",
+      "quote": "Such a lovely, cute and homely cafe. We ended up sitting for 2 hours.",
+      "source": "Wanderlog"
+    },
+    {
+      "section": "Story",
+      "quote": "What made our experience even better was Chef Chico's exceptional staff.",
+      "source": "Master Manchester"
+    },
+    {
+      "section": "Story",
+      "quote": "There's a lot of lonely people out there. This is somewhere they can come in for a chat.",
+      "source": "Aaliyah Mohamed"
+    },
+    {
+      "section": "Trust bar",
+      "quote": "4.9★ on Google · #3 best café in Bolton · Top 5 best cafés, Bolton News"
+    },
+    {
+      "section": "Menu intro",
+      "quote": "Halal · Vegan options · Gluten-free · Kids welcome · £1-10 average"
+    }
+  ]
+}
