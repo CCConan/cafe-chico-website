@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Outside Catering · Café Chico · Bolton</title>
+  <meta name="description" content="Platters, breakfasts, brunch boxes and sweet treats — made in Bolton, delivered across Greater Manchester." />
+  <meta name="theme-color" content="#3b2418" />
+  <link rel="icon" type="image/png" href="assets/photos/logo/chico-favicon-32.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&family=Fraunces:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/shared.css" />
+  <link rel="stylesheet" href="assets/css/catering.css" />
+
+  <meta property="og:title" content="Outside Catering · Café Chico" />
+  <meta property="og:description" content="Platters, breakfasts, brunch boxes and sweet treats delivered across Greater Manchester." />
+  <meta property="og:image" content="assets/photos/catering/ai-cat-hero-spread-v2.jpg" />
+  <meta property="og:type" content="website" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Outside Catering",
+    "provider": {
+      "@type": "FoodEstablishment",
+      "name": "Café Chico",
+      "address": { "@type": "PostalAddress", "streetAddress": "185 St Helens Rd", "addressLocality": "Bolton", "postalCode": "BL3 3PS", "addressCountry": "GB" }
+    },
+    "areaServed": { "@type": "Place", "name": "Greater Manchester" }
+  }
+  </script>
+</head>
+<body class="cat-page">
+
+<nav class="site-nav" aria-label="Primary">
+  <div class="site-nav__inner">
+    <a href="index.html" class="brand"><img class="brand__mark" src="assets/photos/logo/chico-text-dark.png" alt="Café Chico" width="60" height="21" /><span>Café Chico</span></a>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    <ul class="nav-tabs" role="list">
+      <li><a href="index.html#hero">Home</a></li>
+      <li><a href="index.html#social">Social</a></li>
+      <li><a href="index.html#story">Story</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="ice-cream-bike.html">Ice Cream Bike</a></li>
+      <li><a href="catering.html" class="active">Catering</a></li>
+      <li><a href="party-room.html">Party Room</a></li>
+      <li><a href="index.html#press">Press</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============================================================ HERO -->
+<header class="cat-hero" aria-label="Outside catering">
+  <div class="cat-hero__bg">
+    <img src="assets/photos/catering/ai-cat-hero-spread-v2.jpg" alt="Café Chico catering spread — bread loaves, ciabatta sandwich rolls, fruit skewers, mini dessert squares on black trays across a wooden table" />
+  </div>
+
+  <div class="cat-hero__inner">
+    <p class="cat-hero__kicker"><span class="dot"></span>Outside catering · Made fresh in Bolton</p>
+    <h1 class="cat-hero__title">
+      <span class="line">Food that</span>
+      <span class="line line--accent"><em>comes to you.</em></span>
+    </h1>
+    <p class="cat-hero__sub">Eight platters. One kitchen. Breakfast, savoury, sweet, fruit &amp; dessert — for 6 to 60 guests. Made the morning of your event, then delivered.</p>
+  </div>
+
+  <a class="cat-hero__scroll" href="#menu" aria-label="See the menu">
+    <span>The menu</span>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v14M5 12l7 7 7-7"/></svg>
+  </a>
+</header>
+
+<!-- ============================================================ MOSAIC GRID -->
+<section class="cat-mosaic" id="menu" aria-label="Platter gallery">
+  <div class="container">
+    <div class="cat-mosaic__head">
+      <p class="kicker">A look at the spread</p>
+      <h2 class="cat-mosaic__title">Eight platters. <em>One kitchen.</em></h2>
+    </div>
+
+    <div class="cat-filters" role="tablist" aria-label="Filter platters">
+      <button class="cat-filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button class="cat-filter" data-filter="breakfast" role="tab" aria-selected="false">Breakfast</button>
+      <button class="cat-filter" data-filter="savoury" role="tab" aria-selected="false">Savoury</button>
+      <button class="cat-filter" data-filter="sweet" role="tab" aria-selected="false">Sweet</button>
+    </div>
+
+    <div class="cat-mosaic__grid">
+      <figure class="cat-tile" data-cat="breakfast" data-reveal>
+        <img src="assets/photos/catering/ai-cat-platter-brunch.jpg" alt="Brunch platter on black slate — mini pancake stacks, eggs benedict, croissants, hash browns, cherry tomatoes, bacon and fresh berries, with a Café Chico linen napkin" loading="lazy" />
+        <figcaption>
+          <span class="cat-tile__num">01</span>
+          <h3>Brunch Platter</h3>
+          <p class="cat-tile__desc">Mini pancakes, eggs benedict, croissants, hash browns, bacon &amp; fresh berries — for the morning crowd.</p>
+          <p class="cat-tile__price">£35 <span>· serves 6–8</span></p>
+        </figcaption>
+      </figure>
+
+      <figure class="cat-tile" data-cat="savoury" data-reveal data-reveal-delay="1">
+        <img src="assets/photos/catering/ai-cat-platter-sandwich.jpg" alt="Sandwich &amp; wrap platter on black slate — sandwich triangles, chicken wraps, salmon &amp; cream cheese bagels, falafel wraps, mini paninis, with arugula and cherry tomatoes" loading="lazy" />
+        <figcaption>
+          <span class="cat-tile__num">02</span>
+          <h3>Sandwich &amp; Wrap Platter</h3>
+          <p class="cat-tile__desc">Sandwich triangles, chicken &amp; falafel wraps, salmon bagels, mini paninis — a mix for everyone.</p>
+          <p class="cat-tile__price">£32 <span>· serves 6–8</span></p>
+        </figcaption>
+      </figure>
+
+      <figure class="cat-tile" data-cat="sweet" data-reveal data-reveal-delay="2">
+        <img src="assets/photos/catering/ai-cat-platter-sweet.jpg" alt="Sweet treats platter on black slate — Victoria sponge, brownies, lemon drizzle, carrot cake, fudge, rocky road, jam tarts, with fresh berries and edible flowers" loading="lazy" />
+        <figcaption>
+          <span class="cat-tile__num">03</span>
+          <h3>Sweet Treats Platter</h3>
+          <p class="cat-tile__desc">Victoria sponge, brownies, lemon drizzle, carrot cake, fudge, rocky road &amp; jam tarts.</p>
+          <p class="cat-tile__price">£28 <span>· serves 6–8</span></p>
+        </figcaption>
+      </figure>
+
+      <figure class="cat-tile" data-cat="sweet" data-reveal data-reveal-delay="3">
+        <img src="assets/photos/catering/ai-cat-platter-fruit.jpg" alt="Fruit &amp; yogurt platter on black tray — watermelon, melon, pineapple and kiwi skewers, strawberries, grapes, blueberries, with mini yogurt parfait cups topped with granola, in a Café Chico paper bag" loading="lazy" />
+        <figcaption>
+          <span class="cat-tile__num">04</span>
+          <h3>Fruit &amp; Yogurt Platter</h3>
+          <p class="cat-tile__desc">Fruit skewers (watermelon, melon, pineapple, kiwi) with mini yogurt parfait cups &amp; granola.</p>
+          <p class="cat-tile__price">£25 <span>· serves 6–8</span></p>
+        </figcaption>
+      </figure>
+
+      <figure class="cat-tile" data-cat="sweet" data-reveal data-reveal-delay="4">
+        <img src="assets/photos/catering/ai-cat-platter-dessert.jpg" alt="Mini dessert platter on black tray — tiramisu jars, fruit tarts, lemon curd tarts, pistachio cake squares, chocolate ganache pots, meringue nests with strawberries, with a Café Chico branded card" loading="lazy" />
+        <figcaption>
+          <span class="cat-tile__num">05</span>
+          <h3>Mini Dessert Platter</h3>
+          <p class="cat-tile__desc">Tiramisu jars, fruit tarts, lemon tarts, pistachio cake, chocolate pots &amp; meringue nests.</p>
+          <p class="cat-tile__price">£38 <span>· serves 8–10</span></p>
+        </figcaption>
+      </figure>
+
+      <figure class="cat-tile" data-cat="savoury" data-reveal data-reveal-delay="5">
+        <img src="assets/photos/social/instagram/curated/curated-catering-catering-platters.jpg" alt="Café Chico real bread &amp; sandwich platter — rustic bread loaves, ciabatta sandwich rolls, cookies and fruit skewers on black trays, with a Café Chico chalkboard sign reading 'Freshly Made Daily'" loading="lazy" />
+        <figcaption>
+          <span class="cat-tile__num">06</span>
+          <h3>Bread Platter</h3>
+          <p class="cat-tile__desc">Rustic bread loaves, ciabatta sandwich rolls, cookies &amp; fruit skewers — our daily bake.</p>
+          <p class="cat-tile__price">£30 <span>· serves 8–10</span></p>
+        </figcaption>
+      </figure>
+
+      <figure class="cat-tile" data-cat="savoury" data-reveal data-reveal-delay="6">
+        <img src="assets/photos/social/instagram/curated/curated-food-baked-potato.jpg" alt="Loaded baked potato — slow-baked jacket potato topped with pulled chicken, melted cheese and herbs, with a side salad" loading="lazy" />
+        <figcaption>
+          <span class="cat-tile__num">07</span>
+          <h3>Loaded Potato</h3>
+          <p class="cat-tile__desc">Slow-baked jacket potato with your choice of topping — pulled chicken, cheese, beans or chilli.</p>
+          <p class="cat-tile__price">£8 each <span>· min. 6</span></p>
+        </figcaption>
+      </figure>
+
+      <figure class="cat-tile" data-cat="breakfast" data-reveal data-reveal-delay="7">
+        <img src="assets/photos/social/instagram/curated/curated-food-avo-toast.jpg" alt="Café Chico avocado toast — smashed avo on seeded toast topped with boiled eggs, sautéed mushrooms and crispy chorizo, photographed next to the Café Chico 'Freshly Made Daily' sign" loading="lazy" />
+        <figcaption>
+          <span class="cat-tile__num">08</span>
+          <h3>Avocado Toast Box</h3>
+          <p class="cat-tile__desc">Smashed avo on seeded toast with boiled egg, mushrooms &amp; chorizo — individually boxed.</p>
+          <p class="cat-tile__price">£6 pp <span>· min. 6</span></p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ BIG QUOTE -->
+<section class="cat-quote" aria-label="What we make">
+  <div class="container">
+    <p class="cat-quote__text">
+      <span class="cat-quote__mark">"</span>
+      Made the morning of. <em>No reheats.</em> Nothing from a factory. Nothing sitting in a fridge overnight.
+      <span class="cat-quote__mark">"</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================ DIETARY -->
+<section class="cat-dietary" aria-label="Dietary">
+  <div class="container">
+    <div class="cat-dietary__head" data-reveal>
+      <p class="kicker">Dietary</p>
+      <h2>Halal by default.<br/>Everything else, on request.</h2>
+    </div>
+    <ul class="cat-dietary__list" data-reveal>
+      <li><span>✓</span>Halal</li>
+      <li><span>✓</span>Vegan</li>
+      <li><span>✓</span>Gluten-free</li>
+      <li><span>✓</span>Nut-free</li>
+      <li><span>✓</span>Kids portions</li>
+    </ul>
+    <p class="cat-dietary__note" data-reveal>No extra charge for swaps — just tell us when you enquire.</p>
+  </div>
+</section>
+
+<!-- ============================================================ HOW -->
+<section class="cat-how" aria-label="How it works">
+  <div class="container">
+    <p class="kicker">The practical bits</p>
+    <h2 class="cat-how__title">How it <em>works.</em></h2>
+
+    <ol class="cat-how__steps">
+      <li data-reveal>
+        <span class="cat-how__num">01</span>
+        <h3>Tell us when</h3>
+        <p>Email or call with the date, headcount, and what you'd like.</p>
+      </li>
+      <li data-reveal data-reveal-delay="1">
+        <span class="cat-how__num">02</span>
+        <h3>We confirm</h3>
+        <p>Within 24 hours — quote, delivery cost, and any questions.</p>
+      </li>
+      <li data-reveal data-reveal-delay="2">
+        <span class="cat-how__num">03</span>
+        <h3>48h lead time</h3>
+        <p>We cook the morning of. 2 days needed to plan ingredients.</p>
+      </li>
+      <li data-reveal data-reveal-delay="3">
+        <span class="cat-how__num">04</span>
+        <h3>We deliver</h3>
+        <p>Free within 3 miles of Bolton. £1.50/mile beyond — quoted up front.</p>
+      </li>
+    </ol>
+
+    <ul class="cat-how__fineprint" data-reveal>
+      <li><strong>Min. order</strong> — 2 platters or £50 spend</li>
+      <li><strong>Collection</strong> — free from the café, 9am–4pm Tue–Sun</li>
+      <li><strong>Setup</strong> — platters on black trays, napkins &amp; tongs included</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ ENQUIRE -->
+<section id="enquire" class="cat-enquire" aria-label="Enquire">
+  <div class="container">
+    <div class="cat-enquire__inner">
+      <div class="cat-enquire__text" data-reveal>
+        <p class="kicker">Enquire</p>
+        <h2>Let's <em>feed</em> your event.</h2>
+        <p>Email, call, or fill in the form. We come back within 24 hours.</p>
+
+        <div class="cat-enquire__contact">
+          <a href="tel:+441204934467"><strong>Phone</strong> · 01204 934 467</a>
+          <a href="mailto:cafechico185@gmail.com?subject=Catering%20Enquiry"><strong>Email</strong> · cafechico185@gmail.com</a>
+        </div>
+
+        <p class="cat-enquire__pricing-note">Pricing is a working draft. Owner (Aaliyah) to confirm before going live.</p>
+      </div>
+
+      <form class="cat-enquire__form" data-reveal data-reveal-delay="1" onsubmit="event.preventDefault(); alert('Form is a placeholder — please email or call for now.');">
+        <label>
+          <span>Your name</span>
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          <span>Email or phone</span>
+          <input type="text" name="contact" required />
+        </label>
+        <div class="cat-enquire__row">
+          <label>
+            <span>Event date</span>
+            <input type="date" name="date" />
+          </label>
+          <label>
+            <span>Guests</span>
+            <input type="number" name="guests" min="6" placeholder="e.g. 20" />
+          </label>
+        </div>
+        <label>
+          <span>Platters + delivery</span>
+          <textarea name="notes" rows="3" placeholder="e.g. 2 x Brunch, 1 x Sweet, 1 x Fruit. Delivery to..."></textarea>
+        </label>
+        <label>
+          <span>Dietary (optional)</span>
+          <input type="text" name="dietary" placeholder="vegan, GF, halal..." />
+        </label>
+        <button type="submit" class="btn btn--primary">Send enquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FEATURED — 3 ANIMATION THEMES -->
+<section class="cat-featured" aria-label="Gallery">
+  <div class="container">
+    <p class="kicker">More from the kitchen</p>
+    <h2 class="cat-featured__title">Three dishes,<br/><em>in motion.</em></h2>
+
+    <div class="cat-featured__grid">
+
+      <!-- ① Cinematic Ken Burns — auto slow zoom, hover to feel it -->
+      <div class="cat-feat cat-feat--cinema" data-reveal>
+        <div class="cat-feat__frame">
+          <img src="assets/photos/social/instagram/Cz55eWnoYzW_1.jpg"
+               alt="Eggs Benedict — perfectly poached, golden hollandaise"
+               loading="lazy" />
+          <div class="cat-feat__overlay">
+            <span class="cat-feat__label">Cinematic</span>
+            <p class="cat-feat__caption">Hover to watch</p>
+          </div>
+        </div>
+        <p class="cat-feat__sub">Eggs Benedict · Made fresh</p>
+      </div>
+
+      <!-- ② Parallax — vertical drift on scroll -->
+      <div class="cat-feat cat-feat--parallax" data-reveal data-reveal-delay="1">
+        <div class="cat-feat__frame">
+          <div class="cat-feat__parallax-wrap">
+            <img src="assets/photos/social/instagram/C19PrgqIGo5_1.jpg"
+                 alt="Loaded baked potato — salad toppings, cheese, warm potato"
+                 loading="lazy" />
+          </div>
+          <div class="cat-feat__overlay">
+            <span class="cat-feat__label">Parallax</span>
+            <p class="cat-feat__caption">Scroll to drift</p>
+          </div>
+        </div>
+        <p class="cat-feat__sub">Loaded Baked Potato · Catering favourite</p>
+      </div>
+
+      <!-- ③ Curtain Reveal — clip-path wipe from bottom -->
+      <div class="cat-feat cat-feat--curtain" data-reveal data-reveal-delay="2">
+        <div class="cat-feat__frame">
+          <img src="assets/photos/social/instagram/CztEpOyIAEE_1.jpg"
+               alt="Full breakfast spread — sausages, sweet potato, fresh coffee"
+               loading="lazy" />
+          <div class="cat-feat__overlay">
+            <span class="cat-feat__label">Reveal</span>
+            <p class="cat-feat__caption">Scroll to unveil</p>
+          </div>
+        </div>
+        <p class="cat-feat__sub">Full Breakfast · Catering platter</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+  <div class="site-footer__grid">
+    <div>
+      <p class="site-footer__tag"><img src="assets/photos/logo/chico-logo-white.png" alt="Café Chico" width="120" height="75" /></p>
+      <p style="color:oklch(85% 0.012 80); font-size:14px; line-height:1.6;">
+        A small, family-run café on St Helens Rd, Bolton. Honest food, made close to home.
+      </p>
+    </div>
+    <div>
+      <h5>Visit</h5>
+      <ul>
+        <li>185 St Helens Rd</li>
+        <li>Bolton BL3 3PS</li>
+        <li><a href="tel:+441204934467">01204 934 467</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Hire &amp; events</h5>
+      <ul>
+        <li><a href="ice-cream-bike.html">Ice cream bike</a></li>
+        <li><a href="catering.html">Outside catering</a></li>
+        <li><a href="party-room.html">Upstairs party room</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Follow</h5>
+      <ul>
+        <li><a href="https://instagram.com/cafechico_uk" target="_blank" rel="noopener">Instagram · @cafechico_uk</a></li>
+        <li><a href="https://tiktok.com/@cafechico" target="_blank" rel="noopener">TikTok · @cafechico</a></li>
+        <li><a href="https://maps.app.goo.gl/vYhYXEfkkgfor3qBA?g_st=ic" target="_blank" rel="noopener">Google Maps</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <span>© 2026 Café Chico. Made with care in Bolton.</span>
+    <span>Photos: @cafechico_uk · © respective photographers.</span>
+  </div>
+</footer>
+
+<!-- ============================================================ PLATTER LIGHTBOX -->
+<aside class="platter-modal" id="platter-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="platter-modal-title">
+  <button class="platter-modal__close" type="button" aria-label="Close">×</button>
+  <button class="platter-modal__nav platter-modal__nav--prev" type="button" aria-label="Previous platter">‹</button>
+  <button class="platter-modal__nav platter-modal__nav--next" type="button" aria-label="Next platter">›</button>
+  <div class="platter-modal__inner">
+    <div class="platter-modal__media">
+      <img class="platter-modal__img" src="" alt="" />
+    </div>
+    <div class="platter-modal__body">
+      <span class="platter-modal__num"></span>
+      <h3 class="platter-modal__title" id="platter-modal-title"></h3>
+      <p class="platter-modal__desc"></p>
+      <p class="platter-modal__price"></p>
+      <p class="platter-modal__hint">Use ← → keys to browse · Esc to close</p>
+    </div>
+  </div>
+</aside>
+
+<script src="assets/js/shared.js"></script>
+<script>
+  // Mosaic filter chips
+  (function() {
+    const filters = document.querySelectorAll('.cat-filter');
+    const tiles = document.querySelectorAll('.cat-tile');
+    filters.forEach(f => {
+      f.addEventListener('click', () => {
+        filters.forEach(x => { x.classList.remove('is-active'); x.setAttribute('aria-selected', 'false'); });
+        f.classList.add('is-active');
+        f.setAttribute('aria-selected', 'true');
+        const v = f.dataset.filter;
+        tiles.forEach(t => {
+          const cats = (t.dataset.cat || '').split(/\s+/);
+          const show = v === 'all' || cats.includes(v);
+          t.style.opacity = show ? '1' : '0.18';
+          t.style.pointerEvents = show ? 'auto' : 'none';
+          t.style.filter = show ? 'grayscale(0)' : 'grayscale(0.6)';
+        });
+      });
+    });
+
+    // Scroll-triggered reveal
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('.cat-feat, .cat-album__grid img').forEach(el => {
+        observer.observe(el);
+      });
+    }
+
+    // Parallax for .cat-feat--parallax
+    const parallaxItems = document.querySelectorAll('.cat-feat--parallax .cat-feat__parallax-wrap');
+    if (parallaxItems.length) {
+      function updateParallax() {
+        parallaxItems.forEach(wrap => {
+          const rect = wrap.closest('.cat-feat__frame').getBoundingClientRect();
+          const viewH = window.innerHeight;
+          const progress = (viewH - rect.top) / (viewH + rect.height);
+          const offset = (progress - 0.5) * 60;
+          wrap.style.transform = `translateY(${offset}px)`;
+        });
+      }
+      window.addEventListener('scroll', updateParallax, { passive: true });
+      updateParallax();
+    }
+
+    // Platter lightbox — click any tile to open large view + description
+    (function() {
+      const modal = document.getElementById('platter-modal');
+      if (!modal) return;
+      const tiles = Array.from(document.querySelectorAll('.cat-tile'));
+      const imgEl  = modal.querySelector('.platter-modal__img');
+      const numEl  = modal.querySelector('.platter-modal__num');
+      const titEl  = modal.querySelector('.platter-modal__title');
+      const desEl  = modal.querySelector('.platter-modal__desc');
+      const priEl  = modal.querySelector('.platter-modal__price');
+      const closeB = modal.querySelector('.platter-modal__close');
+      const prevB  = modal.querySelector('.platter-modal__nav--prev');
+      const nextB  = modal.querySelector('.platter-modal__nav--next');
+
+      const data = tiles.map(t => {
+        const img = t.querySelector('img');
+        const h3  = t.querySelector('h3');
+        return {
+          src:   img ? img.getAttribute('src') : '',
+          alt:   img ? img.getAttribute('alt') : '',
+          num:   ((t.querySelector('.cat-tile__num')   || {}).textContent) || '',
+          title: h3 ? h3.textContent : '',
+          desc:  ((t.querySelector('.cat-tile__desc') || {}).textContent) || '',
+          price: ((t.querySelector('.cat-tile__price')|| {}).textContent) || '',
+        };
+      });
+
+      let i = 0;
+      function render(n) {
+        i = (n + data.length) % data.length;
+        const d = data[i];
+        imgEl.src = d.src; imgEl.alt = d.alt;
+        numEl.textContent = d.num;
+        titEl.textContent = d.title;
+        desEl.textContent = d.desc;
+        priEl.textContent = d.price;
+      }
+      function open(n) {
+        render(n);
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      // Event delegation on the grid — survives any per-tile issue
+      const grid = document.querySelector('.cat-mosaic__grid');
+      if (grid) {
+        grid.addEventListener('click', e => {
+          const tile = e.target.closest('.cat-tile');
+          if (!tile) return;
+          const idx = tiles.indexOf(tile);
+          if (idx >= 0) open(idx);
+        });
+        grid.addEventListener('keydown', e => {
+          if (e.key !== 'Enter' && e.key !== ' ') return;
+          const tile = e.target.closest('.cat-tile');
+          if (!tile) return;
+          e.preventDefault();
+          const idx = tiles.indexOf(tile);
+          if (idx >= 0) open(idx);
+        });
+      }
+
+      // Per-tile a11y + cursor (delegation handles clicks)
+      tiles.forEach((t, idx) => {
+        t.style.cursor = 'zoom-in';
+        t.setAttribute('tabindex', '0');
+        t.setAttribute('role', 'button');
+        const h3 = t.querySelector('h3');
+        t.setAttribute('aria-label', 'View ' + (h3 ? h3.textContent : 'platter') + ' large');
+      });
+
+      closeB.addEventListener('click', close);
+      prevB.addEventListener('click', () => render(i - 1));
+      nextB.addEventListener('click', () => render(i + 1));
+      modal.addEventListener('click', e => { if (e.target === modal) close(); });
+      document.addEventListener('keydown', e => {
+        if (modal.getAttribute('aria-hidden') === 'true') return;
+        if (e.key === 'Escape')      close();
+        if (e.key === 'ArrowLeft')   render(i - 1);
+        if (e.key === 'ArrowRight')  render(i + 1);
+      });
+
+      // Hash trigger: #platter-N opens that platter (deep links + testing)
+      const m = location.hash.match(/^#platter-(\d+)$/);
+      if (m) { const n = Math.max(0, Math.min(data.length - 1, parseInt(m[1], 10) - 1)); open(n); }
+    })();
+  })();
+</script>
+</body>
+</html>

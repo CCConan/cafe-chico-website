@@ -21,3 +21,6 @@ __pycache__/
 # Node
 node_modules/
 .npm/
+
+# Build artifact (mirror of root, not for Pages)
+_dist/

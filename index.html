@@ -6,6 +6,7 @@
   <title>Café Chico · Family-run café in Bolton</title>
   <meta name="description" content="Café Chico — a small, family-run café in Bolton serving honest breakfast, brunch and lunch. Made close to home." />
   <meta name="theme-color" content="#3b2418" />
+  <link rel="icon" type="image/png" href="assets/photos/logo/chico-favicon-32.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,6 +14,7 @@
 
   <link rel="stylesheet" href="assets/css/shared.css" />
   <link rel="stylesheet" href="assets/css/index.css" />
+  <link rel="stylesheet" href="assets/vendor/photoswipe/photoswipe.css" />
 
   <!-- Inline SVG defs (hand-drawn library) -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -70,14 +72,19 @@
 <nav class="site-nav" aria-label="Primary">
   <div class="site-nav__inner">
     <a href="#hero" class="brand" aria-label="Café Chico, home">
-      <span class="brand__mark">C</span>
+      <img class="brand__mark" src="assets/photos/logo/chico-text-dark.png" alt="Café Chico" width="60" height="21" />
       <span>Café Chico</span>
     </a>
     <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
     <ul class="nav-tabs" role="list">
       <li><a href="#hero" class="active">Home</a></li>
+      <li><a href="#social">Social</a></li>
       <li><a href="#story">Story</a></li>
       <li><a href="menu.html">Menu</a></li>
+      <li><a href="ice-cream-bike.html">Ice Cream Bike</a></li>
+      <li><a href="catering.html">Catering</a></li>
+      <li><a href="party-room.html">Party Room</a></li>
+      <li><a href="#press">Press</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -90,6 +97,8 @@
          alt="Inside Café Chico — exposed brick wall, vintage bicycle and warm Edison-bulb lighting" />
   </div>
   <div class="hero__scrim" aria-hidden="true"></div>
+
+  <img class="hero__brand" src="assets/photos/logo/chico-logo-white.png" alt="Café Chico" width="998" height="625" style="position:absolute;top:24px;right:32px;width:clamp(120px,16vw,220px);height:auto;z-index:5;display:block;opacity:1;" />
 
   <div class="hero__inner">
     <span class="hero__kicker">Bolton · Est. 2024</span>
@@ -190,59 +199,520 @@
   </div>
 </section>
 
+<!-- ====================================================== SOCIAL MEDIA -->
+<section id="social" class="social-media" aria-label="Latest from Instagram">
+  <div class="container">
+    <div class="social-media__head" data-reveal>
+      <div>
+        <p class="kicker"><span style="display:inline-flex;vertical-align:-3px;margin-right:6px;color:var(--accent)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </span>From the gram</p>
+        <h2>Latest from <span style="font-style:italic;color:var(--accent)">@cafechico_uk</span>.</h2>
+      </div>
+      <div class="social-media__head-meta">
+        <p class="social-media__lede" data-ig-followers="2014" data-suffix=" · Bolton">2,014 followers · Bolton</p>
+        <a class="ig-follow" href="https://www.instagram.com/cafechico_uk/" target="_blank" rel="noopener" aria-label="Follow Café Chico on Instagram">
+          <svg class="ig-follow__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2.16c3.2 0 3.58 0 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85 0 3.2 0 3.58-.07 4.85-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07-3.2 0-3.58 0-4.85-.07-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85 0-3.2 0-3.58.07-4.85.15-3.23 1.66-4.77 4.92-4.92C8.42 2.16 8.8 2.16 12 2.16zM12 0C8.74 0 8.33 0 7.05.07 2.68.27.27 2.68.07 7.05.01 8.33 0 8.74 0 12s0 3.67.07 4.95c.2 4.36 2.61 6.78 6.98 6.98C8.33 24 8.74 24 12 24s3.67 0 4.95-.07c4.36-.2 6.78-2.62 6.98-6.98.07-1.28.07-1.69.07-4.95s0-3.67-.07-4.95c-.2-4.36-2.62-6.78-6.98-6.98C15.67 0 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4zm6.4-11.85a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/>
+          </svg>
+          Follow
+        </a>
+      </div>
+    </div>
+
+  <div class="social-media__grid">
+    <a class="sm-thumb sm-thumb--wide" href="https://www.instagram.com/p/C32pQvDo4U1/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/C32pQvDo4U1_1.jpg"
+       data-pswp-width="1440" data-pswp-height="1800"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/C32pQvDo4U1_1.jpg" alt="Raspberry ripple dessert with crushed honeycomb in a clear tub" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb" href="https://www.instagram.com/p/Cz55eWnoYzW/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/Cz55eWnoYzW_1.jpg"
+       data-pswp-width="1169" data-pswp-height="1169"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/Cz55eWnoYzW_1.jpg" alt="Eggs benedict on toast at Café Chico" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb" href="https://www.instagram.com/p/C19PrgqIGo5/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/C19PrgqIGo5_1.jpg"
+       data-pswp-width="1440" data-pswp-height="1440"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/C19PrgqIGo5_1.jpg" alt="Café Chico post" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb" href="https://www.instagram.com/p/DZ9uTWTtSWh/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/DZ9uTWTtSWh_1.jpg"
+       data-pswp-width="1793" data-pswp-height="1620"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/DZ9uTWTtSWh_1.jpg" alt="Three colourful fruit smoothies in branded cups" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb" href="https://www.instagram.com/p/DY1l_nMN55h/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/DY1l_nMN55h_1.jpg"
+       data-pswp-width="1108" data-pswp-height="1243"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/DY1l_nMN55h_1.jpg" alt="Tropical mango drink with ice" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb" href="https://www.instagram.com/cafechico_uk/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/curated/curated-drinks-branded-cups.jpg"
+       data-pswp-width="1265" data-pswp-height="1368"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/curated/curated-drinks-branded-cups.jpg" alt="Café Chico branded cup with milkshake and iced coffee" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb" href="https://www.instagram.com/p/DLE-wuTIdBf/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/DLE-wuTIdBf_1.jpg"
+       data-pswp-width="1440" data-pswp-height="1800"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/DLE-wuTIdBf_1.jpg" alt="The Café Chico ice cream trike with chalkboard menu" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb" href="https://www.instagram.com/p/C9kOL3SoAnC/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/C9kOL3SoAnC_1.jpg"
+       data-pswp-width="1440" data-pswp-height="1440"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/C9kOL3SoAnC_1.jpg" alt="Ice cream trike set up at an outdoor event" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb" href="https://www.instagram.com/cafechico_uk/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/curated/curated-ice-cream-bike-ice-cream-bike-at-event.jpg"
+       data-pswp-width="576" data-pswp-height="1024"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/curated/curated-ice-cream-bike-ice-cream-bike-at-event.jpg" alt="Café Chico ice cream bike at a private event" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb" href="https://www.instagram.com/p/CztEpOyIAEE/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/CztEpOyIAEE_1.jpg"
+       data-pswp-width="1440" data-pswp-height="1784"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/CztEpOyIAEE_1.jpg" alt="A full English breakfast plate" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb" href="https://www.instagram.com/p/C_xc8sWINNf/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/C_xc8sWINNf_1.jpg"
+       data-pswp-width="1440" data-pswp-height="1440"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/C_xc8sWINNf_1.jpg" alt="The Café Chico trike on a sunny day" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb" href="https://www.instagram.com/p/DbnobwlNCS2/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/DbnobwlNCS2_1.jpg"
+       data-pswp-width="1265" data-pswp-height="1368"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/DbnobwlNCS2_1.jpg" alt="Café Chico food spread on the table" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb" href="https://www.instagram.com/cafechico_uk/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/curated/curated-food-yogurt-parfait.jpg"
+       data-pswp-width="1620" data-pswp-height="1620"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/curated/curated-food-yogurt-parfait.jpg" alt="Yogurt parfait with fresh strawberries" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb sm-thumb--wide" href="https://www.instagram.com/p/DYPFpRQNbrN/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/DYPFpRQNbrN_1.jpg"
+       data-pswp-width="4096" data-pswp-height="4096"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/DYPFpRQNbrN_1.jpg" alt="Close-up of a dish from Café Chico" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb" href="https://www.instagram.com/p/DWtsgepDanF/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/DWtsgepDanF_1.jpg"
+       data-pswp-width="1024" data-pswp-height="1024"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/DWtsgepDanF_1.jpg" alt="A Café Chico brunch plate" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb" href="https://www.instagram.com/p/DYJ3ufpjc07/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/DYJ3ufpjc07_1.jpg"
+       data-pswp-width="3024" data-pswp-height="4032"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/DYJ3ufpjc07_1.jpg" alt="Café Chico dish, made fresh in Bolton" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb" href="https://www.instagram.com/cafechico_uk/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/curated/curated-food-strawberry-breakfast.jpg"
+       data-pswp-width="3324" data-pswp-height="4096"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/curated/curated-food-strawberry-breakfast.jpg" alt="Strawberry breakfast spread" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb" href="https://www.instagram.com/p/DGFv-RZoHxn/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/DGFv-RZoHxn_3.jpg"
+       data-pswp-width="1440" data-pswp-height="1440"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/DGFv-RZoHxn_3.jpg" alt="Café Chico food item on the table" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb" href="https://www.instagram.com/p/DAyEo7voX6z/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/DAyEo7voX6z_1.jpg"
+       data-pswp-width="1440" data-pswp-height="1800"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/DAyEo7voX6z_1.jpg" alt="A Café Chico event setup" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb" href="https://www.instagram.com/p/C0RGJDJopcw/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/C0RGJDJopcw_1.jpg"
+       data-pswp-width="1169" data-pswp-height="1169"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/C0RGJDJopcw_1.jpg" alt="A Café Chico dish on a plate" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb" href="https://www.instagram.com/p/DGTFZgWoUuZ/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/DGTFZgWoUuZ_1.jpg"
+       data-pswp-width="1440" data-pswp-height="1440"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/DGTFZgWoUuZ_1.jpg" alt="A close-up of a Café Chico dessert" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb" href="https://www.instagram.com/cafechico_uk/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/curated/curated-catering-summer-platters.jpg"
+       data-pswp-width="360" data-pswp-height="640"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/curated/curated-catering-summer-platters.jpg" alt="Café Chico summer catering platter" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb" href="https://www.instagram.com/cafechico_uk/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/curated/curated-events-eid-mubarak-greeting.jpg"
+       data-pswp-width="1108" data-pswp-height="1243"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/curated/curated-events-eid-mubarak-greeting.jpg" alt="Eid Mubarak greeting from Café Chico" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb" href="https://www.instagram.com/p/DAqV22JIXf0/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/DAqV22JIXf0_1.jpg"
+       data-pswp-width="1440" data-pswp-height="1800"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/DAqV22JIXf0_1.jpg" alt="Café Chico menu item, served fresh" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+    <a class="sm-thumb" href="https://www.instagram.com/cafechico_uk/" target="_blank" rel="noopener"
+       data-pswp-src="assets/photos/social/instagram/curated/curated-events-sponsorship-fitness.jpg"
+       data-pswp-width="1024" data-pswp-height="1024"
+       aria-label="View post on Instagram">
+      <img src="assets/photos/social/instagram/curated/curated-events-sponsorship-fitness.jpg" alt="Café Chico sponsoring a local fitness event" loading="lazy" />
+      <span class="sm-thumb__overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="2" y="2" width="20" height="20" rx="5"/>
+  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+</svg>
+        <span>View post</span>
+      </span>
+    </a>
+  </div>
+
+    <div class="social-media__foot" data-reveal>
+      <span>Photos: <a href="https://www.instagram.com/cafechico_uk/" target="_blank" rel="noopener">@cafechico_uk</a> on Instagram · Tap any photo to preview · All rights reserved</span>
+      <a href="https://www.instagram.com/cafechico_uk/" target="_blank" rel="noopener">Open profile ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ PRESS -->
+<section id="press" class="press" aria-label="As featured in the press">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="kicker"><span style="display:inline-flex;vertical-align:-3px;margin-right:6px;color:var(--accent)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
+          <path d="M18 14h-8M15 18h-5M10 6h8v4h-8z"/>
+        </svg>
+      </span>As featured in</p>
+      <h2>What the press is saying.</h2>
+      <p class="lede">Three write-ups in The Bolton News — and a Tripadvisor Travellers' Choice badge — for a small café that's been open less than two years.</p>
+    </div>
+
+    <!-- Owner / interview feature -->
+    <div class="press__feature" data-reveal>
+      <div class="press__feature-photo">
+        <img src="assets/photos/press/press-owners-aaliyah.jpg" alt="Aaliyah and her father — Café Chico's owners — standing in front of the menu boards inside the café" loading="lazy"/>
+        <figcaption class="press__feature-cap">Aaliyah &amp; family · Café Chico, Bolton</figcaption>
+      </div>
+      <div class="press__feature-body">
+        <p class="kicker" style="color:var(--accent)">Meet the family</p>
+        <h3>"What a fantastic new halal place. The service is second to none."</h3>
+        <p>That's how one Google reviewer described us — and it sums up what we're trying to do. Run by Aaliyah and her family, Café Chico opened in 2023 on a simple idea: bring proper, honest breakfast and brunch to our corner of Bolton, in a place that feels like a friend's front room.</p>
+        <p>Three years on, the chairs still creak in the same spot, the food still comes out hot, and the regulars still come in like they're walking into family.</p>
+        <p class="press__feature-meta">
+          <span class="press__badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="14" height="14"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8 5.8 21.3l2.4-7.4L2 9.4h7.6z"/></svg> 4.9★ Google</span>
+          <span class="press__badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="14" height="14"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8 5.8 21.3l2.4-7.4L2 9.4h7.6z"/></svg> Tripadvisor Travellers' Choice 2024</span>
+          <span class="press__badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="14" height="14"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8 5.8 21.3l2.4-7.4L2 9.4h7.6z"/></svg> Food Hygiene 5★ · Jul 2023</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Press articles list -->
+    <div class="press__list" data-reveal>
+      <article class="press__card">
+        <p class="kicker">The Bolton News</p>
+        <h4>5 of the best cafes to visit for food and drinks in Bolton</h4>
+        <p>"The owners and staff were absolutely brilliant. I ordered takeout and they even brought my order to my car. The food was fantastic and you can tell it was cooked to perfection."</p>
+        <a class="press__card-link" href="https://www.theboltonnews.co.uk/news/24278743.5-best-cafes-visit-food-drinks-bolton/" target="_blank" rel="noopener">Read the full article →</a>
+      </article>
+      <article class="press__card">
+        <p class="kicker">The Bolton News</p>
+        <h4>5 of the best coffee shops where you can get a caffeine fix in Bolton</h4>
+        <p>"One of the standout features of Cafe Chico is their exceptional coffee. As a coffee lover, I am always on the lookout for a place that can deliver a perfect cup, and Cafe Chico definitely exceeded my expectations."</p>
+        <a class="press__card-link" href="https://www.theboltonnews.co.uk/news/24420703.5-best-coffee-shops-can-enjoy-bolton/" target="_blank" rel="noopener">Read the full article →</a>
+      </article>
+      <article class="press__card">
+        <p class="kicker">The Bolton News</p>
+        <h4>5 of the best places to get a full English in Bolton</h4>
+        <p>"A pleasant, cosy stop for a fry-up in the BL3 postcode — listed alongside Monte Carlo Café and Northern Ivy in Google Reviews' top 5."</p>
+        <a class="press__card-link" href="https://www.theboltonnews.co.uk/news/23789228.5-best-places-get-full-english-bolton/" target="_blank" rel="noopener">Read the full article →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- ============================================================ STORY -->
 <section id="story" class="story">
   <div class="container">
 
-    <div class="split" data-reveal>
-      <div class="split__photo">
-        <img src="assets/photos/candidates/02-vibe-interior-wooden-chairs.jpg"
-             alt="Café Chico interior — wooden tables, chairs, warm light, a globe and a chalk menu board" loading="lazy"/>
-      </div>
-      <div class="split__copy">
+    <!-- ── Opening photo + title ── -->
+    <div class="story__hero" data-reveal>
+      <img src="assets/photos/candidates/02-vibe-interior-wooden-chairs.jpg"
+           alt="Inside Café Chico — wooden tables, warm light, chalk menu boards, a place that feels like a friend's front room" loading="lazy"/>
+      <div class="story__hero-text">
         <p class="kicker">Our story</p>
-        <h2>We treat every plate like we mean it.</h2>
-        <p>Café Chico started with a family decision: bring proper, honest food to our neighbourhood. We upcycled the seating from an old church, grew the herbs we cook with, and slowly built a menu around breakfast and brunch that we'd want to eat ourselves.</p>
-        <p>Three years on, the chairs still creak in the same spot. The food still comes out hot, every time. And the regulars still come in like they're walking into a friend's front room.</p>
+        <h2>Fresh food, not fast food —<br/><em>built by family, for the neighbourhood.</em></h2>
       </div>
     </div>
 
-    <div class="story__quote" data-reveal>
-      <p>"Small and cosy place, the food is delicious. You can feel they actually care."</p>
-      <span class="author">— Aliyah · 5★ Google review</span>
-    </div>
-
-    <div class="flourish" aria-hidden="true" style="color:var(--accent)">
-      <svg width="44" height="44"><use href="#i-wreath"/></svg>
-    </div>
-
-    <!-- Values -->
-    <div class="values">
-      <div class="section-head section-head--left" data-reveal>
-        <p class="kicker">What you'll find here</p>
-        <h2>Three things we won't compromise on.</h2>
-      </div>
-
-      <div class="values__grid">
-        <div class="value-card" data-reveal data-reveal-delay="1">
-          <svg class="value-card__icon" aria-hidden="true"><use href="#i-coffee"/></svg>
-          <h3>Made close to home</h3>
-          <p>Everything on the plate is made in our kitchen that morning — no reheats, no shortcuts, no "from a packet."</p>
-        </div>
-
-        <div class="value-card" data-reveal data-reveal-delay="2">
-          <svg class="value-card__icon" aria-hidden="true" style="color:var(--green)"><use href="#i-bike"/></svg>
-          <h3>Generous, honest portions</h3>
-          <p>If you've ordered a Full English, you'll know — the plate comes with two of everything, because we know you're hungry.</p>
-        </div>
-
-        <div class="value-card" data-reveal data-reveal-delay="3">
-          <svg class="value-card__icon" aria-hidden="true" style="color:var(--accent)"><use href="#i-utensils"/></svg>
-          <h3>A seat for everyone</h3>
-          <p>Vegan, gluten-free, halal, family-friendly — the menu has options, and the welcome is the same for all of them.</p>
-        </div>
+    <!-- ── Segment 1: Family-run + fresh food philosophy ── -->
+    <div class="story__seg story__seg--text-only" data-reveal>
+      <div class="story__seg-num"><span>01</span></div>
+      <div class="story__seg-body">
+        <h3>A café run by family.</h3>
+        <p>Nestled in the heart of Bolton, Café Chico is a proudly family-run café built on one simple philosophy: <em>fresh food, not fast food</em>. Every dish is freshly cooked to order using quality, locally sourced ingredients, including free-range eggs, with all meats being halal. Whether you're joining us for a hearty breakfast, relaxed brunch, artisan coffee or one of our homemade treats, you'll always receive a warm welcome.</p>
       </div>
     </div>
+
+    <!-- ── Segment 2: 5-star + 4.9 + hidden gem + food photo ── -->
+    <div class="story__seg story__seg--split" data-reveal>
+      <div class="story__seg-photo">
+        <img src="assets/photos/candidates/09-big-breakfast-platter-with-qrcode.jpg"
+             alt="A full Café Chico breakfast plate — the kind we cook fresh every morning" loading="lazy"/>
+      </div>
+      <div class="story__seg-body">
+        <div class="story__seg-num"><span>02</span></div>
+        <h3>Bolton's hidden gem.</h3>
+        <p>Proudly holding a <strong>5-Star Food Hygiene Rating</strong> and an outstanding <strong>4.9-star Google rating</strong>, Café Chico has become one of Bolton's favourite hidden gems — renowned for exceptional customer service, freshly prepared food and a welcoming atmosphere that brings people together.</p>
+        <p class="story__seg-badges">
+          <span class="story__badge">★ 4.9 Google</span>
+          <span class="story__badge">★ 5 Food Hygiene</span>
+          <span class="story__badge">Tripadvisor Travellers' Choice 2024</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- ── Segment 3: 3R building story + interior photo ── -->
+    <div class="story__seg story__seg--split story__seg--reverse" data-reveal>
+      <div class="story__seg-photo">
+        <img src="assets/photos/press/press-owners-aaliyah.jpg"
+             alt="Aaliyah and her father — the family behind Café Chico" loading="lazy"/>
+      </div>
+      <div class="story__seg-body">
+        <div class="story__seg-num"><span>03</span></div>
+        <h3>The café we built with our own hands.</h3>
+        <p>What makes Café Chico truly unique is the story behind the building itself. Rather than commissioning an expensive fit-out, the café was lovingly designed and handcrafted by the owner and her dad, who transformed the space by embracing the <strong>3R principles — Regenerate, Reuse and Recycle</strong>.</p>
+        <p>From reclaimed timber and repurposed materials to restored furniture and creative design features, they breathed new life into what was once an empty shell — creating the warm, rustic café our customers know and love today. Every corner tells a story of creativity, sustainability and family.</p>
+      </div>
+    </div>
+
+    <!-- ── Segment 4: Community hub vision (text only) ── -->
+    <div class="story__seg story__seg--text-only" data-reveal>
+      <div class="story__seg-num"><span>04</span></div>
+      <div class="story__seg-body">
+        <h3>More than a café — a community hub.</h3>
+        <p>Our vision has always extended beyond serving great coffee and food. Café Chico was created to be a community hub that celebrates Bolton's rich multicultural heritage while inspiring sustainable living. Over the next three years, we aim to expand this vision by developing a true <strong>Farm-to-Fork approach</strong> — working with local growers, promoting healthy eating, reducing waste through circular practices and creating educational opportunities for families and young people.</p>
+        <p>We are passionate about building stronger community partnerships, supporting local businesses, creating opportunities for local people and encouraging environmental responsibility through sustainable initiatives.</p>
+      </div>
+    </div>
+
+    <!-- ── Closing: pull-quote ── -->
+    <div class="story__close" data-reveal>
+      <svg class="story__close-mark" width="40" height="40" aria-hidden="true" style="color:var(--accent)"><use href="#i-wreath"/></svg>
+      <p class="story__close-quote">"Great food can bring people together — but great communities are built through collaboration, creativity and care."</p>
+      <p class="story__close-meta">Our goal: a happy, healthy and engaged community where food, people and sustainability come together. From inclusive menus (gluten-free, vegetarian, vegan) to activities for children and families — Café Chico is much more than a café. It's a place where connections are made, stories are shared and everyone feels at home.</p>
+    </div>
+
   </div>
 </section>
 
@@ -364,11 +834,65 @@
   </div>
 </section>
 
+<!-- ================================================ HIRE & EVENTS -->
+<section class="hire-preview" aria-label="Hire and events">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <svg class="squiggle" aria-hidden="true" style="color:var(--accent)"><use href="#i-squiggle"/></svg>
+      <p class="kicker">Beyond the café</p>
+      <h2>Three ways to take Café Chico with you.</h2>
+      <p class="lede">We're not just a sit-down café. The food goes out, the ice cream rolls out, and the upstairs room is yours to book.</p>
+    </div>
+
+    <div class="hire-preview__grid">
+      <a class="hire-preview__card" href="ice-cream-bike.html" data-reveal>
+        <div class="hire-preview__photo">
+          <img src="assets/photos/instagram/ice-cream-bike-event.jpg"
+               alt="Café Chico's ice cream bike at an event with flowers in the basket" loading="lazy"/>
+        </div>
+        <div class="hire-preview__body">
+          <p class="kicker">For hire</p>
+          <h3>Ice cream bike</h3>
+          <p>Real scoops, real bike, real occasions. Weddings, parties, summer days. From £350.</p>
+          <span class="hire-preview__link">See what's on the bike →</span>
+        </div>
+      </a>
+
+      <a class="hire-preview__card" href="catering.html" data-reveal data-reveal-delay="1">
+        <div class="hire-preview__photo">
+          <img src="assets/photos/instagram/catering-platters.jpg"
+               alt="Café Chico catering spread: sandwiches, wraps, fruit skewers and sweet treats" loading="lazy"/>
+        </div>
+        <div class="hire-preview__body">
+          <p class="kicker">For your event</p>
+          <h3>Outside catering</h3>
+          <p>Platters, breakfasts, brunch boxes, sweet treats. Made fresh, delivered to you. Platters from £28.</p>
+          <span class="hire-preview__link">See the platters →</span>
+        </div>
+      </a>
+
+      <a class="hire-preview__card" href="party-room.html" data-reveal data-reveal-delay="2">
+        <div class="hire-preview__photo hire-preview__photo--placeholder">
+          <img src="assets/photos/candidates/02-vibe-interior-wooden-chairs.jpg"
+               alt="Café Chico's warm wood-and-Edison-bulbs interior, the same atmosphere as the upstairs party room" loading="lazy"/>
+          <span class="hire-preview__badge">Real photos after launch</span>
+        </div>
+        <div class="hire-preview__body">
+          <p class="kicker">Upstairs</p>
+          <h3>Party room</h3>
+          <p>A small private room above the café. Birthdays, showers, small meetings. Up to 12. From £25/hr.</p>
+          <span class="hire-preview__link">See the room →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ============================================================ FOOTER -->
 <footer class="site-footer">
   <div class="site-footer__grid">
     <div>
-      <p class="site-footer__tag">Café Chico</p>
+      <p class="site-footer__tag"><img src="assets/photos/logo/chico-logo-white.png" alt="Café Chico" width="120" height="75" /></p>
       <p style="color:oklch(85% 0.012 80); font-size:14px; line-height:1.6;">
         A small, family-run café on St Helens Rd, Bolton. Honest food, made close to home.
       </p>
@@ -409,5 +933,7 @@
 </footer>
 
 <script src="assets/js/shared.js"></script>
+  <script src="assets/js/shared.js"></script>
+  <script type="module" src="assets/js/social.js"></script>
 </body>
 </html>

@@ -120,14 +120,11 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   gap: 10px;
 }
 .brand__mark {
-  width: 28px; height: 28px;
-  border-radius: 50%;
-  background: var(--accent);
-  display: grid; place-items: center;
-  color: white;
-  font-family: var(--font-display);
-  font-size: 16px;
-  font-weight: 600;
+  width: 60px;
+  height: 21px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
 }
 .nav-tabs {
   display: flex;
@@ -284,6 +281,8 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   display: flex; align-items: center; gap: 8px;
 }
 .hero__scroll svg { animation: scrollBob 2s var(--ease-soft) infinite; }
+
+/* Hero brand mark — moved to index.css (page-specific) */
 @keyframes scrollBob {
   0%, 100% { transform: translateY(0); }
   50%      { transform: translateY(4px); }
@@ -552,6 +551,12 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   font-size: 28px;
   margin: 0 0 var(--space-2);
   color: white;
+}
+.site-footer__tag img {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin-bottom: var(--space-2);
 }
 .site-footer__bottom {
   max-width: 1180px;
