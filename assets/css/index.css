@@ -207,6 +207,37 @@
   .story__seg-photo img { aspect-ratio: 4 / 3; }
 }
 
+/* Brand divider between story segments */
+.story__divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: var(--space-7) auto;
+  max-width: 280px;
+}
+.story__divider img {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0.45;
+  filter: saturate(0.85);
+}
+
+/* Social media brand mark (watermark) */
+.social-media__mark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: clamp(40px, 6vw, 72px) auto 0;
+  max-width: 200px;
+}
+.social-media__mark img {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0.6;
+}
+
 /* Closing pull-quote */
 .story__close {
   max-width: 820px;
