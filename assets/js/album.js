@@ -21,16 +21,16 @@
   const dots   = dotsEl ? Array.from(dotsEl.querySelectorAll('.album__dot')) : [];
 
   const angleStep = 360 / n;
-  const radius    = 380;       // 3D ring radius (px) — back to 380 per user feedback
+  const radius    = 380;       // 3D ring radius (px) — keep 380 per user
   const maxBlur   = 7;         // px at the back
   const minBlur   = 0;         // px at the front
-  // Per-slot speed: very slow at each image, 9× faster mid-transition.
+  // Per-slot speed: very slow at each image, 18× faster mid-transition (3× previous 9.0).
   // phase ∈ [0, 1] = (curRot mod angleStep) / angleStep  (0 = at image front, 0.5 = mid)
-  // speedMult = 0.15 + 8.85 * sin(phase * π)  →  range [0.15, 9.0]
+  // speedMult = 0.15 + 17.85 * sin(phase * π)  →  range [0.15, 18.0]
   const rotSpeedBase   = 0.12;  // deg/frame at slowest (when at image front)
-  const rotSpeedMaxMul = 9.0;   // peak multiplier (mid-transition, 3× of previous 3.0)
+  const rotSpeedMaxMul = 18.0;  // peak multiplier (mid-transition, 2× previous 9.0)
   const rotSpeedMinMul = 0.15;  // floor multiplier (at image front, half of previous 0.3)
-  const dragSens  = 0.35;      // deg per px dragged
+  const dragSens  = -0.35;     // deg per px dragged (NEGATIVE: drag right -> rotate ring right)
   const resumeMs  = 2400;      // ms of stillness before auto-rotate resumes
 
   let curRot    = 0;          // current rotation of the ring
@@ -175,9 +175,14 @@
     });
   }
 
-  // ---- Hover: slow down auto-rotation (subtle interaction cue) ----
-  ring.addEventListener('mouseenter', () => { if (!dragging) autoRot = false; lastInputTime = performance.now(); });
-  ring.addEventListener('mouseleave', () => { lastInputTime = performance.now(); });
+  // ---- Hover: does NOT pause — auto-rotation continues regardless of mouse position ----
+  // (User feedback: '鼠標離開後會立即移動' = resume on leave, not pause on enter)
+  ring.addEventListener('mouseleave', () => {
+    if (!dragging) {
+      autoRot = true;
+      lastInputTime = 0;
+    }
+  });
 
   // ---- Initial paint ----
   applyTransforms();

@@ -48,6 +48,8 @@
   max-width: 1180px;
   margin: 0 auto;
   padding: 0 var(--space-4);
+  isolation: isolate;         /* new stacking context so info always wins */
+  position: relative;
 }
 @media (max-width: 880px) {
   .album__stage { grid-template-columns: 1fr; gap: var(--space-6); }
@@ -55,11 +57,12 @@
 
 .album__ring {
   position: relative;
+  z-index: 1;                /* keep ring below info */
   width: 100%;
   aspect-ratio: 1 / 1;
-  max-width: 720px;          /* back to 720 per user feedback */
+  max-width: 600px;          /* was 720 — smaller to keep image within left column */
   margin: 0 auto;
-  perspective: 1500px;       /* was 1100 — less front-image magnification */
+  perspective: 1900px;       /* was 1500 — even less front-image magnification */
   overflow: hidden;          /* cut off side images that bleed past the ring frame */
   transform-style: preserve-3d;
   cursor: grab;
@@ -69,7 +72,7 @@
 .album__ring.is-dragging { cursor: grabbing; }
 .album__item {
   position: absolute;
-  inset: 30%;                /* was 18% — smaller image so neighbours don't bleed into front */
+  inset: 40%;                /* was 30% — smaller image so spread is narrower */
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--bg);
@@ -111,7 +114,8 @@
 .album__info {
   padding: 0 var(--space-3);
   position: relative;        /* lift above ring's 3D layer */
-  z-index: 10;               /* ensure text never gets covered by ring images */
+  z-index: 100;              /* was 10 — much higher so text always wins over ring */
+  background: transparent;   /* keep transparent so ring doesn't peek through */
 }
 .album__kicker {
   font-family: var(--font-mono);
