@@ -206,38 +206,60 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-4);
 }
 .bike-flavours__list li {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 24px;
-  padding: 24px 0;
-  border-bottom: 1px solid var(--border);
+  text-align: center;
+  padding: 0;
+  border: none;
   font-family: "Fraunces", var(--font-display);
-  font-size: clamp(28px, 4vw, 56px);
+  font-size: clamp(20px, 1.6vw, 26px);
   color: var(--fg);
-  letter-spacing: -0.02em;
-  transition: padding-left 0.4s var(--ease-soft);
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  transition: transform 240ms var(--ease-soft);
+  gap: var(--space-3);
 }
 .bike-flavours__list li:hover {
-  padding-left: 16px;
+  transform: translateY(-4px);
 }
 .bike-flavours__list .dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex-shrink: 0;
+  display: none;
+}
+.bike-flavours__list .name {
+  display: block;
+  width: 100%;
+  line-height: 1.1;
 }
 .bike-flavours__list .meta {
-  margin-left: auto;
+  margin-left: 0;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
   font-weight: 400;
+}
+.bike-flavours__img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  display: block;
+  box-shadow: var(--shadow-1);
+  transition: transform 320ms var(--ease-soft), box-shadow 320ms var(--ease-soft);
+}
+.bike-flavours__list li:hover .bike-flavours__img {
+  transform: scale(1.04);
+  box-shadow: var(--shadow-2);
+}
+@media (max-width: 760px) {
+  .bike-flavours__list { grid-template-columns: repeat(2, 1fr); }
 }
 .bike-flavours__swaps {
   margin-top: 32px;
