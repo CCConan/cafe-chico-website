@@ -275,21 +275,7 @@
   .story__seg-photo img { aspect-ratio: 4 / 3; }
 }
 
-/* Brand divider between story segments */
-.story__divider {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: var(--space-7) auto;
-  max-width: 280px;
-}
-.story__divider img {
-  display: block;
-  width: 100%;
-  height: auto;
-  opacity: 0.45;
-  filter: saturate(0.85);
-}
+/* Brand divider between story segments (REMOVED Aug 2026 — user wanted cleaner story flow) */
 
 /* Social media brand mark (watermark) */
 .social-media__mark {
