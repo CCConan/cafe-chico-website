@@ -125,6 +125,46 @@
 }
 
 /* ---- Mosaic Grid ---- */
+.cat-video {
+  padding: clamp(64px, 9vw, 120px) 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.cat-video__head {
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+.cat-video__title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.5vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  color: var(--fg);
+  margin: var(--space-2) 0 0;
+}
+.cat-video__title em {
+  font-style: italic;
+  color: var(--accent);
+}
+.cat-video__embed {
+  max-width: 605px;
+  margin: 0 auto;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-2);
+  background: var(--surface);
+}
+.cat-video__embed .tiktok-embed {
+  margin: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+}
+@media (max-width: 640px) {
+  .cat-video__embed { max-width: 100%; }
+}
+
 .cat-mosaic {
   padding: clamp(64px, 9vw, 120px) 0;
   background: var(--bg);

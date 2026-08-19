@@ -21,15 +21,15 @@
   const dots   = dotsEl ? Array.from(dotsEl.querySelectorAll('.album__dot')) : [];
 
   const angleStep = 360 / n;
-  const radius    = 520;       // 3D ring radius (px) — was 260→380, now 520 for clear separation
+  const radius    = 380;       // 3D ring radius (px) — back to 380 per user feedback
   const maxBlur   = 7;         // px at the back
   const minBlur   = 0;         // px at the front
-  // Per-slot speed: slow when arriving at each image, 3× faster mid-transition.
+  // Per-slot speed: very slow at each image, 9× faster mid-transition.
   // phase ∈ [0, 1] = (curRot mod angleStep) / angleStep  (0 = at image front, 0.5 = mid)
-  // speedMult = 0.3 + 2.7 * sin(phase * π)  →  range [0.3, 3.0]
+  // speedMult = 0.15 + 8.85 * sin(phase * π)  →  range [0.15, 9.0]
   const rotSpeedBase   = 0.12;  // deg/frame at slowest (when at image front)
-  const rotSpeedMaxMul = 3.0;   // peak multiplier (when mid-transition between images)
-  const rotSpeedMinMul = 0.3;   // floor multiplier (at image front)
+  const rotSpeedMaxMul = 9.0;   // peak multiplier (mid-transition, 3× of previous 3.0)
+  const rotSpeedMinMul = 0.15;  // floor multiplier (at image front, half of previous 0.3)
   const dragSens  = 0.35;      // deg per px dragged
   const resumeMs  = 2400;      // ms of stillness before auto-rotate resumes
 
