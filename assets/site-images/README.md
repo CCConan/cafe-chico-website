@@ -10,7 +10,7 @@ The rest of `assets/photos/` is a **source archive** with mixed purpose:
 - `social/instagram/curated/` — Studio Nestir-curated picks for the site
 - `candidates/` — pre-curation photo candidates
 - `raw/menu-items/` — original menu item photos (currently being migrated; see Stage 2 below)
-- `catering/`, `party-room/`, `ice-cream-bike/` — page-specific historical assets
+- `catering/`, `party-room/`, `ice-cream-bike/` — page-specific historical assets (note: `catering/` folder on disk is the AI-platters source for `platters.html`; the page was renamed Aug 2026 but the folder name is left as-is for source tracking)
 - `logo/` — original raw logo plus its processed derivatives
 - `maps/`, `press/`, `photo from Faruk/` — Faruk's deliveries and the Google Maps screenshots
 
@@ -94,9 +94,9 @@ The old `chico-stack-*` and `chico-text-*` variants haven't been through the sam
 | Page | Logo | Hero | Other |
 |---|---|---|---|
 | `index.html` | `logo/*` | n/a | uses `../photos/candidates/`, `../social/instagram/curated/`, `../raw/menu-items/`, `../instagram/`, `../press/` for social grid; uses `story/04-cafe-in-moody-weather.jpg` for story segment 4; uses `press/group-theboltonnews-6people.jpg` for the new `#neighbours` section — **partial migration, see Stage 2** |
-| `menu.html` | `logo/*` | n/a | data-driven from `__menuData__` JSON, images now at `menu/*` (9 real photos covering 31 dishes) — **migrated ✓ (Aug 2026 quick fix)** |
+| `menu.html` | `logo/*` | n/a | data-driven from `__menuData__` JSON, images now at `menu/*` (9 real photos covering 31 dishes); also hosts the 3-dish "in motion" showcase using `../social/instagram/Cz55*` / `C19P*` / `CztE*` (still under `../photos/`, see Stage 2) — **migrated ✓ (Aug 2026 quick fix + 3-dish move)** |
 | `ice-cream-bike.html` | `logo/*` | `ice-cream-bike/hero/*` (only 2 today) | `ice-cream-bike/flavours/*`, `ice-cream-bike/extras/*` — **migrated ✓** |
-| `catering.html` | `logo/*` | n/a | uses `../photos/catering/`, `../social/instagram/curated/` — **not yet migrated, see Stage 2** |
+| `platters.html` (renamed from `catering.html` Aug 2026) | `logo/*` | n/a | uses `../photos/catering/`, `../social/instagram/curated/` — **not yet migrated, see Stage 2** |
 | `party-room.html` | `logo/*` | n/a | uses `../photos/party-room/`, `../social/instagram/` — **not yet migrated, see Stage 2** |
 
 ## Stage 2 — migration backlog (not yet done)
@@ -110,7 +110,7 @@ When another agent (or a future session) gets to the rest, the work is:
    - `social-tiles/` (~10 curated social tiles)
    - `press/` (1 press portrait)
 2. **`menu/`** — restructure `__menuData__` in menu.html so image paths are relative to a new `menu/` bucket, and the 3D viewer + 6 menu grids pick up the new paths. Currently the JSON hardcodes `../raw/menu-items/*.webp` which is a dead path — this is the source of the visible "image broken" bug on the live page.
-3. **`catering/`** — 6 AI platters + 1 hero + 3 social-proof → bucket.
+3. **`platters/`** — 6 AI platters + 1 hero + 3 social-proof → bucket. (Page renamed from `catering.html` to `platters.html` in Aug 2026 — keep bucket name in sync with the page.)
 4. **`party-room/`** — 4 AI panels + 1 hero + 4 social-proof → bucket.
 5. **`shared/`** — any image used across two or more pages goes here (e.g. the trike shots reused on index.html and ice-cream-bike.html). After the home migration, at least 3 of the 5 ice-cream-bike hero shots will be referenced from `shared/trike/` instead of `ice-cream-bike/hero/`.
 6. After Stage 2 is done, **`../photos/` becomes read-only source archive**. Add a `.gitattributes` or a top-level `assets/photos/README.md` enforcing it.
