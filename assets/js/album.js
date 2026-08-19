@@ -21,7 +21,7 @@
   const dots   = dotsEl ? Array.from(dotsEl.querySelectorAll('.album__dot')) : [];
 
   const angleStep = 360 / n;
-  const radius    = 260;       // 3D ring radius (px)
+  const radius    = 380;       // 3D ring radius (px) — was 260, +46% for more spacing between dishes
   const maxBlur   = 7;         // px at the back
   const minBlur   = 0;         // px at the front
   const rotSpeed  = 0.18;      // deg per 60fps frame (auto-rotate)

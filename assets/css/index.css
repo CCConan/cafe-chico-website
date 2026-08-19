@@ -57,9 +57,9 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  max-width: 580px;
+  max-width: 720px;          /* was 580 — larger container for 3D ring */
   margin: 0 auto;
-  perspective: 1600px;
+  perspective: 1100px;       /* was 1600 — less front-image magnification */
   transform-style: preserve-3d;
   cursor: grab;
   touch-action: pan-y;
@@ -68,7 +68,7 @@
 .album__ring.is-dragging { cursor: grabbing; }
 .album__item {
   position: absolute;
-  inset: 8%;
+  inset: 18%;                /* was 8% — more padding so neighbours don't bleed into front */
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--bg);
