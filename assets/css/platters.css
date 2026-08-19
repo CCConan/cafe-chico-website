@@ -959,7 +959,7 @@
 .album__ring.is-dragging { cursor: grabbing; }
 .album__item {
   position: absolute;
-  inset: 40%;
+  inset: 32%;
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--bg);

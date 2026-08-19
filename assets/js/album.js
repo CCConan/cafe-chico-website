@@ -24,12 +24,13 @@
   const radius    = 380;       // 3D ring radius (px) — keep 380 per user
   const maxBlur   = 7;         // px at the back
   const minBlur   = 0;         // px at the front
-  // Per-slot speed: very slow at each image, 18× faster mid-transition (3× previous 9.0).
+  // Per-slot speed: very slow at each image (6× longer dwell), peak speed 30% slower
+  // than before so the cross-fade "quick switch" feels more deliberate.
   // phase ∈ [0, 1] = (curRot mod angleStep) / angleStep  (0 = at image front, 0.5 = mid)
-  // speedMult = 0.15 + 17.85 * sin(phase * π)  →  range [0.15, 18.0]
+  // speedMult = 0.025 + 12.575 * sin(phase * π)  →  range [0.025, 12.6]
   const rotSpeedBase   = 0.12;  // deg/frame at slowest (when at image front)
-  const rotSpeedMaxMul = 18.0;  // peak multiplier (mid-transition, 2× previous 9.0)
-  const rotSpeedMinMul = 0.15;  // floor multiplier (at image front, half of previous 0.3)
+  const rotSpeedMaxMul = 12.6;  // peak multiplier (mid-transition, 30% slower than previous 18.0)
+  const rotSpeedMinMul = 0.025; // floor multiplier (at image front, 1/6 of previous 0.15 → dwell 6× longer)
   const dragSens  = -0.35;     // deg per px dragged (NEGATIVE: drag right -> rotate ring right)
   const resumeMs  = 2400;      // ms of stillness before auto-rotate resumes
 
