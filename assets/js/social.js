@@ -4,6 +4,8 @@
 //  - Click opens PhotoSwipe v5 lightbox with smooth transitions
 //  - Lightbox has its own "View on Instagram" button
 //  - Lazy-loads images as they enter viewport (IntersectionObserver)
+//  - Also binds the index.html 6-card "popular dishes" grid to a lightbox
+//    so clicking a popular card opens the full image (was: nav to menu.html)
 // =====================================================================
 
 import PhotoSwipe from '../vendor/photoswipe/photoswipe.esm.js';
@@ -11,6 +13,7 @@ import PhotoSwipe from '../vendor/photoswipe/photoswipe.esm.js';
 const IG_PROFILE = 'https://www.instagram.com/cafechico_uk/';
 const GRID_SEL = '.social-media__grid';
 const THUMB_SEL = '.sm-thumb';
+const POPULAR_SEL = '.popular__card';
 
 // -----------------------------------------------------------------
 // 1) Build the dataSource array for PhotoSwipe from the DOM
@@ -178,18 +181,98 @@ function setupLazyLoad() {
 // -----------------------------------------------------------------
 function setupClickHandlers() {
   const grid = document.querySelector(GRID_SEL);
-  if (!grid) return;
+  if (grid) {
+    // Delegate clicks: open the lightbox at the clicked index
+    grid.addEventListener('click', (e) => {
+      const link = e.target.closest(THUMB_SEL);
+      if (!link) {
+        return;
+      }
+      e.preventDefault();  // prevent the IG link from opening in a new tab
+      const idx = indexOfClickedThumb(link);
+      openLightboxAt(idx);
+    });
+  }
 
-  // Delegate clicks: open the lightbox at the clicked index
-  grid.addEventListener('click', (e) => {
-    const link = e.target.closest(THUMB_SEL);
-    if (!link) {
-      return;
-    }
-    e.preventDefault();  // prevent the IG link from opening in a new tab
-    const idx = indexOfClickedThumb(link);
-    openLightboxAt(idx);
+  // Popular dishes grid (6 cards on index.html) → open lightbox with the
+  // large image, plus a "View on the menu →" button that links to the
+  // relevant menu.html#cat-* anchor.
+  const popularGrid = document.querySelector('.popular__grid');
+  if (popularGrid) {
+    popularGrid.addEventListener('click', (e) => {
+      const card = e.target.closest(POPULAR_SEL);
+      if (!card) return;
+      e.preventDefault();
+      const cards = Array.from(popularGrid.querySelectorAll(POPULAR_SEL));
+      const idx = cards.indexOf(card);
+      openPopularLightbox(cards, idx);
+    });
+  }
+}
+
+// -----------------------------------------------------------------
+// 6b) Popular grid lightbox — same PhotoSwipe, different slide shape
+//     (dish metadata for the custom "View on menu" button)
+// -----------------------------------------------------------------
+function openPopularLightbox(cards, idx) {
+  if (!cards.length) return;
+
+  const slides = cards.map((el) => ({
+    src: el.getAttribute('data-pswp-src') || el.querySelector('img')?.src,
+    width: parseInt(el.getAttribute('data-pswp-width') || '1600', 10),
+    height: parseInt(el.getAttribute('data-pswp-height') || '1600', 10),
+    alt: el.querySelector('img')?.alt || '',
+    dishName: el.getAttribute('data-dish-name') || '',
+    dishPrice: el.getAttribute('data-dish-price') || '',
+    dishHref: el.getAttribute('data-dish-href') || 'menu.html',
+  }));
+
+  const lightbox = new PhotoSwipe({
+    dataSource: slides,
+    index: Math.max(0, Math.min(idx, slides.length - 1)),
+    bgOpacity: 0.95,
+    showHideAnimationType: 'zoom',
+    spacing: 0.1,
+    loop: true,
+    pinchToClose: false,
   });
+
+  lightbox.on('beforeOpen', () => attachPopularButton(lightbox));
+  lightbox.init();
+}
+
+function attachPopularButton(lightbox) {
+  const btn = document.createElement('a');
+  btn.className = 'pswp-ig-link pswp-ig-link--enter pswp-popular-link';
+  btn.setAttribute('aria-label', 'View this dish on the menu');
+  btn.innerHTML = `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M4 6 h16 M4 12 h16 M4 18 h10"/>
+    </svg>
+    <span class="pswp-popular-link__label">View on the menu →</span>
+  `;
+  document.body.appendChild(btn);
+
+  const update = () => {
+    const data = lightbox.currSlide?.data;
+    if (!data) return;
+    btn.href = data.dishHref;
+    const label = btn.querySelector('.pswp-popular-link__label');
+    if (label) {
+      label.textContent = data.dishName
+        ? `${data.dishName} · ${data.dishPrice} · View on the menu →`
+        : 'View on the menu →';
+    }
+  };
+  update();
+
+  lightbox.on('change', update);
+  lightbox.on('close', () => btn.classList.add('pswp-ig-link--leave'));
+  lightbox.on('destroy', () => btn.remove());
+
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    btn.classList.remove('pswp-ig-link--enter');
+  }));
 }
 
 // -----------------------------------------------------------------

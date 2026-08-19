@@ -947,7 +947,7 @@
   z-index: 1;
   width: 100%;
   aspect-ratio: 1 / 1;
-  max-width: 600px;
+  max-width: 780px;                  /* boundary 600 → 780 (×1.3 per user) */
   margin: 0 auto;
   perspective: 1900px;
   overflow: hidden;

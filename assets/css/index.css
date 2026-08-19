@@ -1044,6 +1044,18 @@
   width: 16px; height: 16px;
   flex-shrink: 0;
 }
+/* Popular-grid override: same position, café Chico accent on hover, wider label */
+.pswp-popular-link:hover {
+  background: var(--accent);
+  color: var(--bg);
+  transform: translate(-50%, -2px);
+}
+.pswp-popular-link .pswp-popular-link__label {
+  max-width: min(72vw, 460px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 /* ---------- Press section removed ---------- */
 

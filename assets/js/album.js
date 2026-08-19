@@ -21,16 +21,15 @@
   const dots   = dotsEl ? Array.from(dotsEl.querySelectorAll('.album__dot')) : [];
 
   const angleStep = 360 / n;
-  const radius    = 380;       // 3D ring radius (px) — keep 380 per user
+  const radius    = 266;       // 3D ring radius (px) — 380 × 0.7 (rotation diameter −30% per user)
   const maxBlur   = 7;         // px at the back
   const minBlur   = 0;         // px at the front
-  // Per-slot speed: 10× longer dwell at each image, peak speed 1/3 of previous
-  // (so the cross-fade "quick switch" feels much more deliberate).
+  // Per-slot speed: dwell 10× longer, peak 1/3 of previous (now 2× faster again per user)
   // phase ∈ [0, 1] = (curRot mod angleStep) / angleStep  (0 = at image front, 0.5 = mid)
-  // speedMult = 0.015 + 4.185 * sin(phase * π)  →  range [0.015, 4.2]
+  // speedMult = 0.03 + 8.37 * sin(phase * π)  →  range [0.03, 8.4]
   const rotSpeedBase   = 0.12;  // deg/frame at slowest (when at image front)
-  const rotSpeedMaxMul = 4.2;   // peak multiplier (mid-transition, 1/3 of previous 12.6)
-  const rotSpeedMinMul = 0.015; // floor multiplier (at image front, 1/10 of original 0.15 → dwell 10× longer)
+  const rotSpeedMaxMul = 8.4;   // peak multiplier (mid-transition, 2× faster than previous 4.2)
+  const rotSpeedMinMul = 0.03;  // floor multiplier (2× faster than previous 0.015 → dwell 2× shorter)
   const dragSens  = -0.35;     // deg per px dragged (NEGATIVE: drag right -> rotate ring right)
   const resumeMs  = 2400;      // ms of stillness before auto-rotate resumes
 
