@@ -206,9 +206,12 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: var(--space-4);
+  display: flex;                /* vertical stack per user */
+  flex-direction: column;
+  gap: clamp(28px, 3vw, 40px);
+  max-width: 600px;             /* caps image width → 600×600 (was 200×200, ×3 per user) */
+  margin-left: auto;
+  margin-right: auto;
 }
 .bike-flavours__list li {
   display: flex;
@@ -258,9 +261,7 @@
   transform: scale(1.04);
   box-shadow: var(--shadow-2);
 }
-@media (max-width: 760px) {
-  .bike-flavours__list { grid-template-columns: repeat(2, 1fr); }
-}
+/* User requested vertical stack on all viewports — no breakpoint grid override */
 .bike-flavours__swaps {
   margin-top: 32px;
   font-size: 14px;
