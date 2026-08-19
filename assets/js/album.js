@@ -24,7 +24,12 @@
   const radius    = 520;       // 3D ring radius (px) — was 260→380, now 520 for clear separation
   const maxBlur   = 7;         // px at the back
   const minBlur   = 0;         // px at the front
-  const rotSpeed  = 0.18;      // deg per 60fps frame (auto-rotate)
+  // Per-slot speed: slow when arriving at each image, 3× faster mid-transition.
+  // phase ∈ [0, 1] = (curRot mod angleStep) / angleStep  (0 = at image front, 0.5 = mid)
+  // speedMult = 0.3 + 2.7 * sin(phase * π)  →  range [0.3, 3.0]
+  const rotSpeedBase   = 0.12;  // deg/frame at slowest (when at image front)
+  const rotSpeedMaxMul = 3.0;   // peak multiplier (when mid-transition between images)
+  const rotSpeedMinMul = 0.3;   // floor multiplier (at image front)
   const dragSens  = 0.35;      // deg per px dragged
   const resumeMs  = 2400;      // ms of stillness before auto-rotate resumes
 
@@ -93,7 +98,10 @@
       const nowMs = performance.now();
       const idle = nowMs - lastInputTime;
       if (autoRot) {
-        curRot = (curRot + rotSpeed * dt) % 360;
+        // Dynamic speed: slow at each image, 3× faster mid-transition
+        const phase = ((curRot % angleStep) + angleStep) % angleStep / angleStep;
+        const speedMult = rotSpeedMinMul + (rotSpeedMaxMul - rotSpeedMinMul) * Math.sin(phase * Math.PI);
+        curRot = (curRot + rotSpeedBase * speedMult * dt) % 360;
       } else {
         // Inertia decay
         lastVel *= 0.94;
