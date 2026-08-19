@@ -1,0 +1,104 @@
+{
+  "version": "1.2",
+  "purpose": "Authoritative image library for the live Café Chico website. Files in this tree are the ones the site actually references. Modifications stay inside this tree and do not touch the original sources under assets/photos/ (Faruk deliveries, raw menu, social media, candidates, etc.).",
+  "rule": "site-images is the LIVE library. assets/photos is the SOURCE archive. Never delete from either without checking git history.",
+  "pages": {
+    "logo": {
+      "used_by": ["every page — nav, footer, favicon, hero__brand, etc."],
+      "notes": "Aug 2026: Both chico-logo-{light,dark}.png were re-upscaled 1500x1024 -> 3000x2048 and then cropped to their true content bbox (1426x1538, aspect 0.927) so the brand mark no longer has huge transparent padding around the visible logo. HTML width/height attributes updated to 1426/1538 across all pages; footer logos updated from 120/82 to 120/130 to match.",
+      "files": {
+        "logo/chico-logo-light.png":    { "format": "PNG, 1426x1538 RGBA, transparent", "source": "IzXTmgx-txhCHFe-bnGlcGa.jpg (375x256) -> 1500x1024 (4x bicubic + binary alpha) -> 3000x2048 (1x lanczos) -> cropped to content bbox 1426x1538" },
+        "logo/chico-logo-dark.png":     { "format": "PNG, 1426x1538 RGBA, transparent", "source": "Recolour of chico-logo-light.png (espresso brown #2A1810), then through the same upscale + crop pipeline" },
+        "logo/chico-stack-light.png":   { "format": "PNG, 540x368 RGBA, transparent",   "source": "assets/photos/logo/chico-stack-white.png (compact variant — not yet re-upscaled; old aspect 1.47:1)" },
+        "logo/chico-stack-dark.png":    { "format": "PNG, 540x368 RGBA, transparent",   "source": "assets/photos/logo/chico-stack-dark.png" },
+        "logo/chico-text-light.png":    { "format": "PNG, 1500x1024 RGBA, transparent", "source": "assets/photos/logo/chico-text-white.png" },
+        "logo/chico-text-dark.png":     { "format": "PNG, 1500x1024 RGBA, transparent", "source": "assets/photos/logo/chico-text-dark.png" },
+        "logo/chico-favicon.png":       { "format": "PNG, 512x350 RGBA, transparent",   "source": "assets/photos/logo/chico-favicon.png" },
+        "logo/chico-favicon-32.png":    { "format": "PNG, 64x44 RGBA, transparent",     "source": "assets/photos/logo/chico-favicon-32.png (browser favicon at 32x22)" },
+        "logo/chico-favicon-64.png":    { "format": "PNG, 64x69 RGBA, transparent",     "source": "Cropped chico-logo-dark.png at 64px wide (Retina favicon, 0.927 aspect)" },
+        "logo/chico-favicon-192.png":   { "format": "PNG, 192x207 RGBA, transparent",   "source": "Cropped chico-logo-dark.png at 192px wide (Android Chrome)" },
+        "logo/chico-favicon-512.png":   { "format": "PNG, 512x552 RGBA, transparent",   "source": "Cropped chico-logo-dark.png at 512px wide (App icon)" }
+      }
+    },
+    "ice-cream-bike": {
+      "used_by": ["ice-cream-bike.html"],
+      "hero": {
+        "rotation": "Inline JS at the bottom of ice-cream-bike.html cycles through these 2 images every 5 seconds, with a 400ms fade. Order is the order listed here. Only 2 real trike shots are in the archive today — when more event photos arrive from Faruk, drop them here and extend the imgs[] array in the script.",
+        "files": {
+          "ice-cream-bike/hero/01-at-event.jpg": { "source": "assets/photos/social/instagram/curated/curated-ice-cream-bike-ice-cream-bike-at-event@3x.jpg — trike with black umbrella, set up at an event" },
+          "ice-cream-bike/hero/02-launch.jpg":   { "source": "assets/photos/social/instagram/curated/curated-ice-cream-bike-ice-cream-bike-launch.jpg — trike with Walling's chalkboard, launch day" }
+        }
+      },
+      "flavours": {
+        "rotation": "Listed 1:1 with .bike-flavours__list in ice-cream-bike.html. The number prefix matches the list order so the file→slot mapping is obvious.",
+        "files": {
+          "ice-cream-bike/flavours/01-vanilla.jpg":    { "type": "AI-generated", "prompt_flavour": "vanilla with vanilla pod" },
+          "ice-cream-bike/flavours/02-mango.jpg":      { "type": "AI-generated", "prompt_flavour": "mango sorbet with mango wedge" },
+          "ice-cream-bike/flavours/03-strawberry.jpg": { "type": "AI-generated", "prompt_flavour": "strawberry with whole strawberries" },
+          "ice-cream-bike/flavours/04-chocolate.jpg":  { "type": "AI-generated", "prompt_flavour": "dark Belgian chocolate with chocolate shavings" },
+          "ice-cream-bike/flavours/05-bubblegum.jpg":  { "type": "AI-generated", "prompt_flavour": "bubblegum with confetti sprinkles" }
+        }
+      },
+      "extras": {
+        "files": {
+          "ice-cream-bike/extras/01-branded-cups.jpg": { "type": "AI-generated", "prompt_subject": "Sara & Tom · 14.06.2025 wedding-branded Café Chico paper cups on a rustic table, soft daylight" }
+        }
+      }
+    },
+    "food": {
+      "used_by": ["(currently none — moved here from ice-cream-bike/hero when we discovered the original IG filenames didn't match what index.html's alt text claimed)"],
+      "files": {
+        "food/01-atlas-coffee-and-book.jpg":     { "source": "assets/photos/social/instagram/DLE-wuTIdBf_1.jpg — coffee, biscuit, sugar packet, Atlas of Coffee book on a wooden table. Was previously mislabelled in index.html as 'Café Chico ice cream trike with chalkboard menu'." },
+        "food/02-smoked-salmon-toast.jpg":      { "source": "assets/photos/social/instagram/C9kOL3SoAnC_1.jpg — smoked salmon, avocado, egg on seeded toast. Was previously mislabelled in index.html as 'Ice cream trike set up at an outdoor event'." },
+        "food/03-full-english-breakfast.jpg":   { "source": "assets/photos/social/instagram/C_xc8sWINNf_1.jpg — full English plate with beans, mushrooms, omelette, paratha. Was previously mislabelled in index.html as 'The Café Chico trike on a sunny day'." }
+      }
+    },
+    "story": {
+      "used_by": ["index.html (the #story section, segment 4)"],
+      "files": {
+        "story/04-cafe-in-moody-weather.jpg": { "source": "assets/photos/photo from Faruk/ba78b9ff-8390-478d-8c30-927526ba3637.JPG — moody weather storefront shot (rainy Bolton afternoon), stands in for the requested 'snow / winter' shot since we don't have a real winter image yet. If a snowy photo arrives from Faruk, drop it here as 04-cafe-in-winter.jpg and update index.html." }
+      }
+    },
+    "press": {
+      "used_by": ["index.html (the new #neighbours 'Loved by the people next door' section, between #story and #contact)"],
+      "files": {
+        "press/group-theboltonnews-6people.jpg": { "format": "JPEG, 1280x450 (aspect 2.844:1)", "source": "assets/photos/photo from Faruk/3a999d74-456b-4328-bfa7-d6c506983739.JPG (739x1600 iPhone screenshot of theboltonnews.co.uk). Processing: (1) cropped to article photo region (739x260 in cropped coords, y=640-900 of source) dropping the iOS status bar, browser nav, share icons, '1/9 Hide caption' overlay, Safari URL bar, and home indicator; (2) inpainted the translucent white '>' carousel next-button on the right edge of the photo by sampling the surrounding brick wall colour (#B79A8E) and sharp-filling the arrow bbox (cropped x=615-705, y=40-130); (3) upscaled to 1280px on the long side via LANCZOS, JPEG quality 92. Shows Aaliyah + 5 regulars at Café Chico, featured in The Bolton News article 'Popular café's lovely gesture delights the community it wants to be at the heart of'." }
+      }
+    },
+    "menu": {
+      "used_by": ["menu.html (the __menuData__ inline JSON, 31 dish images)"],
+      "notes": "Aug 2026: Quick fix for the 'image broken' bug on the live menu page. The previous __menuData__ referenced assets/photos/raw/menu-items/*.webp but that directory was deleted in commit 56f8988. Solution: copy 9 existing real photos (no AI generation, no rename) into this bucket with clean slugs, then point each of the 31 dish slugs to the closest matching photo. Several drinks share drinks-branded-cups.jpg, breakfast items share breakfast-platter.jpg, etc. — acceptable as a quick fix. Long-term, this bucket will hold one real photo per dish (32 unique) once Faruk delivers them.",
+      "routing": {
+        "breakfast-platter.jpg":    ["full-english-breakfast", "desi-breakfast", "veggie-breakfast", "breakfast-stacker"],
+        "bagels-muffins.jpg":       ["breakfast-bap", "breakfast-muffin", "egg-cheese-muffin"],
+        "american-special.jpg":     ["american-special", "eggs-benedict", "omelette-with-3-toppings", "stir-fry-noodles"],
+        "pancakes.jpg":             ["pancakes"],
+        "sourdough-toast.jpg":      ["sourdough-toast", "toasties", "grilled-halloumi-salad", "vegan-breakfast"],
+        "subs-burgers.jpg":         ["signature-subs", "signature-subs-meal-deal", "signature-spuds", "signature-spuds-meal-deal"],
+        "yogurt-parfait.jpg":       ["french-toast", "kids-meal-deal"],
+        "drinks-branded-cups.jpg":  ["english-breakfast-tea", "cafe-latte", "cappuccino", "mochaccino", "chico-s-special-coffee", "chico-s-spiced-chai", "apple-juice", "orange-juice"],
+        "hot-chocolate.jpg":        ["hot-chocolate"]
+      },
+      "files": {
+        "menu/breakfast-platter.jpg":     { "source": "assets/photos/candidates/09-big-breakfast-platter-with-qrcode.jpg — Full English with QR code in corner" },
+        "menu/american-special.jpg":     { "source": "assets/photos/candidates/05-american-special-pancakes-bacon.jpg" },
+        "menu/pancakes.jpg":             { "source": "assets/photos/candidates/07-pancakes-berries-fragaria.jpg" },
+        "menu/hot-chocolate.jpg":        { "source": "assets/photos/candidates/06-hot-chocolate-marshmallow-tower.jpg" },
+        "menu/sourdough-toast.jpg":      { "source": "assets/photos/social/instagram/curated/curated-food-avo-toast.jpg (used as sourdough-toast; actual content is avo-toast which is close enough)" },
+        "menu/drinks-branded-cups.jpg":  { "source": "assets/photos/social/instagram/curated/curated-drinks-branded-cups.jpg" },
+        "menu/yogurt-parfait.jpg":       { "source": "assets/photos/social/instagram/curated/curated-food-yogurt-parfait.jpg (used as french-toast placeholder; real content is yogurt parfait)" },
+        "menu/subs-burgers.jpg":         { "source": "assets/photos/photo from Faruk/03_food_and_drinks/0cd16726-...JPG — two burger plates (halal + cheese) on CAFE CHICO table" },
+        "menu/bagels-muffins.jpg":       { "source": "assets/photos/photo from Faruk/03_food_and_drinks/d9d8c1cb-...JPG — bagel sandwich + parfait + bacon/egg bagel" }
+      }
+    }
+  },
+  "naming_convention": {
+    "logo": "{chico-logo|chico-stack|chico-text|chico-favicon}[-{size?}].png, with -light and -dark variants",
+    "numbered_prefix": "Files inside hero/, flavours/, extras/ use a two-digit numeric prefix (01-, 02-, 03-, ...) so the slot order is visible at a glance when the folder is opened. They are NOT zero-padded to three digits — the highest known bucket today is 05.",
+    "no_hash_names": "No hash names in site-images/. If you need a hero or social shot, name it (e.g. 01-at-event.jpg, 02-launch.jpg)."
+  },
+  "git": {
+    "tracked": true,
+    "rationale": "site-images is small (<30MB) and part of the live site. It should be in the repo so that any clone renders the site correctly without copying from an external location."
+  }
+}

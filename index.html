@@ -6,7 +6,7 @@
   <title>Café Chico · Family-run café in Bolton</title>
   <meta name="description" content="Café Chico — a small, family-run café in Bolton serving honest breakfast, brunch and lunch. Made close to home." />
   <meta name="theme-color" content="#3b2418" />
-  <link rel="icon" type="image/png" href="assets/photos/logo/chico-favicon-32.png" />
+  <link rel="icon" type="image/png" href="assets/site-images/logo/chico-favicon-32.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -72,8 +72,8 @@
 <nav class="site-nav" aria-label="Primary">
   <div class="site-nav__inner">
     <a href="#hero" class="brand" aria-label="Café Chico, home">
-      <img class="brand__mark brand__mark--dark"  src="assets/photos/logo/chico-logo-dark.png"  alt="Café Chico" width="1500" height="1024" />
-      <img class="brand__mark brand__mark--light" src="assets/photos/logo/chico-logo-white.png" alt="Café Chico" width="1500" height="1024" />
+      <img class="brand__mark brand__mark--dark"  src="assets/site-images/logo/chico-logo-dark.png"  alt="Café Chico" width="1426" height="1538" />
+      <img class="brand__mark brand__mark--light" src="assets/site-images/logo/chico-logo-light.png" alt="Café Chico" width="1426" height="1538" />
     </a>
     <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
     <ul class="nav-tabs" role="list">
@@ -97,7 +97,7 @@
   </div>
   <div class="hero__scrim" aria-hidden="true"></div>
 
-  <img class="hero__brand" src="assets/photos/logo/chico-logo-white.png" alt="Café Chico" width="1500" height="1024" style="position:absolute;top:24px;right:32px;width:clamp(120px,16vw,220px);height:auto;z-index:5;display:block;opacity:1;" />
+  <img class="hero__brand" src="assets/site-images/logo/chico-logo-light.png" alt="Café Chico" width="1426" height="1538" style="position:absolute;top:24px;right:32px;width:clamp(120px,16vw,220px);height:auto;z-index:5;display:block;opacity:1;" />
 
   <div class="hero__inner">
     <span class="hero__kicker">Bolton · Est. 2024</span>
@@ -580,7 +580,7 @@
 
     <!-- ── Brand mark watermark ── -->
     <div class="social-media__mark" aria-hidden="true">
-      <img src="assets/photos/logo/chico-logo-dark.png" alt="" width="1500" height="1024" loading="lazy" />
+      <img src="assets/site-images/logo/chico-logo-dark.png" alt="" width="1426" height="1538" loading="lazy" />
     </div>
   </div>
 </section>
@@ -610,7 +610,7 @@
 
     <!-- ── Brand divider 1 ── -->
     <div class="story__divider" aria-hidden="true">
-      <img src="assets/photos/logo/chico-logo-dark.png" alt="" width="1500" height="1024" loading="lazy" />
+      <img src="assets/site-images/logo/chico-logo-dark.png" alt="" width="1426" height="1538" loading="lazy" />
     </div>
 
     <!-- ── Segment 2: 5-star + 4.9 + hidden gem + food photo ── -->
@@ -647,13 +647,17 @@
 
     <!-- ── Brand divider 2 ── -->
     <div class="story__divider" aria-hidden="true">
-      <img src="assets/photos/logo/chico-logo-dark.png" alt="" width="1500" height="1024" loading="lazy" />
+      <img src="assets/site-images/logo/chico-logo-dark.png" alt="" width="1426" height="1538" loading="lazy" />
     </div>
 
-    <!-- ── Segment 4: Community hub vision (text only) ── -->
-    <div class="story__seg story__seg--text-only" data-reveal>
-      <div class="story__seg-num"><span>04</span></div>
+    <!-- ── Segment 4: Community hub vision + moody storefront shot ── -->
+    <div class="story__seg story__seg--split" data-reveal>
+      <div class="story__seg-photo">
+        <img src="assets/site-images/story/04-cafe-in-moody-weather.jpg"
+             alt="Café Chico on a moody, rain-grey day on St Helens Rd, Bolton — the storefront stands warm and lit behind the weather" loading="lazy"/>
+      </div>
       <div class="story__seg-body">
+        <div class="story__seg-num"><span>04</span></div>
         <h3>More than a café — a community hub.</h3>
         <p>Our vision has always extended beyond serving great coffee and food. Café Chico was created to be a community hub that celebrates Bolton's rich multicultural heritage while inspiring sustainable living. Over the next three years, we aim to expand this vision by developing a true <strong>Farm-to-Fork approach</strong> — working with local growers, promoting healthy eating, reducing waste through circular practices and creating educational opportunities for families and young people.</p>
         <p>We are passionate about building stronger community partnerships, supporting local businesses, creating opportunities for local people and encouraging environmental responsibility through sustainable initiatives.</p>
@@ -667,6 +671,56 @@
       <p class="story__close-meta">Our goal: a happy, healthy and engaged community where food, people and sustainability come together. From inclusive menus (gluten-free, vegetarian, vegan) to activities for children and families — Café Chico is much more than a café. It's a place where connections are made, stories are shared and everyone feels at home.</p>
     </div>
 
+  </div>
+</section>
+
+<!-- ======================================================== NEIGHBOURHOOD REVIEWS -->
+<section id="neighbours" class="neighbours" aria-label="What our neighbours say">
+  <div class="container">
+    <div class="neighbours__head" data-reveal>
+      <p class="kicker">From the neighbourhood</p>
+      <h2>Loved by the people next door.</h2>
+      <p class="neighbours__lede">We don't chase reviews — but when neighbours, regulars and the local press take the time to write a few words, we listen. Here's a small sample.</p>
+    </div>
+
+    <div class="neighbours__grid" data-reveal>
+
+      <!-- ── Bolton News group photo ── -->
+      <figure class="neighbours__press">
+        <div class="neighbours__press-photo">
+          <img src="assets/site-images/press/group-theboltonnews-6people.jpg"
+               alt="Owner Aaliyah with five regular customers at Café Chico — featured in The Bolton News"
+               width="1280" height="450" loading="lazy" />
+        </div>
+        <figcaption class="neighbours__press-cap">
+          <span class="neighbours__press-tag">The Bolton News</span>
+          <h3>"Popular café's lovely gesture delights the community it wants to be at the heart of."</h3>
+          <p>Aaliyah and five regulars — featured in <em>The Bolton News</em> after the café opened its doors to the neighbourhood.</p>
+        </figcaption>
+      </figure>
+
+      <!-- ── Polished text review (Robertson North West) ── -->
+      <figure class="neighbours__quote">
+        <svg class="neighbours__quote-mark" width="44" height="44" aria-hidden="true" style="color:var(--accent)"><use href="#i-wreath"/></svg>
+        <blockquote class="neighbours__quote-body">
+          <p>Hi Café Chico — just wanted to say thank you for a great buffet today. Top-class food, cheers.</p>
+          <p>The next buffet is definitely yours too (and the one after that, and the one after that…) <span aria-hidden="true">😊</span></p>
+        </blockquote>
+        <figcaption class="neighbours__quote-meta">
+          <span class="neighbours__quote-name">Senior Project Manager</span>
+          <span class="neighbours__quote-org">Robertson North West</span>
+        </figcaption>
+      </figure>
+
+    </div>
+
+    <p class="neighbours__more" data-reveal>
+      And on Google:
+      <span class="neighbours__more-stars">★★★★★</span>
+      <strong>4.9 / 5</strong> from
+      <a href="https://maps.app.goo.gl/vYhYXEfkkgfor3qBA?g_st=ic" target="_blank" rel="noopener">307 neighbours</a>
+      — Bolton's hidden gem.
+    </p>
   </div>
 </section>
 
@@ -746,7 +800,7 @@
     <div class="menu-preview__grid">
       <a class="menu-preview__item" href="menu.html">
         <div class="menu-preview__photo">
-          <img src="assets/photos/raw/menu-items/french-toast.webp" alt="" loading="lazy"/>
+          <img src="assets/site-images/menu/yogurt-parfait.jpg" alt="" loading="lazy"/>
         </div>
         <div>
           <h3 class="menu-preview__name">French Toast</h3>
@@ -756,7 +810,7 @@
       </a>
       <a class="menu-preview__item" href="menu.html">
         <div class="menu-preview__photo">
-          <img src="assets/photos/raw/menu-items/american-special.webp" alt="" loading="lazy"/>
+          <img src="assets/site-images/menu/american-special.jpg" alt="" loading="lazy"/>
         </div>
         <div>
           <h3 class="menu-preview__name">American Special</h3>
@@ -766,7 +820,7 @@
       </a>
       <a class="menu-preview__item" href="menu.html">
         <div class="menu-preview__photo">
-          <img src="assets/photos/raw/menu-items/full-english-breakfast.webp" alt="" loading="lazy"/>
+          <img src="assets/site-images/menu/breakfast-platter.jpg" alt="" loading="lazy"/>
         </div>
         <div>
           <h3 class="menu-preview__name">Full English Breakfast</h3>
@@ -776,7 +830,7 @@
       </a>
       <a class="menu-preview__item" href="menu.html">
         <div class="menu-preview__photo">
-          <img src="assets/photos/raw/menu-items/hot-chocolate.webp" alt="" loading="lazy"/>
+          <img src="assets/site-images/menu/hot-chocolate.jpg" alt="" loading="lazy"/>
         </div>
         <div>
           <h3 class="menu-preview__name">Hot Chocolate</h3>
@@ -801,7 +855,7 @@
     <div class="hire-preview__grid">
       <a class="hire-preview__card" href="ice-cream-bike.html" data-reveal>
         <div class="hire-preview__photo">
-          <img src="assets/photos/instagram/ice-cream-bike-event.jpg"
+          <img src="assets/site-images/ice-cream-bike/hero/01-at-event.jpg"
                alt="Café Chico's ice cream bike at an event with flowers in the basket" loading="lazy"/>
         </div>
         <div class="hire-preview__body">
@@ -814,7 +868,7 @@
 
       <a class="hire-preview__card" href="catering.html" data-reveal data-reveal-delay="1">
         <div class="hire-preview__photo">
-          <img src="assets/photos/instagram/catering-platters.jpg"
+          <img src="assets/photos/social/instagram/curated/curated-catering-summer-platters.jpg"
                alt="Café Chico catering spread: sandwiches, wraps, fruit skewers and sweet treats" loading="lazy"/>
         </div>
         <div class="hire-preview__body">
@@ -846,7 +900,7 @@
 <footer class="site-footer">
   <div class="site-footer__grid">
     <div>
-      <p class="site-footer__tag"><img src="assets/photos/logo/chico-logo-white.png" alt="Café Chico" width="120" height="82" /></p>
+      <p class="site-footer__tag"><img src="assets/site-images/logo/chico-logo-light.png" alt="Café Chico" width="120" height="130" /></p>
       <p style="color:oklch(85% 0.012 80); font-size:14px; line-height:1.6;">
         A small, family-run café on St Helens Rd, Bolton. Honest food, made close to home.
       </p>

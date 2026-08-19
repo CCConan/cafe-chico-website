@@ -47,17 +47,19 @@
   });
 
   /* ----- Scroll-spy: highlight tab matching current section ----- */
-  const tabs = document.querySelectorAll('.nav-tabs a[href^="#"]');
+  // Match any tab whose href contains a #, including cross-page links like index.html#story
+  const tabs = document.querySelectorAll('.nav-tabs a[href*="#"]');
   if (tabs.length && 'IntersectionObserver' in window) {
     const sections = Array.from(tabs).map(t => {
-      const sel = t.getAttribute('href');
-      return { tab: t, target: document.querySelector(sel) };
-    }).filter(x => x.target);
+      const href = t.getAttribute('href') || '';
+      const m = href.match(/#([^?#]+)/);
+      if (!m) return null;
+      return { tab: t, hash: m[1], target: document.querySelector('#' + m[1]) };
+    }).filter(x => x && x.target);
 
     const setActive = (id) => {
-      tabs.forEach(t => {
-        const isActive = t.getAttribute('href') === '#' + id;
-        t.classList.toggle('active', isActive);
+      sections.forEach(s => {
+        s.tab.classList.toggle('active', s.hash === id);
       });
     };
 

@@ -363,6 +363,187 @@
   font-style: normal;
 }
 
+/* ---------- Neighbours (Bolton News + reviews) ---------- */
+.neighbours {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.neighbours__head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto var(--space-7);
+}
+.neighbours__head h2 {
+  max-width: 18ch;
+  margin: 0 auto var(--space-3);
+}
+.neighbours__lede {
+  color: var(--muted);
+  font-size: clamp(15px, 1.3vw, 17px);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 auto;
+}
+.neighbours__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-6);
+  align-items: stretch;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+@media (max-width: 880px) {
+  .neighbours__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+}
+
+/* Press card (Bolton News) */
+.neighbours__press {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+  border: 1px solid var(--border);
+}
+.neighbours__press-photo {
+  position: relative;
+  width: 100%;
+  background: oklch(35% 0.04 40);
+  overflow: hidden;
+}
+.neighbours__press-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1280 / 450;
+}
+.neighbours__press-cap {
+  padding: var(--space-5);
+  background: var(--bg);
+}
+.neighbours__press-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-pill);
+  padding: 4px 10px;
+  margin-bottom: var(--space-3);
+  font-weight: 600;
+}
+.neighbours__press-cap h3 {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 1.8vw, 24px);
+  line-height: 1.25;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--fg);
+  margin: 0 0 var(--space-3);
+  letter-spacing: -0.01em;
+}
+.neighbours__press-cap p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Quote card (Robertson North West) */
+.neighbours__quote {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--space-6) var(--space-5) var(--space-5);
+  background: var(--bg-dark);
+  color: oklch(95% 0.012 80);
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+}
+.neighbours__quote::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 80% at 100% 0%, oklch(48% 0.10 25 / 0.18) 0%, transparent 60%),
+    radial-gradient(60% 80% at 0% 100%, oklch(78% 0.08 75 / 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.neighbours__quote > * { position: relative; }
+.neighbours__quote-mark {
+  display: block;
+  margin-bottom: var(--space-4);
+  opacity: 0.85;
+}
+.neighbours__quote-body {
+  margin: 0 0 var(--space-5);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(17px, 1.4vw, 19px);
+  line-height: 1.55;
+  color: oklch(95% 0.012 80);
+}
+.neighbours__quote-body p { margin: 0 0 1em; }
+.neighbours__quote-body p:last-child { margin-bottom: 0; }
+.neighbours__quote-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-top: 1px solid oklch(95% 0.012 80 / 0.15);
+  padding-top: var(--space-4);
+  margin-top: auto;
+}
+.neighbours__quote-name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 500;
+  color: oklch(95% 0.012 80);
+}
+.neighbours__quote-org {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+}
+
+/* Bottom strip */
+.neighbours__more {
+  text-align: center;
+  margin-top: var(--space-7);
+  color: var(--muted);
+  font-size: 14px;
+}
+.neighbours__more-stars {
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  font-size: 16px;
+  margin: 0 4px;
+}
+.neighbours__more strong {
+  color: var(--fg);
+  font-weight: 600;
+}
+.neighbours__more a {
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+}
+.neighbours__more a:hover {
+  color: var(--fg);
+  border-bottom-color: var(--fg);
+}
+
 /* ---------- Values (3 columns) ---------- */
 .values {
   background: var(--bg);
