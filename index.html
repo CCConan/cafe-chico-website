@@ -116,55 +116,96 @@
   </div>
 </header>
 
-<!-- ================================================== HIGHLIGHTS (Home) -->
-<section id="highlights" class="highlights">
+<!-- ================================================== ALBUM (Home) — circular 3D ring -->
+<section id="highlights" class="album" aria-label="Featured dishes, 3D ring">
   <div class="container">
-    <div class="section-head" data-reveal>
+    <div class="section-head section-head--center" data-reveal>
       <svg class="squiggle" aria-hidden="true" style="color:var(--accent)"><use href="#i-squiggle"/></svg>
       <p class="kicker">What we're known for</p>
-      <h2>Three plates that bring people back.</h2>
-      <p class="lede">Fresh, generous, made from scratch every morning. If you only try three things, start here.</p>
+      <h2>The plates that bring people back.</h2>
+      <p class="lede">Drag the ring or let it spin. The plate in front updates the details on the right.</p>
     </div>
 
-    <div class="cards">
-      <article class="card" data-reveal data-reveal-delay="1">
-        <div class="card__photo">
-          <img src="assets/photos/candidates/07-pancakes-berries-fragaria.jpg"
-               alt="Stack of pancakes with whipped cream, strawberries, blueberries and raspberries" loading="lazy"/>
+    <div class="album__stage" data-reveal>
+      <div class="album__ring" id="album-ring" aria-label="Drag to rotate featured dishes">
+        <div class="album__item" data-index="0"
+             data-name="Full English Breakfast"
+             data-cat="Breakfast · The classic"
+             data-desc="Lamb macon rashers, halal sausages, baked beans, hash brown, free-range eggs — fried, scrambled or poached. The plate customers come back for."
+             data-price="8.95"
+             data-image="assets/photos/candidates/09-big-breakfast-platter-with-qrcode.jpg">
+          <img src="assets/photos/candidates/09-big-breakfast-platter-with-qrcode.jpg" alt="Full English Breakfast plate" loading="lazy"/>
+          <span class="album__caption">01 · Full English</span>
         </div>
-        <div class="card__body">
-          <p class="kicker">Brunch</p>
-          <h3>Pancakes</h3>
-          <p>Whipped cream, fresh fruit — Nutella, Lotus, lemon &amp; sugar, maple or Oreo.</p>
-          <p class="card__price">£5.95</p>
+        <div class="album__item" data-index="1"
+             data-name="American Special"
+             data-cat="Brunch · Sweet meets savoury"
+             data-desc="Three buttermilk pancakes, scrambled free-range eggs, crispy lamb macon rashers, real maple syrup. The brunch that built our reputation."
+             data-price="6.95"
+             data-image="assets/photos/candidates/05-american-special-pancakes-bacon.jpg">
+          <img src="assets/photos/candidates/05-american-special-pancakes-bacon.jpg" alt="American Special pancakes with bacon and eggs" loading="lazy"/>
+          <span class="album__caption">02 · American Special</span>
         </div>
-      </article>
+        <div class="album__item" data-index="2"
+             data-name="Pancakes"
+             data-cat="Brunch · Stack of three"
+             data-desc="Three buttermilk pancakes, whipped cream, fresh berries. Choose your topping: Nutella, Lotus, lemon &amp; sugar, maple or Oreo."
+             data-price="5.95"
+             data-image="assets/photos/candidates/07-pancakes-berries-fragaria.jpg">
+          <img src="assets/photos/candidates/07-pancakes-berries-fragaria.jpg" alt="Pancakes with whipped cream and fresh berries" loading="lazy"/>
+          <span class="album__caption">03 · Pancakes</span>
+        </div>
+        <div class="album__item" data-index="3"
+             data-name="Tomato Bruschetta"
+             data-cat="Brunch · Light bite"
+             data-desc="Toasted sourdough, fresh tomatoes, baby spinach, garlic, olive oil, balsamic glaze. Vegetarian and bright — pairs with our flat white."
+             data-price="4.95"
+             data-image="assets/photos/candidates/08-tomato-bruschetta-spinach.jpg">
+          <img src="assets/photos/candidates/08-tomato-bruschetta-spinach.jpg" alt="Tomato bruschetta on toasted sourdough with spinach" loading="lazy"/>
+          <span class="album__caption">04 · Bruschetta</span>
+        </div>
+        <div class="album__item" data-index="4"
+             data-name="Hot Chocolate"
+             data-cat="Signature drink · Slow-pour"
+             data-desc="Real Belgian chocolate, steamed milk, slow-pour. Topped with whipped cream, mini marshmallows and a chocolate drizzle. The one customers take photos of."
+             data-price="2.25"
+             data-image="assets/photos/candidates/06-hot-chocolate-marshmallow-tower.jpg">
+          <img src="assets/photos/candidates/06-hot-chocolate-marshmallow-tower.jpg" alt="Hot chocolate with whipped cream and marshmallow tower" loading="lazy"/>
+          <span class="album__caption">05 · Hot Chocolate</span>
+        </div>
+      </div>
 
-      <article class="card" data-reveal data-reveal-delay="2">
-        <div class="card__photo">
-          <img src="assets/photos/candidates/06-hot-chocolate-marshmallow-tower.jpg"
-               alt="Hot chocolate topped with whipped cream, mini marshmallows and chocolate drizzle" loading="lazy"/>
+      <aside class="album__info" aria-live="polite">
+        <p class="album__kicker" id="album-kicker">Breakfast · The classic</p>
+        <h3 class="album__title" id="album-title">Full English Breakfast</h3>
+        <p class="album__desc" id="album-desc">Lamb macon rashers, halal sausages, baked beans, hash brown, free-range eggs — fried, scrambled or poached. The plate customers come back for.</p>
+        <div class="album__price-row">
+          <span class="album__price" id="album-price">£8.95</span>
+          <a class="album__cta" href="menu.html">View full menu →</a>
         </div>
-        <div class="card__body">
-          <p class="kicker">Signature drink</p>
-          <h3>Hot Chocolate</h3>
-          <p>The one customers take photos of. Rich, slow-pour, with everything on top.</p>
-          <p class="card__price">£2.25</p>
+        <div class="album__dots" id="album-dots">
+          <span class="album__dot is-active" data-index="0"></span>
+          <span class="album__dot" data-index="1"></span>
+          <span class="album__dot" data-index="2"></span>
+          <span class="album__dot" data-index="3"></span>
+          <span class="album__dot" data-index="4"></span>
         </div>
-      </article>
+      </aside>
+    </div>
+  </div>
+</section>
 
-      <article class="card" data-reveal data-reveal-delay="3">
-        <div class="card__photo">
-          <img src="assets/photos/candidates/05-american-special-pancakes-bacon.jpg"
-               alt="American Special — pancakes with crispy bacon and scrambled eggs" loading="lazy"/>
+<!-- ================================================== 3D BRAND MARK -->
+<section class="brand-3d" aria-label="Café Chico mark">
+  <div class="container">
+    <div class="brand-3d__inner">
+      <div class="brand-3d__stage" id="brand-3d-stage" aria-label="Drag to rotate the café mark">
+        <div class="brand-3d__plate" id="brand-3d-plate">
+          <img src="assets/photos/logo/chico-logo-dark.png" alt="Café Chico mark" width="998" height="625" />
         </div>
-        <div class="card__body">
-          <p class="kicker">Hearty</p>
-          <h3>American Special</h3>
-          <p>Sweet and savoury on one plate. Pancakes, crispy bacon, scrambled eggs, maple syrup.</p>
-          <p class="card__price">£6.95</p>
-        </div>
-      </article>
+        <span class="brand-3d__hint">Drag to spin</span>
+      </div>
+      <p class="brand-3d__cap">The mark we built this place around.</p>
     </div>
   </div>
 </section>
@@ -949,6 +990,8 @@
 
 <script src="assets/js/shared.js"></script>
   <script src="assets/js/shared.js"></script>
+  <script src="assets/js/album.js"></script>
+  <script src="assets/js/brand-3d.js"></script>
   <script type="module" src="assets/js/social.js"></script>
 </body>
 </html>
