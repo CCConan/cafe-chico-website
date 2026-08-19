@@ -57,9 +57,9 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  max-width: 720px;          /* was 580 — larger container for 3D ring */
+  max-width: 800px;          /* was 720 — even larger container */
   margin: 0 auto;
-  perspective: 1100px;       /* was 1600 — less front-image magnification */
+  perspective: 1500px;       /* was 1100 — less front-image magnification */
   transform-style: preserve-3d;
   cursor: grab;
   touch-action: pan-y;
@@ -68,12 +68,14 @@
 .album__ring.is-dragging { cursor: grabbing; }
 .album__item {
   position: absolute;
-  inset: 18%;                /* was 8% — more padding so neighbours don't bleed into front */
+  inset: 30%;                /* was 18% — smaller image so neighbours don't bleed into front */
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--bg);
   box-shadow: 0 24px 64px oklch(20% 0.02 50 / 0.25), 0 4px 12px oklch(20% 0.02 50 / 0.12);
   transform-style: preserve-3d;
+  backface-visibility: hidden;   /* hide back-facing items to kill seams */
+  -webkit-backface-visibility: hidden;
   will-change: transform, filter;
   transition: filter 0.5s var(--ease-soft), opacity 0.5s var(--ease-soft);
 }
