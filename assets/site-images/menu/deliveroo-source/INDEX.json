@@ -1,0 +1,141 @@
+{
+  "source": "Deliveroo UK",
+  "source_url": "https://deliveroo.co.uk/menu/manchester/daubhill-and-lever-edge-lane/cafe-chico-bolton",
+  "fetched_at": "2026-08-20T22:56:00+01:00",
+  "fetched_by": "Cafe Chico (CCConan) site agent via in-app Browser",
+  "note": "Live Deliveroo menu as published by Cafe Chico - Bolton on 2026-08-20. This is the canonical 'source of truth' menu reference. Images for 7 dishes were extracted from Deliveroo's React SPA via ego-browser (background-image DOM scraping) and downloaded at 800x800 from the rs-menus-api.roocdn.com CDN. The remaining 57 items show a grey placeholder on Deliveroo itself (the restaurant has not yet uploaded a photo for them).",
+  "restaurant": {
+    "name": "Cafe Chico - Bolton",
+    "address": "185 St Helens Road, Bolton BL3 3PS",
+    "phone": "01204 934 467",
+    "email": "cafechico185@gmail.com"
+  },
+  "categories": [
+    {
+      "id": "breakfast",
+      "label": "Breakfast",
+      "items": [
+        { "name": "Full English Breakfast", "price_gbp": 13.50, "description": "Classic sausages, freshly cooked eggs, crispy hash browns, sautéed mushrooms, grilled tomatoes, baked beans, and warm toasted bread. A hearty breakfast favorite.", "image_status": "downloaded", "image_file": "full-english-breakfast.jpg" },
+        { "name": "Full Desi Breakfast", "price_gbp": 13.50, "description": "Lamb macon, spicy sausages, a freshly made desi omelette, crispy hash browns, mushrooms, tomatoes, spicy beans, and warm paratha. A filling, flavorful breakfast.", "image_status": "downloaded", "image_file": "full-desi-breakfast.jpg" },
+        { "name": "Egg and Cheese Muffin", "price_gbp": 5.50, "description": "Fluffy muffin filled with egg and melted cheese.", "image_status": "placeholder_only" },
+        { "name": "Half English Breakfast", "price_gbp": 9.50, "description": "Classic sausages, freshly cooked eggs, crispy hash browns, sautéed mushrooms, grilled tomatoes, baked beans, and warm toasted bread. A lighter take on a hearty breakfast favorite.", "image_status": "placeholder_only" },
+        { "name": "Half Desi Breakfast", "price_gbp": 9.50, "description": "Spicy sausages, desi cooked eggs, crispy hash browns, sautéed mushrooms, grilled tomatoes, baked beans, and warm paratha. A lighter take on a flavorful breakfast favorite.", "image_status": "downloaded", "image_file": "half-desi-breakfast.jpg" },
+        { "name": "Breakfast Muffin", "price_gbp": 6.50, "description": "A classic breakfast muffin stacked with a sizzling sausage, fried egg, cheese, crispy hashbrown in a warm english muffin. A perfect start to the day", "image_status": "placeholder_only" },
+        { "name": "Veggie Breakfast", "price_gbp": 13.50, "description": "Quorn sausages, freshly cooked eggs, crispy hash browns, sautéed mushrooms, grilled tomatoes, baked beans, and warm toast. A simple, satisfying meat-free breakfast.", "tags": ["vegetarian"], "image_status": "placeholder_only" },
+        { "name": "Breakfast Stacker", "price_gbp": 11.40, "description": "Golden waffles stacked with lamb macon, salami, crispy hash browns, fluffy eggs, baked beans, and melted cheese. A bold, hearty breakfast stacked high between two waffles.", "image_status": "placeholder_only" },
+        { "name": "Breakfast Bap", "price_gbp": 8.50, "description": "A hearty breakfast packed with crispy lamb macon, fried egg, golden hasbrown, mushroom, tomato, cheese served in a soft buttered bap. Simple and filling for a satisfying start to the day", "image_status": "placeholder_only" },
+        { "name": "Vegan Breakfast", "price_gbp": 13.50, "description": "Vegan breakfast option featuring a variety of plant-based ingredients.", "tags": ["vegan"], "image_status": "placeholder_only" },
+        { "name": "Breakfast Burger", "price_gbp": 8.50, "description": "Juicy patty, egg, lamb macon, hashbrown, mushroom, tomato, cheese served in a toasted brioche bun", "image_status": "placeholder_only" }
+      ]
+    },
+    {
+      "id": "brunch",
+      "label": "Brunch",
+      "items": [
+        { "name": "Sourdough Toast", "price_gbp": 9.95, "description": "A perfect slice of Sourdough toast topped with Avacado and Poached eggs with a choice of Smoked salmon, Lamb macon, Sauteed spinach, Mushroom or Tomato", "image_status": "placeholder_only" },
+        { "name": "French Toast", "price_gbp": 8.45, "description": "Thick slices of bread dipped in egg and served golden brown with fresh fruit and a choice of whipped cream with the choice of nutella, white chocolate, lotus, maple syrup, oreo, lemon and sugar", "image_status": "downloaded", "image_file": "french-toast.jpg" },
+        { "name": "Granola Pot", "price_gbp": 5.25, "description": "Greek yogurt topped with granola, fresh fruit and honey.", "image_status": "placeholder_only" },
+        { "name": "Grilled Halloumi House Salad", "price_gbp": 8.75, "description": "A healthy mixture of Halloumi, bistro salad, sweetcorn, olives, jalapenos, tomatoes, cucumber, red onions, croutons and a drizzle of vinaigrette", "image_status": "placeholder_only" },
+        { "name": "Toasties", "price_gbp": 6.95, "description": "Choose 2 from chicken, cheese, tuna, tomato, chilli. served with coleslaw", "image_status": "downloaded", "image_file": "toasties.jpg" },
+        { "name": "Crepe", "price_gbp": 8.45, "description": "Fresh pancakes served with fresh fruit and whipped cream with the choice of nutella, white chocolate, lotus, maple syrup, lemon and sugar, oreo", "image_status": "downloaded", "image_file": "crepe.jpg" },
+        { "name": "Stir Fry Noodles", "price_gbp": 9.95, "description": "Homemade spicy chicken noodles with stir fry vegetables, best served hot", "image_status": "placeholder_only" },
+        { "name": "Eggs Benedict", "price_gbp": 9.95, "description": "Poached eggs served with either smoked salmon, lamb macon, sauteed spinach, mushroom or tomato", "image_status": "placeholder_only" },
+        { "name": "American Special", "price_gbp": 9.95, "description": "A stack of pancakes, layered with scrambled eggs, topped off with lamb macon and a side of maple syrup", "image_status": "placeholder_only" },
+        { "name": "Omlette with Three Toppings", "price_gbp": 7.95, "description": "Choose 3 from cheese, tomato, lamb macon, mushroom, chilli. Served with toast or paratha", "image_status": "placeholder_only" },
+        { "name": "Scrambled Egg with Croissant", "price_gbp": 5.45, "description": "Scrambled egg served inside a warm buttered croissant", "image_status": "placeholder_only" },
+        { "name": "Megadough Toast", "price_gbp": 13.50, "description": "Includes a Sourdough toast with Avacado, Poached eggs, Smoked salmon, Lamb macon, Sauteed spinach, Mushrooms and Tomatoes.", "image_status": "placeholder_only" }
+      ]
+    },
+    {
+      "id": "signature-subs",
+      "label": "Signature Subs",
+      "items": [
+        { "name": "Signature Sub", "price_gbp": 6.75, "description": "Delicious sub with the option of chicken, steak, tuna and cheese.", "image_status": "downloaded", "image_file": "signature-sub.jpg" },
+        { "name": "Sub Meal Deal", "price_gbp": 9.95, "description": "Our signature subs with a side of crips and a drink", "image_status": "placeholder_only" }
+      ]
+    },
+    {
+      "id": "kids",
+      "label": "Kids",
+      "items": [
+        { "name": "Kids Spud Meal", "price_gbp": 8.40, "description": "Half Jacket Potato with 2 fillings Fruit Pot Fruit Juice", "image_status": "placeholder_only" },
+        { "name": "Kids Breakfast Meal", "price_gbp": 8.40, "description": "Choose 4 Breakfast Items. Fruit Pot Fruit Juice", "image_status": "placeholder_only" },
+        { "name": "Kids Pasta Meal", "price_gbp": 8.40, "description": "Choose between Creamy or Tomato Pasta both with sprinkled cheese Fruit Pot Fruit Juice", "image_status": "placeholder_only" },
+        { "name": "Kids Cheesy Omlette Meal", "price_gbp": 8.40, "description": "Fluffy omelette filled with melted cheese, perfect for kids.", "image_status": "placeholder_only" }
+      ]
+    },
+    {
+      "id": "desserts",
+      "label": "Desserts",
+      "items": [
+        { "name": "Homemade Brownies", "price_gbp": 3.50, "description": "Rich, fudgy squares of chocolatey goodness.", "image_status": "placeholder_only" },
+        { "name": "Aussie Crunch", "price_gbp": 3.00, "description": "Crunchy dessert with a sweet Australian twist.", "image_status": "placeholder_only" },
+        { "name": "Flapjack", "price_gbp": 3.00, "description": "Sweet and chewy oat bars.", "image_status": "placeholder_only" }
+      ]
+    },
+    {
+      "id": "drinks",
+      "label": "Drinks",
+      "items": [
+        { "name": "Iced Spanish Caramel Latte", "price_gbp": 5.50, "description": "Coffee blended with caramel syrup, milk and ice. Topped with whipped cream and caramel sauce.", "image_status": "placeholder_only" },
+        { "name": "Fresh Orange Juice", "price_gbp": 3.25, "description": "Freshly squeezed juice from oranges. 350ml cup", "image_status": "placeholder_only" },
+        { "name": "Chico Chai", "price_gbp": 3.50, "description": "Homemade chai with spices, sugar and milk", "image_status": "placeholder_only" },
+        { "name": "Kinder Bueno Milkshake", "price_gbp": 6.45, "description": "Rich flavour of kinder bueno blended with vanilla ice cream and milk. Perfect sweet treat", "image_status": "placeholder_only" },
+        { "name": "Americano", "price_gbp": 3.50, "description": "A shot of espresso slowly infused with hit water to create a long black coffee", "image_status": "placeholder_only" },
+        { "name": "Cappuccino", "price_gbp": 3.50, "description": "A luxurious mix of espresso steamed milk and velvety froth", "image_status": "placeholder_only" },
+        { "name": "Irn Bru", "price_gbp": 1.50, "description": "330ml can", "image_status": "placeholder_only" },
+        { "name": "Rio", "price_gbp": 1.50, "description": "330ml can", "image_status": "placeholder_only" },
+        { "name": "Vimto", "price_gbp": 1.50, "description": "330ml can", "image_status": "placeholder_only" },
+        { "name": "Rubicon Lychee", "price_gbp": 1.80, "description": "330ml can", "image_status": "placeholder_only" },
+        { "name": "Rubicon Passion", "price_gbp": 1.80, "description": "330ml can", "image_status": "placeholder_only" },
+        { "name": "Rubicon Guava", "price_gbp": 1.80, "description": "330ml can", "image_status": "placeholder_only" },
+        { "name": "Rubicon Mango", "price_gbp": 1.80, "description": "330ml can", "image_status": "placeholder_only" },
+        { "name": "Chico Coffee", "price_gbp": 3.50, "description": "Homemade coffee with spices, sugar and milk", "image_status": "placeholder_only" },
+        { "name": "Espresso", "price_gbp": 3.50, "description": "A short invigorating shot of coffee with intense flavour", "image_status": "placeholder_only" },
+        { "name": "Cafe Latte", "price_gbp": 3.50, "description": "A delicious combination of espresso and steamed milk, crowned with a layer of milk forth", "image_status": "placeholder_only" },
+        { "name": "Hot Chocolate", "price_gbp": 3.50, "description": "A delightfully indulgent combination of chocolate and steamed milk, topped with milk froth", "image_status": "placeholder_only" },
+        { "name": "Mocha", "price_gbp": 3.50, "description": "Rich and smooth coffee drink with a chocolatey twist.", "image_status": "placeholder_only" },
+        { "name": "Macchiato", "price_gbp": 3.50, "description": "Rich and intense espresso shot topped with a dollop of frothed milk.", "image_status": "placeholder_only" },
+        { "name": "English Tea", "price_gbp": 3.50, "description": "A cup of freshly brewed tea served with milk", "image_status": "placeholder_only" },
+        { "name": "Mango Smootie", "price_gbp": 5.50, "description": "Fresh mango blended to a smooth and refreshing drink.", "image_status": "placeholder_only" },
+        { "name": "Mix Berry Smoothie", "price_gbp": 5.50, "description": "Blend of mixed berries in a refreshing smoothie.", "image_status": "placeholder_only" },
+        { "name": "Strawberry and Banana Smoothie", "price_gbp": 5.50, "description": "A refreshing blend of strawberries and bananas", "image_status": "placeholder_only" },
+        { "name": "Fererro Milkshake", "price_gbp": 6.45, "description": "A luxury flavour of ferrero rocher and a rich texture.", "image_status": "placeholder_only" },
+        { "name": "Lotus Milkshake", "price_gbp": 6.45, "description": "A rich blend of lotus and vanilla ice cream", "image_status": "placeholder_only" },
+        { "name": "Pistachio Milkshake", "price_gbp": 6.45, "description": "A rich flavour of psitachio with a creamy texture", "image_status": "placeholder_only" },
+        { "name": "Vive Cola", "price_gbp": 1.50, "description": "330ml can", "image_status": "placeholder_only" },
+        { "name": "Vive Diet Cola", "price_gbp": 1.50, "description": "330ml can", "image_status": "placeholder_only" },
+        { "name": "ZX Cola", "price_gbp": 1.50, "description": "330ml can", "image_status": "placeholder_only" },
+        { "name": "Barr Lemonade", "price_gbp": 1.50, "description": "330ml can", "image_status": "placeholder_only" },
+        { "name": "Vive Tropical Blast", "price_gbp": 1.50, "description": "330ml can", "image_status": "placeholder_only" },
+        { "name": "Vive Twisted Fruit", "price_gbp": 1.50, "description": "330ml can", "image_status": "placeholder_only" },
+        { "name": "Vive Orange", "price_gbp": 1.50, "description": "330ml can", "image_status": "placeholder_only" },
+        { "name": "Mango Juice Carton", "price_gbp": 1.00, "description": "200ml carton", "image_status": "placeholder_only" },
+        { "name": "Mixed Berry Carton", "price_gbp": 1.00, "description": "200ml carton", "image_status": "placeholder_only" },
+        { "name": "Orange Juice Carton", "price_gbp": 1.00, "description": "200ml carton", "image_status": "placeholder_only" },
+        { "name": "Apple Juice Carton", "price_gbp": 1.00, "description": "200ml carton", "image_status": "placeholder_only" },
+        { "name": "Ribena Carton", "price_gbp": 1.25, "description": "250ml carton", "image_status": "placeholder_only" },
+        { "name": "Apple and Blackcurrant Fruit Blast", "price_gbp": 1.50, "description": "200ml bottle", "image_status": "placeholder_only" },
+        { "name": "Orange Fruit Blast", "price_gbp": 1.50, "description": "200ml bottle", "image_status": "placeholder_only" },
+        { "name": "Apple Fruit Blast", "price_gbp": 1.50, "description": "200ml bottle", "image_status": "placeholder_only" },
+        { "name": "Fresh Apple Juice", "price_gbp": 3.25, "description": "350ml cup", "image_status": "placeholder_only" },
+        { "name": "Fresh Apple Mango Juice", "price_gbp": 3.25, "description": "350ml cup", "image_status": "placeholder_only" },
+        { "name": "Water", "price_gbp": 1.25, "description": "500ml bottle", "image_status": "placeholder_only" }
+      ]
+    }
+  ],
+  "popular_with_other_people": [
+    "Signature Sub",
+    "French Toast",
+    "Full English Breakfast",
+    "Full Desi Breakfast",
+    "Toasties",
+    "Crepe",
+    "Half Desi Breakfast"
+  ],
+  "totals": {
+    "categories": 6,
+    "items": 64,
+    "items_with_image_downloaded": 7
+  }
+}
