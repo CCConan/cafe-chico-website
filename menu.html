@@ -161,61 +161,7 @@
   </div>
 </section>
 
-<!-- ============================================================ FEATURED — 3 ANIMATION THEMES (moved from platters.html) -->
-<section class="cat-featured" aria-label="Dishes in motion">
-  <div class="container">
-    <p class="kicker">More from the kitchen</p>
-    <h2 class="cat-featured__title">Three dishes,<br/><em>in motion.</em></h2>
-
-    <div class="cat-featured__grid">
-
-      <!-- ① Cinematic Ken Burns — auto slow zoom, hover to feel it -->
-      <div class="cat-feat cat-feat--cinema" data-reveal>
-        <div class="cat-feat__frame">
-          <img src="assets/photos/social/instagram/Cz55eWnoYzW_1.jpg"
-               alt="Eggs Benedict — perfectly poached, golden hollandaise"
-               loading="lazy" />
-          <div class="cat-feat__overlay">
-            <span class="cat-feat__label">Cinematic</span>
-            <p class="cat-feat__caption">Hover to watch</p>
-          </div>
-        </div>
-        <p class="cat-feat__sub">Eggs Benedict · Made fresh</p>
-      </div>
-
-      <!-- ② Parallax — vertical drift on scroll -->
-      <div class="cat-feat cat-feat--parallax" data-reveal data-reveal-delay="1">
-        <div class="cat-feat__frame">
-          <div class="cat-feat__parallax-wrap">
-            <img src="assets/photos/social/instagram/C19PrgqIGo5_1.jpg"
-                 alt="Loaded baked potato — salad toppings, cheese, warm potato"
-                 loading="lazy" />
-          </div>
-          <div class="cat-feat__overlay">
-            <span class="cat-feat__label">Parallax</span>
-            <p class="cat-feat__caption">Scroll to drift</p>
-          </div>
-        </div>
-        <p class="cat-feat__sub">Loaded Baked Potato · Our spuds hero</p>
-      </div>
-
-      <!-- ③ Curtain Reveal — clip-path wipe from bottom -->
-      <div class="cat-feat cat-feat--curtain" data-reveal data-reveal-delay="2">
-        <div class="cat-feat__frame">
-          <img src="assets/photos/social/instagram/CztEpOyIAEE_1.jpg"
-               alt="Full breakfast spread — sausages, sweet potato, fresh coffee"
-               loading="lazy" />
-          <div class="cat-feat__overlay">
-            <span class="cat-feat__label">Reveal</span>
-            <p class="cat-feat__caption">Scroll to unveil</p>
-          </div>
-        </div>
-        <p class="cat-feat__sub">Full Breakfast · The Chico classic</p>
-      </div>
-
-    </div>
-  </div>
-</section>
+<!-- (3-dish "in motion" section removed per user request 2026-08-22) -->
 
 <!-- ====================================================== MENU GRID -->
 <main>
@@ -412,22 +358,7 @@
     }
   })();
 
-  // Parallax for the 3-dish 'in motion' section (moved here from platters page)
-  (function () {
-    const parallaxItems = document.querySelectorAll('.cat-feat--parallax .cat-feat__parallax-wrap');
-    if (!parallaxItems.length) return;
-    function updateParallax() {
-      parallaxItems.forEach(wrap => {
-        const rect = wrap.closest('.cat-feat__frame').getBoundingClientRect();
-        const viewH = window.innerHeight;
-        const progress = (viewH - rect.top) / (viewH + rect.height);
-        const offset = (progress - 0.5) * 60;
-        wrap.style.transform = `translateY(${offset}px)`;
-      });
-    }
-    window.addEventListener('scroll', updateParallax, { passive: true });
-    updateParallax();
-  })();
+  // (Parallax for the 3-dish 'in motion' section removed 2026-08-22 with the section)
 </script>
 </body>
 </html>
