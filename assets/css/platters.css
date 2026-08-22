@@ -922,6 +922,19 @@
   padding: clamp(80px, 10vw, 140px) 0;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
+}
+.album::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.30);
+  pointer-events: none;
+  z-index: 0;
+}
+.album > * {
+  position: relative;
+  z-index: 1;
 }
 .album .section-head--center {
   text-align: center;
