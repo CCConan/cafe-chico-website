@@ -548,12 +548,39 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  transition: transform 200ms var(--ease-soft), box-shadow 200ms var(--ease-soft), border-color 200ms;
+  opacity: 0;
+  transform: translateY(28px) scale(0.96);
+  transition:
+    opacity 600ms var(--ease-soft),
+    transform 600ms var(--ease-soft),
+    box-shadow 260ms var(--ease-soft),
+    border-color 260ms var(--ease-soft);
+}
+.review.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 .review:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-2);
+  transform: translateY(-8px) scale(1.018);
+  box-shadow: 0 18px 38px -16px rgba(40, 24, 12, 0.32), 0 4px 10px -4px rgba(40, 24, 12, 0.18);
   border-color: var(--accent);
+  transition-delay: 0ms;  /* hover must respond instantly, not wait for stagger */
+}
+/* Stagger entrance so cards don't all snap in at once. Hover delay overridden above. */
+.reviews__grid .review:nth-child(1)  { transition-delay: 0ms,   0ms,   0ms,   0ms; }
+.reviews__grid .review:nth-child(2)  { transition-delay: 60ms,  60ms,  0ms,   0ms; }
+.reviews__grid .review:nth-child(3)  { transition-delay: 120ms, 120ms, 0ms,   0ms; }
+.reviews__grid .review:nth-child(4)  { transition-delay: 180ms, 180ms, 0ms,   0ms; }
+.reviews__grid .review:nth-child(5)  { transition-delay: 240ms, 240ms, 0ms,   0ms; }
+.reviews__grid .review:nth-child(6)  { transition-delay: 300ms, 300ms, 0ms,   0ms; }
+.reviews__grid .review:nth-child(7)  { transition-delay: 360ms, 360ms, 0ms,   0ms; }
+.reviews__grid .review:nth-child(8)  { transition-delay: 420ms, 420ms, 0ms,   0ms; }
+.reviews__grid .review:nth-child(9)  { transition-delay: 480ms, 480ms, 0ms,   0ms; }
+.reviews__grid .review:nth-child(10) { transition-delay: 540ms, 540ms, 0ms,   0ms; }
+@media (prefers-reduced-motion: reduce) {
+  .review { opacity: 1; transform: none; transition: box-shadow 200ms, border-color 200ms; }
+  .review:hover { transform: none; }
+  .reviews__grid .review { transition-delay: 0ms; }
 }
 .review__head {
   display: flex;
@@ -580,7 +607,6 @@
 }
 .review__src--google     { background: oklch(96% 0.04 250); color: oklch(28% 0.10 250); }
 .review__src--tripadvisor{ background: oklch(96% 0.07 145); color: oklch(28% 0.10 145); }
-.review__src--facebook   { background: oklch(95% 0.05 250); color: oklch(28% 0.12 250); }
 .review__src--google .review__src-logo { color: inherit; }
 .review__stars {
   color: oklch(78% 0.16 70);
@@ -614,34 +640,6 @@
   letter-spacing: 0.06em;
   color: var(--muted);
   text-transform: uppercase;
-}
-.review__cta {
-  align-self: flex-start;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 6px;
-  padding: 8px 14px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  background: var(--bg);
-  text-decoration: none;
-  transition: background 180ms, color 180ms, border-color 180ms;
-}
-.review__cta svg {
-  width: 12px;
-  height: 12px;
-  flex-shrink: 0;
-}
-.review__cta:hover {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
 }
 .reviews__more {
   text-align: center;

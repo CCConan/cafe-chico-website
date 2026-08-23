@@ -56,7 +56,7 @@ body {
 /* ============================================================
    TILE BACKGROUND (café chic — wood columns + brick + ivy)
    Apply to <body> for full-page tileable scrolling background.
-   Mobile: 1K JPEG. Desktop: 4K JPEG for retina/4K sharpness.
+   Mobile: 1K JPEG. Desktop: 2K JPEG (down from 4K) to keep page weight low.
    ============================================================ */
 .bg-tile-page {
   background-image: url('../site-images/tile-dir-2/bg-fresh2-B-1K-mobile.jpg');
@@ -74,7 +74,7 @@ body {
 }
 @media (min-width: 769px) {
   .bg-tile-page {
-    background-image: url('../site-images/tile-dir-2/bg-fresh2-B-4K-desktop.jpg');
+    background-image: url('../site-images/tile-dir-2/bg-fresh2-B-2K-desktop.jpg');
   }
 }
 
