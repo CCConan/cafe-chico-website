@@ -206,12 +206,18 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;                /* vertical stack per user */
-  flex-direction: column;
-  gap: clamp(28px, 3vw, 40px);
-  max-width: 600px;             /* caps image width → 600×600 (was 200×200, ×3 per user) */
+  display: grid;                /* 3-up grid (left/centre/right) per user — 5 items, 3 cols */
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 2.4vw, 32px);
+  max-width: 900px;             /* 3 × ~280px + 2 × 30px gaps — caps each image around 280px */
   margin-left: auto;
   margin-right: auto;
+}
+@media (max-width: 720px) {
+  .bike-flavours__list { grid-template-columns: repeat(2, 1fr); max-width: 480px; }
+}
+@media (max-width: 420px) {
+  .bike-flavours__list { grid-template-columns: 1fr; max-width: 320px; }
 }
 .bike-flavours__list li {
   display: flex;
@@ -261,7 +267,7 @@
   transform: scale(1.04);
   box-shadow: var(--shadow-2);
 }
-/* User requested vertical stack on all viewports — no breakpoint grid override */
+/* 3-up grid on desktop, 2-up on tablet, 1-up on phone (handled above) */
 .bike-flavours__swaps {
   margin-top: 32px;
   font-size: 14px;

@@ -919,7 +919,7 @@
 /* ---------- 3D Album (5-dish ring carousel) ---------- */
 .album {
   background: transparent;        /* user wants the section (incl. right text) to inherit page bg */
-  padding: clamp(80px, 10vw, 140px) 0;
+  padding: clamp(48px, 6vw, 80px) 0;   /* reduced from clamp(80px,10vw,140px) — user: section too tall */
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -938,8 +938,9 @@
 }
 .album .section-head--center {
   text-align: center;
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-3);    /* tightened from var(--space-4) so heading sits closer to ring */
 }
+.album .section-head--center .lede { margin-top: var(--space-2); }    /* tighten lede gap */
 .album .section-head--center h2 {
   font-size: clamp(24px, 2.8vw, 40px);
   white-space: nowrap;
