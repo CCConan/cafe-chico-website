@@ -617,8 +617,8 @@
   padding: 14px 24px;
 }
 .cat-enquire__form .btn:hover {
-  background: oklch(42% 0.10 25);
-  box-shadow: 0 6px 20px oklch(48% 0.10 25 / 0.3);
+  background: oklch(42% 0.10 55);
+  box-shadow: 0 6px 20px oklch(48% 0.10 60 / 0.3);
   transform: translateY(-1px);
 }
 

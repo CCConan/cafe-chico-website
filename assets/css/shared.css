@@ -12,8 +12,8 @@
   --fg:        oklch(94% 0.02 80);     /* warm cream — primary text (was deep brown) */
   --muted:     oklch(72% 0.025 80);    /* muted cream — secondary text */
   --border:    oklch(36% 0.04 145);    /* subtle green border (visible on dark bg) */
-  --accent:    oklch(48% 0.10 25);     /* burnt sienna — vintage brick red (brand, keep) */
-  --accent-soft: oklch(85% 0.06 35);   /* keep */
+  --accent:    oklch(80% 0.10 60);     /* apricot — warm peach per user 25 Aug 2026 */
+  --accent-soft: oklch(92% 0.04 70);   /* very light apricot background tint */
   --green:     oklch(60% 0.10 145);    /* brighter green for highlights (was 42%) */
   --gold:      oklch(78% 0.08 75);     /* keep */
 
@@ -171,9 +171,9 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
 }
 .nav-tabs a:hover { color: #fff; font-weight: 600; }
 .nav-tabs a.active { color: #fff; font-weight: 700; }
-.site-nav.is-scrolled .nav-tabs a { color: var(--muted); }
-.site-nav.is-scrolled .nav-tabs a:hover { color: var(--fg); }
-.site-nav.is-scrolled .nav-tabs a.active { color: var(--fg); }
+.site-nav.is-scrolled .nav-tabs a { color: rgba(255, 255, 255, 0.95); }   /* scrolled: white text on page content showing through 50% nav */
+.site-nav.is-scrolled .nav-tabs a:hover { color: #fff; }
+.site-nav.is-scrolled .nav-tabs a.active { color: oklch(28% 0.06 50); }       /* scrolled active: deep brown (user 25 Aug 2026) */
 .nav-tabs a.active::after {
   content: "";
   position: absolute;
@@ -336,7 +336,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
 .btn:hover { transform: translateY(-1px); }
 .btn:active { transform: translateY(0); }
 .btn--primary { background: var(--accent); color: white; }
-.btn--primary:hover { background: oklch(42% 0.10 25); box-shadow: 0 8px 20px oklch(48% 0.10 25 / 0.25); }
+.btn--primary:hover { background: oklch(42% 0.10 55); box-shadow: 0 8px 20px oklch(48% 0.10 60 / 0.25); }
 .btn--ghost {
   background: transparent;
   color: white;
