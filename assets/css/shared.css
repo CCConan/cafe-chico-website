@@ -78,6 +78,22 @@ body {
   }
 }
 
+/* ============================================================
+   PAGE-WIDE DARK OVERLAY LAYER
+   Sits above the tile background but below all content.
+   To change the page mood: edit `background` and/or `opacity`
+   on .bg-tile-page::before in one place.
+   Toggle off: comment out the block, or set background: none.
+   ============================================================ */
+.bg-tile-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.30);   /* 30% black overlay — user 25 Aug 2026 */
+  pointer-events: none;
+  z-index: 0;                        /* below main content (which is z-index 1+) */
+}
+
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; cursor: pointer; border: 0; background: none; padding: 0; }
