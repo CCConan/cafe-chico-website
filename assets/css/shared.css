@@ -116,14 +116,14 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(20, 14, 10, 0.80);
+  background: rgba(20, 14, 10, 0.50);   /* 0.80 → 0.50 per user: more see-through */
   backdrop-filter: saturate(160%) blur(14px);
   -webkit-backdrop-filter: saturate(160%) blur(14px);
   border-bottom: 1px solid transparent;
   transition: border-color 200ms var(--ease-soft), background 200ms var(--ease-soft);
 }
 .site-nav.is-scrolled {
-  background: oklch(97% 0.012 80 / 0.94);
+  background: oklch(97% 0.012 80 / 0.50);  /* 0.94 → 0.50 — keep consistent with top state */
   border-bottom-color: var(--border);
 }
 .site-nav__inner {
@@ -200,7 +200,9 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   .nav-tabs {
     position: absolute;
     inset: 100% 0 auto 0;
-    background: var(--bg);
+    background: rgba(20, 14, 10, 0.50);   /* mobile dropdown: 50% dark transparent per user */
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
     border-bottom: 1px solid var(--border);
     flex-direction: column;
     padding: var(--space-4);
@@ -215,6 +217,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
     opacity: 1;
     pointer-events: auto;
   }
+  .site-nav.is-open .nav-tabs a { color: #fff; }   /* ensure white text on dark translucent dropdown */
   .nav-toggle { display: flex; }
 }
 
