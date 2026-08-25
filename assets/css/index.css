@@ -32,7 +32,7 @@
 /* ---------- Album (3D circular ring of featured dishes) ---------- */
 /* ---------- 6 popular dishes grid (replaces album) ---------- */
 .popular {
-  background: linear-gradient(180deg, var(--bg) 0%, oklch(94% 0.012 80) 100%);
+  background: linear-gradient(180deg, var(--bg) 0%, oklch(22% 0.04 50) 100%);   /* deep green → deep brown (user 25 Aug 2026) */
   padding: clamp(80px, 10vw, 140px) 0;
   position: relative;
   overflow: hidden;
@@ -124,6 +124,19 @@
   object-fit: cover;
   object-position: center 35%;
   filter: brightness(0.62) saturate(0.95);
+}
+/* Ornate gold frame overlay — sits above photo, transparent inside, user 25 Aug 2026 */
+.story__frame {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 2;
 }
 .story__hero-text {
   position: absolute;
