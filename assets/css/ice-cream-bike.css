@@ -156,8 +156,8 @@
   color: #fdf6ed;
   padding: 32px 0;
   overflow: hidden;
-  border-top: 1px solid oklch(35% 0.025 50);
-  border-bottom: 1px solid oklch(35% 0.025 50);
+  border-top: 1px solid oklch(35% 0.025 145);
+  border-bottom: 1px solid oklch(35% 0.025 145);
 }
 .bike-marquee__track {
   display: flex;
@@ -299,22 +299,22 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
-  border-top: 1px solid oklch(35% 0.025 50);
-  border-bottom: 1px solid oklch(35% 0.025 50);
+  border-top: 1px solid oklch(35% 0.025 145);
+  border-bottom: 1px solid oklch(35% 0.025 145);
 }
 @media (max-width: 720px) {
   .bike-specs__grid { grid-template-columns: 1fr; }
 }
 .bike-spec {
   padding: 48px 32px;
-  border-right: 1px solid oklch(35% 0.025 50);
+  border-right: 1px solid oklch(35% 0.025 145);
   position: relative;
   transition: background 0.3s;
 }
 .bike-spec:last-child { border-right: none; }
-.bike-spec:hover { background: oklch(25% 0.025 50); }
+.bike-spec:hover { background: oklch(25% 0.025 145); }
 @media (max-width: 720px) {
-  .bike-spec { border-right: none; border-bottom: 1px solid oklch(35% 0.025 50); }
+  .bike-spec { border-right: none; border-bottom: 1px solid oklch(35% 0.025 145); }
   .bike-spec:last-child { border-bottom: none; }
 }
 .bike-spec__label {
@@ -553,7 +553,7 @@
   font-size: 14px;
   font-weight: 500;
   color: var(--bg);
-  background: oklch(28% 0.025 50);
+  background: oklch(28% 0.025 145);
 }
 .bike-toppings__note {
   font-size: 13px;

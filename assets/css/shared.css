@@ -5,17 +5,17 @@
    ========================================================================== */
 
 :root {
-  /* === Color === */
-  --bg:        oklch(97% 0.012 80);
-  --surface:   oklch(99% 0.008 80);
-  --bg-dark:   oklch(20% 0.025 50);
-  --fg:        oklch(22% 0.025 50);
-  --muted:     oklch(48% 0.025 60);
-  --border:    oklch(85% 0.020 80);
-  --accent:    oklch(48% 0.10 25);     /* burnt sienna — vintage brick red */
-  --accent-soft: oklch(85% 0.06 35);
-  --green:     oklch(42% 0.08 145);
-  --gold:      oklch(78% 0.08 75);
+  /* === Color (deep forest green theme — 25 Aug 2026) === */
+  --bg:        oklch(24% 0.04 145);    /* deep forest green — page background */
+  --surface:   oklch(29% 0.04 145);    /* slightly lighter green — cards / surfaces */
+  --bg-dark:   oklch(16% 0.03 145);    /* deeper green — dark sections / footer */
+  --fg:        oklch(94% 0.02 80);     /* warm cream — primary text (was deep brown) */
+  --muted:     oklch(72% 0.025 80);    /* muted cream — secondary text */
+  --border:    oklch(36% 0.04 145);    /* subtle green border (visible on dark bg) */
+  --accent:    oklch(48% 0.10 25);     /* burnt sienna — vintage brick red (brand, keep) */
+  --accent-soft: oklch(85% 0.06 35);   /* keep */
+  --green:     oklch(60% 0.10 145);    /* brighter green for highlights (was 42%) */
+  --gold:      oklch(78% 0.08 75);     /* keep */
 
   /* === Typography === */
   --font-display: "Iowan Old Style", "Charter", "Palatino Linotype", "Georgia", "Times New Roman", serif;
@@ -247,8 +247,8 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
 .hero__scrim {
   position: absolute; inset: 0; z-index: 1;
   background:
-    linear-gradient(180deg, oklch(20% 0.025 50 / 0.10) 0%, oklch(20% 0.025 50 / 0.45) 70%, oklch(20% 0.025 50 / 0.85) 100%),
-    linear-gradient(90deg,  oklch(20% 0.025 50 / 0.30) 0%, transparent 50%);
+    linear-gradient(180deg, oklch(20% 0.04 145 / 0.10) 0%, oklch(20% 0.04 145 / 0.45) 70%, oklch(20% 0.04 145 / 0.85) 100%),
+    linear-gradient(90deg,  oklch(20% 0.04 145 / 0.30) 0%, transparent 50%);
 }
 .hero__inner {
   position: relative;
@@ -347,7 +347,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   background: var(--fg);
   color: var(--bg);
 }
-.btn--ink:hover { background: oklch(30% 0.025 50); box-shadow: 0 8px 20px oklch(22% 0.025 50 / 0.2); }
+.btn--ink:hover { background: oklch(30% 0.05 145); box-shadow: 0 8px 20px oklch(20% 0.04 145 / 0.4); }
 
 /* ---------- Section heading ---------- */
 .section-head {
@@ -456,7 +456,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
 .split__copy { padding: var(--space-3) 0; }
 .split__copy h2 { margin-bottom: var(--space-4); }
 .split__copy p {
-  color: oklch(22% 0.025 50 / 0.85);
+  color: oklch(94% 0.02 80 / 0.85);
   font-size: clamp(15px, 1.2vw, 17px);
   line-height: 1.7;
   margin-bottom: var(--space-3);
@@ -539,7 +539,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   border: 1px solid var(--border);
   font-size: 12px;
   color: var(--muted);
-  background: oklch(99% 0.008 80 / 0.5);
+  background: oklch(99% 0.008 80 / 0.08);
 }
 .chip__dot {
   width: 6px; height: 6px;

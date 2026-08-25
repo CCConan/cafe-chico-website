@@ -63,12 +63,12 @@
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--bg);
-  box-shadow: 0 16px 40px oklch(20% 0.02 50 / 0.18), 0 4px 8px oklch(20% 0.02 50 / 0.10);
+  box-shadow: 0 16px 40px oklch(20% 0.02 145 / 0.18), 0 4px 8px oklch(20% 0.02 145 / 0.10);
   transition: transform 280ms var(--ease-soft), box-shadow 280ms var(--ease-soft);
 }
 .popular__card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 24px 56px oklch(20% 0.02 50 / 0.28), 0 6px 12px oklch(20% 0.02 50 / 0.14);
+  box-shadow: 0 24px 56px oklch(20% 0.02 145 / 0.28), 0 6px 12px oklch(20% 0.02 145 / 0.14);
 }
 .popular__photo {
   position: relative;
@@ -154,7 +154,7 @@
   font-weight: 400;
   margin: 0;
   color: #fdf6ed;
-  text-shadow: 0 2px 6px oklch(20% 0.04 50 / 0.6);
+  text-shadow: 0 2px 6px oklch(20% 0.04 145 / 0.6);
   max-width: 880px;
 }
 .story__hero-text h2 em {
@@ -231,7 +231,7 @@
 .story__seg-photo {
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 16px 48px oklch(20% 0.02 50 / 0.14);
+  box-shadow: 0 16px 48px oklch(20% 0.02 145 / 0.14);
 }
 .story__seg-photo img {
   display: block;
@@ -876,7 +876,7 @@
   position: absolute;
   top: 12px;
   left: 12px;
-  background: oklch(20% 0.025 50 / 0.85);
+  background: oklch(20% 0.025 145 / 0.85);
   color: #fdf6ed;
   font-family: var(--font-mono);
   font-size: 10px;
