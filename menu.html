@@ -305,7 +305,7 @@
     "cat_name": "BREAKFAST",
     "cat_slug": "breakfast",
     "name": "FULL DESI BREAKFAST",
-    "slug": "full-desi-breakfast",
+    "slug": "desi-breakfast",
     "desc": "Lamb macon, spicy sausages, a freshly made desi omelette, crispy hash browns, mushrooms, tomatoes, spicy beans, and warm paratha. A filling, flavorful breakfast.",
     "price": 13.5,
     "image": "assets/site-images/menu/full-desi-breakfast.jpg",
@@ -317,7 +317,7 @@
     "cat_name": "BREAKFAST",
     "cat_slug": "breakfast",
     "name": "EGG AND CHEESE MUFFIN",
-    "slug": "egg-and-cheese-muffin",
+    "slug": "egg-cheese-muffin",
     "desc": "Fluffy muffin filled with egg and melted cheese.",
     "price": 5.5,
     "image": "assets/site-images/menu/choiceqr/egg-and-cheese-muffin.jpg",
@@ -467,7 +467,7 @@
     "cat_name": "BRUNCH",
     "cat_slug": "brunch",
     "name": "GRILLED HALLOUMI HOUSE SALAD",
-    "slug": "grilled-halloumi-house-salad",
+    "slug": "grilled-halloumi-salad",
     "desc": "A healthy mixture of Halloumi, bistro salad, sweetcorn, olives, jalapenos, tomatoes, cucumber, red onions, croutons and a drizzle of vinaigrette",
     "price": 8.75,
     "image": "assets/site-images/menu/choiceqr/grilled-halloumi-salad.jpg",
@@ -539,7 +539,7 @@
     "cat_name": "BRUNCH",
     "cat_slug": "brunch",
     "name": "OMLETTE WITH THREE TOPPINGS",
-    "slug": "omlette-with-three-toppings",
+    "slug": "omelette-with-3-toppings",
     "desc": "Choose 3 from cheese, tomato, lamb macon, mushroom, chilli. Served with toast or paratha",
     "price": 7.95,
     "image": "assets/site-images/menu/choiceqr/omlette-with-3-toppings.jpg",
@@ -551,7 +551,7 @@
     "cat_name": "BRUNCH",
     "cat_slug": "brunch",
     "name": "SCRAMBLED EGG WITH CROISSANT",
-    "slug": "scrambled-egg-with-croissant",
+    "slug": "scrambled-egg-croissant",
     "desc": "Scrambled egg served inside a warm buttered croissant",
     "price": 5.45,
     "image": "assets/site-images/menu/scrambled-egg-croissant.jpg",
@@ -1240,7 +1240,7 @@
           : `<span class="dish__price dish__price--placeholder">Ask in café</span>`;
 
         const photoHtml = it.image
-          ? `<div class="dish__photo"><img src="assets/site-images/menu/thumb/${escapeHtml(it.slug)}.jpg" alt="${escapeHtml(it.name)}" loading="lazy"/></div>`
+          ? `<div class="dish__photo"><img src="assets/site-images/menu/thumb/${escapeHtml(it.slug)}.jpg" alt="${escapeHtml(it.name)}" loading="lazy" onerror="this.parentElement.classList.add('dish__photo--missing'); this.remove();"/></div>`
           : '';
 
         return `
@@ -1306,7 +1306,7 @@
     'american-special':           "Real maple syrup — not the bottle with the bear on it.",
     'omelette-with-3-toppings':   "Three-egg omelette, low heat, patience. Don't rush it or it goes rubbery.",
     'toasties':                   "Panini grill, exactly three minutes. Cheese pulls when you cut it — that's the test.",
-    'scrambled-egg-on-croissant': "Soft scramble, never hard. The croissant should still be warm when it lands.",
+    'scrambled-egg-croissant': "Soft scramble, never hard. The croissant should still be warm when it lands.",
     'french-toast':               "Brioche, not regular bread. Egg bath the night before so it soaks properly.",
     'pancakes':                   "Three pancakes, not four. Stack of three. The plate breathes."
   };
