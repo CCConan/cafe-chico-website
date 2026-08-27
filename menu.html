@@ -9,7 +9,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="assets/css/shared.css" />
   <link rel="stylesheet" href="assets/css/menu.css" />
@@ -1240,11 +1240,19 @@
           : `<span class="dish__price dish__price--placeholder">Ask in café</span>`;
 
         const photoHtml = it.image
-          ? `<div class="dish__photo"><img src="${it.image}" alt="${escapeHtml(it.name)}" loading="lazy"/></div>`
+          ? `<div class="dish__photo"><img src="assets/site-images/menu/thumb/${escapeHtml(it.slug)}.jpg" alt="${escapeHtml(it.name)}" loading="lazy"/></div>`
           : '';
 
         return `
-          <article class="dish ${it.image ? '' : 'dish--no-photo'}" data-reveal>
+          <article class="dish ${it.image ? '' : 'dish--no-photo'}" data-reveal
+                   data-slug="${escapeHtml(it.slug)}"
+                   data-name="${escapeHtml(it.name)}"
+                   data-cat="${escapeHtml(it.cat_name || '')}"
+                   data-desc="${escapeHtml(it.desc || '')}"
+                   data-price="${it.price != null ? it.price : ''}"
+                   role="button"
+                   tabindex="0"
+                   aria-label="Open ${escapeHtml(it.name)} details">
             ${photoHtml}
             <div class="dish__info">
               <h3>${escapeHtml(it.name)}</h3>
@@ -1279,6 +1287,126 @@
   })();
 
   // (Parallax for the 3-dish 'in motion' section removed 2026-08-22 with the section)
+
+  // ----- Chef's note (only for breakfast + brunch) -----
+  const chefNotes = {
+    'full-english-breakfast':     "I've been making this exact plate since we opened — same griddle temp, same three minutes each side. It just works.",
+    'desi-breakfast':             "The paratha-toast for the beans was Mum's idea. Worth the extra five minutes, every time.",
+    'veggie-breakfast':           "Same care as the meat version — we don't do 'just' vegetarian. The halloumi sear takes 90 seconds, no more.",
+    'breakfast-stacker':          "Waffles + rashers sounds wrong. It's not. Try it once.",
+    'half-english-breakfast':     "Same griddle, half the plate. Sometimes that's exactly what you want.",
+    'breakfast-bap':              "Soft roll, buttered, never toasted. That's the rule.",
+    'vegan-breakfast':            "Two years testing vegan sausages — these are the ones. The mushrooms get a splash of soy.",
+    'breakfast-muffin':           "Egg cooked to order — we don't batch these. Wait the four minutes, it's worth it.",
+    'egg-cheese-muffin':          "Simple. Done right. That's the whole thing.",
+    'stir-fry-noodles':           "Wok hei — that breath of smoke when it lands. Can't fake it.",
+    'sourdough-toast':            "Bread from a bakery six streets over. We don't slice it until you order.",
+    'eggs-benedict':              "Hollandaise from scratch. Every shift. No shortcuts.",
+    'grilled-halloumi-salad':     "Char the halloumi until it squeaks. That's the cue.",
+    'american-special':           "Real maple syrup — not the bottle with the bear on it.",
+    'omelette-with-3-toppings':   "Three-egg omelette, low heat, patience. Don't rush it or it goes rubbery.",
+    'toasties':                   "Panini grill, exactly three minutes. Cheese pulls when you cut it — that's the test.",
+    'scrambled-egg-on-croissant': "Soft scramble, never hard. The croissant should still be warm when it lands.",
+    'french-toast':               "Brioche, not regular bread. Egg bath the night before so it soaks properly.",
+    'pancakes':                   "Three pancakes, not four. Stack of three. The plate breathes."
+  };
+
+  // ----- Food detail modal -----
+  const modal = document.getElementById('food-modal');
+  const fmImg = document.getElementById('fm-img');
+  const fmCat = document.getElementById('fm-cat');
+  const fmName = document.getElementById('fm-name');
+  const fmDesc = document.getElementById('fm-desc');
+  const fmPrice = document.getElementById('fm-price');
+  const fmChef = document.getElementById('fm-chef-note');
+  const fmChefText = document.getElementById('fm-chef-text');
+
+  function openFoodModal(slug, name, cat, desc, price) {
+    if (!modal) return;
+    const fullSrc = 'assets/site-images/menu/full/' + slug + '.jpg';
+    fmImg.src = fullSrc;
+    fmImg.alt = name;
+    fmCat.textContent = cat || '';
+    fmName.textContent = name;
+    fmDesc.textContent = desc || '';
+    fmPrice.textContent = (price != null) ? '£' + Number(price).toFixed(2) : 'Ask in café';
+    // Chef note only for breakfast + brunch
+    const note = chefNotes[slug];
+    if (note) {
+      fmChefText.textContent = note;
+      fmChef.hidden = false;
+    } else {
+      fmChef.hidden = true;
+    }
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    // Focus management for a11y
+    const closeBtn = modal.querySelector('.food-modal__close');
+    if (closeBtn) setTimeout(() => closeBtn.focus(), 50);
+  }
+
+  function closeFoodModal() {
+    if (!modal) return;
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target.matches('[data-modal-close]')) closeFoodModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeFoodModal();
+    });
+  }
+
+  // Event delegation: any .dish click in any .menu-grid opens modal
+  document.querySelectorAll('.menu-grid').forEach(grid => {
+    grid.addEventListener('click', (e) => {
+      const card = e.target.closest('.dish');
+      if (!card) return;
+      const { slug, name, cat, desc, price } = card.dataset;
+      if (!slug) return;
+      openFoodModal(slug, name, cat, desc, price);
+    });
+  });
 </script>
+<!-- Food detail modal -->
+<div class="food-modal" id="food-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="fm-name">
+  <div class="food-modal__backdrop" data-modal-close></div>
+  <div class="food-modal__dialog" role="document">
+    <button class="food-modal__close" data-modal-close aria-label="Close">×</button>
+    <div class="food-modal__content">
+      <div class="food-modal__media">
+        <img class="food-modal__img" id="fm-img" src="" alt="" />
+        <aside class="chef-note" id="fm-chef-note" hidden>
+          <svg class="chef-note__hat" viewBox="0 0 64 48" aria-hidden="true">
+            <ellipse cx="14" cy="34" rx="8" ry="5" fill="currentColor"/>
+            <ellipse cx="50" cy="34" rx="8" ry="5" fill="currentColor"/>
+            <ellipse cx="32" cy="22" rx="14" ry="12" fill="currentColor"/>
+            <ellipse cx="20" cy="28" rx="6" ry="6" fill="currentColor"/>
+            <ellipse cx="44" cy="28" rx="6" ry="6" fill="currentColor"/>
+            <rect x="8" y="34" width="48" height="6" rx="2" fill="currentColor"/>
+          </svg>
+          <p class="chef-note__label">From the kitchen</p>
+          <p class="chef-note__text" id="fm-chef-text"></p>
+        </aside>
+      </div>
+      <div class="food-modal__info">
+        <p class="food-modal__cat" id="fm-cat"></p>
+        <h2 class="food-modal__name" id="fm-name"></h2>
+        <p class="food-modal__desc" id="fm-desc"></p>
+        <p class="food-modal__price" id="fm-price"></p>
+        <div class="food-modal__cta-row">
+          <a class="food-modal__cta" href="tel:+441204934467">📞 Call to order</a>
+          <a class="food-modal__cta food-modal__cta--ghost" href="https://cafe-chico.choiceqr.com/section:menu" target="_blank" rel="noopener">Order online →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

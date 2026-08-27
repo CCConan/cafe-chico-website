@@ -353,4 +353,270 @@
   border-bottom: 1px solid oklch(78% 0.08 75 / 0.4);
   padding-bottom: 1px;
 }
+
+/* ============================================================
+   FOOD DETAIL MODAL
+   Click any .dish to open large image + right info + chef note
+   Chef note (only for breakfast + brunch) appears on left of image
+   with chalk-on-paper effect and a chef hat icon.
+   ============================================================ */
+.dish { cursor: pointer; }
+.dish:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.food-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.food-modal.is-open { display: flex; }
+.food-modal[aria-hidden="true"] { display: none; }
+.food-modal[aria-hidden="false"] { display: flex; }
+
+.food-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: oklch(8% 0.02 50 / 0.78);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: fm-fade 220ms var(--ease-soft);
+}
+@keyframes fm-fade { from { opacity: 0; } to { opacity: 1; } }
+
+.food-modal__dialog {
+  position: relative;
+  width: min(1100px, 96vw);
+  max-height: 92vh;
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 80px oklch(8% 0.02 50 / 0.45);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: fm-rise 320ms var(--ease-soft);
+}
+@keyframes fm-rise { from { opacity: 0; transform: translateY(20px) scale(0.98); } to { opacity: 1; transform: none; } }
+
+.food-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 5;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: oklch(20% 0.02 50 / 0.65);
+  color: #fdf6ed;
+  font-size: 26px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 160ms var(--ease-soft), transform 160ms var(--ease-soft);
+  cursor: pointer;
+}
+.food-modal__close:hover { background: oklch(15% 0.02 50 / 0.85); transform: scale(1.06); }
+.food-modal__close:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.food-modal__content {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  min-height: 0;
+  max-height: 92vh;
+}
+@media (max-width: 760px) {
+  .food-modal { padding: 0; }
+  .food-modal__dialog { width: 100vw; max-height: 100vh; height: 100vh; border-radius: 0; }
+  .food-modal__content { grid-template-columns: 1fr; grid-template-rows: 50vh 1fr; }
+}
+
+/* Left: media (large image + chef note) */
+.food-modal__media {
+  position: relative;
+  background: #1a120c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 320px;
+}
+.food-modal__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 92vh;
+  object-fit: cover;
+  animation: fm-img 360ms var(--ease-soft);
+}
+@keyframes fm-img { from { opacity: 0; transform: scale(1.04); } to { opacity: 1; transform: none; } }
+
+/* Right: info */
+.food-modal__info {
+  padding: clamp(28px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+}
+.food-modal__cat {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+}
+.food-modal__name {
+  font-family: "Fraunces", var(--font-display);
+  font-size: clamp(28px, 3.4vw, 40px);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+  margin: 0;
+  color: var(--fg);
+}
+.food-modal__desc {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--muted);
+  margin: 6px 0 0;
+  flex: 1;
+}
+.food-modal__price {
+  font-family: "Fraunces", var(--font-display);
+  font-size: clamp(26px, 2.6vw, 32px);
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 14px 0 0;
+}
+.food-modal__cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+.food-modal__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--accent);
+  color: #fdf6ed;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 160ms var(--ease-soft);
+}
+.food-modal__cta:hover { background: oklch(35% 0.08 35 / 1); }
+.food-modal__cta--ghost {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+.food-modal__cta--ghost:hover {
+  background: var(--accent);
+  color: #fdf6ed;
+}
+
+/* ============================================================
+   CHEF'S NOTE — chalk-on-paper effect, lower-left of media
+   ============================================================ */
+.chef-note {
+  position: absolute;
+  left: clamp(16px, 2.4vw, 32px);
+  bottom: clamp(16px, 2.4vw, 32px);
+  max-width: min(360px, 56%);
+  padding: 22px 24px 20px 24px;
+  background:
+    radial-gradient(ellipse at 25% 15%, oklch(96% 0.04 80) 0%, oklch(92% 0.05 75) 60%, oklch(86% 0.06 70) 100%);
+  border-radius: 2px;
+  box-shadow:
+    0 1px 0 oklch(0% 0 0 / 0.08),
+    0 2px 6px oklch(20% 0.02 50 / 0.18),
+    0 22px 60px oklch(20% 0.02 50 / 0.32);
+  transform: rotate(-1.8deg);
+  /* subtle paper edge */
+  outline: 1px solid oklch(78% 0.04 70 / 0.4);
+  outline-offset: -1px;
+}
+.chef-note::before {
+  /* paper grain overlay — noise via repeating-gradient */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(45deg, oklch(20% 0.02 50 / 0.04) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(-45deg, oklch(20% 0.02 50 / 0.03) 0 1px, transparent 1px 4px);
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+}
+.chef-note::after {
+  /* corner wear — slight dark vignette at one corner */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(circle at 90% 95%, oklch(35% 0.04 50 / 0.18) 0%, transparent 40%);
+}
+.chef-note__hat {
+  display: block;
+  width: 44px;
+  height: 32px;
+  color: #2a2118;
+  margin: 0 0 6px;
+  /* subtle hand-drawn feel via filter */
+  filter: drop-shadow(0 1px 0 oklch(20% 0.02 50 / 0.15));
+}
+.chef-note__label {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #6a5b48;
+  margin: 0 0 4px;
+  font-weight: 500;
+}
+.chef-note__text {
+  font-family: "Caveat", "Indie Flower", "Comic Sans MS", cursive;
+  font-size: clamp(17px, 1.6vw, 21px);
+  font-weight: 500;
+  line-height: 1.32;
+  color: #1f1812;
+  margin: 0;
+  /* chalk feel: slight letter variation, soft shadow */
+  text-shadow:
+    0 0 1px oklch(20% 0.02 50 / 0.15),
+    0 1px 0 oklch(96% 0.04 80 / 0.6);
+  letter-spacing: 0.01em;
+}
+@media (max-width: 760px) {
+  .chef-note {
+    max-width: 70%;
+    left: 12px;
+    bottom: 12px;
+    padding: 16px 18px 14px;
+    transform: rotate(-1.2deg);
+  }
+  .chef-note__hat { width: 36px; height: 26px; }
+  .chef-note__text { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .food-modal__dialog,
+  .food-modal__img,
+  .food-modal__backdrop { animation: none !important; }
+}
+}
 .menu-note a:hover { color: white; border-color: white; }
