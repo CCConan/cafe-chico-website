@@ -10,9 +10,9 @@
   right: clamp(16px, 3vw, 40px);
   z-index: 3;
   display: block;
-  width: clamp(120px, 16vw, 220px);
+  width: clamp(240px, 32vw, 440px);   /* doubled from clamp(120px, 16vw, 220px) per user 27 Aug 2026 */
   height: auto;
-  filter: drop-shadow(0 4px 16px oklch(0% 0 0 / 0.45));
+  filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.70));   /* 70% black shadow, deeper + wider per user */
   opacity: 1;
   animation: heroBrandIn 1s var(--ease-soft) 0.2s both;
 }
@@ -32,7 +32,7 @@
 /* ---------- Album (3D circular ring of featured dishes) ---------- */
 /* ---------- 6 popular dishes grid (replaces album) ---------- */
 .popular {
-  background: linear-gradient(180deg, var(--bg) 0%, oklch(22% 0.04 50) 100%);   /* deep green → deep brown (user 25 Aug 2026) */
+  background: linear-gradient(180deg, var(--bg) 0%, oklch(45% 0.07 50) 100%);   /* deep green → brick brown (warmer, closer to brick wall color, user 27 Aug 2026) */
   padding: clamp(80px, 10vw, 140px) 0;
   position: relative;
   overflow: hidden;
