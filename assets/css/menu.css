@@ -314,13 +314,18 @@
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-size: 11px;
+  font-size: 9px;
   color: var(--muted, #8a7e6e);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   text-align: center;
   line-height: 1.2;
-  padding: 6px;
+  padding: 4px;
+}
+.dish__photo--missing::after {
+  content: "Photo\Acoming\Asoon";
+  white-space: pre;
+  font-weight: 500;
 }
 .dish__photo--missing img { display: none; }
 
