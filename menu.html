@@ -1240,7 +1240,7 @@
           : `<span class="dish__price dish__price--placeholder">Ask in café</span>`;
 
         const photoHtml = it.image
-          ? `<div class="dish__photo"><img src="assets/site-images/menu/thumb/${escapeHtml(it.slug)}.jpg" alt="${escapeHtml(it.name)}" loading="lazy" onerror="this.parentElement.classList.add('dish__photo--missing'); this.remove();"/></div>`
+          ? `<div class="dish__photo"><img src="assets/site-images/menu/thumb/${escapeHtml(it.slug)}.jpg" alt="${escapeHtml(it.name)}" loading="lazy" onerror="this.parentElement.classList.add('dish__photo--missing'); this.remove();"/><span class="dish__photo--placeholder">Photo<br/>Coming<br/>Soon</span></div>`
           : '';
 
         return `
