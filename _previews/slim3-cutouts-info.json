@@ -1,0 +1,140 @@
+[
+  {
+    "label": "Method 1: RGB threshold",
+    "image_size": "1500x1500",
+    "gold_bbox": "x=303-1197, y=206-1288",
+    "gold_size": "894x1082",
+    "gold_center": "(750, 747)",
+    "gold_pct": "15.0%",
+    "transparent_pct": "85.0%",
+    "file_size": "3097 KB"
+  },
+  {
+    "label": "Method 2: HSV",
+    "image_size": "1500x1500",
+    "gold_bbox": "x=303-1197, y=207-1288",
+    "gold_size": "894x1081",
+    "gold_center": "(750, 747)",
+    "gold_pct": "15.1%",
+    "transparent_pct": "84.9%",
+    "file_size": "3094 KB"
+  },
+  {
+    "label": "Method 3: K-means (all green clusters)",
+    "image_size": "1500x1500",
+    "gold_bbox": "x=304-1199, y=204-1291",
+    "gold_size": "895x1087",
+    "gold_center": "(751, 747)",
+    "gold_pct": "15.6%",
+    "transparent_pct": "84.4%",
+    "file_size": "3095 KB"
+  },
+  {
+    "label": "M4: Flood fill from corners",
+    "image_size": "1500x1500",
+    "gold_bbox": "x=303-1197, y=206-1289",
+    "gold_size": "894x1083",
+    "gold_center": "(750, 747)",
+    "gold_pct": "42.4%",
+    "transparent_pct": "57.6%",
+    "file_size": "3092 KB"
+  },
+  {
+    "label": "M5: LAB (CIE76 distance)",
+    "image_size": "1500x1500",
+    "gold_bbox": "x=0-1499, y=0-1429",
+    "gold_size": "1499x1429",
+    "gold_center": "(749, 714)",
+    "gold_pct": "43.3%",
+    "transparent_pct": "56.7%",
+    "file_size": "3165 KB"
+  },
+  {
+    "label": "M6: YCrCb",
+    "image_size": "1500x1500",
+    "gold_bbox": "x=0-1499, y=0-1499",
+    "gold_size": "1499x1499",
+    "gold_center": "(749, 749)",
+    "gold_pct": "100.0%",
+    "transparent_pct": "0.0%",
+    "file_size": "3100 KB"
+  },
+  {
+    "label": "M7: Euclidean RGB distance from corner",
+    "image_size": "1500x1500",
+    "gold_bbox": "x=303-1198, y=206-1290",
+    "gold_size": "895x1084",
+    "gold_center": "(750, 748)",
+    "gold_pct": "13.5%",
+    "transparent_pct": "86.5%",
+    "file_size": "3104 KB"
+  },
+  {
+    "label": "M8: K-means 6 clusters",
+    "image_size": "1500x1500",
+    "gold_bbox": "x=304-1199, y=208-1287",
+    "gold_size": "895x1079",
+    "gold_center": "(751, 747)",
+    "gold_pct": "15.2%",
+    "transparent_pct": "84.8%",
+    "file_size": "3095 KB"
+  },
+  {
+    "label": "CK2: Multi-ref HSV (thresh=20)",
+    "gold_bbox": "x=0-1499, y=0-1499",
+    "gold_size": "1499x1499",
+    "gold_center": "(749, 749)",
+    "gold_pct": "30.5%",
+    "transparent_pct": "69.5%",
+    "file_size": "3260 KB"
+  },
+  {
+    "label": "CK3: Multi-ref OKLab (thresh=0.10)",
+    "gold_bbox": "x=302-1198, y=206-1297",
+    "gold_size": "896x1091",
+    "gold_center": "(750, 751)",
+    "gold_pct": "16.5%",
+    "transparent_pct": "83.5%",
+    "file_size": "3093 KB"
+  },
+  {
+    "label": "CK1-refined: tight threshold + main-component + close + dilate",
+    "image_size": "1500x1500",
+    "gold_bbox": "x=301-1200, y=204-1291",
+    "gold_size": "899x1087",
+    "gold_center": "(750, 747)",
+    "gold_pct": "16.6%",
+    "transparent_pct": "83.4%",
+    "file_size": "3092 KB"
+  },
+  {
+    "label": "CK3-refined: OKLab tight (0.09) + main-component + close + dilate 2px",
+    "image_size": "1500x1500",
+    "gold_bbox": "x=300-1200, y=203-1300",
+    "gold_size": "900x1097",
+    "gold_center": "(750, 751)",
+    "gold_pct": "17.2%",
+    "transparent_pct": "82.8%",
+    "lime_green_residue_pct": "7.1% of visible (27,502 px) \u2014 DIRTY EDGES",
+    "file_size": "3093 KB",
+    "status": "superseded by V4"
+  },
+  {
+    "label": "V4: explicit color rule (G>170, G>R+25, B<90) + erode2 + dilate1 + main-component + greenish-pixel filter + close2",
+    "image_size": "1500x1500",
+    "gold_bbox": "x=300-1637, y=279-1761",
+    "gold_size": "1337x1482",
+    "gold_center": "(968, 1020)",
+    "gold_pct": "15.8%",
+    "transparent_pct": "84.2%",
+    "lime_green_residue_px": 0,
+    "lime_green_residue_pct": "0% \u2014 CLEAN",
+    "greenish_residue_px": 5,
+    "greenish_residue_pct": "0.001% (5px dark olive carved-recess shadows)",
+    "file_size": "3.02 MB",
+    "status": "RECOMMENDED \u2014 best gold preservation + zero lime green residue",
+    "file": "assets/site-images/frames/frame-slim-3-ck3-v4.png",
+    "visible_pixels": 355803,
+    "visible_pct": 15.8
+  }
+]

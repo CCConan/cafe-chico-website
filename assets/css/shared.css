@@ -158,11 +158,12 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   text-decoration: none;
 }
 .brand__mark {
-  height: 36px;
+  height: 54px;  /* +50% from 36px per request 2026-08-28 */
   width: auto;
   object-fit: contain;
   display: block;
   flex-shrink: 0;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.45));
 }
 .brand__mark--light { display: block; }
 .brand__mark--dark  { display: none; }
