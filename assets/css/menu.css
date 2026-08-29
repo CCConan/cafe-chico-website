@@ -473,7 +473,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  /* overflow: visible — let the .chef-note (Breakfast / Brunch) hang off
+     the top-left edge of the media pane without being clipped. The image
+     stays contained via .food-modal__img { object-fit: cover; height:100% }. */
+  overflow: visible;
   min-height: 320px;
 }
 .food-modal__img {
@@ -605,14 +608,17 @@
 }
 
 /* ============================================================
-   CHEF'S NOTE — chalk-on-paper effect, lower-left of media
+   CHEF'S NOTE — chalk-on-paper effect, top-left of media
+   (Breakfast + Brunch only). Half hangs off the top-left edge of
+   the image to cover less of the photo, the other half stays
+   over the image so the reader can still see it in context.
    ============================================================ */
 .chef-note {
   position: absolute;
-  left: clamp(16px, 2.4vw, 32px);
-  bottom: clamp(16px, 2.4vw, 32px);
-  max-width: min(360px, 56%);
-  padding: 22px 24px 20px 24px;
+  top: -18px;
+  left: -18px;
+  max-width: min(280px, 48%);
+  padding: 20px 22px 18px 22px;
   background:
     radial-gradient(ellipse at 25% 15%, oklch(96% 0.04 80) 0%, oklch(92% 0.05 75) 60%, oklch(86% 0.06 70) 100%);
   border-radius: 2px;
@@ -620,10 +626,11 @@
     0 1px 0 oklch(0% 0 0 / 0.08),
     0 2px 6px oklch(20% 0.02 50 / 0.18),
     0 22px 60px oklch(20% 0.02 50 / 0.32);
-  transform: rotate(-1.8deg);
+  transform: rotate(-2.5deg);
   /* subtle paper edge */
   outline: 1px solid oklch(78% 0.04 70 / 0.4);
   outline-offset: -1px;
+  z-index: 2; /* sit above the image so the hanging-off half reads clearly */
 }
 .chef-note::before {
   /* paper grain overlay — noise via repeating-gradient */
@@ -680,11 +687,11 @@
 }
 @media (max-width: 760px) {
   .chef-note {
-    max-width: 70%;
-    left: 12px;
-    bottom: 12px;
+    max-width: 64%;
+    top: -10px;
+    left: -10px;
     padding: 16px 18px 14px;
-    transform: rotate(-1.2deg);
+    transform: rotate(-2deg);
   }
   .chef-note__hat { width: 36px; height: 26px; }
   .chef-note__text { font-size: 16px; }
