@@ -224,9 +224,11 @@
 .menu-section {
   padding: clamp(56px, 8vw, 96px) 0;
   scroll-margin-top: 130px;
+  /* Transparent so the .bg-tile-page wall texture on <body> shows
+     through between the dish cards. Cards keep their own var(--bg)
+     surface, so individual dishes stay readable. */
+  background: transparent;
 }
-.menu-section:nth-of-type(odd) { background: var(--bg); }
-.menu-section:nth-of-type(even) { background: var(--surface); }
 
 .menu-section__head {
   display: flex;
