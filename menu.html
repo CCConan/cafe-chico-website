@@ -1217,7 +1217,12 @@
     <button class="food-modal__close" data-modal-close aria-label="Close">×</button>
     <div class="food-modal__content">
       <div class="food-modal__media">
-        <img class="food-modal__img" id="fm-img" src="" alt="" />
+        <img class="food-modal__img" id="fm-img" src="" alt="" />      </div>
+      <div class="food-modal__info">
+        <p class="food-modal__cat" id="fm-cat"></p>
+        <h2 class="food-modal__name" id="fm-name"></h2>
+        <p class="food-modal__desc" id="fm-desc"></p>
+
         <aside class="chef-note" id="fm-chef-note" hidden>
           <svg class="chef-note__hat" viewBox="0 0 64 48" aria-hidden="true">
             <ellipse cx="14" cy="34" rx="8" ry="5" fill="currentColor"/>
@@ -1230,11 +1235,6 @@
           <p class="chef-note__label">From the kitchen</p>
           <p class="chef-note__text" id="fm-chef-text"></p>
         </aside>
-      </div>
-      <div class="food-modal__info">
-        <p class="food-modal__cat" id="fm-cat"></p>
-        <h2 class="food-modal__name" id="fm-name"></h2>
-        <p class="food-modal__desc" id="fm-desc"></p>
         <p class="food-modal__price" id="fm-price"></p>
         <div class="food-modal__cta-row">
           <a class="food-modal__cta" href="tel:+441204934467">📞 Call to order</a>

@@ -466,17 +466,14 @@
   .food-modal__content { grid-template-columns: 1fr; grid-template-rows: 50vh 1fr; }
 }
 
-/* Left: media (large image + chef note) */
+/* Left: media (large image only; chef-note moved to right info pane) */
 .food-modal__media {
   position: relative;
   background: #1a120c;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* overflow: visible — let the .chef-note (Breakfast / Brunch) hang off
-     the top-left edge of the media pane without being clipped. The image
-     stays contained via .food-modal__img { object-fit: cover; height:100% }. */
-  overflow: visible;
+  overflow: hidden;
   min-height: 320px;
 }
 .food-modal__img {
@@ -608,17 +605,17 @@
 }
 
 /* ============================================================
-   CHEF'S NOTE — chalk-on-paper effect, top-left of media
-   (Breakfast + Brunch only). Half hangs off the top-left edge of
-   the image to cover less of the photo, the other half stays
-   over the image so the reader can still see it in context.
+   CHEF'S NOTE — chalk-on-paper effect, sits in the right info pane
+   under the dish description (Breakfast + Brunch only). Lives inside
+   .food-modal__info so the .food-modal__dialog overflow: hidden
+   doesn't clip it. The slight rotation keeps the handwritten feel.
    ============================================================ */
 .chef-note {
-  position: absolute;
-  top: -18px;
-  left: -18px;
-  max-width: min(280px, 48%);
-  padding: 20px 22px 18px 22px;
+  /* In-flow inside .food-modal__info — no absolute positioning, no
+     overlap with the photo. The handwritten tilt is kept so it still
+     reads as a slip of paper rather than a flat caption. */
+  margin: 18px 0 22px;
+  padding: 18px 22px 16px 22px;
   background:
     radial-gradient(ellipse at 25% 15%, oklch(96% 0.04 80) 0%, oklch(92% 0.05 75) 60%, oklch(86% 0.06 70) 100%);
   border-radius: 2px;
@@ -626,11 +623,11 @@
     0 1px 0 oklch(0% 0 0 / 0.08),
     0 2px 6px oklch(20% 0.02 50 / 0.18),
     0 22px 60px oklch(20% 0.02 50 / 0.32);
-  transform: rotate(-2.5deg);
+  transform: rotate(-1.2deg);
+  transform-origin: left center;
   /* subtle paper edge */
   outline: 1px solid oklch(78% 0.04 70 / 0.4);
   outline-offset: -1px;
-  z-index: 2; /* sit above the image so the hanging-off half reads clearly */
 }
 .chef-note::before {
   /* paper grain overlay — noise via repeating-gradient */
@@ -687,11 +684,9 @@
 }
 @media (max-width: 760px) {
   .chef-note {
-    max-width: 64%;
-    top: -10px;
-    left: -10px;
-    padding: 16px 18px 14px;
-    transform: rotate(-2deg);
+    margin: 14px 0 18px;
+    padding: 14px 16px 12px;
+    transform: rotate(-1deg);
   }
   .chef-note__hat { width: 36px; height: 26px; }
   .chef-note__text { font-size: 16px; }
