@@ -1321,11 +1321,78 @@
   const fmChef = document.getElementById('fm-chef-note');
   const fmChefText = document.getElementById('fm-chef-text');
 
+  // Inline SVG placeholder (data URI) — used as the last-resort fallback
+  // when neither full/ nor thumb/ has an image for this dish.
+  // Encoded once, reused for every missing dish.
+  const PLACEHOLDER_SVG =
+    'data:image/svg+xml;utf8,' + encodeURIComponent(
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">' +
+        '<defs>' +
+          '<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">' +
+            '<stop offset="0%" stop-color="#2a1a10"/>' +
+            '<stop offset="100%" stop-color="#1a120c"/>' +
+          '</linearGradient>' +
+        '</defs>' +
+        '<rect width="800" height="600" fill="url(#bg)"/>' +
+        '<g fill="none" stroke="#c9a14a" stroke-width="3" opacity="0.6">' +
+          '<circle cx="400" cy="270" r="120"/>' +
+          '<path d="M340 350 Q 400 410 460 350" stroke-linecap="round"/>' +
+        '</g>' +
+        '<text x="400" y="470" text-anchor="middle" ' +
+              'font-family="Georgia, serif" font-size="28" ' +
+              'fill="#c9a14a" letter-spacing="3">CAFÉ CHICO</text>' +
+      '</svg>'
+    );
+
   function openFoodModal(slug, name, cat, desc, price) {
     if (!modal) return;
-    const fullSrc = 'assets/site-images/menu/full/' + slug + '.jpg';
-    fmImg.src = fullSrc;
+    // Fallback chain for the large image: full → thumb → inline SVG placeholder.
+    // Stops the "broken image" icon when a dish has no full-size photo yet
+    // (drinks, kids meals, subs, desserts, etc.).
+    const candidates = [
+      'assets/site-images/menu/full/' + slug + '.jpg',
+      'assets/site-images/menu/thumb/' + slug + '.jpg',
+    ];
+
+    // Reset placeholder state from a previous open
+    fmImg.classList.remove('food-modal__img--missing');
     fmImg.alt = name;
+
+    // Wire one-shot fallback chain on the image
+    fmImg.onerror = function () {
+      const tried = parseInt(this.dataset.tried || '0', 10);
+      if (tried < candidates.length) {
+        this.dataset.tried = String(tried + 1);
+        this.src = candidates[tried];
+      } else {
+        // Final fallback: inline SVG placeholder (always works, no network)
+        this.onerror = null;
+        this.classList.add('food-modal__img--missing');
+        this.removeAttribute('src');
+        // Render the dish name in the media pane as the placeholder copy
+        const media = this.parentElement;
+        let ph = media.querySelector('.food-modal__placeholder');
+        if (!ph) {
+          ph = document.createElement('div');
+          ph.className = 'food-modal__placeholder';
+          ph.innerHTML =
+            '<svg class="food-modal__placeholder-icon" viewBox="0 0 64 64" aria-hidden="true">' +
+              '<g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+                '<rect x="6" y="14" width="52" height="40" rx="4"/>' +
+                '<circle cx="22" cy="30" r="4"/>' +
+                '<path d="M58 48 L42 32 L18 56"/>' +
+              '</g>' +
+            '</svg>' +
+            '<p class="food-modal__placeholder-eyebrow">Photo coming soon</p>' +
+            '<p class="food-modal__placeholder-name"></p>';
+          media.appendChild(ph);
+        }
+        ph.querySelector('.food-modal__placeholder-name').textContent = name;
+      }
+    };
+    fmImg.dataset.tried = '0';
+    fmImg.src = candidates[0];
+
     fmCat.textContent = cat || '';
     fmName.textContent = name;
     fmDesc.textContent = desc || '';
@@ -1367,6 +1434,16 @@
     grid.addEventListener('click', (e) => {
       const card = e.target.closest('.dish');
       if (!card) return;
+      const { slug, name, cat, desc, price } = card.dataset;
+      if (!slug) return;
+      openFoodModal(slug, name, cat, desc, price);
+    });
+    // Keyboard support: Enter / Space on a focused .dish opens the modal
+    grid.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      const card = e.target.closest('.dish');
+      if (!card) return;
+      e.preventDefault();
       const { slug, name, cat, desc, price } = card.dataset;
       if (!slug) return;
       openFoodModal(slug, name, cat, desc, price);

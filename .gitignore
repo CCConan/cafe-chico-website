@@ -24,3 +24,9 @@ node_modules/
 
 # Build artifact (mirror of root, not for Pages)
 _dist/
+
+# Dev artifacts (chroma-key / cutout working files) — do NOT commit
+_previews/
+
+# Client contracts (private) — do NOT commit
+合約/

@@ -486,6 +486,52 @@
 }
 @keyframes fm-img { from { opacity: 0; transform: scale(1.04); } to { opacity: 1; transform: none; } }
 
+/* When the large image can't be found in full/ or thumb/ we drop in an
+   inline placeholder so every dish click still produces a viewable modal
+   instead of a broken-image icon. The placeholder fills the media pane
+   and shows the dish name. */
+.food-modal__img--missing { display: none; }
+.food-modal__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 32px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(201,161,74,0.10), transparent 60%),
+    radial-gradient(ellipse at 70% 80%, rgba(201,161,74,0.08), transparent 60%),
+    linear-gradient(135deg, #2a1a10 0%, #1a120c 100%);
+  color: oklch(92% 0.012 80);
+}
+.food-modal__placeholder-icon {
+  width: 56px;
+  height: 56px;
+  color: var(--gold, #c9a14a);
+  opacity: 0.85;
+  margin-bottom: 4px;
+}
+.food-modal__placeholder-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold, #c9a14a);
+  margin: 0;
+}
+.food-modal__placeholder-name {
+  font-family: "Fraunces", var(--font-display);
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-style: italic;
+  color: oklch(96% 0.012 80);
+  margin: 0;
+  max-width: 28ch;
+  line-height: 1.25;
+}
+
 /* Right: info */
 .food-modal__info {
   padding: clamp(28px, 4vw, 48px);
