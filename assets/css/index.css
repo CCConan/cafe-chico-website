@@ -32,7 +32,7 @@
 /* ---------- Album (3D circular ring of featured dishes) ---------- */
 /* ---------- 6 popular dishes grid (replaces album) ---------- */
 .popular {
-  background: linear-gradient(180deg, var(--bg) 0%, oklch(22% 0.04 55) 100%);   /* deep green → dark espresso (deeper than the previous brick brown, user 29 Aug 2026) */
+  background: linear-gradient(180deg, var(--bg) 0%, transparent 100%);   /* cream → fully transparent bottom so the body wall-tile shows through (user 31 Aug 2026) */
   padding: clamp(80px, 10vw, 140px) 0;
   position: relative;
   overflow: hidden;
