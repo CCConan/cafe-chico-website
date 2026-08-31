@@ -89,7 +89,7 @@ body {
   content: '';
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);   /* 45% black overlay — 30% → 45% (1.5× darker, user 1 Sep 2026, "increase 50%") so text on top of the wall tile reads more clearly */
+  background: rgba(0, 0, 0, 0.70);   /* 70% black overlay — 45% → 70% (user 1 Sep 2026) */
   pointer-events: none;
   z-index: 0;                        /* below main content (which is z-index 1+) */
 }
