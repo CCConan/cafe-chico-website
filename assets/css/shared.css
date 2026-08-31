@@ -89,9 +89,12 @@ body {
   content: '';
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.70);   /* 70% black overlay — 45% → 70% (user 1 Sep 2026) */
+  background: rgba(0, 0, 0, 0.55);   /* 55% black overlay — 70% → 55% (user 1 Sep 2026). 0.70 was so dark the wall tile read as solid charcoal and started
+                                       dragging the contrast of any cream text / light dish photo down with it. 0.55 keeps the wall pattern
+                                       visible (wood / brick / ivy) but lets the tile stop competing with foreground content. */
   pointer-events: none;
-  z-index: 0;                        /* below main content (which is z-index 1+) */
+  z-index: 0;                        /* layer order: body background-image (wall tile) < this overlay < z-index 1+ content
+                                       — so the overlay only darkens the tile behind the texture, never the text or images on top. */
 }
 
 img { max-width: 100%; height: auto; display: block; }
