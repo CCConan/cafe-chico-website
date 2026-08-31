@@ -193,7 +193,10 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
 .nav-tabs a.active { color: #fff; font-weight: 700; }
 .site-nav.is-scrolled .nav-tabs a { color: rgba(255, 255, 255, 0.95); }   /* scrolled: white text on page content showing through 50% nav */
 .site-nav.is-scrolled .nav-tabs a:hover { color: #fff; }
-.site-nav.is-scrolled .nav-tabs a.active { color: oklch(28% 0.06 50); }       /* scrolled active: deep brown (user 25 Aug 2026) */
+/* scrolled active used to be deep brown oklch(28% 0.06 50), but on the cream scrolled-nav
+   backdrop the 0.55 black overlay dragged it visually dim. Now matches the rest of the
+   active state: pure white, just bolder. User 1 Sep 2026. */
+.site-nav.is-scrolled .nav-tabs a.active { color: #fff; font-weight: 700; }
 .nav-tabs a.active::after {
   content: "";
   position: absolute;
@@ -367,7 +370,13 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   background: var(--fg);
   color: var(--bg);
 }
-.btn--ink:hover { background: oklch(30% 0.05 145); box-shadow: 0 8px 20px oklch(20% 0.04 145 / 0.4); }
+.btn--ink:hover {
+  background: oklch(30% 0.05 145);
+  color: #fff;                                                                   /* was var(--bg) = oklch(24% 0.04 145) deep green, which clashed with the
+                                                                                   new deep-green hover background and made the text effectively vanish.
+                                                                                   Force white on hover for guaranteed contrast (user 1 Sep 2026). */
+  box-shadow: 0 8px 20px oklch(20% 0.04 145 / 0.4);
+}
 
 /* ---------- Section heading ---------- */
 .section-head {
@@ -515,7 +524,13 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   line-height: 1.55;
   color: oklch(95% 0.012 80);
 }
-.visit-strip__cell a:hover { color: var(--gold); }
+.visit-strip__cell a:hover {
+  /* was var(--gold) oklch(80% 0.10 60) — a warm apricot that under the
+     55% black tile overlay read as 'drained / greyish' next to the
+     default cream-white. Force back to pure white on hover so the
+     link becomes brighter, not darker. (user 1 Sep 2026) */
+  color: #fff;
+}
 .visit-strip__cell strong {
   display: block;
   font-family: var(--font-display);
@@ -675,6 +690,12 @@ a:focus-visible, button:focus-visible, .btn:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 4px;
+}
+/* Cancel mouse-click focus so tapping a link on touch devices doesn't
+   leave a stuck "dim" appearance after the click. Keeps keyboard
+   focus outline via :focus-visible above. (user 1 Sep 2026) */
+a:focus:not(:focus-visible), button:focus:not(:focus-visible), .btn:focus:not(:focus-visible) {
+  outline: none;
 }
 
 /* ---------- Shared photo treatment ---------- */
