@@ -485,7 +485,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
 
 /* ---------- Visit-info strip ---------- */
 .visit-strip {
-  background: var(--bg-dark);
+  background: transparent;
   color: oklch(95% 0.012 80);
   padding: var(--space-6) 0;
 }
