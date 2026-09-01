@@ -75,7 +75,13 @@
       });
       if (best) {
         const id = best.target.id;
-        if (id) setActive(id);
+        // If the section that just entered the viewport doesn't have a
+        // nav tab (e.g. #neighbours — there is no Neighbours tab), keep
+        // the current active tab instead of clearing every tab. Without
+        // this guard the user sees Social → (gap) → Contact as they
+        // scroll through the Story / Neighbours / Reviews block.
+        const isMapped = sections.some(s => s.hash === id);
+        if (id && isMapped) setActive(id);
       }
     }, {
       threshold: [0.15, 0.4, 0.65],
