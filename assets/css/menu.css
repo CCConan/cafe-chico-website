@@ -31,7 +31,9 @@
 }
 .menu-hero .lede {
   font-size: clamp(16px, 1.4vw, 19px);
-  color: oklch(100% 0 0 / 0.8);
+  color: #fff;                                                                    /* was oklch(100% 0 0 / 0.8) — 20% alpha loss multiplied by the 55%
+                                                                                     black tile overlay dropped the menu hero lede into a dim grey.
+                                                                                     Force fully opaque white. (user 1 Sep 2026) */
   max-width: 56ch;
 }
 .menu-hero__stats {
@@ -39,7 +41,9 @@
   flex-wrap: wrap;
   gap: var(--space-5);
   margin-top: var(--space-5);
-  color: oklch(100% 0 0 / 0.6);
+  color: #fff;                                                                    /* was oklch(100% 0 0 / 0.6) — 40% alpha loss × 55% black tile overlay
+                                                                                     = perceived 27% L (mid-grey). The 'Dishes / From / To' labels
+                                                                                     were nearly invisible. Force fully opaque white. (user 1 Sep 2026) */
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.18em;

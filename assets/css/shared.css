@@ -186,12 +186,15 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   text-transform: uppercase;
   padding: 8px 2px;
   position: relative;
-  color: rgba(255, 255, 255, 0.95);
+  color: #fff;
   transition: color 180ms var(--ease-soft), font-weight 180ms var(--ease-soft);
 }
 .nav-tabs a:hover { color: #fff; font-weight: 600; }
 .nav-tabs a.active { color: #fff; font-weight: 700; }
-.site-nav.is-scrolled .nav-tabs a { color: rgba(255, 255, 255, 0.95); }   /* scrolled: white text on page content showing through 50% nav */
+/* was rgba(255, 255, 255, 0.95). 55% black tile overlay was eating 5% of the white, and
+   mouseout transitions (the text reverting from a hover state) read as 'darker' on the
+   scrolled cream nav. Force 100% opaque white so the tab is rock-steady in both nav states. */
+.site-nav.is-scrolled .nav-tabs a { color: #fff; }
 .site-nav.is-scrolled .nav-tabs a:hover { color: #fff; }
 /* scrolled active used to be deep brown oklch(28% 0.06 50), but on the cream scrolled-nav
    backdrop the 0.55 black overlay dragged it visually dim. Now matches the rest of the
@@ -201,8 +204,13 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   content: "";
   position: absolute;
   inset: auto 0 -2px 0;
-  height: 2px;
-  background: var(--accent);
+  height: 3px;                                                                    /* was 2px; bumped to 3px so the active-tab underline survives the
+                                                                                     55% tile overlay and the 50% scrolled-nav backdrop blur */
+  background: var(--gold);                                                       /* was var(--accent) oklch(80% 0.10 60) apricot — under the 55%
+                                                                                     black tile overlay the apricot line sank into the wall and was
+                                                                                     nearly invisible. Switched to var(--gold) oklch(78% 0.08 75) which
+                                                                                     reads as a warm underline at both nav states. (user 1 Sep 2026) */
+  border-radius: 1.5px;
 }
 
 .nav-toggle {
@@ -313,7 +321,10 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   margin-top: var(--space-4);
   font-size: clamp(16px, 1.4vw, 19px);
   max-width: 48ch;
-  color: oklch(100% 0 0 / 0.86);
+  color: #fff;                                                                    /* was oklch(100% 0 0 / 0.86) — 14% alpha loss multiplied by the 55%
+                                                                                     black tile overlay dropped this hero sub text into a dim grey
+                                                                                     and the user read it as "the page went dim after the click". Force
+                                                                                     fully opaque white. (user 1 Sep 2026) */
   line-height: 1.55;
 }
 .hero__cta {
@@ -327,7 +338,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   bottom: var(--space-4);
   right: var(--space-5);
   z-index: 2;
-  color: oklch(100% 0 0 / 0.7);
+  color: #fff;                                                                    /* was oklch(100% 0 0 / 0.7) — same dim-text issue; force opaque white */
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.2em;
@@ -363,7 +374,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
 .btn--ghost {
   background: transparent;
   color: white;
-  border-color: oklch(100% 0 0 / 0.5);
+  border-color: oklch(100% 0 0);
 }
 .btn--ghost:hover { background: oklch(100% 0 0 / 0.1); border-color: white; }
 .btn--ink {
@@ -485,7 +496,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
 .split__copy { padding: var(--space-3) 0; }
 .split__copy h2 { margin-bottom: var(--space-4); }
 .split__copy p {
-  color: oklch(94% 0.02 80 / 0.85);
+  color: var(--fg);
   font-size: clamp(15px, 1.2vw, 17px);
   line-height: 1.7;
   margin-bottom: var(--space-3);
