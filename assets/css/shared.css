@@ -80,22 +80,22 @@ body {
 
 /* ============================================================
    PAGE-WIDE DARK OVERLAY LAYER
-   Sits above the tile background but below all content.
-   To change the page mood: edit `background` and/or `opacity`
-   on .bg-tile-page::before in one place.
-   Toggle off: comment out the block, or set background: none.
+   The 45% black ::before pseudo-element on .bg-tile-page was the
+   only full-viewport dark layer, but the user reads text on top of
+   it as 'dim / drained' regardless of the alpha. It was removed
+   on 1 Sep 2026 so the user can A/B compare the page with and
+   without the darkening. To re-enable: paste the block back from
+   git history (734ba35 was the last commit with the overlay
+   active at 45%).
    ============================================================ */
-.bg-tile-page::before {
+/* .bg-tile-page::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);   /* 45% black overlay — 55% → 45% (user 1 Sep 2026, "change to 0.45"). 0.55 was still dimming the wall tile
-                                       enough to read as 'grey-brown' rather than as wood / brick / ivy; 0.45 lets the texture come back to its
-                                       natural warmth while keeping text contrast acceptable. */
+  background: rgba(0, 0, 0, 0.45);
   pointer-events: none;
-  z-index: 0;                        /* layer order: body background-image (wall tile) < this overlay < z-index 1+ content
-                                       — so the overlay only darkens the tile behind the texture, never the text or images on top. */
-}
+  z-index: 0;
+} */
 
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
