@@ -57,13 +57,23 @@ body {
    TILE BACKGROUND (café chic — wood columns + brick + ivy)
    Apply to <body> for full-page tileable scrolling background.
    Mobile: 1K JPEG. Desktop: 2K JPEG (down from 4K) to keep page weight low.
+
+   Dark tint (rgba(0,0,0,0.45)) is now declared as the FIRST
+   background layer via a solid-color linear-gradient — the CSS
+   background stack then paints the wall-tile image on top of
+   that tint. No ::before pseudo-element, no position:fixed, no
+   z-index. The body now owns the entire dark layer as part of
+   its own background shorthand. (User 1 Sep 2026, "0.45 dark
+   layer, NOT as an overlay")
    ============================================================ */
 .bg-tile-page {
-  background-image: url('../site-images/tile-dir-2/bg-fresh2-B-1K-mobile.jpg');
-  background-repeat: repeat-y;
-  background-position: center top;
-  background-size: 100% auto;
-  background-attachment: scroll;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url('../site-images/tile-dir-2/bg-fresh2-B-1K-mobile.jpg') repeat-y center top / 100% auto;
+  background-attachment: scroll, scroll;
+  background-repeat: no-repeat, repeat-y;
+  background-position: center top, center top;
+  background-size: 100% 100%, 100% auto;
 }
 .bg-tile-page main,
 .bg-tile-page section,
@@ -74,27 +84,12 @@ body {
 }
 @media (min-width: 769px) {
   .bg-tile-page {
-    background-image: url('../site-images/tile-dir-2/bg-fresh2-B-2K-desktop.jpg');
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+      url('../site-images/tile-dir-2/bg-fresh2-B-2K-desktop.jpg') repeat-y center top / 100% auto;
+    background-repeat: no-repeat, repeat-y;
   }
 }
-
-/* ============================================================
-   PAGE-WIDE DARK OVERLAY LAYER
-   The 55% black ::before pseudo-element on .bg-tile-page was tried
-   again on 1 Sep 2026 (commit 3da8c83) but the user asked to drop
-   it again immediately. The no-overlay build (commit 8de26b1) is
-   the user's preferred state. Block kept here as comment so a
-   future re-enable is one paste-back. To re-enable: copy the block
-   below out of the comment markers, or restore commit 3da8c83.
-   ============================================================ */
-/* .bg-tile-page::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  pointer-events: none;
-  z-index: 0;
-} */
 
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
