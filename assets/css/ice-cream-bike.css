@@ -59,7 +59,9 @@
 
 .bike-hero__text h1 {
   font-family: "Fraunces", var(--font-display);
-  font-size: clamp(57.6px, 9.9vw, 151.2px);  /* 0.9x of clamp(64,11vw,168) — user 9 Sep 2026 */
+  font-size: clamp(51.84px, 8.91vw, 136.08px);  /* 0.81x of clamp(64,11vw,168) — first pass was
+                                     ×0.9 (commit b0da8f6), user 9 Sep 2026 round 2 wants
+                                     another ×0.9. Total reduction 19% from original. */
   line-height: 0.95;
   letter-spacing: -0.04em;
   font-weight: 400;
