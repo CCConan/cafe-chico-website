@@ -266,10 +266,12 @@
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 6px 12px;
-  border: 1px solid var(--accent);
-  color: var(--accent);
+  padding: 8px 14px;
+  border: 1px solid var(--bg-dark);
+  background: var(--accent);
+  color: var(--bg-dark);
   border-radius: 999px;
+  font-weight: 600;
   background: oklch(98% 0.01 80);
 }
 
