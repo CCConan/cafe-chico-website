@@ -30,3 +30,9 @@ _previews/
 
 # Client contracts (private) — do NOT commit
 合約/
+# Editor swap / backup files (prevent accidental secret leaks)
+*.md-E
+*.md-*
+*~
+.*.swp
+.DS_Store
