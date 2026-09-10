@@ -221,11 +221,11 @@
   color: white;
 }
 
-/* Mosaic grid — 4-column layout for 8 platters */
+/* Mosaic grid — 3-column layout for 5 platters */
 .cat-mosaic__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 280px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 300px;
   gap: 12px;
 }
 
@@ -1102,5 +1102,29 @@
   color: var(--muted);
   white-space: nowrap;
   pointer-events: none;
+}
+
+/* ---- Catering flyer (promo single above the five platters) ---- */
+.cat-flyer {
+  max-width: 520px;
+  margin: 0 auto var(--space-8);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(20, 16, 12, 0.22);
+}
+.cat-flyer img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.cat-flyer figcaption {
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+  background: var(--surface);
 }
 
