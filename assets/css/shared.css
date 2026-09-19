@@ -5,17 +5,19 @@
    ========================================================================== */
 
 :root {
-  /* === Color (deep forest green theme — 25 Aug 2026) === */
-  --bg:        oklch(24% 0.04 145);    /* deep forest green — page background */
-  --surface:   oklch(29% 0.04 145);    /* slightly lighter green — cards / surfaces */
-  --bg-dark:   oklch(16% 0.03 145);    /* deeper green — dark sections / footer */
-  --fg:        oklch(94% 0.02 80);     /* warm cream — primary text (was deep brown) */
-  --muted:     oklch(72% 0.025 80);    /* muted cream — secondary text */
-  --border:    oklch(36% 0.04 145);    /* subtle green border (visible on dark bg) */
-  --accent:    oklch(80% 0.10 60);     /* apricot — warm peach per user 25 Aug 2026 */
-  --accent-soft: oklch(92% 0.04 70);   /* very light apricot background tint */
-  --green:     oklch(60% 0.10 145);    /* brighter green for highlights (was 42%) */
-  --gold:      oklch(78% 0.08 75);     /* keep */
+  /* === Color (olive-green theme — 19 Sep 2026, per client meeting 10 Sep 2026)
+         Brand palette confirmed by client: Moderate Olive + Very Dark Olive/black + cream white.
+         Olive accent = Moderate Olive #A8A84A (the "M" shade on the olive chart). === */
+  --bg:        oklch(22.7% 0.022 108);  /* Very Dark Olive #1D1D11 — page background */
+  --surface:   oklch(28.1% 0.023 108);  /* #2A2A1D — cards / surfaces */
+  --bg-dark:   oklch(19.7% 0.017 108);  /* #16160D — dark sections / footer */
+  --fg:        oklch(96.8% 0.012 101);  /* #F6F5EC cream white — primary text */
+  --muted:     oklch(82.2% 0.025 104);  /* #C7C6B4 — secondary text */
+  --border:    oklch(38.9% 0.020 111);  /* #45463A — subtle olive border */
+  --accent:    oklch(71.2% 0.117 109);  /* Moderate Olive #A8A84A — client-confirmed brand olive */
+  --accent-soft: oklch(29.6% 0.026 108);/* #2E2E1F — olive tint (chips / tile fallbacks) */
+  --green:     oklch(61.8% 0.112 119);  /* #7E8F3A — olive-green highlight */
+  --gold:      oklch(78.9% 0.102 107);  /* #C2BF6F light olive — replaces the old gold */
 
   /* === Typography === */
   --font-display: "Iowan Old Style", "Charter", "Palatino Linotype", "Georgia", "Times New Roman", serif;
@@ -33,9 +35,9 @@
   --border-w: 1px; --border-w-thick: 2px;
 
   /* === Shadow === */
-  --shadow-1: 0 1px 2px rgba(60, 40, 20, 0.04);
-  --shadow-2: 0 4px 16px rgba(60, 40, 20, 0.08);
-  --shadow-3: 0 12px 32px rgba(60, 40, 20, 0.12);
+  --shadow-1: 0 1px 2px rgba(6, 8, 3, 0.04);
+  --shadow-2: 0 4px 16px rgba(6, 8, 3, 0.08);
+  --shadow-3: 0 12px 32px rgba(6, 8, 3, 0.12);
 
   /* === Easing === */
   --ease-soft: cubic-bezier(.2, .8, .2, 1);
@@ -95,7 +97,7 @@ img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; cursor: pointer; border: 0; background: none; padding: 0; }
 
-::selection { background: var(--accent); color: white; }
+::selection { background: var(--accent); color: #14140C; }
 
 /* ---------- Typography ---------- */
 .serif { font-family: var(--font-display); }
@@ -129,7 +131,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(20, 14, 10, 0.50);   /* 0.80 → 0.50 per user: more see-through */
+  background: rgba(6, 8, 3, 0.50);   /* 0.80 → 0.50 per user: more see-through */
   backdrop-filter: saturate(160%) blur(14px);
   -webkit-backdrop-filter: saturate(160%) blur(14px);
   border-bottom: 1px solid transparent;
@@ -190,7 +192,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
    scrolled cream nav. Force 100% opaque white so the tab is rock-steady in both nav states. */
 .site-nav.is-scrolled .nav-tabs a { color: #fff; }
 .site-nav.is-scrolled .nav-tabs a:hover { color: #fff; }
-/* scrolled active used to be deep brown oklch(28% 0.06 50), but on the cream scrolled-nav
+/* scrolled active used to be deep brown oklch(28% 0.060 109), but on the cream scrolled-nav
    backdrop the 0.55 black overlay dragged it visually dim. Now matches the rest of the
    active state: pure white, just bolder. User 1 Sep 2026. */
 .site-nav.is-scrolled .nav-tabs a.active { color: #fff; font-weight: 700; }
@@ -200,9 +202,9 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   inset: auto 0 -2px 0;
   height: 3px;                                                                    /* was 2px; bumped to 3px so the active-tab underline survives the
                                                                                      55% tile overlay and the 50% scrolled-nav backdrop blur */
-  background: var(--gold);                                                       /* was var(--accent) oklch(80% 0.10 60) apricot — under the 55%
+  background: var(--gold);                                                       /* was var(--accent) oklch(80% 0.100 109) apricot — under the 55%
                                                                                      black tile overlay the apricot line sank into the wall and was
-                                                                                     nearly invisible. Switched to var(--gold) oklch(78% 0.08 75) which
+                                                                                     nearly invisible. Switched to var(--gold) oklch(78% 0.080 109) which
                                                                                      reads as a warm underline at both nav states. (user 1 Sep 2026) */
   border-radius: 1.5px;
 }
@@ -225,7 +227,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   .nav-tabs {
     position: absolute;
     inset: 100% 0 auto 0;
-    background: rgba(20, 14, 10, 0.50);   /* mobile dropdown: 50% dark transparent per user */
+    background: rgba(6, 8, 3, 0.50);   /* mobile dropdown: 50% dark transparent per user */
     backdrop-filter: saturate(160%) blur(14px);
     -webkit-backdrop-filter: saturate(160%) blur(14px);
     border-bottom: 1px solid var(--border);
@@ -272,8 +274,8 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
 .hero__scrim {
   position: absolute; inset: 0; z-index: 1;
   background:
-    linear-gradient(180deg, oklch(20% 0.04 145 / 0.10) 0%, oklch(20% 0.04 145 / 0.45) 70%, oklch(20% 0.04 145 / 0.85) 100%),
-    linear-gradient(90deg,  oklch(20% 0.04 145 / 0.30) 0%, transparent 50%);
+    linear-gradient(180deg, oklch(20% 0.040 112/ 0.10) 0%, oklch(20% 0.040 112/ 0.45) 70%, oklch(20% 0.040 112/ 0.85) 100%),
+    linear-gradient(90deg,  oklch(20% 0.040 112/ 0.30) 0%, transparent 50%);
 }
 .hero__inner {
   position: relative;
@@ -288,9 +290,10 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
 .hero__kicker {
   display: inline-block;
   padding: 5px 12px;
-  border: 1px solid oklch(100% 0 0 / 0.4);
+  border: 1px solid oklch(100% 0 0 / 0.55);
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 13px;               /* 11px → 13px: client asked for "a little bit bigger" (10 Sep 2026) */
+  color: #fff;                   /* client: white writing, not orange */
   letter-spacing: 0.18em;
   text-transform: uppercase;
   margin-bottom: var(--space-4);
@@ -371,7 +374,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
                                                                                   green text now matches the
                                                                                   .story__badge treatment on the
                                                                                   home page. */
-.btn--primary:hover { background: oklch(42% 0.10 55); box-shadow: 0 8px 20px oklch(48% 0.10 60 / 0.25); }
+.btn--primary:hover { background: oklch(80% 0.105 109); box-shadow: 0 8px 20px oklch(48% 0.100 109/ 0.25); }
 .btn--ghost {
   background: transparent;
   color: white;
@@ -383,11 +386,11 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   color: var(--bg);
 }
 .btn--ink:hover {
-  background: oklch(30% 0.05 145);
-  color: #fff;                                                                   /* was var(--bg) = oklch(24% 0.04 145) deep green, which clashed with the
+  background: oklch(30% 0.050 112);
+  color: #fff;                                                                   /* was var(--bg) = oklch(24% 0.040 112) deep green, which clashed with the
                                                                                    new deep-green hover background and made the text effectively vanish.
                                                                                    Force white on hover for guaranteed contrast (user 1 Sep 2026). */
-  box-shadow: 0 8px 20px oklch(20% 0.04 145 / 0.4);
+  box-shadow: 0 8px 20px oklch(20% 0.040 112/ 0.4);
 }
 
 /* ---------- Section heading ---------- */
@@ -526,7 +529,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: oklch(78% 0.06 35);
+  color: oklch(78% 0.060 109);
   margin: 0 0 var(--space-2);
   font-weight: 600;
 }
@@ -537,7 +540,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   color: oklch(95% 0.012 80);
 }
 .visit-strip__cell a:hover {
-  /* was var(--gold) oklch(80% 0.10 60) — a warm apricot that under the
+  /* was var(--gold) oklch(80% 0.100 109) — a warm apricot that under the
      55% black tile overlay read as 'drained / greyish' next to the
      default cream-white. Force back to pure white on hover so the
      link becomes brighter, not darker. (user 1 Sep 2026) */
@@ -593,7 +596,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   border-radius: 50%;
   background: var(--green);
 }
-.chip__dot--amber { background: oklch(72% 0.12 65); }
+.chip__dot--amber { background: oklch(72% 0.120 109); }
 .chip__dot--grey  { background: var(--muted); }
 
 /* ---------- Footer ---------- */
@@ -616,7 +619,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: oklch(78% 0.06 35);
+  color: oklch(78% 0.060 109);
   margin: 0 0 var(--space-3);
   font-weight: 600;
 }

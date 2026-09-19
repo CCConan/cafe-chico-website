@@ -63,12 +63,12 @@
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--bg);
-  box-shadow: 0 16px 40px oklch(20% 0.02 145 / 0.18), 0 4px 8px oklch(20% 0.02 145 / 0.10);
+  box-shadow: 0 16px 40px oklch(20% 0.020 112/ 0.18), 0 4px 8px oklch(20% 0.020 112/ 0.10);
   transition: transform 280ms var(--ease-soft), box-shadow 280ms var(--ease-soft);
 }
 .popular__card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 24px 56px oklch(20% 0.02 145 / 0.28), 0 6px 12px oklch(20% 0.02 145 / 0.14);
+  box-shadow: 0 24px 56px oklch(20% 0.020 112/ 0.28), 0 6px 12px oklch(20% 0.020 112/ 0.14);
 }
 .popular__photo {
   position: relative;
@@ -145,13 +145,13 @@
   flex-direction: column;
   justify-content: flex-end;
   padding: clamp(40px, 5vw, 64px) clamp(28px, 4vw, 56px);
-  color: #fdf6ed;
+  color: #F7F6EE;
 }
 .story__hero-text .kicker {
   display: inline-block;
   align-self: flex-start;
   background: var(--accent);
-  color: #fdf6ed;
+  color: #14140C;
   padding: 5px 12px;
   margin: 0 0 18px;
   font-family: var(--font-mono);
@@ -166,13 +166,13 @@
   letter-spacing: -0.02em;
   font-weight: 400;
   margin: 0;
-  color: #fdf6ed;
-  text-shadow: 0 2px 6px oklch(20% 0.04 145 / 0.6);
+  color: #F7F6EE;
+  text-shadow: 0 2px 6px oklch(20% 0.040 112/ 0.6);
   max-width: 880px;
 }
 .story__hero-text h2 em {
   font-style: italic;
-  color: oklch(82% 0.10 70);
+  color: oklch(82% 0.100 109);
 }
 
 /* Segment: numbered, with text + optional photo */
@@ -244,7 +244,7 @@
 .story__seg-photo {
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 16px 48px oklch(20% 0.02 145 / 0.14);
+  box-shadow: 0 16px 48px oklch(20% 0.020 112/ 0.14);
 }
 .story__seg-photo img {
   display: block;
@@ -415,7 +415,7 @@
 .neighbours__press-photo {
   position: relative;
   width: 100%;
-  background: oklch(35% 0.04 40);
+  background: oklch(35% 0.040 109);
   overflow: hidden;
 }
 .neighbours__press-photo img {
@@ -477,8 +477,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(60% 80% at 100% 0%, oklch(48% 0.10 60 / 0.18) 0%, transparent 60%),
-    radial-gradient(60% 80% at 0% 100%, oklch(78% 0.08 75 / 0.08) 0%, transparent 60%);
+    radial-gradient(60% 80% at 100% 0%, oklch(48% 0.100 109/ 0.18) 0%, transparent 60%),
+    radial-gradient(60% 80% at 0% 100%, oklch(78% 0.080 109/ 0.08) 0%, transparent 60%);
   pointer-events: none;
 }
 .neighbours__quote > * { position: relative; }
@@ -516,7 +516,7 @@
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent-soft);
+  color: var(--gold);   /* olive theme — was var(--accent-soft): needs a LIGHT tone on dark bg */
 }
 
 /* Bottom strip */
@@ -577,7 +577,7 @@
 }
 .review:hover {
   transform: translateY(-8px) scale(1.018);
-  box-shadow: 0 18px 38px -16px rgba(40, 24, 12, 0.32), 0 4px 10px -4px rgba(40, 24, 12, 0.18);
+  box-shadow: 0 18px 38px -16px rgba(6, 8, 3, 0.32), 0 4px 10px -4px rgba(6, 8, 3, 0.18);
   border-color: var(--accent);
   transition-delay: 0ms;  /* hover must respond instantly, not wait for stagger */
 }
@@ -621,10 +621,10 @@
   flex-shrink: 0;
 }
 .review__src--google     { background: oklch(96% 0.04 250); color: oklch(28% 0.10 250); }
-.review__src--tripadvisor{ background: oklch(96% 0.07 145); color: oklch(28% 0.10 145); }
+.review__src--tripadvisor{ background: oklch(96% 0.070 112); color: oklch(28% 0.100 112); }
 .review__src--google .review__src-logo { color: inherit; }
 .review__stars {
-  color: oklch(78% 0.16 70);
+  color: oklch(78% 0.130 109);
   font-size: 14px;
   letter-spacing: 0.05em;
 }
@@ -891,8 +891,8 @@
   position: absolute;
   top: 12px;
   left: 12px;
-  background: oklch(20% 0.025 145 / 0.85);
-  color: #fdf6ed;
+  background: oklch(20% 0.025 112/ 0.85);
+  color: #F7F6EE;
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.12em;
