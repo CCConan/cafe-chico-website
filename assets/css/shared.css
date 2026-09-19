@@ -733,3 +733,43 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible), .btn:focus:not(:f
   border-radius: 50%;
   pointer-events: none;
 }
+
+/* ---- Halal mark (client's own menu stamp, keyed to transparent) ---- */
+.hero__halal {
+  display: block;
+  width: clamp(84px, 8.5vw, 118px);
+  height: auto;
+  margin: 0 0 14px;
+  opacity: 0.95;
+}
+
+/* ---- Trust badges: Google rating + Food Hygiene Rating ---- */
+.trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-6);
+}
+.trust-badges li {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 8px 16px;
+  border: var(--border-w) solid var(--accent);
+  border-radius: var(--radius-pill);
+  background: var(--accent-soft);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg);
+}
+.trust-badges strong {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--accent);
+}

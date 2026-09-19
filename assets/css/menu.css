@@ -18,6 +18,17 @@
   opacity: 0.18;
   filter: saturate(1.1);
 }
+.menu-hero__delivery {
+  margin: var(--space-3) 0 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.menu-hero__delivery strong { color: var(--accent); }
+.menu-hero__delivery a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+
 .menu-hero__inner {
   position: relative;
   z-index: 1;
