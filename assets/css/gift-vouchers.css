@@ -393,7 +393,13 @@
    ========================================================================== */
 
 /* ------------------------------------------------------------- stat strip */
-.g-stats { border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+/* shared.css sets `section { padding: clamp(64px, 9vw, 128px) 0 }` globally —
+   the stat strip needs the same 30%-tighter rhythm as the rest of the page. */
+.g-stats {
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  padding: clamp(45px, 6.3vw, 90px) 0;
+}
 .g-stats__grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
