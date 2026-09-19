@@ -6,6 +6,12 @@
   <title>The Menu · Café Chico</title>
   <meta name="description" content="The full Café Chico menu — breakfast, brunch, salads, signature subs, spuds, sandwiches, desserts and drinks. Made fresh in Bolton." />
   <meta name="theme-color" content="#1D1D11" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/site-images/logo/favicon-bg-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/site-images/logo/favicon-bg-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/site-images/logo/apple-touch-icon-180.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/site-images/logo/favicon-light-32.png" media="(prefers-color-scheme: light)" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/site-images/logo/favicon-32.png" media="(prefers-color-scheme: dark)" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1189,6 +1195,7 @@
                    data-cat="${escapeHtml(it.cat_name || '')}"
                    data-desc="${escapeHtml(it.desc || '')}"
                    data-price="${it.price != null ? it.price : ''}"
+                   data-image="${escapeHtml(it.image || '')}"
                    role="button"
                    tabindex="0"
                    aria-label="Open ${escapeHtml(it.name)} details">
@@ -1283,26 +1290,38 @@
       '</svg>'
     );
 
-  function openFoodModal(slug, name, cat, desc, price) {
+  function openFoodModal(slug, name, cat, desc, price, image) {
     if (!modal) return;
-    // Fallback chain for the large image: full → thumb → inline SVG placeholder.
-    // Stops the "broken image" icon when a dish has no full-size photo yet
-    // (drinks, kids meals, subs, desserts, etc.).
-    const candidates = [
-      'assets/site-images/menu/full/' + slug + '.jpg',
-      'assets/site-images/menu/thumb/' + slug + '.jpg',
-    ];
+    // Fallback chain for the large image:
+    //   1) full-size version of this dish's own photo (thumb path → full path)
+    //   2) this dish's thumb photo
+    //   3) legacy slug-based lookups (full/<slug>.jpg, thumb/<slug>.jpg)
+    //   4) inline SVG placeholder
+    // (19 Sep 2026: 1+2 added — after the Sept menu rebuild the slugs no longer
+    //  always match the photo file names, so slug-only lookup lost the big image.)
+    const candidates = [];
+    if (image) {
+      candidates.push(image.replace('/thumb/', '/full/'));
+      candidates.push(image);
+    }
+    candidates.push('assets/site-images/menu/full/' + slug + '.jpg');
+    candidates.push('assets/site-images/menu/thumb/' + slug + '.jpg');
+    const seen = new Set();
+    const chain = candidates.filter(c => c && !seen.has(c) && seen.add(c));
+    const candidatesAll = chain;
 
     // Reset placeholder state from a previous open
     fmImg.classList.remove('food-modal__img--missing');
+    const stalePh = modal.querySelector('.food-modal__placeholder');
+    if (stalePh) stalePh.remove();
     fmImg.alt = name;
 
     // Wire one-shot fallback chain on the image
     fmImg.onerror = function () {
       const tried = parseInt(this.dataset.tried || '0', 10);
-      if (tried < candidates.length) {
+      if (tried < candidatesAll.length) {
         this.dataset.tried = String(tried + 1);
-        this.src = candidates[tried];
+        this.src = candidatesAll[tried];
       } else {
         // Final fallback: inline SVG placeholder (always works, no network)
         this.onerror = null;
@@ -1373,9 +1392,9 @@
     grid.addEventListener('click', (e) => {
       const card = e.target.closest('.dish');
       if (!card) return;
-      const { slug, name, cat, desc, price } = card.dataset;
+      const { slug, name, cat, desc, price, image } = card.dataset;
       if (!slug) return;
-      openFoodModal(slug, name, cat, desc, price);
+      openFoodModal(slug, name, cat, desc, price, image);
     });
     // Keyboard support: Enter / Space on a focused .dish opens the modal
     grid.addEventListener('keydown', (e) => {
@@ -1383,9 +1402,9 @@
       const card = e.target.closest('.dish');
       if (!card) return;
       e.preventDefault();
-      const { slug, name, cat, desc, price } = card.dataset;
+      const { slug, name, cat, desc, price, image } = card.dataset;
       if (!slug) return;
-      openFoodModal(slug, name, cat, desc, price);
+      openFoodModal(slug, name, cat, desc, price, image);
     });
   });
 </script>
