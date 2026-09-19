@@ -564,32 +564,44 @@
    The text buttons ("Follow on Instagram" / "Watch on TikTok") are replaced by
    the platforms' own logos: a clear, instantly recognisable button.
    ========================================================================== */
-.g-logo-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 32px; }
+.g-logo-row { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: 32px; }
 .g-logo-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 58px;
-  height: 58px;
-  background: #fff;
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius);
-  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  background: none;          /* pure logo — no white box (owner request, 19 Sep 2026) */
+  border: 0;
+  transform-origin: center;
+  transition: transform 320ms cubic-bezier(.2, .8, .2, 1);   /* smooth shrink back */
 }
+.g-logo-btn img { width: 100%; height: 100%; display: block; }
 .g-logo-btn:hover,
-.g-logo-btn:focus-visible {
-  transform: translateY(-2px);
-  border-color: var(--olive);
-  box-shadow: 0 6px 16px rgba(25, 26, 16, 0.12);
+.g-logo-btn:focus-visible { animation: logoRubberBand 900ms cubic-bezier(.22, 1, .36, 1) forwards; }
+.g-logo-btn:active { animation: none; transform: scale(1.12); }
+.g-logo-btn:focus-visible { outline: 2px solid var(--olive); outline-offset: 6px; }
+
+/* +30% with an elastic (rubber-band) wobble */
+@keyframes logoRubberBand {
+  0%   { transform: scale(1, 1); }
+  30%  { transform: scale(1.34, 1.24); }
+  40%  { transform: scale(1.24, 1.34); }
+  50%  { transform: scale(1.33, 1.28); }
+  65%  { transform: scale(1.27, 1.32); }
+  75%  { transform: scale(1.31, 1.29); }
+  100% { transform: scale(1.3, 1.3); }
 }
-.g-logo-btn img { width: 30px; height: 30px; display: block; }
-.g-close .g-logo-btn { border-color: transparent; }
+@media (prefers-reduced-motion: reduce) {
+  .g-logo-btn:hover,
+  .g-logo-btn:focus-visible { animation: none; transform: scale(1.3); }
+}
 
 /* Section mark — the platform's logo sits next to the section heading */
 .g-head__row { display: flex; align-items: center; gap: 16px; }
 .g-mark { width: 46px; height: 46px; flex: none; }
 @media (max-width: 620px) {
-  .g-logo-btn { width: 52px; height: 52px; }
-  .g-logo-btn img { width: 26px; height: 26px; }
+  .g-logo-btn { width: 42px; height: 42px; }
   .g-mark { width: 38px; height: 38px; }
 }

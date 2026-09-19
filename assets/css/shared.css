@@ -69,13 +69,16 @@ body {
    layer, NOT as an overlay")
    ============================================================ */
 .bg-tile-page {
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-    url('../site-images/tile-dir-2/bg-fresh2-B-1K-mobile.jpg') repeat-y center top / 100% auto;
-  background-attachment: scroll, scroll;
-  background-repeat: no-repeat, repeat-y;
-  background-position: center top, center top;
-  background-size: 100% 100%, 100% auto;
+  /* 19 Sep 2026 — client asked for the brick / timber / ivy wall photo to go.
+     Replaced by a seamless olive micro-floral tile (Moderate Olive #A8A84A motifs
+     on Very Dark Olive #1D1D11): generated with MiniMax image-01, then made
+     genuinely tileable + tone-corrected in post-production. 460px repeat keeps
+     the repeat invisible; no dark tint layer needed any more — the tile IS dark. */
+  background-color: var(--bg);
+  background-image: url('../site-images/tile-olive/olive-floral-dark-1K.jpg');
+  background-repeat: repeat;
+  background-position: center top;
+  background-size: 460px auto;
 }
 .bg-tile-page main,
 .bg-tile-page section,
@@ -86,10 +89,8 @@ body {
 }
 @media (min-width: 769px) {
   .bg-tile-page {
-    background:
-      linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-      url('../site-images/tile-dir-2/bg-fresh2-B-2K-desktop.jpg') repeat-y center top / 100% auto;
-    background-repeat: no-repeat, repeat-y;
+    background-size: 520px auto;
+    background-repeat: repeat;
   }
 }
 
