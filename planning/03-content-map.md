@@ -318,7 +318,7 @@ Block 4 — Looking ahead: Farm-to-fork + community meal photo
 | Café Chico logo (if exists) | Owner | Not provided — using wordmark only |
 | Year established (exact) | Bolton News says "around a year" as of 2024 → late 2023 | Use "Opened 2023" with note |
 | Chef Chico nickname origin | Not yet found | Use "Chef Chico" once confirmed by owner |
-| Exact opening hours — Tue opens at 9:30 vs 10? | Google says 10am Tue, RG says 9:30am Tue. Sources differ. | Use 10am–4pm per choiceQR (authoritative) |
+| Exact opening hours | **已解決 2026-09-19（Conan 指示：跟 Google Maps）** | Google Maps：Mon Closed · **Tue–Sat 09:00–16:00** · Sun 10:00–16:00。網站（index 摘要、時間表、7 頁頁尾、party-room、platters、gift-vouchers、social-reviews）已全部改成此版本。注意：café 自家 choiceQR 仍寫 Tue–Sun 10:00–16:00（MapQuest/Foursquare 亦係 10:00）→ 已提請老闆確認並更新 Google 或 choiceQR |
 | Parking info | Not researched | Use general Bolton advice |
 | Reservation method | Not specified — appears walk-in only | "Walk-ins welcome" |
 | Email contact | cafechico185@gmail.com (confirmed via choiceQR) | Use as primary contact |

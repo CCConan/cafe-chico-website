@@ -758,3 +758,42 @@
   .delivery-chip img { height: 15px; }
 }
 .menu-note a:hover { color: white; border-color: white; }
+
+/* ---- Menu page: TikTok strip (19 Sep 2026) ---- */
+.menu-tiktok {
+  background: var(--bg-dark);
+  padding: clamp(48px, 6vw, 88px) 0;
+}
+.menu-tiktok__head h2 { margin: var(--space-2) 0 0; }
+.menu-tiktok__head h2 em { font-style: italic; color: var(--accent); }
+.menu-tiktok__head a { color: var(--accent); }
+.menu-tiktok__lede {
+  margin-top: var(--space-3);
+  color: var(--muted);
+  max-width: 52ch;
+}
+.menu-tiktok__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-5);
+  margin-top: var(--space-5);
+}
+.menu-tiktok__follow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-start;
+  padding: 12px 22px;
+  border: var(--border-w) solid var(--accent);
+  border-radius: var(--radius-pill);
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 200ms, transform 200ms var(--ease-soft);
+}
+.menu-tiktok__follow:hover { background: var(--accent); color: #14140C; transform: translateY(-2px); }
+.menu-tiktok__row .tiktok-embed { margin: 0; }
