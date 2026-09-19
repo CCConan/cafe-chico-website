@@ -1,14 +1,16 @@
 <!doctype html><html><head><meta charset="utf-8"><style>
 html,body{margin:0;background:#1D1D11}
-.crop{overflow:hidden;height:760px}
-iframe{width:1400px;height:760px;border:0;display:block}
-#b{margin-top:-40px}
+.crop{overflow:hidden;height:620px}
+iframe{width:1400px;height:620px;border:0;display:block}
 </style></head><body>
 <div class="crop"><iframe id="a" src="index.html"></iframe></div>
 <div class="crop"><iframe id="b" src="index.html"></iframe></div>
 <script>
 document.getElementById('b').addEventListener('load',function(){
-  var w=this.contentWindow,d=this.contentDocument,el=d.getElementById('social');
-  if(el) w.scrollTo(0, el.offsetTop-20);
+  var fr=this;
+  setTimeout(function(){
+    var w=fr.contentWindow,d=fr.contentDocument,el=d.getElementById('social');
+    if(el){ w.scrollTo(0, el.getBoundingClientRect().top + w.scrollY - 10); }
+  },3500);
 });
 </script></body></html>

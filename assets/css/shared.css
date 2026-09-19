@@ -170,15 +170,17 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
 .site-nav.is-scrolled .brand__mark--dark  { display: block; }
 .nav-tabs {
   display: flex;
-  gap: var(--space-5);
+  gap: clamp(14px, 1.7vw, 28px);   /* 19 Sep 2026: 收窄 gap — nav 多咗「Social & Reviews」「Gift Vouchers」兩個長標籤 */
+  flex-wrap: wrap;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 .nav-tabs a {
   font-family: var(--font-mono);
-  font-size: 13.2px;
-  letter-spacing: 0.16em;
+  font-size: 12.6px;
+  letter-spacing: 0.11em;
+  white-space: nowrap;             /* 標籤唔好斷行 */
   text-transform: uppercase;
   padding: 8px 2px;
   position: relative;
