@@ -30,6 +30,10 @@ _previews/
 
 # Client contracts (private) — do NOT commit
 合約/
+
+# Client raw originals (large HEIC straight from the owner's phone).
+# Kept in ../_backups/cafechico-client-originals-*.tar instead of bloating the repo.
+assets/photos/photo from Conan/
 # Editor swap / backup files (prevent accidental secret leaks)
 *.md-E
 *.md-*
