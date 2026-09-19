@@ -742,6 +742,14 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible), .btn:focus:not(:f
   margin: 0 0 14px;
   opacity: 0.95;
 }
+/* 主頁 hero 背景係淺色相（雲石／木），白字印章要深色底襯才睇得到 */
+.hero__halal--chip {
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  background: oklch(19.7% 0.017 108 / 0.74);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
 
 /* ---- Trust badges: Google rating + Food Hygiene Rating ---- */
 .trust-badges {
