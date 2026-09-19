@@ -337,8 +337,20 @@
     <div>
       <h5>Follow</h5>
       <ul>
-        <li><a href="https://instagram.com/cafechico_uk" target="_blank" rel="noopener">Instagram · @cafechico_uk</a></li>
-        <li><a href="https://tiktok.com/@cafechico" target="_blank" rel="noopener">TikTok · @cafechico</a></li>
+        <li class="qr-link">
+          <a href="https://instagram.com/cafechico_uk" target="_blank" rel="noopener">Instagram · @cafechico_uk</a>
+          <span class="qr-pop" aria-hidden="true">
+            <img src="assets/site-images/qr/instagram.png" alt="Instagram QR code — @cafechico_uk" width="512" height="512" loading="lazy" />
+            <span class="qr-pop__hint">Scan with your phone</span>
+          </span>
+        </li>
+        <li class="qr-link">
+          <a href="https://tiktok.com/@cafechico" target="_blank" rel="noopener">TikTok · @cafechico</a>
+          <span class="qr-pop" aria-hidden="true">
+            <img src="assets/site-images/qr/tiktok.png" alt="TikTok QR code — @cafechico" width="512" height="512" loading="lazy" />
+            <span class="qr-pop__hint">Scan with your phone</span>
+          </span>
+        </li>
         <li><a href="https://maps.app.goo.gl/vYhYXEfkkgfor3qBA?g_st=ic" target="_blank" rel="noopener">Google Maps</a></li>
       </ul>
     </div>
@@ -1432,5 +1444,27 @@
   });
 </script>
 
+
+<script>
+  // 手機／觸控：hover 唔存在，所以撳一下先彈 QR，再撳先去連結
+  (function () {
+    var items = document.querySelectorAll('.qr-link');
+    items.forEach(function (li) {
+      var a = li.querySelector('a');
+      if (!a) return;
+      a.addEventListener('click', function (e) {
+        var touch = window.matchMedia('(hover: none)').matches;
+        if (touch && !li.classList.contains('is-open')) {
+          e.preventDefault();
+          items.forEach(function (o) { if (o !== li) o.classList.remove('is-open'); });
+          li.classList.add('is-open');
+        }
+      });
+    });
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.qr-link')) items.forEach(function (o) { o.classList.remove('is-open'); });
+    });
+  })();
+</script>
 </body>
 </html>

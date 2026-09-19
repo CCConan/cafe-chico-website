@@ -740,18 +740,11 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible), .btn:focus:not(:f
 /* ---- Halal mark (client's own menu stamp, keyed to transparent) ---- */
 .hero__halal {
   display: block;
-  width: clamp(59px, 6vw, 83px);   /* 19 Sep 2026: 細 30%（原本 84–118px）— 客人話太搶眼 */
+  width: clamp(78px, 7.6vw, 102px);   /* 19 Sep 2026: 約原本視覺大小嘅 70%（客人：唔要太細） */
   height: auto;
   margin: 0 0 10px;
-  opacity: 0.9;
-}
-/* 主頁 hero 背景係淺色相（雲石／木），白字印章要深色底襯才睇得到 */
-.hero__halal--chip {
-  padding: 6px 8px;                /* 低調啲：細 padding + 淡底 */
-  border-radius: var(--radius-sm);
-  background: oklch(19.7% 0.017 108 / 0.52);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
+  /* 冇底色方塊 —— 用柔和陰影令白印章喺淺色相片上一樣睇得到 */
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.7)) drop-shadow(0 0 12px rgba(0,0,0,0.45));
 }
 
 /* ---- Trust badges: Google rating + Food Hygiene Rating ---- */
@@ -783,4 +776,48 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible), .btn:focus:not(:f
   font-weight: 600;
   letter-spacing: 0;
   color: var(--accent);
+}
+
+/* ---- Social link + QR pop-out（橡筋回彈，19 Sep 2026）
+        客人要求：Menu 頁 TikTok / Instagram 按鈕，鼠標移上去喺下方彈出 QR code ---- */
+.qr-link { position: relative; }
+
+.qr-pop {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 10px);          /* 喺按鈕下方彈出 */
+  z-index: 60;
+  width: 150px;
+  padding: 10px 10px 8px;
+  background: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-10px) scale(0.8);
+  transform-origin: top left;
+  pointer-events: none;
+  transition:
+    opacity 150ms ease,
+    transform 520ms cubic-bezier(0.34, 1.56, 0.64, 1);   /* ← 橡筋回彈（overshoot） */
+}
+.qr-pop img { display: block; width: 100%; height: auto; }
+.qr-pop__hint {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #4a4a44;
+}
+.qr-link:hover .qr-pop,
+.qr-link:focus-within .qr-pop,
+.qr-link.is-open .qr-pop {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  .qr-pop { transition: opacity 120ms ease; transform: none; }
 }
