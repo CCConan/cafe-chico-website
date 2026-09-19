@@ -14,9 +14,10 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url("../../assets/photos/raw/cover-photo.jpg") center / cover;
-  opacity: 0.18;
-  filter: saturate(1.1);
+  /* 19 Sep 2026 — was assets/photos/raw/cover-photo.jpg (the brick wall photo the
+     client asked us to drop). Now the same olive micro-floral tile as the page. */
+  background: url("../../assets/site-images/tile-olive/olive-floral-dark-1K.jpg") repeat center top / 520px auto;
+  opacity: 1;
 }
 .menu-hero__delivery {
   margin: var(--space-3) 0 0;
