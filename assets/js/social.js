@@ -11,7 +11,7 @@
 import PhotoSwipe from '../vendor/photoswipe/photoswipe.esm.js';
 
 const IG_PROFILE = 'https://www.instagram.com/cafechico_uk/';
-const GRID_SEL = '.social-media__grid';
+const GRID_SEL = '.social-row, .social-media__grid';   /* 19 Sep 2026: 首頁 social 區改成 .social-row（5 張一行），保留舊 selector 以防其他頁用 */
 const THUMB_SEL = '.sm-thumb';
 const POPULAR_SEL = '.popular__card';
 
