@@ -40,3 +40,7 @@ assets/photos/photo from Conan/
 *~
 .*.swp
 .DS_Store
+
+# Local test wrappers (screenshot harness) — never commit / deploy
+_t.html
+_test_*.html
