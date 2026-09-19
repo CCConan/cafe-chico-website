@@ -1,42 +1,44 @@
 /* ==========================================================================
-   Café Chico — Shop & Gifts  |  "Editorial" system
+   Café Chico — "Editorial" system  (Shop & Gifts, Social & Reviews)
    --------------------------------------------------------------------------
-   Style reference requested by the owner: Slattery (slattery.co.uk/wedding-cakes)
-   — generous white/cream space, big all-caps serif headings with wide tracking,
-     hairline rules, square corners (radius 0), flat buttons, editorial grids.
-   Café Chico's own palette (olive / black / cream white) is kept, so this reads
-   as Café Chico rather than a copy of Slattery.
+   Layout feel: Slattery (slattery.co.uk) — generous cream space, big all-caps
+   serif headings, hairline rules, square corners, flat buttons, editorial grids.
+
+   Palette (confirmed by the owner):
+     • Moderate Olive  #A8A84A  — the brand olive, used as the main colour
+     • near-black      #191A10  — about 20% of the surface (headings, dark band)
+     • cream white     #F7F6EE  — the light base
+   Text on cream is near-black (legible); olive carries the brand as fills,
+   bands, buttons, numbers and rules. Ink on olive = 6.7:1, ink on cream = 15:1.
 
    Fonts: Slattery uses garamond-premier-pro + europa (Adobe Fonts — licensed,
-   cannot be embedded). Closest free equivalents are used instead:
-     • EB Garamond      ← garamond-premier-pro
-     • Inter            ← europa
+   cannot be embedded). Free equivalents: EB Garamond + Inter.
    ========================================================================== */
 
 :root {
-  /* --- paper / ink: light editorial base (was: dark olive theme) --- */
+  /* --- light base --- */
   --paper:      #F7F6EE;   /* cream white page background */
   --paper-2:    #EFEDDF;   /* one step darker — alternating bands */
   --paper-3:    #E7E4D2;   /* image placeholder / soft blocks */
-  --ink:        #1D1D11;   /* Very Dark Olive — primary text */
-  --ink-soft:   #5F5F49;   /* secondary text */
-  --hairline:   #D9D6C1;   /* 1px rules — the Slattery look */
 
-  /* --- brand olive --- */
-  --olive:      #A8A84A;   /* Moderate Olive — decorative fills, rules, marks */
-  --olive-deep: #5C6018;   /* dark olive — headings + buttons (6.1:1 on paper) */
+  /* --- the black 20% --- */
+  --ink:        #191A10;   /* near-black olive — headings, body, dark band */
+  --ink-soft:   #5F5F49;   /* secondary text (5.6:1 on cream) */
+  --hairline:   #D9D6C1;   /* 1px rules */
+
+  /* --- brand olive (Moderate Olive #A8A84A) --- */
+  --olive:      #A8A84A;   /* the M shade — fills, bands, buttons, marks */
+  --olive-deep: #6E7226;   /* same hue, darker — only where small text needs contrast */
   --olive-tint: #EDEBCF;   /* very light olive wash */
 
   /* --- type --- */
   --font-editorial: "EB Garamond", "Iowan Old Style", "Charter", Georgia, serif;
   --font-ui: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
 
-  /* --- rhythm (8px base, Slattery-scale section padding) --- */
+  /* --- rhythm --- */
   --gutter: clamp(20px, 5vw, 56px);
   --section: clamp(64px, 9vw, 132px);
-
-  /* --- square corners are the whole point here --- */
-  --radius: 0;
+  --radius: 0;             /* square corners are the whole point */
 }
 
 /* ------------------------------------------------------------------ base */
@@ -52,15 +54,15 @@
   font-family: var(--font-editorial);
   font-weight: 500;
   letter-spacing: 0.01em;
-  color: var(--olive-deep);
+  color: var(--ink);
   margin: 0;
 }
+.gift-page p { margin: 0 0 0; }
 .gift-page a { color: var(--olive-deep); }
 
 .g-wrap { max-width: 1220px; margin: 0 auto; padding: 0 var(--gutter); }
 .g-wrap--narrow { max-width: 820px; }
 
-/* Slattery-style eyebrow: small caps, wide tracking, hairline-flanked */
 .g-eyebrow {
   font-family: var(--font-ui);
   font-size: 11px;
@@ -74,21 +76,18 @@
 
 /* ------------------------------------------------------------- announce */
 .g-announce {
-  background: var(--olive-tint);
-  border-bottom: 1px solid var(--hairline);
+  background: var(--olive);
+  color: var(--ink);
   font-size: 12.5px;
   letter-spacing: 0.06em;
-  color: var(--ink-soft);
   text-align: center;
-  padding: 9px var(--gutter);
+  padding: 10px var(--gutter);
 }
-.g-announce strong { color: var(--ink); font-weight: 600; }
+.g-announce strong { font-weight: 600; }
+.g-announce a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 
 /* --------------------------------------------- centred logo lockup (Slattery) */
-.g-lockup {
-  padding: clamp(26px, 4vw, 44px) 0 clamp(20px, 3vw, 32px);
-  text-align: center;
-}
+.g-lockup { padding: clamp(26px, 4vw, 44px) 0 clamp(20px, 3vw, 32px); text-align: center; }
 .g-lockup__row {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -129,10 +128,7 @@
 }
 .g-hero__cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
 .g-hero__media { position: relative; }
-.g-hero__media img {
-  width: 100%; height: auto; display: block;
-  aspect-ratio: 4 / 3; object-fit: cover;
-}
+.g-hero__media img { width: 100%; height: auto; display: block; aspect-ratio: 4 / 3; object-fit: cover; }
 .g-hero__note {
   margin: 12px 0 0;
   font-size: 12px;
@@ -148,9 +144,9 @@
   justify-content: center;
   gap: 10px;
   padding: 15px 30px;
-  border: 1px solid var(--olive-deep);
-  background: var(--olive-deep);
-  color: #fff;
+  border: 1px solid var(--olive);
+  background: var(--olive);          /* the M olive, front and centre */
+  color: var(--ink);                 /* ink on olive = 6.7:1 */
   font-family: var(--font-ui);
   font-size: 12px;
   font-weight: 600;
@@ -160,16 +156,17 @@
   border-radius: var(--radius);
   transition: background 200ms ease, color 200ms ease, transform 200ms ease;
 }
-.g-btn:hover { background: #4A4E12; transform: translateY(-1px); }
-.g-btn--ghost { background: transparent; color: var(--olive-deep); }
-.g-btn--ghost:hover { background: var(--olive-deep); color: #fff; }
+.g-btn:hover { background: #9C9C41; transform: translateY(-1px); }
+.g-btn--ghost { background: transparent; border-color: var(--ink); color: var(--ink); }
+.g-btn--ghost:hover { background: var(--ink); color: var(--paper); }
 
-/* `.gift-page a { color: … }` above is more specific than `.g-btn`, which made the
-   filled button's label olive-on-olive. Re-assert the button colours explicitly. */
-.gift-page a.g-btn { color: #fff; }
-.gift-page a.g-btn:hover { color: #fff; }
-.gift-page a.g-btn--ghost { color: var(--olive-deep); }
-.gift-page a.g-btn--ghost:hover { color: #fff; }
+/* `.gift-page a { color: … }` is more specific than `.g-btn`; re-assert. */
+.gift-page a.g-btn { color: var(--ink); }
+.gift-page a.g-btn:hover { color: var(--ink); }
+.gift-page a.g-btn--ghost { color: var(--ink); }
+.gift-page a.g-btn--ghost:hover { color: var(--paper); }
+/* dark band variant */
+.on-ink .g-btn { background: var(--olive); border-color: var(--olive); color: var(--ink); }
 
 /* ------------------------------------------------------- section heading */
 .g-head { margin-bottom: clamp(34px, 4vw, 56px); }
@@ -188,31 +185,31 @@
 .g-values__grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-top: 1px solid var(--hairline);
-  border-left: 1px solid var(--hairline);
+  gap: 1px;
+  background: var(--hairline);
+  border: 1px solid var(--hairline);
 }
 .g-value {
-  border-right: 1px solid var(--hairline);
-  border-bottom: 1px solid var(--hairline);
-  padding: clamp(28px, 3vw, 42px) clamp(20px, 2.4vw, 32px);
   background: var(--paper);
+  padding: clamp(26px, 3vw, 38px) clamp(20px, 2.4vw, 32px) clamp(28px, 3vw, 42px);
   display: flex;
   flex-direction: column;
-  min-height: 260px;
+  min-height: 270px;
+  border-top: 8px solid var(--olive);   /* olive cap on every value card */
 }
 .g-value:hover { background: var(--olive-tint); }
 .g-value__amount {
   font-family: var(--font-editorial);
   font-size: clamp(38px, 4vw, 56px);
   line-height: 1;
-  color: var(--olive-deep);
+  color: var(--ink);
 }
 .g-value__label {
   margin-top: 14px;
   font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--ink-soft);
+  color: var(--olive-deep);
 }
 .g-value__desc { margin: 16px 0 0; font-size: 14.5px; color: var(--ink-soft); flex: 1; }
 .g-value__link {
@@ -221,7 +218,7 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
   text-decoration: none;
-  border-bottom: 1px solid var(--olive);
+  border-bottom: 2px solid var(--olive);
   align-self: flex-start;
   padding-bottom: 3px;
 }
@@ -234,24 +231,21 @@
   gap: clamp(20px, 2.6vw, 34px);
 }
 .g-card { background: var(--paper); display: flex; flex-direction: column; }
-.g-card__media { background: var(--paper-3); }
+.g-card__media { background: var(--paper-3); overflow: hidden; }
 .g-card__media img {
   width: 100%; height: auto; display: block;
   aspect-ratio: 4 / 3; object-fit: cover;
   transition: transform 600ms cubic-bezier(.2,.8,.2,1);
 }
 .g-card:hover .g-card__media img { transform: scale(1.03); }
-.g-card__body { padding: 22px 0 0; }
-.g-card__body h3 {
-  font-size: clamp(20px, 2vw, 26px);
-  line-height: 1.2;
-}
+.g-card__body { padding: 22px 0 0; border-top: 3px solid var(--olive); margin-top: 0; }
+.g-card__body h3 { font-size: clamp(20px, 2vw, 26px); line-height: 1.2; }
 .g-card__body p { margin: 12px 0 0; font-size: 14.5px; color: var(--ink-soft); }
 .g-card__price {
   margin-top: 14px;
   font-family: var(--font-editorial);
   font-size: 20px;
-  color: var(--olive-deep);
+  color: var(--ink);
 }
 
 /* ------------------------------------------------------------ categories */
@@ -269,43 +263,54 @@
   transition: background 200ms ease, padding-left 200ms ease;
 }
 .g-cats__row:hover { background: var(--olive-tint); padding-left: 14px; }
-.g-cats__num {
-  font-family: var(--font-ui);
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  color: var(--ink-soft);
-}
+.g-cats__num { font-family: var(--font-ui); font-size: 11px; letter-spacing: 0.2em; color: var(--olive-deep); }
 .g-cats__name {
   font-family: var(--font-editorial);
   font-size: clamp(22px, 2.4vw, 32px);
-  color: var(--olive-deep);
+  color: var(--ink);
   text-transform: uppercase;
   letter-spacing: 0.02em;
 }
-.g-cats__desc { display: block; font-family: var(--font-ui); font-size: 14px; letter-spacing: 0; text-transform: none; color: var(--ink-soft); margin-top: 6px; }
+.g-cats__desc {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink-soft);
+  margin-top: 6px;
+}
 .g-cats__arrow { font-size: 18px; color: var(--olive); }
 
-/* ------------------------------------------------------------- occasions */
-.g-occasions { background: var(--olive-deep); color: #fff; padding: var(--section) 0; }
-.g-occasions h2 { color: #fff; }
-.g-occasions .g-eyebrow { color: rgba(255,255,255,0.72); }
-.g-occasions p { color: rgba(255,255,255,0.86); }
+/* ------------------------------------------------------------- occasions
+   The olive band: the biggest block of the brand colour on the page.        */
+.g-occasions { background: var(--olive); color: var(--ink); padding: var(--section) 0; }
+.g-occasions h2 { color: var(--ink); }
+.g-occasions .g-eyebrow { color: rgba(25,26,16,0.62); }
+.g-occasions p { color: rgba(25,26,16,0.78); }
 .g-occasions__grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
-  background: rgba(255,255,255,0.22);
-  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(25,26,16,0.18);
+  border: 1px solid rgba(25,26,16,0.18);
   margin-top: 12px;
 }
 .g-occasion {
-  background: var(--olive-deep);
+  background: var(--olive);
   padding: 30px 26px;
   font-family: var(--font-editorial);
   font-size: clamp(20px, 2vw, 26px);
   letter-spacing: 0.02em;
 }
-.g-occasion span { display: block; font-family: var(--font-ui); font-size: 13.5px; letter-spacing: 0; color: rgba(255,255,255,0.72); margin-top: 8px; }
+.g-occasion span {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 13.5px;
+  letter-spacing: 0;
+  color: rgba(25,26,16,0.7);
+  margin-top: 8px;
+}
 
 /* ----------------------------------------------------------- how it works */
 .g-steps { padding: var(--section) 0; }
@@ -313,15 +318,9 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: clamp(24px, 3vw, 40px);
-  counter-reset: step;
 }
-.g-step { border-top: 1px solid var(--hairline); padding-top: 20px; }
-.g-step__num {
-  font-family: var(--font-ui);
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  color: var(--olive);
-}
+.g-step { border-top: 3px solid var(--olive); padding-top: 20px; }
+.g-step__num { font-family: var(--font-ui); font-size: 11px; letter-spacing: 0.22em; color: var(--olive-deep); }
 .g-step h3 { font-size: clamp(19px, 1.9vw, 24px); margin-top: 10px; }
 .g-step p { margin: 12px 0 0; font-size: 14.5px; color: var(--ink-soft); }
 
@@ -334,31 +333,60 @@
   list-style: none;
   font-family: var(--font-editorial);
   font-size: clamp(18px, 1.9vw, 23px);
-  color: var(--olive-deep);
+  color: var(--ink);
   display: flex;
   justify-content: space-between;
   gap: 20px;
 }
 .g-faq summary::-webkit-details-marker { display: none; }
-.g-faq summary::after { content: "+"; font-family: var(--font-ui); color: var(--olive); }
+.g-faq summary::after { content: "+"; font-family: var(--font-ui); color: var(--olive-deep); }
 .g-faq details[open] summary::after { content: "–"; }
 .g-faq details p { margin: 14px 0 0; font-size: 15px; color: var(--ink-soft); max-width: 78ch; }
 
-/* --------------------------------------------------------------- closing */
-.g-close { padding: var(--section) 0; }
+/* --------------------------------------------------------------- closing
+   The black 20%: one deep near-black band to anchor the page.               */
+.g-close { background: var(--ink); color: var(--paper); padding: var(--section) 0; }
+.g-close h2 { color: var(--paper); }
+.g-close .g-eyebrow { color: rgba(247,246,238,0.62); }
 .g-close__grid {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
   gap: clamp(32px, 5vw, 64px);
   align-items: start;
 }
-.g-close dt { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft); margin-top: 22px; }
+.g-close dt { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(247,246,238,0.6); margin-top: 22px; }
 .g-close dd { margin: 6px 0 0; font-family: var(--font-editorial); font-size: clamp(19px, 2vw, 24px); }
-.g-close dd a { text-decoration: none; border-bottom: 1px solid var(--olive); }
-.g-note { margin-top: 26px; font-size: 13px; color: var(--ink-soft); }
+.g-close dd a { color: var(--paper); text-decoration: none; border-bottom: 2px solid var(--olive); }
+.g-close .g-head p { color: rgba(247,246,238,0.78); }
+.g-note { margin-top: 26px; font-size: 13px; color: rgba(247,246,238,0.7); }
 
-/* reuse the site's delivery chips on the light background */
-.gift-page .delivery-chip { box-shadow: 0 1px 0 var(--hairline); border: 1px solid var(--hairline); }
+/* --------------------------------------------- delivery chips (light + dark) */
+.delivery-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 14px; }
+.delivery-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid var(--hairline);
+  padding: 8px 16px;
+  min-height: 38px;
+  border-radius: var(--radius);
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+.delivery-chip:hover { transform: translateY(-2px); border-color: var(--olive); }
+.delivery-chip img { display: block; height: 17px; width: auto; }
+
+/* The site nav/footer were built for the dark theme — keep them legible here. */
+.gift-page .site-nav { position: static; background: var(--paper); border-bottom: 1px solid var(--hairline); }
+.gift-page .site-nav .nav-tabs a { color: var(--ink); }
+.gift-page .site-nav .nav-tabs a:hover,
+.gift-page .site-nav .nav-tabs a.active { color: var(--olive-deep); }
+.gift-page .nav-tabs a.active::after { background: var(--olive); }
+.gift-page .brand__mark--light { display: none; }
+.gift-page .brand__mark--dark { display: block; }
+.gift-page .nav-toggle span,
+.gift-page .nav-toggle span::before,
+.gift-page .nav-toggle span::after { background: var(--ink); }
 
 /* --------------------------------------------------------------- responsive */
 @media (max-width: 980px) {
@@ -376,36 +404,3 @@
   .g-cats__row { grid-template-columns: 34px minmax(0, 1fr) auto; gap: 14px; }
   .g-hero h1 { font-size: clamp(34px, 9vw, 46px); }
 }
-
-/* ------------------------------------------- delivery chips (light surface) */
-.gift-page .delivery-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-  margin-top: 14px;
-}
-.gift-page .delivery-chip {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  border: 1px solid var(--hairline);
-  padding: 8px 16px;
-  min-height: 38px;
-  transition: transform 180ms ease, border-color 180ms ease;
-}
-.gift-page .delivery-chip:hover { transform: translateY(-2px); border-color: var(--olive); }
-.gift-page .delivery-chip img { display: block; height: 17px; width: auto; }
-
-/* The site nav/footer were built for the dark theme — keep them legible here. */
-.gift-page .site-nav { position: static; background: var(--paper); border-bottom: 1px solid var(--hairline); }
-.gift-page .site-nav .nav-tabs a { color: var(--ink); }
-.gift-page .site-nav .nav-tabs a:hover,
-.gift-page .site-nav .nav-tabs a.active { color: var(--olive-deep); }
-.gift-page .nav-tabs a.active::after { background: var(--olive); }
-.gift-page .brand__mark--light { display: none; }
-.gift-page .brand__mark--dark { display: block; }
-.gift-page .nav-toggle span,
-.gift-page .nav-toggle span::before,
-.gift-page .nav-toggle span::after { background: var(--ink); }
