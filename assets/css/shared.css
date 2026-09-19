@@ -737,16 +737,16 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible), .btn:focus:not(:f
 /* ---- Halal mark (client's own menu stamp, keyed to transparent) ---- */
 .hero__halal {
   display: block;
-  width: clamp(84px, 8.5vw, 118px);
+  width: clamp(59px, 6vw, 83px);   /* 19 Sep 2026: 細 30%（原本 84–118px）— 客人話太搶眼 */
   height: auto;
-  margin: 0 0 14px;
-  opacity: 0.95;
+  margin: 0 0 10px;
+  opacity: 0.9;
 }
 /* 主頁 hero 背景係淺色相（雲石／木），白字印章要深色底襯才睇得到 */
 .hero__halal--chip {
-  padding: 10px 14px;
-  border-radius: var(--radius-md);
-  background: oklch(19.7% 0.017 108 / 0.74);
+  padding: 6px 8px;                /* 低調啲：細 padding + 淡底 */
+  border-radius: var(--radius-sm);
+  background: oklch(19.7% 0.017 108 / 0.52);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
 }
