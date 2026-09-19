@@ -714,4 +714,46 @@
   .food-modal__backdrop { animation: none !important; }
 }
 }
+
+/* ============================================================
+   Delivery platform chips (Uber Eats / Deliveroo)
+   Logos are third-party marks used only to show where to order.
+   ============================================================ */
+.delivery-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: var(--space-3);
+}
+.delivery-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: var(--radius-pill);
+  padding: 7px 16px;
+  min-height: 38px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  opacity: 0.95;
+  transition: transform 180ms var(--ease-soft), opacity 180ms, box-shadow 180ms;
+}
+.delivery-chip:hover,
+.delivery-chip:focus-visible {
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.32);
+}
+.delivery-chip img {
+  display: block;
+  height: 18px;
+  width: auto;
+}
+/* 喺 menu-note / footer 用細一級 */
+.menu-note .delivery-row { margin-top: var(--space-4); }
+.menu-note .delivery-chip img { height: 16px; }
+@media (max-width: 480px) {
+  .delivery-chip { padding: 6px 12px; }
+  .delivery-chip img { height: 15px; }
+}
 .menu-note a:hover { color: white; border-color: white; }
