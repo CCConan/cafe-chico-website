@@ -466,6 +466,8 @@
   align-items: center;
 }
 .g-tiktok__embed {
+  max-width: 349px;
+  margin: 0 auto;
   background: #000;
   border-radius: var(--radius);
   padding: 12px;

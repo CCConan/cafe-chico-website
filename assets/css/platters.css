@@ -148,12 +148,15 @@
   color: var(--accent);
 }
 .cat-video__embed {
-  max-width: 605px;
+  /* 19 Sep 2026: 改用 TikTok player v1（直度 9:16 + loop），所以容器收窄成黑卡並置中 */
+  max-width: 349px;          /* 325px 影片 + 兩邊各 12px padding */
   margin: 0 auto;
+  padding: 12px;
   border-radius: var(--radius-md);
-  overflow: hidden;
   box-shadow: var(--shadow-2);
-  background: #000;   /* black container — TikTok iframe default is white, override to black per user 25 Aug 2026 */
+  background: #000;
+  display: flex;
+  justify-content: center;
 }
 .cat-video__embed .tiktok-embed {
   margin: 0 !important;
