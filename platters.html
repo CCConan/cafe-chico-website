@@ -91,16 +91,16 @@
       <h2 class="cat-video__title">See it being <em>made.</em></h2>
     </div>
     <div class="cat-video__embed" data-reveal>
-      <blockquote class="tiktok-embed"
-                  cite="https://www.tiktok.com/@cafechico/video/7657120331466902806"
-                  data-video-id="7657120331466902806"
-                  data-theme="dark"
-                  data-autoplay="1"
-                  style="max-width: 605px; min-width: 325px;">
-        <section>
-          <a target="_blank" rel="noopener" href="https://www.tiktok.com/@cafechico/video/7657120331466902806">@cafechico on TikTok</a>
-        </section>
-      </blockquote>
+      <div class="tt-loop">
+        <iframe
+          src="https://www.tiktok.com/player/v1/7657120331466902806?loop=1&rel=0&music_info=0&description=0&native_context_menu=0&progress_bar=1&play_button=1"
+          title="@cafechico on TikTok — see it being made"
+          loading="lazy"
+          allow="fullscreen; encrypted-media; picture-in-picture"
+          allowfullscreen
+          referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <noscript><a href="https://www.tiktok.com/@cafechico/video/7657120331466902806" target="_blank" rel="noopener">Watch on TikTok</a></noscript>
+      </div>
     </div>
   </div>
 </section>
@@ -503,6 +503,5 @@
 </script>
 
 <!-- TikTok embed (in-view autoplay, loads only on demand) -->
-<script src="assets/js/tiktok-lazy.js" defer></script>
 </body>
 </html>

@@ -821,3 +821,22 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible), .btn:focus:not(:f
 @media (prefers-reduced-motion: reduce) {
   .qr-pop { transition: opacity 120ms ease; transform: none; }
 }
+
+/* ---- TikTok looping player (19 Sep 2026)
+        客人要求：播完要一直循環，唔想彈出其他隨機推薦片 → 用 TikTok player v1
+        加 loop=1（官方 widget 冇得停推薦片）---- */
+.tt-loop {
+  width: min(325px, 100%);
+  aspect-ratio: 9 / 16;          /* TikTok 直度片 */
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.35);
+}
+.tt-loop iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.tt-loop noscript a { color: #fff; }

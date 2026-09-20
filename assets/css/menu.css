@@ -797,3 +797,6 @@
 }
 .menu-tiktok__follow:hover { background: var(--accent); color: #14140C; transform: translateY(-2px); }
 .menu-tiktok__row .tiktok-embed { margin: 0; }
+.menu-tiktok__links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: var(--space-4); }
+.menu-tiktok__follow--ghost { border-color: var(--border); color: var(--muted); }
+.menu-tiktok__follow--ghost:hover { background: transparent; border-color: var(--accent); color: var(--accent); }
