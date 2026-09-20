@@ -740,9 +740,12 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible), .btn:focus:not(:f
 /* ---- Halal mark (client's own menu stamp, keyed to transparent) ---- */
 .hero__halal {
   display: block;
-  width: clamp(78px, 7.6vw, 102px);   /* 19 Sep 2026: 約原本視覺大小嘅 70%（客人：唔要太細） */
+  /* 19 Sep 2026 — 客人要求加大 50%（原本 clamp(78px, 7.6vw, 102px)） */
+  width: clamp(117px, 11.4vw, 153px);
   height: auto;
-  margin: 0 0 10px;
+  margin: 0 0 10px;      /* 靠左對齊下面嘅文字：block + 左邊 0 margin */
+  align-self: flex-start;
+  justify-self: start;
   /* 冇底色方塊 —— 用柔和陰影令白印章喺淺色相片上一樣睇得到 */
   filter: drop-shadow(0 1px 1px rgba(0,0,0,0.7)) drop-shadow(0 0 12px rgba(0,0,0,0.45));
 }
