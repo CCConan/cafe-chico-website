@@ -166,17 +166,17 @@
         </div>
       </div>
       <div class="g-tiktok__embed">
-        <div class="tt-loop">
-          <iframe
-            src="https://www.tiktok.com/player/v1/7657120331466902806?loop=1&rel=0&music_info=0&description=0&native_context_menu=0&progress_bar=1&play_button=1"
-            title="@cafechico on TikTok — see it being made"
-            loading="lazy"
-            allow="fullscreen; encrypted-media; picture-in-picture"
-            allowfullscreen
-            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <div class="tt-loop" data-tt-src="https://www.tiktok.com/player/v1/7657120331466902806?autoplay=1&loop=1&rel=0&music_info=0&description=0&native_context_menu=0">
+          <button class="tt-loop__play" type="button" aria-label="Play the TikTok clip — Platters made fresh">
+            <img src="assets/site-images/tiktok/platters-summer.jpg" alt="Café Chico platters spread — TikTok clip" width="576" height="1024" loading="lazy" />
+            <span class="tt-loop__badge">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-1.85-2.48V9.75a5.76 5.76 0 1 0 4.94 5.7V8.9a7.3 7.3 0 0 0 4.26 1.36V7.17a4.31 4.31 0 0 1-3.2-1.35z"/></svg>
+              @cafechico · 0:15
+            </span>
+            <span class="tt-loop__cta">▷ Play</span>
+          </button>
           <noscript><a href="https://www.tiktok.com/@cafechico/video/7657120331466902806" target="_blank" rel="noopener">Watch on TikTok</a></noscript>
-        </div>
-      </div>
+        </div>      </div>
     </div>
   </div>
 </section>
@@ -365,5 +365,6 @@
 </footer>
 
 <script src="assets/js/shared.js"></script>
+<script src="assets/js/tiktok-lazy.js" defer></script>
 </body>
 </html>
