@@ -276,9 +276,11 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
 }
 .hero__scrim {
   position: absolute; inset: 0; z-index: 1;
+  /* 2026-09-23：hero 相片已刪除（改用全站橄欖綠碎花 tile），所以大幅調淡遮罩，
+     令碎花圖案睇得到；保留少少漸變令白字更穩同接落一節更順。 */
   background:
-    linear-gradient(180deg, oklch(20% 0.040 112/ 0.10) 0%, oklch(20% 0.040 112/ 0.45) 70%, oklch(20% 0.040 112/ 0.85) 100%),
-    linear-gradient(90deg,  oklch(20% 0.040 112/ 0.30) 0%, transparent 50%);
+    linear-gradient(180deg, oklch(20% 0.040 112/ 0.05) 0%, oklch(20% 0.040 112/ 0.15) 70%, oklch(20% 0.040 112/ 0.45) 100%),
+    linear-gradient(90deg,  oklch(20% 0.040 112/ 0.12) 0%, transparent 50%);
 }
 .hero__inner {
   position: relative;
