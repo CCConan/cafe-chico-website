@@ -607,3 +607,33 @@
   .g-logo-btn { width: 42px; height: 42px; }
   .g-mark { width: 38px; height: 38px; }
 }
+
+/* ==========================================================================
+   Social & Reviews — 奶白碎花 tile 背景（2026-09-23，客人要求）
+   --------------------------------------------------------------------------
+   同主站橄欖綠碎花背景係同一款圖案，只係換成奶白底（#F4F4E9）＋更低對比。
+   只套用喺 social-reviews.html（body 加 .gift-page--tiled）；gift-vouchers 暫時
+   保持純奶油色，之後要就跟同一做法加類別就得。
+   圖案由 art/20260919_olive_bg/ 嘅管線產生（Hermes skill: seamless-pattern-tile）。
+   ========================================================================== */
+.gift-page--tiled {
+  background-color: var(--paper);
+  background-image: url("../site-images/tile-olive/olive-floral-cream-1K.jpg");
+  background-repeat: repeat;
+  background-position: center top;
+  background-size: 520px auto;
+}
+
+/* 色帶半透明 → 碎花透出嚟，但仍然保留深淺色帶嘅節奏 */
+.gift-page--tiled .g-tiktok,
+.gift-page--tiled .g-press {
+  background: rgba(239, 237, 223, 0.72);   /* --paper-2 #EFEDDF @ 72% */
+}
+
+/* 卡片同導覽列保持實色（可讀性優先），圖案喺空隙位透出 */
+.gift-page--tiled .site-nav { position: static; }
+
+@media (max-width: 640px) {
+  .gift-page--tiled { background-size: 380px auto; }
+}
+
