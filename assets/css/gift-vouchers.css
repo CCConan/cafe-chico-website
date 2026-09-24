@@ -624,7 +624,10 @@
   background-size: 520px auto;
 }
 
-/* 色帶半透明 → 碎花透出嚟，但仍然保留深淺色帶嘅節奏 */
+/* 色帶半透明 → 碎花透出嚟，但仍然保留深淺色帶嘅節奏
+   （.g-products／.g-faq 係 Gift Vouchers 頁嘅色帶；.g-tiktok／.g-press 係 Social 頁） */
+.gift-page--tiled .g-products,
+.gift-page--tiled .g-faq,
 .gift-page--tiled .g-tiktok,
 .gift-page--tiled .g-press {
   background: rgba(239, 237, 223, 0.72);   /* --paper-2 #EFEDDF @ 72% */
