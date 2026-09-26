@@ -4,8 +4,8 @@
    ========================================================================== */
 
 .menu-hero {
-  background: var(--bg-dark);
-  color: white;
+  background: var(--bg);          /* 25 Sep 2026：跟淺色主題 */
+  color: var(--fg);
   padding: clamp(64px, 8vw, 112px) 0 clamp(28px, 3.5vw, 44px);   /* bottom tightened 19 Sep 2026 — the 4 stat numbers were removed from the hero */
   position: relative;
   overflow: hidden;
@@ -16,7 +16,7 @@
   inset: 0;
   /* 19 Sep 2026 — was assets/photos/raw/cover-photo.jpg (the brick wall photo the
      client asked us to drop). Now the same olive micro-floral tile as the page. */
-  background: url("../../assets/site-images/tile-olive/olive-floral-dark-1K.jpg") repeat center top / 520px auto;
+  background: url("../../assets/site-images/tile-olive/olive-floral-cream-1K.jpg") repeat center top / 520px auto;
   opacity: 1;
 }
 .menu-hero__delivery {
@@ -38,12 +38,12 @@
   padding: 0 var(--space-4);
 }
 .menu-hero h1 {
-  color: white;
+  color: var(--fg);
   margin: 0 0 var(--space-3);
 }
 .menu-hero .lede {
   font-size: clamp(16px, 1.4vw, 19px);
-  color: #fff;                                                                    /* was oklch(100% 0 0 / 0.8) — 20% alpha loss multiplied by the 55%
+  color: var(--muted);                                                             /* 25 Sep 2026：淺色主題（原白字） — 20% alpha loss multiplied by the 55%
                                                                                      black tile overlay dropped the menu hero lede into a dim grey.
                                                                                      Force fully opaque white. (user 1 Sep 2026) */
   max-width: 56ch;

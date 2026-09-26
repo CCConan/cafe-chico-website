@@ -83,6 +83,9 @@
 }
 
 .bike-hero__text .btn { font-size: 14px; }
+/* 25 Sep 2026：hero 改淺底後，ghost 按鈕要墨綠框／字，否則睇唔到 */
+.bike-hero__text .btn--ghost { color: var(--fg); border-color: var(--fg); }
+.bike-hero__text .btn--ghost:hover { background: var(--fg); color: var(--bg); }
 
 /* === 3D TILT CARD === */
 .bike-hero__card {

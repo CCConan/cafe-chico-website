@@ -145,7 +145,7 @@
   flex-direction: column;
   justify-content: flex-end;
   padding: clamp(40px, 5vw, 64px) clamp(28px, 4vw, 56px);
-  color: #F7F6EE;
+  color: var(--fg);   /* 25 Sep 2026：橄欖底 → 墨綠字（奶油字對比不足） */
 }
 .story__hero-text .kicker {
   display: inline-block;
@@ -166,8 +166,8 @@
   letter-spacing: -0.02em;
   font-weight: 400;
   margin: 0;
-  color: #F7F6EE;
-  text-shadow: 0 2px 6px oklch(20% 0.040 112/ 0.6);
+  color: var(--fg);
+  /* 25 Sep 2026：淺色主題，深色陰影已移除 */
   max-width: 880px;
 }
 .story__hero-text h2 em {

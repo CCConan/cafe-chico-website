@@ -8,16 +8,18 @@
   /* === Color (olive-green theme — 19 Sep 2026, per client meeting 10 Sep 2026)
          Brand palette confirmed by client: Moderate Olive + Very Dark Olive/black + cream white.
          Olive accent = Moderate Olive #A8A84A (the "M" shade on the olive chart). === */
-  --bg:        oklch(22.7% 0.022 108);  /* Very Dark Olive #1D1D11 — page background */
-  --surface:   oklch(28.1% 0.023 108);  /* #2A2A1D — cards / surfaces */
-  --bg-dark:   oklch(19.7% 0.017 108);  /* #16160D — dark sections / footer */
-  --fg:        oklch(96.8% 0.012 101);  /* #F6F5EC cream white — primary text */
-  --muted:     oklch(82.2% 0.025 104);  /* #C7C6B4 — secondary text */
-  --border:    oklch(38.9% 0.020 111);  /* #45463A — subtle olive border */
-  --accent:    oklch(71.2% 0.117 109);  /* Moderate Olive #A8A84A — client-confirmed brand olive */
-  --accent-soft: oklch(29.6% 0.026 108);/* #2E2E1F — olive tint (chips / tile fallbacks) */
-  --green:     oklch(61.8% 0.112 119);  /* #7E8F3A — olive-green highlight */
-  --gold:      oklch(78.9% 0.102 107);  /* #C2BF6F light olive — replaces the old gold */
+  /* 25 Sep 2026：全站跟 Social & Reviews 嘅淺色 editorial 風格（奶油紙 + 墨綠字）。
+     --bg-dark 保持深色：footer、引言帶、報價帶等仍然係深色色帶（同新風格一致）。 */
+  --bg:        #F7F6EE;   /* cream paper — page background */
+  --surface:   #FFFFFF;   /* cards / surfaces（比頁面再亮一級） */
+  --bg-dark:   #191A10;   /* near-black olive — dark bands / footer / quote */
+  --fg:        #191A10;   /* ink — primary text */
+  --muted:     #5F5F49;   /* ink-soft — secondary text (5.6:1 on cream) */
+  --border:    #D9D6C1;   /* hairline */
+  --accent:    #A8A84A;   /* Moderate Olive #A8A84A — client-confirmed brand olive */
+  --accent-soft: #EDEBCF; /* olive tint (chips / soft blocks) */
+  --green:     #6E7226;   /* olive-deep — small text on light */
+  --gold:      #6E7226;   /* olive-deep（原本嘅淺金在淺底睇唔到） */
 
   /* === Typography === */
   --font-display: "Iowan Old Style", "Charter", "Palatino Linotype", "Georgia", "Times New Roman", serif;
@@ -75,7 +77,7 @@ body {
      genuinely tileable + tone-corrected in post-production. 460px repeat keeps
      the repeat invisible; no dark tint layer needed any more — the tile IS dark. */
   background-color: var(--bg);
-  background-image: url('../site-images/tile-olive/olive-floral-dark-1K.jpg');
+  background-image: url('../site-images/tile-olive/olive-floral-cream-1K.jpg');
   background-repeat: repeat;
   background-position: center top;
   background-size: 460px auto;
@@ -132,14 +134,14 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(6, 8, 3, 0.50);   /* 0.80 → 0.50 per user: more see-through */
+  background: rgba(247, 246, 238, 0.88);   /* 25 Sep 2026：淺色主題 → 奶油底導覽列 */
   backdrop-filter: saturate(160%) blur(14px);
   -webkit-backdrop-filter: saturate(160%) blur(14px);
   border-bottom: 1px solid transparent;
   transition: border-color 200ms var(--ease-soft), background 200ms var(--ease-soft);
 }
 .site-nav.is-scrolled {
-  background: oklch(97% 0.012 80 / 0.50);  /* 0.94 → 0.50 — keep consistent with top state */
+  background: rgba(247, 246, 238, 0.96);   /* 捲動後：實淨奶油底 */
   border-bottom-color: var(--border);
 }
 .site-nav__inner {
@@ -167,7 +169,9 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
 }
 .brand__mark--light { display: block; }
 .brand__mark--dark  { display: none; }
+.site-nav .brand__mark--light { display: none; }   /* 25 Sep 2026：淺底一律用深色 logo */
 .site-nav.is-scrolled .brand__mark--light { display: none; }
+.site-nav .brand__mark--dark  { display: block; }
 .site-nav.is-scrolled .brand__mark--dark  { display: block; }
 .nav-tabs {
   display: flex;
@@ -177,7 +181,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   padding: 0;
   margin: 0;
 }
-.nav-tabs a {
+.nav-tabs a { color: var(--fg);
   font-family: var(--font-mono);
   font-size: 12.6px;
   letter-spacing: 0.11em;
@@ -188,17 +192,17 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   color: #fff;
   transition: color 180ms var(--ease-soft), font-weight 180ms var(--ease-soft);
 }
-.nav-tabs a:hover { color: #fff; font-weight: 600; }
-.nav-tabs a.active { color: #fff; font-weight: 700; }
+.nav-tabs a:hover { color: var(--fg); font-weight: 600; }
+.nav-tabs a.active { color: var(--fg); font-weight: 700; }
 /* was rgba(255, 255, 255, 0.95). 55% black tile overlay was eating 5% of the white, and
    mouseout transitions (the text reverting from a hover state) read as 'darker' on the
    scrolled cream nav. Force 100% opaque white so the tab is rock-steady in both nav states. */
-.site-nav.is-scrolled .nav-tabs a { color: #fff; }
-.site-nav.is-scrolled .nav-tabs a:hover { color: #fff; }
+.site-nav.is-scrolled .nav-tabs a { color: var(--fg); }
+.site-nav.is-scrolled .nav-tabs a:hover { color: var(--fg); }
 /* scrolled active used to be deep brown oklch(28% 0.060 109), but on the cream scrolled-nav
    backdrop the 0.55 black overlay dragged it visually dim. Now matches the rest of the
    active state: pure white, just bolder. User 1 Sep 2026. */
-.site-nav.is-scrolled .nav-tabs a.active { color: #fff; font-weight: 700; }
+.site-nav.is-scrolled .nav-tabs a.active { color: var(--fg); font-weight: 700; }
 .nav-tabs a.active::after {
   content: "";
   position: absolute;
@@ -518,7 +522,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
 /* ---------- Visit-info strip ---------- */
 .visit-strip {
   background: transparent;
-  color: oklch(95% 0.012 80);
+  color: var(--fg);            /* 25 Sep 2026：淺色主題 → 墨綠字 */
   padding: var(--space-6) 0;
 }
 .visit-strip__grid {
@@ -542,6 +546,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   margin: 0;
   font-size: 14px;
   line-height: 1.55;
+  color: var(--fg);        /* 25 Sep 2026：淺色主題 */
   color: oklch(95% 0.012 80);
 }
 .visit-strip__cell a:hover {
@@ -552,6 +557,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   color: #fff;
 }
 .visit-strip__cell strong {
+  color: var(--fg);
   display: block;
   font-family: var(--font-display);
   font-size: 22px;
