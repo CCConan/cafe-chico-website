@@ -82,11 +82,17 @@ body {
   background-position: center top;
   background-size: 460px auto;
 }
-.bg-tile-page main,
-.bg-tile-page section,
-.bg-tile-page header,
-.bg-tile-page footer,
-.bg-tile-page nav {
+/* 2026-09-25：這條規則原本用普通選擇器（0,1,1），優先級高過任何單一 class
+   （0,1,0），所以 .site-footer / .cat-quote / .pr-pullquote / .menu-note /
+   .bike-specs 等深色色帶全部被強制變透明 —— 深色底消失之後，白字就跌落淺色
+   奶油底上面，完全睇唔到。改用 :where() 令優先級歸零：section / footer / nav
+   預設仍然透明（等 body 嘅碎花 tile 透出來），但只要有 class 自己聲明背景，
+   就會正常生效。 */
+:where(.bg-tile-page main,
+       .bg-tile-page section,
+       .bg-tile-page header,
+       .bg-tile-page footer,
+       .bg-tile-page nav) {
   background-color: transparent;
 }
 @media (min-width: 769px) {
