@@ -109,7 +109,7 @@
 /* INTRO */
 .pr-intro {
   padding: var(--space-8) 0;
-  background: var(--bg);
+  background: var(--bg-veil);   /* 25 Sep 2026：紙張色帶，等 body 碎花 tile 透出來 */
 }
 
 /* INCLUDED */
@@ -156,7 +156,7 @@
 /* FIT */
 .pr-fit {
   padding: var(--space-8) 0;
-  background: var(--bg);
+  background: var(--bg-veil);   /* 25 Sep 2026：紙張色帶，等 body 碎花 tile 透出來 */
 }
 
 .pr-fit__list {
@@ -313,7 +313,7 @@
 /* PHOTO PENDING */
 .pr-photo-pending {
   padding: var(--space-6) 0;
-  background: var(--bg);
+  background: var(--bg-veil);   /* 25 Sep 2026：紙張色帶，等 body 碎花 tile 透出來 */
 }
 
 .pr-photo-pending__note {
@@ -723,7 +723,7 @@
 /* ---- Floor plan ---- */
 .pr-floorplan {
   padding: clamp(56px, 7vw, 96px) 0;
-  background: var(--bg);
+  background: var(--bg-veil);   /* 25 Sep 2026：紙張色帶，等 body 碎花 tile 透出來 */
 }
 .pr-floorplan__inner {
   display: grid;

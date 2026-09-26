@@ -4,20 +4,12 @@
    ========================================================================== */
 
 .menu-hero {
-  background: var(--bg);          /* 25 Sep 2026：跟淺色主題 */
+  background: transparent;        /* 25 Sep 2026：跟淺色主題；背景交返 body 嘅碎花 tile，
+                                     避免 hero 自己再鋪一層造成圖案接駁位 */
   color: var(--fg);
   padding: clamp(64px, 8vw, 112px) 0 clamp(28px, 3.5vw, 44px);   /* bottom tightened 19 Sep 2026 — the 4 stat numbers were removed from the hero */
   position: relative;
   overflow: hidden;
-}
-.menu-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  /* 19 Sep 2026 — was assets/photos/raw/cover-photo.jpg (the brick wall photo the
-     client asked us to drop). Now the same olive micro-floral tile as the page. */
-  background: url("../../assets/site-images/tile-olive/olive-floral-cream-1K.jpg") repeat center top / 520px auto;
-  opacity: 1;
 }
 .menu-hero__delivery {
   margin: var(--space-3) 0 0;

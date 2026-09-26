@@ -3,14 +3,17 @@
    Type-driven, editorial, 3D-tilt card
    ============================================================ */
 
-.bike-page { background: var(--bg); }
+/* 2026-09-25：原本 .bike-page 用 background 簡寫設 body 底色，會連
+   background-image 一齊重設，把 .bg-tile-page 嘅碎花 tile 完全剷走
+   （同優先級、但這支 CSS 後載入，所以覆蓋）。body 嘅底色同 tile 交返
+   .bg-tile-page 統一處理。 */
 
 /* === HERO === */
 .bike-hero {
   padding: 48px 24px 64px;        /* was 64px 32px 96px — trimmed to a
                                      shorter hero band (user 9 Sep 2026:
                                      "this section's height is too tall") */
-  background: var(--bg);
+  background: var(--bg-veil);   /* 25 Sep 2026：紙張色帶，等 body 碎花 tile 透出來 */
   position: relative;
   overflow: hidden;
 }
@@ -196,7 +199,7 @@
 /* === FLAVOURS === */
 .bike-flavours {
   padding: 96px 32px;
-  background: var(--bg);
+  background: var(--bg-veil);   /* 25 Sep 2026：紙張色帶，等 body 碎花 tile 透出來 */
 }
 .bike-flavours .kicker {
   margin-bottom: 24px;
@@ -368,7 +371,7 @@
 /* === HOW === */
 .bike-how {
   padding: 96px 32px;
-  background: var(--bg);
+  background: var(--bg-veil);   /* 25 Sep 2026：紙張色帶，等 body 碎花 tile 透出來 */
 }
 .bike-how .kicker {
   margin-bottom: 24px;
@@ -424,7 +427,7 @@
 /* === CTA === */
 .bike-cta {
   padding: 128px 32px;
-  background: var(--bg);
+  background: var(--bg-veil);   /* 25 Sep 2026：紙張色帶，等 body 碎花 tile 透出來 */
   text-align: center;
   border-top: 1px solid var(--border);
 }
@@ -486,7 +489,7 @@
 /* ---- Cones & tubs ---- */
 .bike-cones {
   padding: clamp(64px, 9vw, 120px) 0;
-  background: var(--bg);
+  background: var(--bg-veil);   /* 25 Sep 2026：紙張色帶，等 body 碎花 tile 透出來 */
 }
 .bike-cones h2 {
   font-family: "Fraunces", var(--font-display);

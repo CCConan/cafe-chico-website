@@ -11,6 +11,9 @@
   /* 25 Sep 2026：全站跟 Social & Reviews 嘅淺色 editorial 風格（奶油紙 + 墨綠字）。
      --bg-dark 保持深色：footer、引言帶、報價帶等仍然係深色色帶（同新風格一致）。 */
   --bg:        #F7F6EE;   /* cream paper — page background */
+  --bg-veil:   rgba(247, 246, 238, 0.72);
+                          /* 25 Sep 2026：紙張色帶用嘅半透明奶油色。section 用佢做背景，body 嘅碎花 tile 就會好似
+                             Social & Reviews 咁淡淡透出來，全站觀感一致。 */
   --surface:   #FFFFFF;   /* cards / surfaces（比頁面再亮一級） */
   --bg-dark:   #191A10;   /* near-black olive — dark bands / footer / quote */
   --fg:        #191A10;   /* ink — primary text */

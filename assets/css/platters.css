@@ -127,7 +127,7 @@
 /* ---- Mosaic Grid ---- */
 .cat-video {
   padding: clamp(64px, 9vw, 120px) 0;
-  background: var(--bg);
+  background: var(--bg-veil);   /* 25 Sep 2026：紙張色帶，等 body 碎花 tile 透出來 */
   border-top: 1px solid var(--border);
 }
 .cat-video__head {
@@ -173,7 +173,7 @@
 
 .cat-mosaic {
   padding: clamp(64px, 9vw, 120px) 0;
-  background: var(--bg);
+  background: var(--bg-veil);   /* 25 Sep 2026：紙張色帶，等 body 碎花 tile 透出來 */
 }
 
 .cat-mosaic__head {

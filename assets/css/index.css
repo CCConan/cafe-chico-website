@@ -32,7 +32,7 @@
 /* ---------- Album (3D circular ring of featured dishes) ---------- */
 /* ---------- 6 popular dishes grid (replaces album) ---------- */
 .popular {
-  background: linear-gradient(180deg, var(--bg) 0%, transparent 100%);   /* cream → fully transparent bottom so the body wall-tile shows through (user 31 Aug 2026) */
+  background: linear-gradient(180deg, var(--bg-veil) 0%, transparent 100%);   /* cream → fully transparent bottom so the body wall-tile shows through (user 31 Aug 2026) */
   padding: clamp(80px, 10vw, 140px) 0;
   position: relative;
   overflow: hidden;
@@ -105,7 +105,7 @@
 
 /* ---------- Story block ---------- */
 .story {
-  background: var(--bg);
+  background: var(--bg-veil);   /* 25 Sep 2026：紙張色帶，等 body 碎花 tile 透出來 */
   position: relative;
   padding: clamp(72px, 10vw, 140px) 0;
 }
@@ -775,7 +775,7 @@
 
 /* ---------- Inline menu preview ---------- */
 .menu-preview {
-  background: var(--bg);
+  background: var(--bg-veil);   /* 25 Sep 2026：紙張色帶，等 body 碎花 tile 透出來 */
   padding-bottom: clamp(48px, 7vw, 96px);
 }
 .menu-preview__head {
