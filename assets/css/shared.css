@@ -189,7 +189,6 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   text-transform: uppercase;
   padding: 8px 2px;
   position: relative;
-  color: #fff;
   transition: color 180ms var(--ease-soft), font-weight 180ms var(--ease-soft);
 }
 .nav-tabs a:hover { color: var(--fg); font-weight: 600; }
@@ -251,7 +250,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
     opacity: 1;
     pointer-events: auto;
   }
-  .site-nav.is-open .nav-tabs a { color: #fff; }   /* ensure white text on dark translucent dropdown */
+  .site-nav.is-open .nav-tabs a { color: var(--fg); }   /* 25 Sep 2026：下拉選單亦係奶油底 */
   .nav-toggle { display: flex; }
 }
 
