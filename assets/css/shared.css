@@ -554,7 +554,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
      55% black tile overlay read as 'drained / greyish' next to the
      default cream-white. Force back to pure white on hover so the
      link becomes brighter, not darker. (user 1 Sep 2026) */
-  color: #fff;
+  color: var(--accent);   /* 25 Sep 2026：淺色主題 → 用品牌橄欖 */
 }
 .visit-strip__cell strong {
   color: var(--fg);
@@ -563,7 +563,6 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   font-size: 22px;
   font-weight: 500;
   margin-bottom: 4px;
-  color: white;
 }
 @media (max-width: 880px) {
   .visit-strip__grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
