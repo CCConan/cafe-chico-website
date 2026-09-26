@@ -74,7 +74,7 @@
 .bike-hero__text h1 em {
   font-style: italic;
   font-weight: 400;
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .bike-hero__text .lede {
@@ -187,7 +187,7 @@
   font-weight: 400;
 }
 .bike-marquee__track > span:nth-child(even) {
-  color: var(--gold);
+  color: var(--accent-on-dark);
   font-style: normal;
   font-size: 0.5em;
 }
@@ -294,7 +294,7 @@
   color: #F7F6EE;
 }
 .bike-specs .kicker {
-  color: var(--gold);
+  color: var(--accent-on-dark);
   margin-bottom: 24px;
 }
 .bike-specs h2 {
@@ -334,7 +334,7 @@
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--accent-on-dark);
   margin: 0 0 24px;
 }
 .bike-spec__price {
@@ -404,7 +404,7 @@
   display: block;
   font-family: "Fraunces", var(--font-display);
   font-size: 14px;
-  color: var(--accent);
+  color: var(--accent-ink);
   font-style: italic;
   margin-bottom: 16px;
 }
@@ -476,7 +476,7 @@
 }
 .bike-make h2 em {
   font-style: italic;
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 .bike-make__lede {
   max-width: 720px;
@@ -500,7 +500,7 @@
   margin: var(--space-2) 0 var(--space-6);
   color: var(--fg);
 }
-.bike-cones h2 em { font-style: italic; color: var(--accent); }
+.bike-cones h2 em { font-style: italic; color: var(--accent-ink); }
 .bike-cones__list {
   list-style: none;
   margin: 0;
@@ -545,7 +545,7 @@
   margin: var(--space-2) 0 var(--space-4);
   color: var(--bg);
 }
-.bike-toppings h2 em { font-style: italic; color: var(--accent); }  /* gold → accent (apricot) reads better on cream */
+.bike-toppings h2 em { font-style: italic; color: var(--accent-ink); }  /* gold → accent (apricot) reads better on cream */
 .bike-toppings__lede {
   max-width: 680px;
   margin: 0 0 var(--space-6);
@@ -640,7 +640,7 @@
   color: var(--fg);
   text-align: center;
 }
-.bike-extras h2 em { font-style: italic; color: var(--accent); }
+.bike-extras h2 em { font-style: italic; color: var(--accent-ink); }
 .bike-extras__grid {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
@@ -676,7 +676,7 @@
   color: var(--muted);
   margin: 0;
 }
-.bike-extras__list strong { color: var(--accent); font-weight: 600; }
+.bike-extras__list strong { color: var(--accent-ink); font-weight: 600; }
 
 @media (max-width: 760px) {
   .bike-extras__grid {

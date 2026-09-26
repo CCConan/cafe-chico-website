@@ -44,7 +44,7 @@
   font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--accent-on-dark);
   margin: 0 0 24px;
   display: inline-block;
   padding: 6px 12px;
@@ -179,7 +179,7 @@
   font-size: 24px;
   font-weight: 400;
   margin: 0 0 6px;
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 .pr-fit__list p {
   font-size: 15px;
@@ -227,7 +227,7 @@
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-ink);
   margin: 0 0 8px;
 }
 
@@ -270,7 +270,7 @@
   content: "→";
   position: absolute;
   left: 0;
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .pr-pricing__extras {
@@ -363,7 +363,7 @@
   font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-on-dark);
   margin: 24px 0 8px;
 }
 .pr-enquire__contact h3:first-child { margin-top: 0; }
@@ -650,7 +650,7 @@
 }
 .pr-pullquote__mark {
   font-size: 2em;
-  color: var(--accent);
+  color: var(--accent-on-dark);
   line-height: 0;
   vertical-align: -0.3em;
   margin: 0 6px;
@@ -737,7 +737,7 @@
 }
 .pr-floorplan__copy h2 em {
   font-style: italic;
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 .pr-floorplan__copy p {
   color: var(--muted);

@@ -188,7 +188,7 @@
   font-family: var(--font-display);
   font-size: clamp(72px, 9vw, 132px);
   line-height: 0.85;
-  color: var(--accent);
+  color: var(--accent-ink);
   font-weight: 400;
   letter-spacing: -0.04em;
   font-style: italic;
@@ -217,7 +217,7 @@
   max-width: 64ch;
 }
 .story__seg-body p:last-child { margin-bottom: 0; }
-.story__seg-body em { color: var(--accent); font-style: italic; font-weight: 500; }
+.story__seg-body em { color: var(--accent-ink); font-style: italic; font-weight: 500; }
 .story__seg-body strong { color: var(--fg); font-weight: 600; }
 
 /* Text-only segment (no image) */
@@ -435,7 +435,7 @@
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-ink);
   border: 1px solid var(--accent);
   border-radius: var(--radius-pill);
   padding: 4px 10px;
@@ -516,7 +516,7 @@
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold);   /* olive theme — was var(--accent-soft): needs a LIGHT tone on dark bg */
+  color: var(--accent-ink);   /* olive theme — was var(--accent-soft): needs a LIGHT tone on dark bg */
 }
 
 /* Bottom strip */
@@ -527,7 +527,7 @@
   font-size: 14px;
 }
 .neighbours__more-stars {
-  color: var(--gold);
+  color: var(--accent-ink);
   letter-spacing: 0.12em;
   font-size: 16px;
   margin: 0 4px;
@@ -537,7 +537,7 @@
   font-weight: 600;
 }
 .neighbours__more a {
-  color: var(--accent);
+  color: var(--accent-ink);
   border-bottom: 1px solid var(--accent);
 }
 .neighbours__more a:hover {
@@ -663,7 +663,7 @@
   margin: 0;
 }
 .reviews__more a {
-  color: var(--accent);
+  color: var(--accent-ink);
   border-bottom: 1px solid transparent;
   text-decoration: none;
   transition: color 180ms, border-color 180ms;
@@ -690,7 +690,7 @@
 }
 .value-card__icon {
   width: 44px; height: 44px;
-  color: var(--accent);
+  color: var(--accent-ink);
   margin-bottom: var(--space-4);
 }
 .value-card h3 {
@@ -767,7 +767,7 @@
   padding-bottom: 2px;
   margin: var(--space-2) 0;
 }
-.contact__phone:hover { color: var(--accent); }
+.contact__phone:hover { color: var(--accent-ink); }
 
 @media (max-width: 880px) {
   .contact__grid { grid-template-columns: 1fr; }
@@ -828,7 +828,7 @@
 .menu-preview__price {
   font-family: var(--font-mono);
   font-size: 12px;
-  color: var(--accent);
+  color: var(--accent-ink);
   font-weight: 600;
   letter-spacing: 0.06em;
 }
@@ -930,7 +930,7 @@
   font-family: var(--font-mono);
   font-size: 12px;
   letter-spacing: 0.08em;
-  color: var(--accent);
+  color: var(--accent-ink);
   margin-top: 8px;
   display: inline-block;
 }
@@ -1135,7 +1135,7 @@
   flex-wrap: wrap;
 }
 .social-media__foot a {
-  color: var(--accent);
+  color: var(--accent-ink);
   border-bottom: 1px solid currentColor;
   text-decoration: none;
 }

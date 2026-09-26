@@ -19,8 +19,8 @@
   text-transform: uppercase;
   color: var(--muted);
 }
-.menu-hero__delivery strong { color: var(--accent); }
-.menu-hero__delivery a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.menu-hero__delivery strong { color: var(--accent-ink); }
+.menu-hero__delivery a { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 3px; }
 
 .menu-hero__inner {
   position: relative;
@@ -189,7 +189,7 @@
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-ink);
   margin-bottom: var(--space-3);
 }
 .viewer__info .desc {
@@ -287,7 +287,8 @@
   content: '';
   width: 60px; height: 60px;
   border-radius: var(--radius-sm);
-  background: var(--bg-soft);
+  background: var(--accent-soft);   /* 25 Sep 2026：原本用 --bg-soft，但這個 token 從來無定義過，
+                                       會變成透明；跟下面的 .dish__photo 統一用橄欖淺底 */
   border: 1px solid var(--border);
   flex-shrink: 0;
   position: relative;
@@ -367,7 +368,7 @@
 .dish__price {
   font-family: var(--font-mono);
   font-size: 14px;
-  color: var(--accent);
+  color: var(--accent-ink);
   font-weight: 600;
   letter-spacing: 0.04em;
   align-self: start;
@@ -389,7 +390,7 @@
   line-height: 1.7;
 }
 .menu-note a {
-  color: var(--gold);
+  color: var(--accent-on-dark);
   border-bottom: 1px solid oklch(78% 0.080 109/ 0.4);
   padding-bottom: 1px;
 }
@@ -555,7 +556,7 @@
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-ink);
   margin: 0;
 }
 .food-modal__name {
@@ -577,7 +578,7 @@
 .food-modal__price {
   font-family: "Fraunces", var(--font-display);
   font-size: clamp(26px, 2.6vw, 32px);
-  color: var(--accent);
+  color: var(--accent-ink);
   font-weight: 600;
   letter-spacing: -0.01em;
   margin: 14px 0 0;
@@ -606,7 +607,7 @@
 .food-modal__cta:hover { background: oklch(35% 0.080 109/ 1); }
 .food-modal__cta--ghost {
   background: transparent;
-  color: var(--accent);
+  color: var(--accent-ink);
   border: 1px solid var(--accent);
 }
 .food-modal__cta--ghost:hover {
@@ -756,8 +757,8 @@
   padding: clamp(48px, 6vw, 88px) 0;
 }
 .menu-tiktok__head h2 { margin: var(--space-2) 0 0; }
-.menu-tiktok__head h2 em { font-style: italic; color: var(--accent); }
-.menu-tiktok__head a { color: var(--accent); }
+.menu-tiktok__head h2 em { font-style: italic; color: var(--accent-on-dark); }
+.menu-tiktok__head a { color: var(--accent-on-dark); }
 .menu-tiktok__lede {
   margin-top: var(--space-3);
   color: var(--muted);
@@ -790,4 +791,4 @@
 .menu-tiktok__row .tiktok-embed { margin: 0; }
 .menu-tiktok__links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: var(--space-4); }
 .menu-tiktok__follow--ghost { border-color: var(--border); color: var(--muted); }
-.menu-tiktok__follow--ghost:hover { background: transparent; border-color: var(--accent); color: var(--accent); }
+.menu-tiktok__follow--ghost:hover { background: transparent; border-color: var(--accent); color: var(--accent-on-dark); }

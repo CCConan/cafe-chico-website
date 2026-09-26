@@ -22,6 +22,13 @@
   --accent:    #A8A84A;   /* Moderate Olive #A8A84A — client-confirmed brand olive */
   --accent-soft: #EDEBCF; /* olive tint (chips / soft blocks) */
   --green:     #6E7226;   /* olive-deep — small text on light */
+  --accent-ink:     #6E7226;
+                          /* 25 Sep 2026：淺底上面嘅「強調色文字」。Moderate Olive
+                             #A8A84A 喺奶油底只有 2.32:1 對比，做文字完全睇唔清，
+                             所以文字一律用這個深橄欖（4.73:1，過 WCAG AA）。
+                             --accent 本身保留做色塊／按鈕／圓點嘅填色。 */
+  --accent-on-dark: #C3C68E;
+                          /* 深色帶上面嘅強調色文字（9.85:1 on --bg-dark） */
   --gold:      #6E7226;   /* olive-deep（原本嘅淺金在淺底睇唔到） */
 
   /* === Typography === */
@@ -122,12 +129,19 @@ h3 { font-size: clamp(22px, 2.5vw, 30px); line-height: 1.18; }
 p  { margin: 0 0 1em; }
 p:last-child { margin-bottom: 0; }
 
+/* 25 Sep 2026：深色色帶上面嘅 kicker 要用淺橄欖，否則深橄欖字跌落深底會睇唔到 */
+:where(.menu-note, .menu-tiktok, .cat-quote, .cat-enquire, .pr-pullquote,
+       .pr-featured, .pr-editorial__copy, .pr-enquire, .bike-marquee,
+       .bike-specs, .site-footer, .g-close) .kicker {
+  color: var(--accent-on-dark);
+}
+
 .kicker {
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-ink);
   margin: 0 0 var(--space-3);
   font-weight: 600;
 }
@@ -469,7 +483,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   font-family: var(--font-mono);
   font-size: 13px;
   letter-spacing: 0.06em;
-  color: var(--accent);
+  color: var(--accent-ink);
   font-weight: 600;
 }
 
@@ -562,7 +576,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
      55% black tile overlay read as 'drained / greyish' next to the
      default cream-white. Force back to pure white on hover so the
      link becomes brighter, not darker. (user 1 Sep 2026) */
-  color: var(--accent);   /* 25 Sep 2026：淺色主題 → 用品牌橄欖 */
+  color: var(--accent-ink);   /* 25 Sep 2026：淺色主題 → 用品牌橄欖 */
 }
 .visit-strip__cell strong {
   color: var(--fg);
@@ -591,7 +605,7 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
 .hours-table th { color: var(--muted); font-weight: 400; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; }
 .hours-table td { font-variant-numeric: tabular-nums; }
 .hours-table .closed { color: var(--muted); font-style: italic; }
-.hours-table tr.today { color: var(--accent); font-weight: 600; }
+.hours-table tr.today { color: var(--accent-ink); font-weight: 600; }
 
 /* ---------- Inline service chips ---------- */
 .chips {
@@ -793,7 +807,7 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible), .btn:focus:not(:f
   font-size: 20px;
   font-weight: 600;
   letter-spacing: 0;
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 /* ---- Social link + QR pop-out（橡筋回彈，19 Sep 2026）
