@@ -453,26 +453,6 @@
 
 <script src="assets/js/shared.js"></script>
 <script src="assets/js/tiktok-lazy.js" defer></script>
-<script>
-  // #14 — 自動同步 Google 評分 / 評論數（/api/google-stats，6 小時快取）
-  (function () {
-    if (!window.fetch) return;
-    fetch('/api/google-stats', { cache: 'no-store' })
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        if (!d || !d.ok) return;                       // 未設定 API key → 沿用靜態數字
-        if (d.rating) {
-          document.querySelectorAll('[data-g="rating"]').forEach(function (el) {
-            el.innerHTML = String(d.rating) + '<em>★</em>';
-          });
-        }
-        if (d.count) {
-          var n = Number(d.count).toLocaleString('en-GB');
-          document.querySelectorAll('[data-g="count"]').forEach(function (el) { el.textContent = n; });
-        }
-      })
-      .catch(function () { /* 靜靜咁失敗，保留靜態數字 */ });
-  })();
-</script>
+<script src="assets/js/google-stats.js" defer></script>
 </body>
 </html>
