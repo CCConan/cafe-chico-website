@@ -360,7 +360,8 @@
 .g-close dd { margin: 6px 0 0; font-family: var(--font-editorial); font-size: clamp(19px, 2vw, 24px); }
 .g-close dd a { color: var(--paper); text-decoration: none; border-bottom: 2px solid var(--olive); }
 .g-close .g-head p { color: rgba(247,246,238,0.78); }
-.g-note { margin-top: 26px; font-size: 13px; color: rgba(247,246,238,0.7); }
+/* 28 Sep 2026：原本 rgba(247,246,238,0.7)（近白）—— g-close 區已刪，而家 g-note 只出現在 g-faq（淺色底），近白字完全睇唔到，改用暖啡。 */
+.g-note { margin-top: 26px; font-size: 13px; color: var(--ink-soft); }
 
 /* --------------------------------------------- delivery chips (light + dark) */
 .delivery-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 14px; }

@@ -551,7 +551,9 @@
   margin: 0 0 var(--space-6);
   font-size: clamp(16px, 1.3vw, 19px);
   line-height: 1.6;
-  color: oklch(85% 0.012 80);
+  /* 28 Sep 2026：原本 oklch(85% 0.012 80)（近白）—— 呢個區塊係淺橄欖底
+     (--accent-soft)，近白字完全睇唔到。改用墨綠。 */
+  color: var(--bg-dark);
 }
 .bike-toppings__list {
   list-style: none;
@@ -572,7 +574,8 @@
 }
 .bike-toppings__note {
   font-size: 13px;
-  color: oklch(70% 0.015 70);
+  /* 28 Sep 2026：原本 oklch(70% 0.015 70)（中灰）喺淺橄欖底只有 ~2.4:1，太淡 */
+  color: var(--muted);
   font-style: italic;
   margin: 0;
 }

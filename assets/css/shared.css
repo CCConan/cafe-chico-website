@@ -741,8 +741,10 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   margin: 0;
   font-size: 14px;
   line-height: 1.55;
-  color: var(--fg);        /* 25 Sep 2026：淺色主題 */
-  color: oklch(95% 0.012 80);
+  /* 28 Sep 2026：原本仲有一行深色主題遺留嘅 `color: oklch(95% 0.012 80)`
+     （近白色）蓋過墨綠字，令電話號碼、地址第二行喺淺底上面完全睇唔到。
+     已刪除，統一用墨綠。 */
+  color: var(--fg);
 }
 .visit-strip__cell a:hover {
   /* was var(--gold) oklch(80% 0.100 109) — a warm apricot that under the
