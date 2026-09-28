@@ -365,8 +365,9 @@
 }
 .cat-quote__text {
   font-family: var(--font-display);
-  font-size: clamp(22px, 3vw, 36px);
-  line-height: 1.45;
+  /* 29 Sep 2026：客人話太大，縮細 20%（原 clamp(22px, 3vw, 36px)） */
+  font-size: clamp(17.6px, 2.4vw, 28.8px);
+  line-height: 1.5;
   color: oklch(95% 0.012 80);
   max-width: 780px;
   margin: 0 auto;
@@ -374,6 +375,10 @@
   font-style: normal;
 }
 .cat-quote__text em {
+  /* 29 Sep 2026：客人要求全句用同一種字體。<em> 瀏覽器預設係斜體，
+     所以之前「From a family-run Bolton kitchen.」睇落同其餘文字唔同字體。
+     呢度取消斜體（保留橄欖色作重點色）。 */
+  font-style: normal;
   color: oklch(78% 0.080 109);
 }
 .cat-quote__mark {
