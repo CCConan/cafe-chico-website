@@ -244,6 +244,99 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   border-radius: 1.5px;
 }
 
+/* ---------- 導覽列下拉選單（Event 分組，26 Sep 2026）----------
+   客人要求把 Ice Cream Bike / Platters / Party Room 收成一個「Event」分類，
+   滑鼠移上去自動彈出三個頁面（參考 slattery.co.uk）。同時支援：
+   click、鍵盤（Tab + Enter/Space）、Esc 關閉、撳外面關閉。 */
+.nav-item--has-menu { position: relative; }
+
+.nav-item__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 0;
+  padding: 8px 2px;
+  cursor: pointer;
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 12.6px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  position: relative;
+  transition: color 180ms var(--ease-soft);
+}
+.nav-item__toggle:hover,
+.nav-item--has-menu.is-open .nav-item__toggle { font-weight: 600; }
+.nav-item__toggle.active { font-weight: 700; }
+.nav-item__toggle.active::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -2px 0;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 1.5px;
+}
+.nav-item__caret {
+  flex-shrink: 0;
+  transition: transform 200ms var(--ease-soft);
+  opacity: 0.75;
+}
+.nav-item--has-menu:hover .nav-item__caret,
+.nav-item--has-menu.is-open .nav-item__caret { transform: rotate(180deg); }
+
+.nav-submenu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  z-index: 60;
+  min-width: 216px;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-3);
+  transform: translateX(-50%) translateY(-6px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 180ms var(--ease-soft), transform 180ms var(--ease-soft), visibility 180ms;
+}
+/* 滑鼠由「Event」移去選單時要跨過一段空隙，用隱形橋樑避免中途關閉 */
+.nav-submenu::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  bottom: 100%;
+  height: 14px;
+}
+.nav-item--has-menu:hover .nav-submenu,
+.nav-item--has-menu:focus-within .nav-submenu,
+.nav-item--has-menu.is-open .nav-submenu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.nav-submenu a {
+  display: block;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--fg);
+  white-space: nowrap;
+  transition: background 160ms var(--ease-soft), color 160ms var(--ease-soft);
+}
+.nav-submenu a:hover,
+.nav-submenu a:focus-visible { background: var(--accent-soft); color: var(--fg); font-weight: 600; }
+.nav-submenu a.active { font-weight: 700; }
+
 .nav-toggle {
   display: none;
   width: 40px; height: 40px;
@@ -262,7 +355,9 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   .nav-tabs {
     position: absolute;
     inset: 100% 0 auto 0;
-    background: rgba(6, 8, 3, 0.50);   /* mobile dropdown: 50% dark transparent per user */
+    /* 26 Sep 2026：原本 rgba(6,8,3,0.50)（深色主題遺留），在淺色主題會變成一塊灰，
+       配深色文字幾乎睇唔到。改回奶油底。 */
+    background: rgba(247, 246, 238, 0.98);
     backdrop-filter: saturate(160%) blur(14px);
     -webkit-backdrop-filter: saturate(160%) blur(14px);
     border-bottom: 1px solid var(--border);
@@ -281,6 +376,31 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   }
   .site-nav.is-open .nav-tabs a { color: var(--fg); }   /* 25 Sep 2026：下拉選單亦係奶油底 */
   .nav-toggle { display: flex; }
+
+  /* 手機：Event 下拉改成手風琴（冇 hover，所以撳一下展開） */
+  .nav-item--has-menu { width: 100%; }
+  .nav-item__toggle { width: 100%; justify-content: space-between; font-size: 13px; }
+  .nav-submenu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    display: none;
+    min-width: 0;
+    margin: 6px 0 0;
+    padding: 4px 0 4px 14px;
+    background: transparent;
+    border: 0;
+    border-left: 2px solid var(--accent);
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .nav-submenu::before { display: none; }
+  .nav-item--has-menu:hover .nav-submenu { transform: none; }
+  .nav-item--has-menu.is-open .nav-submenu,
+  .nav-item--has-menu:focus-within .nav-submenu { display: block; transform: none; }
+  .nav-submenu a { padding: 8px 0; }
 }
 
 /* ---------- Hero ---------- */

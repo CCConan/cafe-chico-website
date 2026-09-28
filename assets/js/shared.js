@@ -49,6 +49,42 @@
     });
   }
 
+  /* ----- 導覽列下拉選單（Event，26 Sep 2026）-----
+     桌面：滑鼠移上去由 CSS :hover 處理（唔需要 JS）。
+     呢度負責：撳／鍵盤 Enter·Space 開關、Esc 關閉、撳出面或撳走焦點關閉，
+     以及同步 aria-expanded。手機版同樣用呢個 toggle 做手風琴。 */
+  const navMenuItems = document.querySelectorAll('.nav-item--has-menu');
+  const closeAllNavMenus = (except) => {
+    navMenuItems.forEach(item => {
+      if (item === except) return;
+      item.classList.remove('is-open');
+      const btn = item.querySelector('.nav-item__toggle');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    });
+  };
+  navMenuItems.forEach(item => {
+    const btn = item.querySelector('.nav-item__toggle');
+    if (!btn) return;
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const willOpen = !item.classList.contains('is-open');
+      closeAllNavMenus(item);
+      item.classList.toggle('is-open', willOpen);
+      btn.setAttribute('aria-expanded', String(willOpen));
+    });
+    // 撳選單入面嘅連結之後收起
+    item.querySelectorAll('.nav-submenu a').forEach(a => {
+      a.addEventListener('click', () => closeAllNavMenus());
+    });
+  });
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-item--has-menu')) closeAllNavMenus();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAllNavMenus();
+  });
+
   /* ----- Smooth scroll for in-page anchors ----- */
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     const href = link.getAttribute('href');
