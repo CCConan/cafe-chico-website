@@ -69,7 +69,7 @@
    確保即使 JS 未執行嘅一剎那都唔會出現遮擋。 */
 :root { --nav-h: 87px; }                                        /* 1440–768px：導覽列一行 */
 @media (min-width: 721px) and (max-width: 767px) {
-  :root { --nav-h: 110px; }                                     /* 呢個窄範圍導覽列會換兩行，實測 110px */
+  :root { --nav-h: 115px; }                                     /* 呢個窄範圍導覽列會換兩行，實測 115px */
 }
 
 .cat-nav {

@@ -103,49 +103,57 @@
     });
   });
 
-  /* ----- Scroll-spy: highlight tab matching current section ----- */
-  // Match any tab whose href contains a #, including cross-page links like index.html#story
-  const tabs = document.querySelectorAll('.nav-tabs a[href*="#"]');
-  if (tabs.length && 'IntersectionObserver' in window) {
-    const sections = Array.from(tabs).map(t => {
-      const href = t.getAttribute('href') || '';
-      const m = href.match(/#([^?#]+)/);
-      if (!m) return null;
-      return { tab: t, hash: m[1], target: document.querySelector('#' + m[1]) };
-    }).filter(x => x && x.target);
+  /* ----- Scroll-spy（重寫 28 Sep 2026）＋ 滑動底線 -----
+     舊版用 IntersectionObserver 按「佔比最大」決定邊個 tab 亮起，遇到好高嘅
+     區塊（例如 #story）會跳過，出現「Home 直接跳去 Contact」。
+     新版改成按「最後一個已經過咗頂線嘅區塊」判斷，簡單而且唔會漏。 */
+  const navTabsEl = document.querySelector('.nav-tabs');
+  const spySections = Array.from(document.querySelectorAll('.nav-tabs a[href*="#"]'))
+    .map(t => {
+      const m = (t.getAttribute('href') || '').match(/#([^?#]+)/);
+      const target = m ? document.getElementById(m[1]) : null;
+      return target ? { tab: t, hash: m[1], target } : null;
+    })
+    .filter(Boolean)
+    .sort((a, b) => a.target.offsetTop - b.target.offsetTop);   // 依文件位置排序（唔可以跟 nav 次序）
 
-    const setActive = (id) => {
-      sections.forEach(s => {
-        s.tab.classList.toggle('active', s.hash === id);
-      });
-    };
+  /* 滑動底線：把共用底線移到目前 active tab 嘅位置（CSS 有 transition 做動畫） */
+  const moveIndicator = () => {
+    if (!navTabsEl) return;
+    const active = navTabsEl.querySelector('a.active, .nav-item__toggle.active');
+    if (!active) { navTabsEl.classList.remove('has-indicator'); return; }
+    const ul = navTabsEl.getBoundingClientRect();
+    const a = active.getBoundingClientRect();
+    navTabsEl.style.setProperty('--nav-ind-x', (a.left - ul.left) + 'px');
+    navTabsEl.style.setProperty('--nav-ind-w', a.width + 'px');
+    navTabsEl.classList.add('has-indicator');
+  };
+  moveIndicator();
+  window.addEventListener('resize', moveIndicator, { passive: true });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(moveIndicator);
 
-    const observer = new IntersectionObserver((entries) => {
-      // Pick the entry with the largest intersection ratio
-      let best = null;
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          if (!best || e.intersectionRatio > best.intersectionRatio) {
-            best = e;
-          }
-        }
-      });
-      if (best) {
-        const id = best.target.id;
-        // If the section that just entered the viewport doesn't have a
-        // nav tab (e.g. #neighbours — there is no Neighbours tab), keep
-        // the current active tab instead of clearing every tab. Without
-        // this guard the user sees Social → (gap) → Contact as they
-        // scroll through the Story / Neighbours / Reviews block.
-        const isMapped = sections.some(s => s.hash === id);
-        if (id && isMapped) setActive(id);
+  if (spySections.length) {
+    let currentHash = null;
+    const updateSpy = () => {
+      const navH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 87;
+      const line = window.scrollY + navH + 32;      // 頂欄底部再加少少緩衝
+      let best = spySections[0];
+      for (const s of spySections) {
+        if (s.target.offsetTop <= line) best = s;   // 最後一個已滾過頂線嘅區塊
       }
-    }, {
-      threshold: [0.15, 0.4, 0.65],
-      rootMargin: '-80px 0px -40% 0px',
-    });
-
-    sections.forEach(s => observer.observe(s.target));
+      // 捲到最底時，強制亮起最後一個（#contact）
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+        best = spySections[spySections.length - 1];
+      }
+      if (best && best.hash !== currentHash) {
+        currentHash = best.hash;
+        spySections.forEach(s => s.tab.classList.toggle('active', s === best));
+        moveIndicator();
+      }
+    };
+    window.addEventListener('scroll', updateSpy, { passive: true });
+    window.addEventListener('resize', updateSpy, { passive: true });
+    updateSpy();
   }
 
   /* ----- Reveal-on-scroll ----- */
