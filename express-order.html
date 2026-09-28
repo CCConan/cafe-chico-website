@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Express Order · Café Chico · Bolton</title>
+  <meta name="description" content="Order direct from Café Chico — no delivery-app fees. Build your basket, choose delivery or collection, pay online or in the café." />
+  <meta name="theme-color" content="#1D1D11" />
+
+  <link rel="icon" href="favicon.ico" sizes="any" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/site-images/logo/favicon-bg-32.png" />
+
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/site-images/logo/favicon-bg-16.png" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/site-images/logo/apple-touch-icon-180.png" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/site-images/logo/favicon-light-32.png" media="(prefers-color-scheme: light)" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/site-images/logo/favicon-32.png" media="(prefers-color-scheme: dark)" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/shared.css" />
+  <link rel="stylesheet" href="assets/css/express-order.css" />
+</head>
+<body class="express-page">
+
+<nav class="site-nav" aria-label="Primary">
+  <div class="site-nav__inner">
+    <a href="index.html" class="brand" aria-label="Café Chico, back to home">
+      <img class="brand__mark brand__mark--dark"  src="assets/site-images/logo/chico-logo-dark.png"  alt="Café Chico" width="3000" height="3232" />
+      <img class="brand__mark brand__mark--light" src="assets/site-images/logo/chico-logo-light.png" alt="Café Chico" width="3000" height="3232" />
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    <ul class="nav-tabs" role="list">
+      <li><a href="index.html#hero">Home</a></li>
+      <li><a href="index.html#story">Story</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="social-reviews.html">Social &amp; Reviews</a></li>
+      <!-- 26 Sep 2026：客人要求把 Ice Cream Bike / Platters / Party Room 收成一個「Event」分類，
+           滑鼠移上去（或撳）會彈出選單顯示三個頁面（參考 slattery.co.uk 嘅做法）。 -->
+      <li class="nav-item--has-menu">
+        <button class="nav-item__toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="nav-event-menu">
+          Event<svg class="nav-item__caret" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="nav-submenu" id="nav-event-menu" role="list">
+          <li><a href="ice-cream-bike.html">Ice Cream Bike</a></li>
+          <li><a href="platters.html">Platters</a></li>
+          <li><a href="party-room.html">Party Room</a></li>
+        </ul>
+      </li>
+            <li><a href="gift-vouchers.html">Gift Vouchers</a></li>
+<li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============================================================ HERO -->
+<header class="ex-hero">
+  <div class="ex-hero__inner">
+    <span class="ex-hero__kicker">Express Order · Order direct</span>
+    <h1>Skip the platforms.<br/><em>Order straight from us.</em></h1>
+    <p class="ex-hero__sub">
+      同我哋直接落單 —— 冇 Uber Eats／Deliveroo 平台費，價錢同店內一樣。
+      揀好食物放落購物籃，可以外送（兩個英里內免費）或者到店自取。
+    </p>
+    <ul class="ex-hero__trust">
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>No platform fees</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Free delivery within 2 miles</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Collection in ~20 min</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Halal kitchen</li>
+    </ul>
+  </div>
+</header>
+
+<div class="ex-wrap">
+  <div class="ex-layout">
+
+    <!-- ======================================================= MENU -->
+    <main>
+      <div class="ex-controls">
+        <div class="ex-search">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="ex-search" type="search" placeholder="搜尋食物…（例如 full english、latte）" aria-label="搜尋食物" />
+        </div>
+        <div class="ex-tabs" id="ex-tabs" role="tablist" aria-label="分類"></div>
+      </div>
+
+      <p class="ex-section__count" style="margin-top:12px"><span id="ex-count">—</span></p>
+      <div id="ex-menu" aria-live="polite"></div>
+
+      <p class="ex-demo">
+        示範版本（Express Order demo）：可以加食物落購物籃、揀數量、行完成個結帳流程，
+        但<strong>未接真實付款</strong>，所以唔會收錢、亦唔會送出訂單。
+      </p>
+    </main>
+
+    <!-- ===================================================== BASKET -->
+    <aside class="ex-basket" id="ex-basket" aria-label="購物籃">
+      <div class="ex-basket__head">
+        <h2>購物籃</h2>
+        <span class="ex-basket__count"><span data-basket-count>0</span> 件</span>
+      </div>
+
+      <div class="ex-toggle" role="group" aria-label="外送或自取">
+        <button type="button" data-mode="delivery" class="is-active">外送</button>
+        <button type="button" data-mode="collection">到店自取</button>
+      </div>
+
+      <ul class="ex-basket__list" id="ex-basket-list"></ul>
+      <div class="ex-sum" id="ex-summary"></div>
+      <button class="ex-cta" type="button" id="ex-checkout" disabled>購物籃係空</button>
+      <p class="ex-basket__note" id="ex-minhint">兩個英里內免費外送 · 約 25–40 分鐘送到。</p>
+    </aside>
+
+  </div>
+</div>
+
+<!-- ==================================================== MOBILE BAR -->
+<div class="ex-mobilebar" id="ex-mobilebar" role="button" tabindex="0" aria-label="打開購物籃">
+  <span><span data-basket-count>0</span> 件 · <strong data-basket-total>£0.00</strong></span>
+  <span class="ex-mobilebar__btn">睇購物籃</span>
+</div>
+
+<!-- ======================================================== MODAL -->
+<div class="ex-modal" id="ex-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="ex-modal-title">
+  <div class="ex-modal__backdrop" data-close-modal></div>
+  <div class="ex-modal__panel">
+    <div class="ex-modal__head">
+      <h2 id="ex-modal-title">結帳</h2>
+      <button class="ex-modal__close" type="button" data-close-modal aria-label="關閉">×</button>
+    </div>
+    <div class="ex-modal__body" id="ex-modal-body"></div>
+    <div class="ex-modal__foot" id="ex-modal-foot"></div>
+  </div>
+</div>
+
+<div id="ex-toast" style="position:fixed;left:50%;bottom:96px;transform:translateX(-50%) translateY(10px);background:#17170f;color:#fff;padding:10px 18px;border-radius:999px;font:600 13px/1 var(--font-mono);letter-spacing:.06em;opacity:0;pointer-events:none;transition:opacity 200ms,transform 200ms;z-index:95"></div>
+<style>#ex-toast.is-on{opacity:1;transform:translateX(-50%) translateY(0)}</style>
+
+<footer class="site-footer">
+  <div class="site-footer__grid">
+    <div>
+      <p class="site-footer__tag"><img src="assets/site-images/logo/chico-logo-light.png" alt="Café Chico" width="113" height="130" /></p>
+      <p style="color:oklch(85% 0.012 80); font-size:14px; line-height:1.6;">
+        A small, family-run café on St Helens Rd, Bolton. Honest food, made close to home.
+      </p>
+    </div>
+    <div>
+      <h5>Visit</h5>
+      <!-- 29 Sep 2026：地址／電話／電郵之間用幼橫線分隔 -->
+      <ul class="site-footer__visit">
+        <li><a href="https://maps.app.goo.gl/vYhYXEfkkgfor3qBA?g_st=ic" target="_blank" rel="noopener">185 St Helens Rd</a><br /><a href="https://maps.app.goo.gl/vYhYXEfkkgfor3qBA?g_st=ic" target="_blank" rel="noopener">Bolton BL3 3PS</a></li>
+        <li><a href="tel:+441204934467">01204 934 467</a></li>
+        <li><a href="mailto:cafechico185@gmail.com">cafechico185@gmail.com</a></li>
+      </ul>
+      <!-- 28 Sep 2026：營業時間改用傳統七行表格（每日一行、寫明開門同關門時間） -->
+      <table class="hours-table">
+        <tbody>
+          <tr data-day="Mon"><th scope="row">Monday</th><td class="closed">Closed</td></tr>
+          <tr data-day="Tue"><th scope="row">Tuesday</th><td>09:00 – 16:00</td></tr>
+          <tr data-day="Wed"><th scope="row">Wednesday</th><td>09:00 – 16:00</td></tr>
+          <tr data-day="Thu"><th scope="row">Thursday</th><td>09:00 – 16:00</td></tr>
+          <tr data-day="Fri"><th scope="row">Friday</th><td>09:00 – 16:00</td></tr>
+          <tr data-day="Sat"><th scope="row">Saturday</th><td>09:00 – 16:00</td></tr>
+          <tr data-day="Sun"><th scope="row">Sunday</th><td>10:00 – 16:00</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h5>Hire, gifts &amp; more</h5>
+      <ul>
+        <li><a href="platters.html">Platters &amp; catering</a></li>
+        <li><a href="ice-cream-bike.html">Ice cream bike hire</a></li>
+        <li><a href="party-room.html">Upstairs party room</a></li>
+        <li><a href="gift-vouchers.html">Gift vouchers</a></li>
+        <li><a href="social-reviews.html">Social &amp; reviews</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Follow</h5>
+      <ul>
+        <li class="qr-link">
+          <a href="https://instagram.com/cafechico_uk" target="_blank" rel="noopener">Instagram · @cafechico_uk</a>
+          <span class="qr-pop" aria-hidden="true">
+            <img src="assets/site-images/qr/instagram.png" alt="Instagram QR code — @cafechico_uk" width="512" height="512" loading="lazy" />
+            <span class="qr-pop__hint">Scan with your phone</span>
+          </span>
+        </li>
+        <li class="qr-link">
+          <a href="https://tiktok.com/@cafechico" target="_blank" rel="noopener">TikTok · @cafechico</a>
+          <span class="qr-pop" aria-hidden="true">
+            <img src="assets/site-images/qr/tiktok.png" alt="TikTok QR code — @cafechico" width="512" height="512" loading="lazy" />
+            <span class="qr-pop__hint">Scan with your phone</span>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <span>&#169; 2026 Caf&#233; Chico. Made with care in Bolton.</span>
+    <span class="site-footer__slogan">Come for the coffee. Stay for the cake.</span>
+    <span>Website by Studio Nestir</span>
+  </div>
+</footer>
+
+<script src="assets/js/shared.js"></script>
+<script src="assets/js/express-order.js"></script>
+</body>
+</html>

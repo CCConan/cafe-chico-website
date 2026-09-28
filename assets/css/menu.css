@@ -813,3 +813,18 @@
 .menu-tiktok__links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: var(--space-4); }
 .menu-tiktok__follow--ghost { border-color: var(--border); color: var(--muted); }
 .menu-tiktok__follow--ghost:hover { background: transparent; border-color: var(--accent); color: var(--accent-on-dark); }
+
+/* ---- Express Order chip（直接落單，2026-09-29）---- */
+.delivery-chip--express {
+  gap: 8px;
+  color: var(--olive-deep, #6f6f22);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  border: 1px solid var(--olive, #a8a84a);
+}
+.delivery-chip--express svg { flex-shrink: 0; color: var(--olive, #a8a84a); }
+.delivery-chip--express:hover { color: #14140c; background: var(--olive, #a8a84a); }
+.delivery-chip--express:hover svg { color: #14140c; }
