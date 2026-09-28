@@ -84,9 +84,9 @@
      亦即全站主題色）。 */
   background: var(--accent);
   border-bottom: 1px solid rgba(25, 26, 16, 0.18);
-  /* 26 Sep 2026：客人要求整體再往下留白一段距離（約 40% 藥丸高度 ≈ 28px），
-     令分類文字唔會貼住上面導覽列。 */
-  padding: calc(var(--space-3) + var(--cat-nav-gap, 28px)) 0 var(--space-3);
+  /* 29 Sep 2026：客人要求減少上方留白，令分類文字喺綠色欄中間 →
+     改成上下對稱留白（原本上 37px、下 16px，唔對稱）。 */
+  padding: var(--cat-nav-gap, 21px) 0;
 }
 .cat-nav__inner {
   max-width: 1180px;
