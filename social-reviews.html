@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Social &amp; Reviews · Café Chico · Bolton</title>
-  <meta name="description" content="What Bolton says about Café Chico — 4.9★ from 307 Google reviews, the latest from Instagram and TikTok, and the press we've had along the way." />
+  <meta name="description" content="What Bolton says about Café Chico — rated 4.9★ on Google, the latest from Instagram and TikTok, and the press we've had along the way." />
   <meta name="theme-color" content="#1D1D11" />
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/site-images/logo/favicon-bg-32.png" />
@@ -24,7 +24,7 @@
 
 <!-- ================================================================ ANNOUNCE -->
 <p class="g-announce">
-  <strong>4.9★</strong> from 307 Google reviews · follow <a href="https://www.instagram.com/cafechico_uk/" target="_blank" rel="noopener">@cafechico_uk</a> for what came off the pass today
+  <strong data-g="rating">4.9<em>★</em></strong> from <span data-g="count">307</span> Google reviews · follow <a href="https://www.instagram.com/cafechico_uk/" target="_blank" rel="noopener">@cafechico_uk</a> for what came off the pass today
 </p>
 
 <!-- ===================================================================== NAV -->
@@ -81,7 +81,7 @@
         <p class="g-eyebrow">Social &amp; reviews</p>
         <h1>What Bolton<br />says about us</h1>
         <p class="g-hero__lede">
-          Two thousand people follow the kitchen on Instagram, 307 have left a review on Google, and the
+          Two thousand people follow the kitchen on Instagram, <span data-g="count">307</span> have left a review on Google, and the
           dining room keeps filling up on a Tuesday morning. Here's the lot — the posts, the clips and the
           reviews in their own words.
         </p>
@@ -106,8 +106,8 @@
 <section class="g-stats">
   <div class="g-wrap">
     <div class="g-stats__grid">
-      <div class="g-stat"><strong>4.9<em>★</em></strong><span>Google rating</span></div>
-      <div class="g-stat"><strong>307</strong><span>Google reviews</span></div>
+      <div class="g-stat"><strong data-g="rating">4.9<em>★</em></strong><span>Google rating</span></div>
+      <div class="g-stat"><strong data-g="count">307</strong><span>Google reviews</span></div>
       <div class="g-stat"><strong>2,014</strong><span>Instagram followers</span></div>
       <div class="g-stat"><strong>2024</strong><span>Tripadvisor Travellers' Choice</span></div>
     </div>
@@ -437,5 +437,26 @@
 
 <script src="assets/js/shared.js"></script>
 <script src="assets/js/tiktok-lazy.js" defer></script>
+<script>
+  // #14 — 自動同步 Google 評分 / 評論數（/api/google-stats，6 小時快取）
+  (function () {
+    if (!window.fetch) return;
+    fetch('/api/google-stats', { cache: 'no-store' })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (!d || !d.ok) return;                       // 未設定 API key → 沿用靜態數字
+        if (d.rating) {
+          document.querySelectorAll('[data-g="rating"]').forEach(function (el) {
+            el.innerHTML = String(d.rating) + '<em>★</em>';
+          });
+        }
+        if (d.count) {
+          var n = Number(d.count).toLocaleString('en-GB');
+          document.querySelectorAll('[data-g="count"]').forEach(function (el) { el.textContent = n; });
+        }
+      })
+      .catch(function () { /* 靜靜咁失敗，保留靜態數字 */ });
+  })();
+</script>
 </body>
 </html>
