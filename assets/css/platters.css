@@ -219,8 +219,9 @@
   transform: translateY(-1px);
 }
 .cat-filter.is-active {
-  background: var(--fg);
-  border-color: var(--fg);
+  /* 26 Sep 2026：原本 var(--fg)（近黑），跟 Menu 頁嘅分類藥丸一齊改成全站深啡色 */
+  background: var(--brown);
+  border-color: var(--brown);
   color: white;
 }
 

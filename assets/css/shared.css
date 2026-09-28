@@ -30,6 +30,10 @@
   --accent-on-dark: #C3C68E;
                           /* 深色帶上面嘅強調色文字（9.85:1 on --bg-dark） */
   --gold:      #6E7226;   /* olive-deep（原本嘅淺金在淺底睇唔到） */
+  --brown:     #3B2418;
+                          /* 26 Sep 2026：全站唯一嘅深啡色（19 Sep 2026 老闆指定嘅 deep brown）。
+                             Menu 分類藥丸、Platters 篩選藥丸都用佢。 */
+
 
   /* === Typography === */
   --font-display: "Iowan Old Style", "Charter", "Palatino Linotype", "Georgia", "Times New Roman", serif;

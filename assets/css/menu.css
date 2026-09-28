@@ -66,11 +66,17 @@
 /* ---------- Category sub-nav ---------- */
 .cat-nav {
   position: sticky;
-  top: 73px;
+  /* 26 Sep 2026：原本寫死 73px，但導覽列實際 87px（窄螢幕換行會過 100px），
+     所以分類列頂部一直被導覽列壓住。改用 JS 量度出嚟嘅 --nav-h。 */
+  top: var(--nav-h, 87px);
   z-index: 50;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
-  padding: var(--space-3) 0;
+  /* 26 Sep 2026：客人要求分類列底色改成橄欖綠（Moderate Olive #A8A84A = --accent，
+     亦即全站主題色）。 */
+  background: var(--accent);
+  border-bottom: 1px solid rgba(25, 26, 16, 0.18);
+  /* 26 Sep 2026：客人要求整體再往下留白一段距離（約 40% 藥丸高度 ≈ 28px），
+     令分類文字唔會貼住上面導覽列。 */
+  padding: calc(var(--space-3) + var(--cat-nav-gap, 28px)) 0 var(--space-3);
 }
 .cat-nav__inner {
   max-width: 1180px;
@@ -89,15 +95,17 @@
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--muted);
+  /* 橄欖底上面 --muted 只有 2.6:1，改用深啡（#3B2418 on #A8A84A = 5.7:1，過 WCAG AA） */
+  color: var(--brown);
   border-radius: var(--radius-pill);
   transition: background 180ms, color 180ms;
   border: 1px solid transparent;
 }
-.cat-nav__btn:hover { color: var(--fg); background: var(--accent-soft); }
+.cat-nav__btn:hover { color: var(--brown); background: var(--accent-soft); }
 .cat-nav__btn.active {
   color: white;
-  background: var(--fg);
+  /* 26 Sep 2026：原本 var(--fg)（近黑 #191A10），客人要求改成全站嘅深啡色 */
+  background: var(--brown);
 }
 
 /* ---------- 3D viewer ---------- */
@@ -231,7 +239,9 @@
 /* ---------- Menu grid by category ---------- */
 .menu-section {
   padding: clamp(56px, 8vw, 96px) 0;
-  scroll-margin-top: 130px;
+  /* 26 Sep 2026：原本寫死 130px。改成跟實際高度計，撳分類跳過去之後
+     標題唔會畀 sticky 條壓住。 */
+  scroll-margin-top: calc(var(--nav-h, 87px) + var(--cat-nav-h, 97px) + 28px);
   /* Transparent so the .bg-tile-page wall texture on <body> shows
      through between the dish cards. Cards keep their own var(--bg)
      surface, so individual dishes stay readable. */
@@ -717,7 +727,8 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 10px;
-  margin-top: var(--space-3);
+  /* 26 Sep 2026：上面「Also available for delivery on」已刪，所以加返少少距離 */
+  margin-top: var(--space-4);
 }
 .delivery-chip {
   display: inline-flex;

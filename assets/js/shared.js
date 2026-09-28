@@ -16,6 +16,27 @@
     onScroll();
   }
 
+  /* ----- 導覽列／分類列實際高度 → CSS 變數（26 Sep 2026）-----
+     Menu 頁嘅 sticky 分類列（.cat-nav）原本寫死 top: 73px，但導覽列實際
+     係 87px，窄螢幕換行時仲會超過 100px；結果分類列頂部被導覽列壓住。
+     呢度即時量度真實高度寫入 --nav-h / --cat-nav-h，CSS 用 var() 跟住走，
+     任何螢幕闊度都唔會再重疊。 */
+  const catNav = document.querySelector('.cat-nav');
+  const setNavHeights = () => {
+    const root = document.documentElement.style;
+    if (nav) root.setProperty('--nav-h', Math.round(nav.getBoundingClientRect().height) + 'px');
+    if (catNav) root.setProperty('--cat-nav-h', Math.round(catNav.getBoundingClientRect().height) + 'px');
+  };
+  setNavHeights();
+  window.addEventListener('resize', setNavHeights, { passive: true });
+  window.addEventListener('orientationchange', setNavHeights, { passive: true });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(setNavHeights);
+  if (window.ResizeObserver) {
+    const ro = new ResizeObserver(setNavHeights);
+    if (nav) ro.observe(nav);
+    if (catNav) ro.observe(catNav);
+  }
+
   /* ----- Mobile nav toggle ----- */
   const toggle = document.querySelector('.nav-toggle');
   if (toggle && nav) {
