@@ -574,13 +574,20 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  /* 29 Sep 2026：客人要求放大 30%（48px × 1.3 = 62px） */
+  width: 62px;
+  height: 62px;
   padding: 0;
   background: none;          /* pure logo — no white box (owner request, 19 Sep 2026) */
   border: 0;
   transform-origin: center;
-  transition: transform 320ms cubic-bezier(.2, .8, .2, 1);   /* smooth shrink back */
+  will-change: transform;
+  /* 29 Sep 2026：客人要求持續放大縮小 —— 0.8 ↔ 1.0，3 秒一循環 */
+  animation: logoPulse 3s cubic-bezier(.45, 0, .55, 1) infinite;
+}
+@keyframes logoPulse {
+  0%, 100% { transform: scale(0.8); }
+  50%      { transform: scale(1); }
 }
 .g-logo-btn img { width: 100%; height: 100%; display: block; }
 .g-logo-btn:hover,
@@ -599,6 +606,8 @@
   100% { transform: scale(1.3, 1.3); }
 }
 @media (prefers-reduced-motion: reduce) {
+  /* 29 Sep 2026：系統設定「減少動態效果」時停用持續縮放 */
+  .g-logo-btn { animation: none; }
   .g-logo-btn:hover,
   .g-logo-btn:focus-visible { animation: none; transform: scale(1.3); }
 }
@@ -607,8 +616,7 @@
 .g-head__row { display: flex; align-items: center; gap: 16px; }
 .g-mark { width: 46px; height: 46px; flex: none; }
 @media (max-width: 620px) {
-  .g-logo-btn { width: 42px; height: 42px; }
-  .g-mark { width: 38px; height: 38px; }
+  .g-logo-btn { width: 55px; height: 55px; }   /* 42px × 1.3 */
 }
 
 /* ==========================================================================
