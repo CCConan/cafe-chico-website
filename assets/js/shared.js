@@ -81,9 +81,27 @@
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.nav-item--has-menu')) closeAllNavMenus();
   });
+  /* 29 Sep 2026：手機版漢堡選單收起時，順手清走 Event 手風琴嘅 is-open，
+     否則三個選項（Ice Cream Bike／Platters／Party Room）會一直展開，
+     下次開選單就好似「冇隱藏」咁。 */
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      if (!nav.classList.contains('is-open')) closeAllNavMenus();
+    });
+  }
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeAllNavMenus();
   });
+  // 29 Sep 2026：一捲動就收起（避免撳完 Event 之後選單一直掛住）
+  let scrollTick = false;
+  window.addEventListener('scroll', () => {
+    if (scrollTick) return;
+    scrollTick = true;
+    window.requestAnimationFrame(() => {
+      scrollTick = false;
+      if (window.scrollY > 40) closeAllNavMenus();
+    });
+  }, { passive: true });
 
   /* ----- Smooth scroll for in-page anchors ----- */
   document.querySelectorAll('a[href^="#"]').forEach(link => {
