@@ -795,14 +795,21 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   padding: 4px 0;
   border-bottom: 1px dashed rgba(247, 246, 238, 0.16);
   background: none;
+  /* 29 Sep 2026：客人要求每個日期嘅時間鎖死一行，視窗變窄都唔會跳去第二行 */
+  white-space: nowrap;
+  /* 29 Sep 2026：客人要求所有日子用同一個顏色（跟原本 Monday 嘅橄欖色） */
+  color: var(--accent);
 }
 .site-footer .hours-table th {
-  color: oklch(78% 0.060 109);          /* 同 .site-footer h5 一致 */
   padding-right: 14px;
   font-size: 10px;
 }
-.site-footer .hours-table td { color: oklch(90% 0.012 80); }
-.site-footer .hours-table .closed { color: rgba(247, 246, 238, 0.55); font-style: italic; }
+/* 29 Sep 2026：Monday「Closed」唔再特別用斜體／淺色，同其他日子一模一樣 */
+.site-footer .hours-table .closed {
+  color: var(--accent);
+  font-style: normal;
+}
+/* 今日高亮喺 footer 唔再需要（全部同一顏色） */
 .site-footer .hours-table tr.today,
 .site-footer .hours-table tr.today th,
 .site-footer .hours-table tr.today td { color: var(--accent); }
@@ -811,6 +818,14 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
 .hours-table--compact { font-size: 13.5px; margin: 0; }
 .hours-table--compact th { font-size: 10px; letter-spacing: 0.1em; padding-right: 12px; }
 .hours-table--compact th, .hours-table--compact td { padding: 5px 0; }
+
+/* ---------- Footer「Visit」欄：地址／電話／電郵之間嘅幼橫線（29 Sep 2026）---------- */
+.site-footer__visit { list-style: none; padding: 0; margin: 0; }
+.site-footer__visit li + li {
+  border-top: 1px solid rgba(247, 246, 238, 0.13);   /* 很幼、很淡嘅分隔線 */
+  margin-top: 7px;
+  padding-top: 7px;
+}
 
 /* Footer 中間嗰句口號 */
 .site-footer__slogan {
