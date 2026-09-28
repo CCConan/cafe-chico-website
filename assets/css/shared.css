@@ -283,6 +283,9 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   min-height: 86vh;
   display: grid;
   grid-template-columns: 1fr;
+  /* 26 Sep 2026：分兩行 —— 第一行擺置中嘅 logo，第二行擺底部文字。
+     logo 只會佔用文字上方嘅空位，所以永遠唔會壓住標題。 */
+  grid-template-rows: 1fr auto;
   overflow: hidden;
 }
 .hero__photo {
@@ -331,7 +334,9 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
 }
 .hero h1 {
   color: white;
-  max-width: 14ch;
+  /* 26 Sep 2026：原本 14ch。合成一句之後要闊少少，令「Made close to home.」
+     呢個 inline-block 可以完整排喺第二行（唔會拆開變成三行）。 */
+  max-width: 11em;
   text-wrap: balance;
 }
 .hero h1 .underline {
