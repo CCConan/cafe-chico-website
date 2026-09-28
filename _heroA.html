@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Café Chico · Family-run café in Bolton</title>
+  <meta name="description" content="Café Chico — a small, family-run café in Bolton serving honest breakfast, brunch and lunch. Made close to home." />
+  <meta name="theme-color" content="#1D1D11" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/site-images/logo/favicon-bg-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/site-images/logo/favicon-bg-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/site-images/logo/apple-touch-icon-180.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/site-images/logo/favicon-light-32.png" media="(prefers-color-scheme: light)" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/site-images/logo/favicon-32.png" media="(prefers-color-scheme: dark)" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/shared.css" />
+  <link rel="stylesheet" href="assets/css/index.css" />
+  <link rel="stylesheet" href="assets/vendor/photoswipe/photoswipe.css" />
+
+  <!-- Inline SVG defs (hand-drawn library) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <!-- Squiggle separator -->
+      <symbol id="i-squiggle" viewBox="0 0 120 8">
+        <path d="M2 5 Q 30 1 60 4 T 118 4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </symbol>
+      <!-- Heart wreath -->
+      <symbol id="i-wreath" viewBox="0 0 64 64">
+        <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <path d="M14 32 q0 -10 8 -14 q-2 6 4 10 q6 -4 4 -10 q8 4 8 14" />
+          <path d="M50 32 q0 -10 -8 -14 q2 6 -4 10 q-6 -4 -4 -10 q-8 4 -8 14" />
+          <path d="M32 14 q-4 -4 -2 -8 M32 14 q4 -4 2 -8" />
+          <path d="M14 38 q-6 8 -2 14 M50 38 q6 8 2 14" />
+          <circle cx="20" cy="22" r="1.5" fill="currentColor"/>
+          <circle cx="44" cy="22" r="1.5" fill="currentColor"/>
+        </g>
+      </symbol>
+      <!-- Spoon-fork cross -->
+      <symbol id="i-utensils" viewBox="0 0 64 64">
+        <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <path d="M24 8 v18 a4 4 0 0 1 -8 0 v-18" />
+          <path d="M20 26 v32" />
+          <path d="M44 8 q-6 6 -6 16 a6 6 0 0 0 12 0 q0 -10 -6 -16" />
+        </g>
+      </symbol>
+      <!-- Bicycle silhouette -->
+      <symbol id="i-bike" viewBox="0 0 80 40">
+        <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <circle cx="14" cy="28" r="9"/>
+          <circle cx="66" cy="28" r="9"/>
+          <path d="M14 28 L36 28 L52 12 L60 28 M52 12 L46 12"/>
+          <path d="M36 28 L46 12"/>
+        </g>
+      </symbol>
+      <!-- Coffee cup with steam -->
+      <symbol id="i-coffee" viewBox="0 0 64 64">
+        <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <path d="M16 28 h32 v14 a10 10 0 0 1 -10 10 h-12 a10 10 0 0 1 -10 -10 z"/>
+          <path d="M48 32 h4 a4 4 0 0 1 0 8 h-4"/>
+          <path d="M22 22 q-2 -4 0 -8 M30 22 q-2 -4 0 -8 M38 22 q-2 -4 0 -8"/>
+        </g>
+      </symbol>
+      <!-- Down-arrow squiggle -->
+      <symbol id="i-arrow-down" viewBox="0 0 24 24">
+        <path d="M12 4 v14 M5 12 q3 4 7 8 q4 -4 7 -8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <!-- Google "G" -->
+      <symbol id="i-google" viewBox="0 0 24 24">
+        <path d="M22.5 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.9c-.3 1.4-1 2.5-2.1 3.3v2.7h3.4c2-1.8 3.3-4.6 3.3-7.8z" fill="#4285F4"/>
+        <path d="M12 23c2.8 0 5.2-.9 6.9-2.5l-3.4-2.6c-.9.6-2.1 1-3.5 1-2.7 0-5-1.8-5.8-4.3H2.7v2.7C4.4 20.6 7.9 23 12 23z" fill="#34A853"/>
+        <path d="M6.2 14.6c-.2-.6-.3-1.3-.3-2s.1-1.4.3-2V7.9H2.7C2 9.2 1.6 10.6 1.6 12s.4 2.8 1.1 4.1l3.5-1.5z" fill="#FBBC05"/>
+        <path d="M12 5.5c1.5 0 2.9.5 3.9 1.5l3-3C17.1 2.3 14.8 1.5 12 1.5 7.9 1.5 4.4 3.9 2.7 7.4l3.5 2.7c.8-2.5 3.1-4.6 5.8-4.6z" fill="#EA4335"/>
+      </symbol>
+      <!-- TripAdvisor owl -->
+      <symbol id="i-tripadvisor" viewBox="0 0 24 24">
+        <ellipse cx="7" cy="13" rx="3" ry="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <ellipse cx="17" cy="13" rx="3" ry="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <circle cx="7" cy="13" r="0.9" fill="currentColor"/>
+        <circle cx="17" cy="13" r="0.9" fill="currentColor"/>
+        <path d="M4 8 q2 -2 4 0 M12 8 q3 -2 5 -2 q3 0 5 2 M14 8 q1 2 -2 3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M2 9 q3 -3 6 0" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </symbol>
+      <!-- External-link arrow -->
+      <symbol id="i-extlink" viewBox="0 0 16 16">
+        <path d="M5 2 H2 v12 h12 V11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M9 2 h5 v5 M14 2 L7 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+    </defs>
+  </svg>
+<style>
+.hero__emblem{position:absolute;top:46%;left:50%;transform:translate(-50%,-50%);z-index:5;text-align:center;display:grid;gap:14px;justify-items:center}
+.hero__emblem .hero__brand{width:clamp(130px,17vw,225px);height:auto;display:block;filter:drop-shadow(0 6px 18px rgba(0,0,0,.45))}
+.hero__emblem-tag{margin:0;font-family:var(--font-display);font-size:clamp(17px,1.9vw,26px);color:#fff;letter-spacing:.01em;border-bottom:2px solid var(--accent);padding-bottom:6px}
+</style></head>
+<body class="bg-tile-page">
+
+<!-- ============================================================ STICKY NAV -->
+<nav class="site-nav" aria-label="Primary">
+  <div class="site-nav__inner">
+    <a href="#hero" class="brand" aria-label="Café Chico, home">
+      <img class="brand__mark brand__mark--dark"  src="assets/site-images/logo/chico-logo-dark.png"  alt="Café Chico" width="3000" height="3232" />
+      <img class="brand__mark brand__mark--light" src="assets/site-images/logo/chico-logo-light.png" alt="Café Chico" width="3000" height="3232" />
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    <ul class="nav-tabs" role="list">
+      <li><a href="#hero" class="active">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="social-reviews.html">Social &amp; Reviews</a></li>
+      <li><a href="#story">Story</a></li>
+      <li><a href="ice-cream-bike.html">Ice Cream Bike</a></li>
+      <li><a href="platters.html">Platters</a></li>
+      <li><a href="party-room.html">Party Room</a></li>
+            <li><a href="gift-vouchers.html">Gift Vouchers</a></li>
+<li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============================================================== HERO -->
+<header id="hero" class="hero" aria-label="Welcome">
+  <div class="hero__photo">
+    <img src="assets/photos/candidates/01-cover-interior-bench-brickwall.jpg"
+         alt="Inside Café Chico — exposed brick wall, vintage bicycle and warm Edison-bulb lighting" />
+  </div>
+  <div class="hero__scrim" aria-hidden="true"></div>
+
+  <div class="hero__emblem">
+    <img class="hero__brand" src="assets/site-images/logo/chico-logo-light.png" alt="Café Chico" width="3000" height="3232" />
+    <p class="hero__emblem-tag">Made close to home.</p>
+  </div>
+
+  <div class="hero__inner">
+    <img class="hero__halal" src="assets/site-images/logo/halal-badge.png" alt="Halal kitchen — حلال" width="350" height="240" />
+    <span class="hero__kicker">Bolton · Est. 2023</span>
+    <h1>Family-run.</h1>
+    <p class="hero__sub">A small, cosy café in Bolton serving honest breakfast, brunch and lunch — plus a hot chocolate that takes its time.</p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="menu.html">View the menu</a>
+      <a class="btn btn--ghost" href="https://maps.app.goo.gl/vYhYXEfkkgfor3qBA?g_st=ic" target="_blank" rel="noopener">Get directions</a>
+    </div>
+  </div>
+
+  <div class="hero__scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow-down"/></svg>
+  </div>
+</header>
+
+<!-- ================================================== 6 POPULAR DISHES -->
+<section id="popular" class="popular" aria-label="Our most popular dishes">
+  <div class="container">
+    <div class="section-head section-head--center" data-reveal>
+      <svg class="squiggle" aria-hidden="true" style="color:var(--accent)"><use href="#i-squiggle"/></svg>
+      <p class="kicker">The most-ordered</p>
+      <h2>Six plates we can't keep on the pass.</h2>
+    </div>
+
+    <div class="popular__grid" data-reveal>
+      <a class="popular__card"
+         href="assets/photos/press/cafe-team-2026.jpg"
+         data-pswp-src="assets/photos/candidates/10-latest-user-photo.jpg"
+         data-pswp-width="1600" data-pswp-height="1600"
+         data-dish-name="Full English Breakfast"
+         data-dish-price="£8.95"
+         data-dish-href="menu.html#cat-breakfast">
+        <div class="popular__photo">
+          <img src="assets/photos/candidates/10-latest-user-photo.jpg" alt="Full English Breakfast" loading="lazy"/>
+        </div>
+        <h3 class="popular__name">Full English</h3>
+      </a>
+      <a class="popular__card"
+         href="assets/photos/candidates/05-american-special-pancakes-bacon.jpg"
+         data-pswp-src="assets/photos/candidates/05-american-special-pancakes-bacon.jpg"
+         data-pswp-width="1600" data-pswp-height="2133"
+         data-dish-name="American Special"
+         data-dish-price="£6.95"
+         data-dish-href="menu.html#cat-brunch">
+        <div class="popular__photo">
+          <img src="assets/photos/candidates/05-american-special-pancakes-bacon.jpg" alt="American Special" loading="lazy"/>
+        </div>
+        <h3 class="popular__name">American Special</h3>
+      </a>
+      <a class="popular__card"
+         href="assets/photos/candidates/07-pancakes-berries-fragaria.jpg"
+         data-pswp-src="assets/photos/candidates/07-pancakes-berries-fragaria.jpg"
+         data-pswp-width="1242" data-pswp-height="2208"
+         data-dish-name="Pancakes"
+         data-dish-price="£5.95"
+         data-dish-href="menu.html#cat-brunch">
+        <div class="popular__photo">
+          <img src="assets/photos/candidates/07-pancakes-berries-fragaria.jpg" alt="Pancakes" loading="lazy"/>
+        </div>
+        <h3 class="popular__name">Pancakes</h3>
+      </a>
+      <a class="popular__card"
+         href="assets/photos/candidates/08-tomato-bruschetta-spinach.jpg"
+         data-pswp-src="assets/photos/candidates/08-tomato-bruschetta-spinach.jpg"
+         data-pswp-width="1320" data-pswp-height="2346"
+         data-dish-name="Tomato Bruschetta"
+         data-dish-price="£4.95"
+         data-dish-href="menu.html#cat-brunch">
+        <div class="popular__photo">
+          <img src="assets/photos/candidates/08-tomato-bruschetta-spinach.jpg" alt="Tomato Bruschetta" loading="lazy"/>
+        </div>
+        <h3 class="popular__name">Tomato Bruschetta</h3>
+      </a>
+      <a class="popular__card"
+         href="assets/photos/candidates/06-hot-chocolate-marshmallow-tower.jpg"
+         data-pswp-src="assets/photos/candidates/06-hot-chocolate-marshmallow-tower.jpg"
+         data-pswp-width="1600" data-pswp-height="2133"
+         data-dish-name="Hot Chocolate"
+         data-dish-price="£2.25"
+         data-dish-href="menu.html#cat-drinks">
+        <div class="popular__photo">
+          <img src="assets/photos/candidates/06-hot-chocolate-marshmallow-tower.jpg" alt="Hot Chocolate" loading="lazy"/>
+        </div>
+        <h3 class="popular__name">Hot Chocolate</h3>
+      </a>
+      <a class="popular__card"
+         href="assets/photos/social/instagram/curated/curated-food-avo-toast.jpg"
+         data-pswp-src="assets/photos/social/instagram/curated/curated-food-avo-toast.jpg"
+         data-pswp-width="1600" data-pswp-height="1600"
+         data-dish-name="Avocado Toast"
+         data-dish-price="£6.45"
+         data-dish-href="menu.html#cat-brunch">
+        <div class="popular__photo">
+          <img src="assets/photos/social/instagram/curated/curated-food-avo-toast.jpg" alt="Avocado Toast" loading="lazy"/>
+        </div>
+        <h3 class="popular__name">Avocado Toast</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================== VISIT INFO STRIP -->
+<section class="visit-strip" aria-label="Visit us">
+  <div class="visit-strip__grid">
+    <div class="visit-strip__cell">
+      <h4>Address</h4>
+      <p><strong>185 St Helens Rd</strong></p>
+      <p>Bolton BL3 3PS</p>
+    </div>
+    <div class="visit-strip__cell">
+      <h4>Hours</h4>
+      <p><strong>Tue–Sat</strong> · 09:00 – 16:00</p>
+        <p><strong>Sunday</strong> · 10:00 – 16:00</p>
+      <p>Closed Monday</p>
+    </div>
+    <div class="visit-strip__cell">
+      <h4>Phone</h4>
+      <p><strong><a href="tel:+441204934467">01204 934 467</a></strong></p>
+      <p>Walk-ins welcome</p>
+    </div>
+    <div class="visit-strip__cell">
+      <h4>Service</h4>
+      <div class="chips">
+        <span class="chip"><span class="chip__dot"></span>Dine-in</span>
+        <span class="chip"><span class="chip__dot chip__dot--amber"></span>Kerbside pickup</span>
+        <span class="chip"><span class="chip__dot chip__dot--amber"></span>Delivery</span>
+      </div>
+      <p style="margin-top:8px;"><a href="https://deliveroo.co.uk/menu/manchester/daubhill-and-lever-edge-lane/cafe-chico-bolton" target="_blank" rel="noopener" style="border-bottom:1px solid currentColor;">Order online →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================== NEIGHBOURHOOD REVIEWS -->
+<section id="neighbours" class="neighbours" aria-label="What our neighbours say">
+  <div class="container">
+    <div class="neighbours__head" data-reveal>
+      <p class="kicker">From the neighbourhood</p>
+      <h2>Loved by the people next door.</h2>
+      <p class="neighbours__lede">We don't chase reviews — but when neighbours, regulars and the local press take the time to write a few words, we listen. Here's a small sample.</p>
+    </div>
+
+    <div class="neighbours__grid" data-reveal>
+
+      <!-- ── Bolton News group photo ── -->
+      <figure class="neighbours__press">
+        <div class="neighbours__press-photo">
+          <img src="assets/site-images/press/group-theboltonnews-6people.jpg"
+               alt="Owner Aaliyah with five regular customers at Café Chico — featured in The Bolton News"
+               width="1280" height="450" loading="lazy" />
+        </div>
+        <figcaption class="neighbours__press-cap">
+          <span class="neighbours__press-tag">The Bolton News</span>
+          <h3>"Popular café's lovely gesture delights the community it wants to be at the heart of."</h3>
+          <p>Aaliyah and five regulars — featured in <em>The Bolton News</em> after the café opened its doors to the neighbourhood.</p>
+        </figcaption>
+      </figure>
+
+      <!-- ── Polished text review (Robertson North West) ── -->
+      <figure class="neighbours__quote">
+        <svg class="neighbours__quote-mark" width="44" height="44" aria-hidden="true" style="color:var(--accent)"><use href="#i-wreath"/></svg>
+        <blockquote class="neighbours__quote-body">
+          <p>Hi Café Chico — just wanted to say thank you for a great buffet today. Top-class food, cheers.</p>
+          <p>The next buffet is definitely yours too (and the one after that, and the one after that…) <span aria-hidden="true">😊</span></p>
+        </blockquote>
+        <figcaption class="neighbours__quote-meta">
+          <span class="neighbours__quote-name">Senior Project Manager</span>
+          <span class="neighbours__quote-org">Robertson North West</span>
+        </figcaption>
+      </figure>
+
+    </div>
+
+    <p class="neighbours__more" data-reveal>
+      And on Google:
+      <span class="neighbours__more-stars">★★★★★</span>
+      <strong>4.9 / 5</strong> from
+      <a href="https://maps.app.goo.gl/vYhYXEfkkgfor3qBA?g_st=ic" target="_blank" rel="noopener">307 neighbours</a>
+      — Bolton's hidden gem.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================ STORY -->
+<section id="story" class="story">
+  <div class="container">
+
+    <!-- ── Opening photo + title ── -->
+    <div class="story__hero" data-reveal>
+      <img src="assets/photos/candidates/02-vibe-interior-wooden-chairs.jpg"
+           alt="Inside Café Chico — wooden tables, warm light, chalk menu boards, a place that feels like a friend's front room" loading="lazy"/>
+      <div class="story__hero-text">
+        <p class="kicker">Our story</p>
+        <h2>Fresh food, not fast food —<br/><em>built by family, for the neighbourhood.</em></h2>
+      </div>
+    </div>
+
+    <!-- ── Segment 1: Family-run + family photo ── -->
+    <div class="story__seg story__seg--split" data-reveal>
+      <div class="story__seg-photo">
+        <img src="assets/photos/press/press-owners-aaliyah.jpg"
+             alt="Aaliyah and her father — the family behind Café Chico, inside the café" loading="lazy"/>
+      </div>
+      <div class="story__seg-body">
+        <div class="story__seg-num"><span>01</span></div>
+        <h3>A café run by family.</h3>
+        <p>Nestled in the heart of Bolton, Café Chico is a proudly family-run café built on one simple philosophy: <em>fresh food, not fast food</em>. Every dish is freshly cooked to order using quality, locally sourced ingredients, including free-range eggs, with all meats being halal. Whether you're joining us for a hearty breakfast, relaxed brunch, artisan coffee or one of our homemade treats, you'll always receive a warm welcome.</p>
+      </div>
+    </div>
+
+    <!-- ── Segment 2: 5-star + 4.9 + hidden gem + food photo ── -->
+    <div class="story__seg story__seg--split" data-reveal>
+      <div class="story__seg-photo">
+        <img src="assets/photos/press/cafe-team-2026.jpg"
+             alt="A Café Chico dish — representative of the food we cook every day" loading="lazy"/>
+      </div>
+      <div class="story__seg-body">
+        <div class="story__seg-num"><span>02</span></div>
+        <h3>Bolton's hidden gem.</h3>
+        <p>Proudly holding a <strong>5-Star Food Hygiene Rating</strong> and an outstanding <strong>4.9-star Google rating</strong>, Café Chico has become one of Bolton's favourite hidden gems — renowned for exceptional customer service, freshly prepared food and a welcoming atmosphere that brings people together.</p>
+        <p class="story__seg-badges">
+          <span class="story__badge">★ 4.9 Google</span>
+          <span class="story__badge">★ 5 Food Hygiene</span>
+          <span class="story__badge">Tripadvisor Travellers' Choice 2024</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- ── Segment 3: 3R building story + interior photo ── -->
+    <div class="story__seg story__seg--split story__seg--reverse" data-reveal>
+      <div class="story__seg-photo">
+        <img src="assets/photos/candidates/01-cover-interior-bench-brickwall.jpg"
+             alt="Inside Café Chico — the brick wall and bench seating the family designed and built themselves" loading="lazy"/>
+      </div>
+      <div class="story__seg-body">
+        <div class="story__seg-num"><span>03</span></div>
+        <h3>The café we built with our own hands.</h3>
+        <p>What makes Café Chico truly unique is the story behind the building itself. Rather than commissioning an expensive fit-out, the café was lovingly designed and handcrafted by the owner and her dad, who transformed the space by embracing the <strong>3R principles — Regenerate, Reuse and Recycle</strong>.</p>
+        <p>From reclaimed timber and repurposed materials to restored furniture and creative design features, they breathed new life into what was once an empty shell — creating the warm, rustic café our customers know and love today. Every corner tells a story of creativity, sustainability and family.</p>
+      </div>
+    </div>
+
+    <!-- ── Segment 4: Community hub vision + moody storefront shot ── -->
+    <div class="story__seg story__seg--split" data-reveal>
+      <div class="story__seg-photo">
+        <img src="assets/site-images/story/04-cafe-in-moody-weather.jpg"
+             alt="Café Chico on a moody, rain-grey day on St Helens Rd, Bolton — the storefront stands warm and lit behind the weather" loading="lazy"/>
+      </div>
+      <div class="story__seg-body">
+        <div class="story__seg-num"><span>04</span></div>
+        <h3>More than a café — a community hub.</h3>
+        <p>Our vision has always extended beyond serving great coffee and food. Café Chico was created to be a community hub that celebrates Bolton's rich multicultural heritage while inspiring sustainable living. Over the next three years, we aim to expand this vision by developing a true <strong>Farm-to-Fork approach</strong> — working with local growers, promoting healthy eating, reducing waste through circular practices and creating educational opportunities for families and young people.</p>
+        <p>We are passionate about building stronger community partnerships, supporting local businesses, creating opportunities for local people and encouraging environmental responsibility through sustainable initiatives.</p>
+      </div>
+    </div>
+
+    <!-- ── Closing: pull-quote ── -->
+    <div class="story__close" data-reveal>
+      <svg class="story__close-mark" width="40" height="40" aria-hidden="true" style="color:var(--accent)"><use href="#i-wreath"/></svg>
+      <p class="story__close-quote">"Great food can bring people together — but great communities are built through collaboration, creativity and care."</p>
+      <p class="story__close-meta">Our goal: a happy, healthy and engaged community where food, people and sustainability come together. From inclusive menus (gluten-free, vegetarian, vegan) to activities for children and families — Café Chico is much more than a café. It's a place where connections are made, stories are shared and everyone feels at home.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ======================================================== CONTACT -->
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <svg class="squiggle" aria-hidden="true" style="color:var(--accent)"><use href="#i-squiggle"/></svg>
+      <p class="kicker">Plan a visit</p>
+      <h2>Find us in Bolton.</h2>
+    </div>
+
+    <ul class="trust-badges" data-reveal>
+      <li><strong>4.9</strong><span>Google rating</span></li>
+      <li><strong>5</strong><span>Food Hygiene Rating</span></li>
+    </ul>
+
+    <div class="contact__grid">
+      <div class="contact__hours" data-reveal>
+        <h3>Hours</h3>
+        <table class="hours-table">
+          <tbody>
+            <tr data-day="Mon"><th>Monday</th>     <td class="closed">Closed</td></tr>
+            <tr data-day="Tue"><th>Tuesday</th>    <td>09:00 – 16:00</td></tr>
+            <tr data-day="Wed"><th>Wednesday</th>  <td>09:00 – 16:00</td></tr>
+            <tr data-day="Thu"><th>Thursday</th>   <td>09:00 – 16:00</td></tr>
+            <tr data-day="Fri"><th>Friday</th>     <td>09:00 – 16:00</td></tr>
+            <tr data-day="Sat"><th>Saturday</th>   <td>09:00 – 16:00</td></tr>
+            <tr data-day="Sun"><th>Sunday</th>     <td>10:00 – 16:00</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:var(--space-3);">
+          <a href="tel:+441204934467" class="contact__phone">01204 934 467</a>
+        </p>
+        <p style="color:var(--muted); font-size:14px;">
+          Walk-ins welcome. For groups of 6+, please call ahead.
+        </p>
+      </div>
+
+      <div class="contact__where" data-reveal data-reveal-delay="1">
+        <h3>Where</h3>
+        <p class="contact__address">
+          185 St Helens Rd<br/>
+          Bolton BL3 3PS<br/>
+          Greater Manchester
+        </p>
+
+        <a href="https://maps.app.goo.gl/vYhYXEfkkgfor3qBA?g_st=ic" target="_blank" rel="noopener" class="map-embed" aria-label="Open Café Chico on Google Maps">
+          <img src="https://maps.googleapis.com/maps/api/staticmap?center=Cafe+Chico+185+St+Helens+Rd+Bolton+BL3+3PS&zoom=16&size=640x480&scale=2&maptype=roadmap&markers=color:red%7CCafe+Chico"
+               alt="Map showing 185 St Helens Rd, Bolton"
+               onerror="this.onerror=null;this.parentElement.style.background='linear-gradient(135deg, #d4a373, #6b4423)';this.remove();" />
+        </a>
+
+        <div class="chips">
+          <span class="chip"><span class="chip__dot"></span>Dine-in</span>
+          <span class="chip"><span class="chip__dot chip__dot--amber"></span>Kerbside pickup</span>
+          <span class="chip"><span class="chip__dot chip__dot--amber"></span>Delivery</span>
+          <span class="chip"><span class="chip__dot chip__dot--grey"></span>Order online</span>
+        </div>
+
+        <p style="margin-top:var(--space-4); font-size:14px;">
+          <a href="https://deliveroo.co.uk/menu/manchester/daubhill-and-lever-edge-lane/cafe-chico-bolton" target="_blank" rel="noopener" style="border-bottom:1px solid var(--accent); color:var(--fg);">
+            Order via our menu →
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================== MENU PREVIEW -->
+<section class="menu-preview" aria-label="A taste of the menu">
+  <div class="container">
+    <div class="menu-preview__head" data-reveal>
+      <div>
+        <p class="kicker">From the kitchen</p>
+        <h2>A taste of the menu.</h2>
+      </div>
+      <a href="menu.html">View full menu →</a>
+    </div>
+
+    <div class="menu-preview__grid">
+      <a class="menu-preview__item" href="menu.html">
+        <div class="menu-preview__photo">
+          <img src="assets/site-images/menu/thumb/granola-pot.jpg" alt="" loading="lazy"/>
+        </div>
+        <div>
+          <h3 class="menu-preview__name">French Toast</h3>
+          <p style="font-size:12px;color:var(--muted);margin:0;">Whipped cream · fresh fruit</p>
+        </div>
+        <span class="menu-preview__price">£5.95</span>
+      </a>
+      <a class="menu-preview__item" href="menu.html">
+        <div class="menu-preview__photo">
+          <img src="assets/site-images/menu/thumb/american-special.jpg" alt="" loading="lazy"/>
+        </div>
+        <div>
+          <h3 class="menu-preview__name">American Special</h3>
+          <p style="font-size:12px;color:var(--muted);margin:0;">Pancakes · bacon · eggs</p>
+        </div>
+        <span class="menu-preview__price">£6.95</span>
+      </a>
+      <a class="menu-preview__item" href="menu.html">
+        <div class="menu-preview__photo">
+          <img src="assets/site-images/menu/thumb/full-english-breakfast.jpg" alt="" loading="lazy"/>
+        </div>
+        <div>
+          <h3 class="menu-preview__name">Full English Breakfast</h3>
+          <p style="font-size:12px;color:var(--muted);margin:0;">Lamb macon · sausages · eggs</p>
+        </div>
+        <span class="menu-preview__price">£8.95</span>
+      </a>
+      <a class="menu-preview__item" href="menu.html">
+        <div class="menu-preview__photo">
+          <img src="assets/site-images/menu/thumb/hot-chocolate.jpg" alt="" loading="lazy"/>
+        </div>
+        <div>
+          <h3 class="menu-preview__name">Hot Chocolate</h3>
+          <p style="font-size:12px;color:var(--muted);margin:0;">Cream · marshmallows</p>
+        </div>
+        <span class="menu-preview__price">£2.25</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================ HIRE & EVENTS -->
+<section class="hire-preview" aria-label="Hire and events">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <svg class="squiggle" aria-hidden="true" style="color:var(--accent)"><use href="#i-squiggle"/></svg>
+      <p class="kicker">Beyond the café</p>
+      <h2>Three ways to take Café Chico with you.</h2>
+      <p class="lede">We're not just a sit-down café. The food goes out, the ice cream rolls out, and the upstairs room is yours to book.</p>
+    </div>
+
+    <div class="hire-preview__grid">
+      <a class="hire-preview__card" href="ice-cream-bike.html" data-reveal>
+        <div class="hire-preview__photo">
+          <img src="assets/site-images/ice-cream-bike/hero/01-at-event.jpg"
+               alt="Café Chico's ice cream bike at an event with flowers in the basket" loading="lazy"/>
+        </div>
+        <div class="hire-preview__body">
+          <p class="kicker">For hire</p>
+          <h3>Ice cream bike</h3>
+          <p>Real scoops, real bike, real occasions. Weddings, parties, summer days. From £350.</p>
+          <span class="hire-preview__link">See what's on the bike →</span>
+        </div>
+      </a>
+
+      <a class="hire-preview__card" href="platters.html" data-reveal data-reveal-delay="1">
+        <div class="hire-preview__photo">
+          <img src="assets/photos/social/instagram/curated/curated-catering-summer-platters.jpg"
+               alt="Café Chico catering spread: sandwiches, wraps, fruit skewers and sweet treats" loading="lazy"/>
+        </div>
+        <div class="hire-preview__body">
+          <p class="kicker">For your event</p>
+          <h3>Platters</h3>
+          <p>Platters, breakfasts, brunch boxes, sweet treats. Made fresh, delivered to you. Platters from £28.</p>
+          <span class="hire-preview__link">See the platters →</span>
+        </div>
+      </a>
+
+      <a class="hire-preview__card" href="party-room.html" data-reveal data-reveal-delay="2">
+        <div class="hire-preview__photo hire-preview__photo--placeholder">
+          <img src="assets/photos/candidates/02-vibe-interior-wooden-chairs.jpg"
+               alt="Café Chico's warm wood-and-Edison-bulbs interior, the same atmosphere as the upstairs party room" loading="lazy"/>
+          <span class="hire-preview__badge">Real photos after launch</span>
+        </div>
+        <div class="hire-preview__body">
+          <p class="kicker">Upstairs</p>
+          <h3>Party room</h3>
+          <p>A small private room above the café. Birthdays, showers, small meetings. Up to 12. From £25/hr.</p>
+          <span class="hire-preview__link">See the room →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FOOTER -->
+<footer class="site-footer">
+  <div class="site-footer__grid">
+    <div>
+      <p class="site-footer__tag"><img src="assets/site-images/logo/chico-logo-light.png" alt="Café Chico" width="113" height="130" /></p>
+      <p style="color:oklch(85% 0.012 80); font-size:14px; line-height:1.6;">
+        A small, family-run café on St Helens Rd, Bolton. Honest food, made close to home.
+      </p>
+    </div>
+
+    <div>
+      <h5>Visit</h5>
+      <ul>
+        <li><a href="https://maps.app.goo.gl/vYhYXEfkkgfor3qBA?g_st=ic" target="_blank" rel="noopener">185 St Helens Rd</a></li>
+        <li><a href="https://maps.app.goo.gl/vYhYXEfkkgfor3qBA?g_st=ic" target="_blank" rel="noopener">Bolton BL3 3PS</a></li>
+        <li><a href="tel:+441204934467">01204 934 467</a></li>
+        <li>Tue&#8211;Sat &#183; 09:00&#8211;16:00</li>
+        <li>Sunday &#183; 10:00&#8211;16:00</li>
+        <li>Closed Monday</li>
+      </ul>
+    </div>
+
+    <div>
+      <h5>Hire, gifts &amp; more</h5>
+      <ul>
+        <li><a href="platters.html">Platters &amp; catering</a></li>
+        <li><a href="ice-cream-bike.html">Ice cream bike hire</a></li>
+        <li><a href="party-room.html">Upstairs party room</a></li>
+        <li><a href="gift-vouchers.html">Gift vouchers</a></li>
+        <li><a href="social-reviews.html">Social &amp; reviews</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h5>Follow</h5>
+      <ul>
+        <li><a href="https://instagram.com/cafechico_uk" target="_blank" rel="noopener">Instagram · @cafechico_uk</a></li>
+        <li><a href="https://tiktok.com/@cafechico" target="_blank" rel="noopener">TikTok · @cafechico</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="site-footer__bottom">
+    <span>&#169; 2026 Caf&#233; Chico. Made with care in Bolton.</span>
+    <span>Photos: Google Maps &#183; @cafechico_uk &#183; &#169; respective photographers.</span>
+    <span>Website by <a href="https://studionestir.com" target="_blank" rel="noopener">Studio Nestir</a></span>
+  </div>
+</footer>
+
+<script src="assets/js/shared.js"></script>
+  <script type="module" src="assets/js/social.js"></script>
+</body>
+</html>

@@ -769,10 +769,13 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible), .btn:focus:not(:f
 /* ---- Halal mark (client's own menu stamp, keyed to transparent) ---- */
 .hero__halal {
   display: block;
-  /* 19 Sep 2026 — 客人要求加大 50%（原本 clamp(78px, 7.6vw, 102px)） */
-  width: clamp(117px, 11.4vw, 153px);
+  /* 19 Sep 2026 — 客人要求加大 50%（原本 clamp(78px, 7.6vw, 102px)）
+     26 Sep 2026 — 圖檔 350×240 但白色圖案只佔 x=110–303，左邊有 110px 透明邊，
+     令印章睇落縮入去、同下面文字對唔齊。已把圖檔裁到內容邊界（194×177），
+     所以呢度嘅 width 按 194/350 比例縮細，白色印章嘅實際大小維持不變。 */
+  width: clamp(64.8px, 6.32vw, 84.8px);
   height: auto;
-  margin: 0 0 10px;      /* 靠左對齊下面嘅文字：block + 左邊 0 margin */
+  margin: 0 0 23px;      /* 23px = 原本 10px + 被裁走嘅 30px 透明下邊（×0.437），保持原本視覺間距 */
   align-self: flex-start;
   justify-self: start;
   /* 冇底色方塊 —— 用柔和陰影令白印章喺淺色相片上一樣睇得到 */
