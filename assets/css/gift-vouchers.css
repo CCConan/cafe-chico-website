@@ -24,7 +24,8 @@
   /* --- the black 20% --- */
   --ink:        var(--brown);   /* deep brown — headings, body, dark band (owner request 19 Sep 2026)
                                    26 Sep 2026：改為引用 shared.css 嘅 --brown，確保全站只有一個深啡色 */
-  --ink-soft:   #6B5A47;   /* warm brown — secondary text (5.4:1 on cream) */
+  --ink-soft:   var(--brown-soft);   /* warm brown — secondary text (owner 19 Sep 2026)
+                                       26 Sep 2026：改為引用 shared.css 嘅 --brown-soft，單一來源 */
   --hairline:   #E1D7C6;   /* 1px rules — warm */
 
   /* --- brand olive (Moderate Olive #A8A84A) --- */

@@ -676,7 +676,7 @@
   display: block;
   width: 44px;
   height: 32px;
-  color: #2a2118;
+  color: var(--brown);          /* 26 Sep 2026：原 #2a2118 → 全站統一深啡 */
   margin: 0 0 6px;
   /* subtle hand-drawn feel via filter */
   filter: drop-shadow(0 1px 0 oklch(20% 0.02 50 / 0.15));
@@ -686,7 +686,7 @@
   font-size: 9.5px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #6a5b48;
+  color: var(--brown-soft);     /* 26 Sep 2026：原 #6a5b48 → 全站統一暖啡 */
   margin: 0 0 4px;
   font-weight: 500;
 }
@@ -695,7 +695,7 @@
   font-size: clamp(17px, 1.6vw, 21px);
   font-weight: 500;
   line-height: 1.32;
-  color: #1f1812;
+  color: var(--brown);          /* 26 Sep 2026：原 #1f1812 → 全站統一深啡 */
   margin: 0;
   /* chalk feel: slight letter variation, soft shadow */
   text-shadow:

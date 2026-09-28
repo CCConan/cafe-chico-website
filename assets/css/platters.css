@@ -462,7 +462,8 @@
   display: inline-block;
   width: 44px; height: 44px;
   border-radius: 50%;
-  background: var(--fg);
+  /* 26 Sep 2026：原本 var(--fg)（近黑），跟客人要求統一成全站深啡色 */
+  background: var(--brown);
   color: white;
   font-family: var(--font-mono);
   font-size: 11px;
