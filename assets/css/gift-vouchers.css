@@ -544,31 +544,23 @@
   .g-press__grid { grid-template-columns: 1fr; }
 }
 
-/* ---------- TikTok 影片縮圖格（29 Sep 2026）----------
-   客人要求 TikTok 區顯示 10–20 個貼文。同 IG 一樣 5 欄，但用 4:5 直度
-   （影片封面本身係 9:16），中間加一個播放符號。 */
+/* ---------- TikTok 影片格（29 Sep 2026，第二次修改）----------
+   客人要求：6 個影片，每個同原本單一影片一樣大小（.tt-loop 本身係
+   width: min(325px,100%) + 9:16），中間有 play 掣，用同樣嘅播放模式。
+   3 欄 × 2 行；每格係普通 block（唔用 flex／auto margin），
+   否則 .tt-loop 嘅 width:100% 會循環計算變成 0。 */
 .g-reels {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: clamp(8px, 1.2vw, 16px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 40px) clamp(16px, 2.4vw, 32px);
   margin-top: clamp(28px, 4vw, 48px);
+  justify-items: center;
 }
-.g-post--reel img { aspect-ratio: 4 / 5; }
-.g-post--reel::after {
-  content: "";
-  position: absolute;
-  left: 50%; top: 50%;
-  width: 44px; height: 44px;
-  margin: -22px 0 0 -22px;
-  border-radius: 50%;
-  background: rgba(25, 26, 16, 0.55) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M8 5.5v13l11-6.5z' fill='%23F7F6EE'/></svg>") center / 18px 18px no-repeat;
-  pointer-events: none;
-  transition: transform 300ms cubic-bezier(.2,.8,.2,1), background-color 300ms;
-}
-.g-post--reel:hover::after { transform: scale(1.12); background-color: rgba(25, 26, 16, 0.72); }
+.g-reel { width: 100%; text-align: center; }
+.g-reel .tt-loop { margin: 0 auto; }
 
-@media (max-width: 980px) { .g-reels { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-@media (max-width: 620px) { .g-reels { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 980px) { .g-reels { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .g-reels { grid-template-columns: 1fr; } }
 
 /* --------------------------------------------------------------- responsive */
 @media (max-width: 980px) {
