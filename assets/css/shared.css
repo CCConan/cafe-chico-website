@@ -280,12 +280,14 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  min-height: 86vh;
+  min-height: 90vh;   /* 26 Sep 2026：86vh → 90vh。logo 搬入中間後需要一行空間，
+                         90vh 令 hero 底部剛好貼住螢幕底（唔會 push 落摺線以下） */
   display: grid;
   grid-template-columns: 1fr;
   /* 26 Sep 2026：分兩行 —— 第一行擺置中嘅 logo，第二行擺底部文字。
-     logo 只會佔用文字上方嘅空位，所以永遠唔會壓住標題。 */
-  grid-template-rows: 1fr auto;
+     minmax(0,1fr) 令第一行可以縮到細過 logo 本身高度，所以 logo 唔會
+     撐高 hero（hero 高度維持 86vh），而係自己縮細去啱位，永遠唔會壓住標題。 */
+  grid-template-rows: minmax(0, 1fr) auto;
   overflow: hidden;
 }
 .hero__photo {
@@ -318,7 +320,9 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   max-width: 1180px;
   width: 100%;
   margin: 0 auto;
-  padding: var(--space-8) var(--space-4) var(--space-7);
+  /* 26 Sep 2026：上面 96px padding 改為 0 —— 文字區塊貼底，上 padding 只會
+     白白佔用 logo 嘅空間。內容位置不變（區塊貼底），但第一行多咗 96px 俾 logo。 */
+  padding: 0 var(--space-4) var(--space-7);
   color: white;
 }
 .hero__kicker {

@@ -16,8 +16,10 @@
   display: block;
   width: auto;
   height: auto;
-  max-width: min(100%, 380px);      /* 大螢幕唔會過大 */
-  max-height: min(100%, 36vh);      /* 自動縮到放得落文字上方嘅空位 */
+  max-width: 380px;                 /* 大螢幕唔會過大 */
+  max-height: 24vh;                 /* 用純 vh（唔加 %）：百分比會令 grid 計唔到內在高度，
+                                       反而撐高 hero；純 vh 先可以準確控制。
+                                       24vh 令 logo 上下各有約 20px 呼吸位 */
   filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.70));   /* 70% black shadow, deeper + wider per user */
   opacity: 1;
   animation: heroBrandIn 1s var(--ease-soft) 0.2s both;
