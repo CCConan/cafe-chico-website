@@ -1,0 +1,23 @@
+# =============================================================================
+# Café Chico — Cloudflare Pages 快取規則
+#
+# 背景（2026-09-28）：Pages 預設對 /assets/* 發 Cache-Control: max-age=14400
+# （4 小時）而檔名唔會變。結果部署新版本之後，舊訪客嘅瀏覽器會繼續用舊 CSS／JS
+# 配新 HTML，出現「樣式錯亂」——例如 Event 下拉選單因為未載入新 CSS，
+# 三個選項變成普通清單直接顯示出來。
+#
+# 呢個檔案叫 Cloudflare 對 CSS／JS 一律要先同伺服器核對（ETag 304），
+# 圖片就留 10 分鐘快取（改圖之後最多 10 分鐘內更新）。
+# =============================================================================
+
+/assets/css/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/assets/js/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/assets/site-images/*
+  Cache-Control: public, max-age=600, must-revalidate
+
+/assets/photos/*
+  Cache-Control: public, max-age=600, must-revalidate
