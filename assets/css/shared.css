@@ -780,6 +780,44 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
 .hours-table .closed { color: var(--muted); font-style: italic; }
 .hours-table tr.today { color: var(--accent-ink); font-weight: 600; }
 
+/* ---------- Footer 版嘅營業時間表（28 Sep 2026）----------
+   客人要求所有營業時間都用傳統七行表格。深色 footer 上面要覆寫顏色，
+   否則預設嘅深色日期名同虛線會睇唔到。 */
+.site-footer .hours-table {
+  width: auto;
+  margin: 10px 0 0;
+  font-size: 13px;
+}
+.site-footer .hours-table th,
+.site-footer .hours-table td {
+  padding: 4px 0;
+  border-bottom: 1px dashed rgba(247, 246, 238, 0.16);
+  background: none;
+}
+.site-footer .hours-table th {
+  color: oklch(78% 0.060 109);          /* 同 .site-footer h5 一致 */
+  padding-right: 14px;
+  font-size: 10px;
+}
+.site-footer .hours-table td { color: oklch(90% 0.012 80); }
+.site-footer .hours-table .closed { color: rgba(247, 246, 238, 0.55); font-style: italic; }
+.site-footer .hours-table tr.today,
+.site-footer .hours-table tr.today th,
+.site-footer .hours-table tr.today td { color: var(--accent); }
+
+/* 淺底（visit-strip）用嘅緊湊版 */
+.hours-table--compact { font-size: 13.5px; margin: 0; }
+.hours-table--compact th { font-size: 10px; letter-spacing: 0.1em; padding-right: 12px; }
+.hours-table--compact th, .hours-table--compact td { padding: 5px 0; }
+
+/* Footer 中間嗰句口號 */
+.site-footer__slogan {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-style: italic;
+  color: oklch(88% 0.045 109);
+}
+
 /* ---------- Inline service chips ---------- */
 .chips {
   display: flex; flex-wrap: wrap; gap: var(--space-2);

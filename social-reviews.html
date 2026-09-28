@@ -283,51 +283,6 @@
   </div>
 </section>
 
-<!-- ================================================================= CLOSING -->
-<section class="g-close">
-  <div class="g-wrap">
-    <div class="g-close__grid">
-      <div>
-        <p class="g-eyebrow">Come and see us</p>
-        <h2>Say hello</h2>
-        <dl>
-          <dt>Call</dt>
-          <dd><a href="tel:+441204934467">01204 934 467</a></dd>
-          <dt>Email</dt>
-          <dd><a href="mailto:cafechico185@gmail.com">cafechico185@gmail.com</a></dd>
-          <dt>Visit</dt>
-          <dd>185 St Helens Rd, Bolton BL3 3PS</dd>
-          <dt>Open</dt>
-          <dd>Tue–Sat · 9–16 · Sun 10–16 <span style="font-family:var(--font-ui);font-size:14px;color:rgba(247,246,238,0.66)">(closed Monday)</span></dd>
-        </dl>
-        <p class="g-note">Order the café menu for delivery on:</p>
-        <div class="delivery-row">
-          <a class="delivery-chip" href="https://www.ubereats.com/gb/store/cafe-chico-bolton/UTbmBLKJRSyVttm3dXiPtw" target="_blank" rel="noopener" aria-label="Order Café Chico on Uber Eats">
-            <img src="assets/site-images/delivery/ubereats-logo-480.png" alt="Uber Eats" width="480" height="79" loading="lazy" />
-          </a>
-          <a class="delivery-chip" href="https://deliveroo.co.uk/menu/manchester/daubhill-and-lever-edge-lane/cafe-chico-bolton" target="_blank" rel="noopener" aria-label="Order Café Chico on Deliveroo">
-            <img src="assets/site-images/delivery/deliveroo-logo-480.png" alt="Deliveroo" width="480" height="128" loading="lazy" />
-          </a>
-        </div>
-      </div>
-      <div>
-        <div class="g-head">
-          <h2>Follow the kitchen</h2>
-          <p>We post most days — what came off the pass, what sold out, and where the ice cream bike is parked this weekend.</p>
-        </div>
-        <div class="g-logo-row">
-          <a class="g-logo-btn" href="https://www.instagram.com/cafechico_uk/" target="_blank" rel="noopener" aria-label="Café Chico on Instagram" title="Instagram">
-            <img src="assets/site-images/social/instagram-icon-white.svg" alt="Instagram" width="48" height="48" />
-          </a>
-          <a class="g-logo-btn" href="https://www.tiktok.com/@cafechico" target="_blank" rel="noopener" aria-label="Café Chico on TikTok" title="TikTok">
-            <img src="assets/site-images/social/tiktok-icon-white.svg" alt="TikTok" width="48" height="48" />
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- =================================================================== FOOTER -->
 <footer class="site-footer">
   <div class="site-footer__grid">
@@ -343,10 +298,20 @@
         <li><a href="https://maps.app.goo.gl/vYhYXEfkkgfor3qBA?g_st=ic" target="_blank" rel="noopener">185 St Helens Rd</a></li>
         <li><a href="https://maps.app.goo.gl/vYhYXEfkkgfor3qBA?g_st=ic" target="_blank" rel="noopener">Bolton BL3 3PS</a></li>
         <li><a href="tel:+441204934467">01204 934 467</a></li>
-        <li>Tue&#8211;Sat &#183; 09:00&#8211;16:00</li>
-        <li>Sunday &#183; 10:00&#8211;16:00</li>
-        <li>Closed Monday</li>
+        <li><a href="mailto:cafechico185@gmail.com">cafechico185@gmail.com</a></li>
       </ul>
+      <!-- 28 Sep 2026：營業時間改用傳統七行表格（每日一行、寫明開門同關門時間） -->
+      <table class="hours-table">
+        <tbody>
+          <tr data-day="Mon"><th scope="row">Monday</th><td class="closed">Closed</td></tr>
+          <tr data-day="Tue"><th scope="row">Tuesday</th><td>09:00 – 16:00</td></tr>
+          <tr data-day="Wed"><th scope="row">Wednesday</th><td>09:00 – 16:00</td></tr>
+          <tr data-day="Thu"><th scope="row">Thursday</th><td>09:00 – 16:00</td></tr>
+          <tr data-day="Fri"><th scope="row">Friday</th><td>09:00 – 16:00</td></tr>
+          <tr data-day="Sat"><th scope="row">Saturday</th><td>09:00 – 16:00</td></tr>
+          <tr data-day="Sun"><th scope="row">Sunday</th><td>10:00 – 16:00</td></tr>
+        </tbody>
+      </table>
     </div>
     <div>
       <h5>Hire, gifts &amp; more</h5>
@@ -361,15 +326,27 @@
     <div>
       <h5>Follow</h5>
       <ul>
-        <li><a href="https://instagram.com/cafechico_uk" target="_blank" rel="noopener">Instagram · @cafechico_uk</a></li>
-        <li><a href="https://tiktok.com/@cafechico" target="_blank" rel="noopener">TikTok · @cafechico</a></li>
+        <li class="qr-link">
+          <a href="https://instagram.com/cafechico_uk" target="_blank" rel="noopener">Instagram · @cafechico_uk</a>
+          <span class="qr-pop" aria-hidden="true">
+            <img src="assets/site-images/qr/instagram.png" alt="Instagram QR code — @cafechico_uk" width="512" height="512" loading="lazy" />
+            <span class="qr-pop__hint">Scan with your phone</span>
+          </span>
+        </li>
+        <li class="qr-link">
+          <a href="https://tiktok.com/@cafechico" target="_blank" rel="noopener">TikTok · @cafechico</a>
+          <span class="qr-pop" aria-hidden="true">
+            <img src="assets/site-images/qr/tiktok.png" alt="TikTok QR code — @cafechico" width="512" height="512" loading="lazy" />
+            <span class="qr-pop__hint">Scan with your phone</span>
+          </span>
+        </li>
       </ul>
     </div>
   </div>
   <div class="site-footer__bottom">
     <span>&#169; 2026 Caf&#233; Chico. Made with care in Bolton.</span>
-    <span>Photos: Google Maps &#183; @cafechico_uk &#183; &#169; respective photographers.</span>
-    <span>Website by <a href="https://studionestir.com" target="_blank" rel="noopener">Studio Nestir</a></span>
+    <span class="site-footer__slogan">Come for the coffee. Stay for the cake.</span>
+    <span>Website by Studio Nestir</span>
   </div>
 </footer>
 

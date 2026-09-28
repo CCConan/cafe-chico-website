@@ -247,9 +247,18 @@
     </div>
     <div class="visit-strip__cell">
       <h4>Hours</h4>
-      <p><strong>Tue–Sat</strong> · 09:00 – 16:00</p>
-        <p><strong>Sunday</strong> · 10:00 – 16:00</p>
-      <p>Closed Monday</p>
+      <!-- 28 Sep 2026：客人要求所有營業時間都用傳統七行表格顯示 -->
+      <table class="hours-table hours-table--compact">
+        <tbody>
+          <tr data-day="Mon"><th scope="row">Monday</th><td class="closed">Closed</td></tr>
+          <tr data-day="Tue"><th scope="row">Tuesday</th><td>09:00 – 16:00</td></tr>
+          <tr data-day="Wed"><th scope="row">Wednesday</th><td>09:00 – 16:00</td></tr>
+          <tr data-day="Thu"><th scope="row">Thursday</th><td>09:00 – 16:00</td></tr>
+          <tr data-day="Fri"><th scope="row">Friday</th><td>09:00 – 16:00</td></tr>
+          <tr data-day="Sat"><th scope="row">Saturday</th><td>09:00 – 16:00</td></tr>
+          <tr data-day="Sun"><th scope="row">Sunday</th><td>10:00 – 16:00</td></tr>
+        </tbody>
+      </table>
     </div>
     <div class="visit-strip__cell">
       <h4>Phone</h4>
@@ -587,19 +596,27 @@
         A small, family-run café on St Helens Rd, Bolton. Honest food, made close to home.
       </p>
     </div>
-
     <div>
       <h5>Visit</h5>
       <ul>
         <li><a href="https://maps.app.goo.gl/vYhYXEfkkgfor3qBA?g_st=ic" target="_blank" rel="noopener">185 St Helens Rd</a></li>
         <li><a href="https://maps.app.goo.gl/vYhYXEfkkgfor3qBA?g_st=ic" target="_blank" rel="noopener">Bolton BL3 3PS</a></li>
         <li><a href="tel:+441204934467">01204 934 467</a></li>
-        <li>Tue&#8211;Sat &#183; 09:00&#8211;16:00</li>
-        <li>Sunday &#183; 10:00&#8211;16:00</li>
-        <li>Closed Monday</li>
+        <li><a href="mailto:cafechico185@gmail.com">cafechico185@gmail.com</a></li>
       </ul>
+      <!-- 28 Sep 2026：營業時間改用傳統七行表格（每日一行、寫明開門同關門時間） -->
+      <table class="hours-table">
+        <tbody>
+          <tr data-day="Mon"><th scope="row">Monday</th><td class="closed">Closed</td></tr>
+          <tr data-day="Tue"><th scope="row">Tuesday</th><td>09:00 – 16:00</td></tr>
+          <tr data-day="Wed"><th scope="row">Wednesday</th><td>09:00 – 16:00</td></tr>
+          <tr data-day="Thu"><th scope="row">Thursday</th><td>09:00 – 16:00</td></tr>
+          <tr data-day="Fri"><th scope="row">Friday</th><td>09:00 – 16:00</td></tr>
+          <tr data-day="Sat"><th scope="row">Saturday</th><td>09:00 – 16:00</td></tr>
+          <tr data-day="Sun"><th scope="row">Sunday</th><td>10:00 – 16:00</td></tr>
+        </tbody>
+      </table>
     </div>
-
     <div>
       <h5>Hire, gifts &amp; more</h5>
       <ul>
@@ -610,20 +627,30 @@
         <li><a href="social-reviews.html">Social &amp; reviews</a></li>
       </ul>
     </div>
-
     <div>
       <h5>Follow</h5>
       <ul>
-        <li><a href="https://instagram.com/cafechico_uk" target="_blank" rel="noopener">Instagram · @cafechico_uk</a></li>
-        <li><a href="https://tiktok.com/@cafechico" target="_blank" rel="noopener">TikTok · @cafechico</a></li>
+        <li class="qr-link">
+          <a href="https://instagram.com/cafechico_uk" target="_blank" rel="noopener">Instagram · @cafechico_uk</a>
+          <span class="qr-pop" aria-hidden="true">
+            <img src="assets/site-images/qr/instagram.png" alt="Instagram QR code — @cafechico_uk" width="512" height="512" loading="lazy" />
+            <span class="qr-pop__hint">Scan with your phone</span>
+          </span>
+        </li>
+        <li class="qr-link">
+          <a href="https://tiktok.com/@cafechico" target="_blank" rel="noopener">TikTok · @cafechico</a>
+          <span class="qr-pop" aria-hidden="true">
+            <img src="assets/site-images/qr/tiktok.png" alt="TikTok QR code — @cafechico" width="512" height="512" loading="lazy" />
+            <span class="qr-pop__hint">Scan with your phone</span>
+          </span>
+        </li>
       </ul>
     </div>
   </div>
-
   <div class="site-footer__bottom">
     <span>&#169; 2026 Caf&#233; Chico. Made with care in Bolton.</span>
-    <span>Photos: Google Maps &#183; @cafechico_uk &#183; &#169; respective photographers.</span>
-    <span>Website by <a href="https://studionestir.com" target="_blank" rel="noopener">Studio Nestir</a></span>
+    <span class="site-footer__slogan">Come for the coffee. Stay for the cake.</span>
+    <span>Website by Studio Nestir</span>
   </div>
 </footer>
 
