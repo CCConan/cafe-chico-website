@@ -64,10 +64,20 @@
 }
 
 /* ---------- Category sub-nav ---------- */
+/* 26 Sep 2026：--nav-h 由 shared.js 即時量度導覽列真實高度寫入（任何闊度都準）。
+   下面呢組係「未行 JS 之前」嘅後備值，按實測高度分三個範圍（見註釋），
+   確保即使 JS 未執行嘅一剎那都唔會出現遮擋。 */
+:root { --nav-h: 87px; }                                        /* 1440–768px：導覽列一行 */
+@media (min-width: 721px) and (max-width: 767px) {
+  :root { --nav-h: 110px; }                                     /* 呢個窄範圍導覽列會換兩行，實測 110px */
+}
+
 .cat-nav {
   position: sticky;
   /* 26 Sep 2026：原本寫死 73px，但導覽列實際 87px（窄螢幕換行會過 100px），
      所以分類列頂部一直被導覽列壓住。改用 JS 量度出嚟嘅 --nav-h。 */
+  /* 距離＝導覽列實際高度（跟住佢變）＋ 0；分類文字同導覽列之間嘅留白
+     由下面嘅 padding-top 提供（--cat-nav-gap）。 */
   top: var(--nav-h, 87px);
   z-index: 50;
   /* 26 Sep 2026：客人要求分類列底色改成橄欖綠（Moderate Olive #A8A84A = --accent，
