@@ -1,26 +1,27 @@
 /* =============================================================================
-   Café Chico — Express Order（直接落單 demo）
+   Café Chico — Express Order (order-direct demo)
    -----------------------------------------------------------------------------
-   • 由 assets/data/menu.json 讀菜單，按分類渲染
-   • 購物籃：加／減／刪、數量、計總額，存 localStorage（重新開頁都仲喺度）
-   • 結帳：資料 → 付款方式 → 確認（demo，唔會真正收錢）
+   • Loads the menu from assets/data/menu.json and renders it by category
+   • Basket: add / increment / decrement / remove, live totals, saved to
+     localStorage so it survives a page reload
+   • Checkout: details -> payment -> confirmation (demo: no real payment taken)
    ============================================================================= */
 (function () {
   'use strict';
 
   var CURRENCY = '£';
   var STORE_KEY = 'cc_express_basket_v1';
-  var FREE_DELIVERY_MILES = 2;   // 傳單寫「FREE DELIVERY WITHIN TWO MILES」
-  var DELIVERY_MIN = 10;         // demo 假設：外送最低消費 £10
+  var FREE_DELIVERY_MILES = 2;   // flyer: "FREE DELIVERY WITHIN TWO MILES"
+  var DELIVERY_MIN = 10;         // demo assumption: £10 minimum for delivery
 
   var state = {
-    items: [],          // 菜單資料
-    cats: [],           // 分類
+    items: [],          // menu items
+    cats: [],           // categories
     basket: {},         // slug -> qty
     mode: 'delivery',   // delivery | collection
     activeCat: 'all',
     query: '',
-    step: 1,            // 結帳步驟 1-3
+    step: 1,            // checkout step 1-3
     payment: 'card'
   };
 
@@ -58,7 +59,7 @@
   function subtotal() {
     return basketLines().reduce(function (n, l) { return n + l.total; }, 0);
   }
-  function deliveryFee() { return 0; }            // 兩英里內免費
+  function deliveryFee() { return 0; }            // free within two miles
   function total() { return subtotal() + (state.mode === 'delivery' ? deliveryFee() : 0); }
 
   /* -------------------------------------------------------------- render */
@@ -114,7 +115,7 @@
         '<span class="ex-section__count">' + items.length + ' item' + (items.length > 1 ? 's' : '') + '</span></div>' +
         '<div class="ex-grid">' + items.map(cardHtml).join('') + '</div></section>';
     });
-    host.innerHTML = html || '<p class="ex-empty">冇搵到符合「' + escapeAttr(state.query) + '」嘅食物。</p>';
+    host.innerHTML = html || '<p class="ex-empty">Nothing matched “' + escapeAttr(state.query) + '”. Try another search.</p>';
     var c = $('#ex-count');
     if (c) c.textContent = shown + ' items';
   }
@@ -142,30 +143,30 @@
           }).join('')
         : '<li class="ex-basket__empty">' +
             '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 6h15l-1.6 9H7.2L6 6z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/></svg>' +
-            '<p>購物籃仲係空。<br/>揀啲嘢食加落去啦。</p></li>';
+            '<p>Your basket is empty.<br/>Add something from the menu.</p></li>';
     }
 
     var sum = $('#ex-summary');
     if (sum) {
       sum.innerHTML = '' +
-        '<div class="ex-sum__row"><span>小計</span><strong>' + money(subtotal()) + '</strong></div>' +
-        '<div class="ex-sum__row"><span>' + (state.mode === 'delivery' ? '外送（2 英里內免費）' : '到店自取') + '</span><strong>' + (state.mode === 'delivery' ? '免費' : '免費') + '</strong></div>' +
-        '<div class="ex-sum__row ex-sum__row--total"><span>總額</span><strong>' + money(total()) + '</strong></div>';
+        '<div class="ex-sum__row"><span>Subtotal</span><strong>' + money(subtotal()) + '</strong></div>' +
+        '<div class="ex-sum__row"><span>' + (state.mode === 'delivery' ? 'Delivery (free within 2 miles)' : 'Collection') + '</span><strong>Free</strong></div>' +
+        '<div class="ex-sum__row ex-sum__row--total"><span>Total</span><strong>' + money(total()) + '</strong></div>';
     }
 
     var cta = $('#ex-checkout');
     if (cta) {
       cta.disabled = n === 0;
-      cta.textContent = n === 0 ? '購物籃係空' : '去結帳 · ' + money(total());
+      cta.textContent = n === 0 ? 'Basket is empty' : 'Checkout · ' + money(total());
     }
     var hint = $('#ex-minhint');
     if (hint) {
       if (state.mode === 'delivery' && subtotal() > 0 && subtotal() < DELIVERY_MIN) {
-        hint.textContent = '外送最低消費 ' + money(DELIVERY_MIN) + '，仲差 ' + money(DELIVERY_MIN - subtotal()) + '。';
+        hint.textContent = 'Delivery minimum is ' + money(DELIVERY_MIN) + ' — ' + money(DELIVERY_MIN - subtotal()) + ' to go.';
       } else if (state.mode === 'delivery') {
-        hint.textContent = '兩個英里內免費外送 · 約 25–40 分鐘送到。';
+        hint.textContent = 'Free delivery within 2 miles · around 25–40 minutes.';
       } else {
-        hint.textContent = '到店自取 · 約 20 分鐘做好，喺 185 St Helens Rd 拎。';
+        hint.textContent = 'Collection from 185 St Helens Rd · ready in about 20 minutes.';
       }
     }
     $$('.ex-toggle button').forEach(function (b) {
@@ -192,7 +193,7 @@
     if (!host) return;
     var slug = host.getAttribute('data-slug');
     var act = btn.getAttribute('data-act');
-    if (act === 'add') { add(slug, 1); toast('已加入購物籃'); }
+    if (act === 'add') { add(slug, 1); toast('Added to your basket'); }
     else if (act === 'inc') add(slug, 1);
     else if (act === 'dec') add(slug, -1);
     else if (act === 'remove') { delete state.basket[slug]; renderAll(); }
@@ -227,7 +228,7 @@
     return lines.map(function (l) {
       return '<div><span>' + l.qty + ' × ' + escapeAttr(l.name) + '</span><span>' + money(l.total) + '</span></div>';
     }).join('') +
-      '<div style="border-top:1px solid var(--hairline);margin-top:6px;padding-top:8px"><span><strong>總額</strong></span><span><strong>' + money(total()) + '</strong></span></div>';
+      '<div style="border-top:1px solid var(--hairline);margin-top:6px;padding-top:8px"><span><strong>Total</strong></span><span><strong>' + money(total()) + '</strong></span></div>';
   }
 
   function renderCheckout() {
@@ -237,72 +238,72 @@
     if (!body) return;
 
     if (state.step === 1) {
-      if (title) title.textContent = '結帳 · 1/3 資料';
+      if (title) title.textContent = 'Checkout · 1 of 3 · Your details';
       body.innerHTML = '' +
-        '<div class="ex-steps"><span class="is-active">1 資料</span><span>2 付款</span><span>3 確認</span></div>' +
-        '<div class="ex-field" id="f-name"><label for="i-name">姓名</label><input id="i-name" type="text" autocomplete="name" placeholder="e.g. Aaliyah M." /><p class="ex-field__error">請填姓名</p></div>' +
-        '<div class="ex-field" id="f-phone"><label for="i-phone">電話</label><input id="i-phone" type="tel" autocomplete="tel" placeholder="07…" /><p class="ex-field__error">請填有效嘅英國電話號碼</p></div>' +
+        '<div class="ex-steps"><span class="is-active">1 Details</span><span>2 Payment</span><span>3 Confirmed</span></div>' +
+        '<div class="ex-field" id="f-name"><label for="i-name">Name</label><input id="i-name" type="text" autocomplete="name" placeholder="e.g. Aaliyah M." /><p class="ex-field__error">Please enter your name</p></div>' +
+        '<div class="ex-field" id="f-phone"><label for="i-phone">Phone</label><input id="i-phone" type="tel" autocomplete="tel" placeholder="07…" /><p class="ex-field__error">Please enter a valid UK phone number</p></div>' +
         (state.mode === 'delivery'
-          ? '<div class="ex-field" id="f-addr"><label for="i-addr">外送地址</label><input id="i-addr" type="text" autocomplete="street-address" placeholder="門牌 + 街道" /><p class="ex-field__error">請填外送地址</p></div>' +
+          ? '<div class="ex-field" id="f-addr"><label for="i-addr">Delivery address</label><input id="i-addr" type="text" autocomplete="street-address" placeholder="House number and street" /><p class="ex-field__error">Please enter the delivery address</p></div>' +
             '<div class="ex-field--row">' +
-              '<div class="ex-field" id="f-post"><label for="i-post">郵區</label><input id="i-post" type="text" placeholder="BL3 3PS" /><p class="ex-field__error">請填郵區</p></div>' +
-              '<div class="ex-field"><label for="i-time">時間</label><select id="i-time"><option>盡快（25–40 分鐘）</option><option>1 小時後</option><option>今晚 6:00</option></select></div>' +
+              '<div class="ex-field" id="f-post"><label for="i-post">Postcode</label><input id="i-post" type="text" placeholder="BL3 3PS" /><p class="ex-field__error">Please enter the postcode</p></div>' +
+              '<div class="ex-field"><label for="i-time">Time</label><select id="i-time"><option>As soon as possible (25–40 min)</option><option>In 1 hour</option><option>Tonight at 6:00</option></select></div>' +
             '</div>'
-          : '<div class="ex-field"><label for="i-time">自取時間</label><select id="i-time"><option>盡快（約 20 分鐘）</option><option>30 分鐘後</option><option>1 小時後</option></select></div>') +
-        '<div class="ex-field"><label for="i-notes">備註（可選）</label><textarea id="i-notes" rows="3" placeholder="例如：唔要洋蔥、醬汁另上、清真…"></textarea></div>' +
+          : '<div class="ex-field"><label for="i-time">Collection time</label><select id="i-time"><option>As soon as possible (about 20 min)</option><option>In 30 minutes</option><option>In 1 hour</option></select></div>') +
+        '<div class="ex-field"><label for="i-notes">Notes (optional)</label><textarea id="i-notes" rows="3" placeholder="e.g. no onions, sauces on the side, halal…"></textarea></div>' +
         '<p class="ex-field__hint">' + (state.mode === 'delivery'
-            ? '兩個英里內免費外送；超出範圍我哋會先打電話同你確認運費。'
-            : '自取地址：185 St Helens Rd, Bolton BL3 3PS（Tue–Sun 09:00–16:00）。') + '</p>';
-      if (foot) foot.innerHTML = '<button class="ex-cta" type="button" id="ex-next">下一步：付款</button>';
+            ? 'Free delivery within two miles. Outside that we will call you to confirm the delivery cost.'
+            : 'Collection from 185 St Helens Rd, Bolton BL3 3PS (Tue–Sun 09:00–16:00).') + '</p>';
+      if (foot) foot.innerHTML = '<button class="ex-cta" type="button" id="ex-next">Continue to payment</button>';
     }
 
     if (state.step === 2) {
-      if (title) title.textContent = '結帳 · 2/3 付款';
+      if (title) title.textContent = 'Checkout · 2 of 3 · Payment';
       body.innerHTML = '' +
-        '<div class="ex-steps"><span>1 資料</span><span class="is-active">2 付款</span><span>3 確認</span></div>' +
-        '<div class="ex-pay" role="radiogroup" aria-label="付款方式">' +
-          payOpt('card', '信用卡／扣帳卡', 'Visa · Mastercard · Amex', '<span>🔒</span>') +
-          payOpt('apple', 'Apple Pay', '用 Face ID / Touch ID 一按即付', '') +
-          payOpt('google', 'Google Pay', '用你 Google 帳戶嘅付款方式', '') +
-          payOpt('cash', '到店付款', '自取或送到時用現金／卡付款', '') +
+        '<div class="ex-steps"><span>1 Details</span><span class="is-active">2 Payment</span><span>3 Confirmed</span></div>' +
+        '<div class="ex-pay" role="radiogroup" aria-label="Payment method">' +
+          payOpt('card', 'Card', 'Visa · Mastercard · Amex', '<span>🔒</span>') +
+          payOpt('apple', 'Apple Pay', 'One tap with Face ID or Touch ID', '') +
+          payOpt('google', 'Google Pay', 'Pay with your Google account', '') +
+          payOpt('cash', 'Pay in the café', 'Cash or card on collection or delivery', '') +
         '</div>' +
         '<div class="ex-cardform' + (state.payment === 'card' ? ' is-active' : '') + '" id="ex-cardform">' +
-          '<div class="ex-field" id="f-num"><label for="i-num">卡號</label><input id="i-num" type="text" inputmode="numeric" placeholder="4242 4242 4242 4242" autocomplete="cc-number" /><p class="ex-field__error">請填 16 位卡號</p></div>' +
+          '<div class="ex-field" id="f-num"><label for="i-num">Card number</label><input id="i-num" type="text" inputmode="numeric" placeholder="4242 4242 4242 4242" autocomplete="cc-number" /><p class="ex-field__error">Please enter a 16-digit card number</p></div>' +
           '<div class="ex-field--row">' +
-            '<div class="ex-field" id="f-exp"><label for="i-exp">到期日</label><input id="i-exp" type="text" inputmode="numeric" placeholder="MM/YY" autocomplete="cc-exp" /><p class="ex-field__error">格式 MM/YY</p></div>' +
-            '<div class="ex-field" id="f-cvc"><label for="i-cvc">安全碼</label><input id="i-cvc" type="text" inputmode="numeric" placeholder="123" autocomplete="cc-csc" /><p class="ex-field__error">3–4 位數字</p></div>' +
+            '<div class="ex-field" id="f-exp"><label for="i-exp">Expiry</label><input id="i-exp" type="text" inputmode="numeric" placeholder="MM/YY" autocomplete="cc-exp" /><p class="ex-field__error">Use MM/YY</p></div>' +
+            '<div class="ex-field" id="f-cvc"><label for="i-cvc">Security code</label><input id="i-cvc" type="text" inputmode="numeric" placeholder="123" autocomplete="cc-csc" /><p class="ex-field__error">3–4 digits</p></div>' +
           '</div>' +
-          '<div class="ex-field" id="f-ccname"><label for="i-ccname">卡上姓名</label><input id="i-ccname" type="text" autocomplete="cc-name" /><p class="ex-field__error">請填卡上姓名</p></div>' +
+          '<div class="ex-field" id="f-ccname"><label for="i-ccname">Name on card</label><input id="i-ccname" type="text" autocomplete="cc-name" /><p class="ex-field__error">Please enter the name on the card</p></div>' +
         '</div>' +
         '<div class="ex-wallet" id="ex-wallet" style="display:' + (state.payment === 'card' || state.payment === 'cash' ? 'none' : 'grid') + '">' +
-          '<button type="button" id="ex-wallet-pay">' + (state.payment === 'google' ? '用 Google Pay 付款' : '用 Apple Pay 付款') + '</button>' +
-          '<button type="button" class="ex-wallet--light" id="ex-pay-later">改為到店付款</button>' +
+          '<button type="button" id="ex-wallet-pay">' + (state.payment === 'google' ? 'Pay with Google Pay' : 'Pay with Apple Pay') + '</button>' +
+          '<button type="button" class="ex-wallet--light" id="ex-pay-later">Pay in the café instead</button>' +
         '</div>' +
-        '<p class="ex-field__hint">Demo 版本：唔會真正過數，亦唔會儲存任何卡資料。</p>';
-      if (foot) foot.innerHTML = '<button class="ex-cta" type="button" id="ex-pay">確認付款 ' + money(total()) + '</button>' +
-        '<button class="ex-cta" type="button" id="ex-back" style="background:transparent;color:var(--ink);border:1px solid var(--hairline);margin-top:8px">返上一頁</button>';
+        '<p class="ex-field__hint">Demo only — no payment is taken and no card details are stored.</p>';
+      if (foot) foot.innerHTML = '<button class="ex-cta" type="button" id="ex-pay">Pay ' + money(total()) + '</button>' +
+        '<button class="ex-cta" type="button" id="ex-back" style="background:transparent;color:var(--ink);border:1px solid var(--hairline);margin-top:8px">Back to details</button>';
     }
 
     if (state.step === 3) {
-      if (title) title.textContent = '訂單確認';
+      if (title) title.textContent = 'Order confirmed';
       var num = 'CC-' + String(Math.floor(1000 + Math.random() * 8999));
       body.innerHTML = '' +
         '<div class="ex-done">' +
           '<svg class="ex-done__tick" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="none" stroke="#a8a84a" stroke-width="4"/><path d="M19 33l9 9 17-18" fill="none" stroke="#a8a84a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
-          '<h3>收到你嘅訂單！</h3>' +
-          '<span class="ex-done__num">訂單編號 ' + num + '</span>' +
+          '<h3>Thanks — we have your order!</h3>' +
+          '<span class="ex-done__num">Order ' + num + '</span>' +
           '<div class="ex-done__list">' + summaryHtml() + '</div>' +
           '<p class="ex-field__hint" style="text-align:left">' +
             (state.mode === 'delivery'
-              ? '外送：約 25–40 分鐘送到（兩個英里內免費）。我哋會先打電話確認。'
-              : '自取：約 20 分鐘後可以喺 185 St Helens Rd 拎。') +
-            '<br/>付款方式：' + payLabel(state.payment) +
+              ? 'Delivery: about 25–40 minutes (free within two miles). We will call to confirm.'
+              : 'Collection: ready in about 20 minutes from 185 St Helens Rd.') +
+            '<br/>Payment: ' + payLabel(state.payment) +
           '</p>' +
-          '<p class="ex-demo" style="margin-top:16px">呢個係 Express Order <strong>示範流程</strong> —— 未接真實付款，所以唔會收錢。</p>' +
+          '<p class="ex-demo" style="margin-top:16px">This is the Express Order <strong>demo flow</strong> — no payment is taken and no order is sent to the kitchen yet.</p>' +
         '</div>';
       if (foot) foot.innerHTML =
-        '<button class="ex-cta" type="button" id="ex-again">再落一張單</button>' +
-        '<a class="ex-cta" href="menu.html" style="display:block;text-align:center;text-decoration:none;background:transparent;color:var(--ink);border:1px solid var(--hairline);margin-top:8px">返 Menu</a>';
+        '<button class="ex-cta" type="button" id="ex-again">Start another order</button>' +
+        '<a class="ex-cta" href="menu.html" style="display:block;text-align:center;text-decoration:none;background:transparent;color:var(--ink);border:1px solid var(--hairline);margin-top:8px">Back to the menu</a>';
     }
   }
 
@@ -314,7 +315,7 @@
     '</label>';
   }
   function payLabel(v) {
-    return { card: '信用卡／扣帳卡', apple: 'Apple Pay', google: 'Google Pay', cash: '到店付款' }[v] || v;
+    return { card: 'Card', apple: 'Apple Pay', google: 'Google Pay', cash: 'Pay in the café' }[v] || v;
   }
 
   /* ---------------------------------------------------------- validation */
@@ -332,7 +333,7 @@
       ok = fieldError('f-addr', !($('#i-addr') && $('#i-addr').value.trim())) && ok;
       ok = fieldError('f-post', !($('#i-post') && $('#i-post').value.trim().length >= 3)) && ok;
       if (subtotal() < DELIVERY_MIN) {
-        toast('外送最低消費 ' + money(DELIVERY_MIN));
+        toast('Delivery minimum is ' + money(DELIVERY_MIN));
         ok = false;
       }
     }
@@ -435,7 +436,7 @@
         state.cats = d.categories || [];
         var tabs = $('#ex-tabs');
         if (tabs) {
-          tabs.innerHTML = '<button type="button" class="ex-tab is-active" data-cat="all">全部</button>' +
+          tabs.innerHTML = '<button type="button" class="ex-tab is-active" data-cat="all">All</button>' +
             state.cats.map(function (c) {
               return '<button type="button" class="ex-tab" data-cat="' + c.slug + '">' + escapeAttr(c.label) + '</button>';
             }).join('');
@@ -445,7 +446,7 @@
       })
       .catch(function () {
         var host = $('#ex-menu');
-        if (host) host.innerHTML = '<p class="ex-empty">菜單載入失敗，請重新整理頁面。</p>';
+        if (host) host.innerHTML = '<p class="ex-empty">Sorry — the menu could not be loaded. Please refresh the page.</p>';
       });
   }
 

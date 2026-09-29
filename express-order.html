@@ -40,8 +40,9 @@
       <li><a href="index.html#story">Story</a></li>
       <li><a href="menu.html">Menu</a></li>
       <li><a href="social-reviews.html">Social &amp; Reviews</a></li>
-      <!-- 26 Sep 2026：客人要求把 Ice Cream Bike / Platters / Party Room 收成一個「Event」分類，
-           滑鼠移上去（或撳）會彈出選單顯示三個頁面（參考 slattery.co.uk 嘅做法）。 -->
+      <!-- 26 Sep 2026: the client asked for Ice Cream Bike / Platters / Party Room to sit
+           under one "Event" group; hovering (or tapping) opens a submenu of the three pages
+           (following the slattery.co.uk pattern). -->
       <li class="nav-item--has-menu">
         <button class="nav-item__toggle" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="nav-event-menu">
           Event<svg class="nav-item__caret" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -64,8 +65,9 @@
     <span class="ex-hero__kicker">Express Order · Order direct</span>
     <h1>Skip the platforms.<br/><em>Order straight from us.</em></h1>
     <p class="ex-hero__sub">
-      同我哋直接落單 —— 冇 Uber Eats／Deliveroo 平台費，價錢同店內一樣。
-      揀好食物放落購物籃，可以外送（兩個英里內免費）或者到店自取。
+      Order direct from us — no Uber Eats or Deliveroo platform fees, and the same
+      prices as in the café. Add what you fancy to the basket, then choose delivery
+      (free within two miles) or collection from the café.
     </p>
     <ul class="ex-hero__trust">
       <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>No platform fees</li>
@@ -84,45 +86,46 @@
       <div class="ex-controls">
         <div class="ex-search">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          <input id="ex-search" type="search" placeholder="搜尋食物…（例如 full english、latte）" aria-label="搜尋食物" />
+          <input id="ex-search" type="search" placeholder="Search the menu… (e.g. full english, latte)" aria-label="Search the menu" />
         </div>
-        <div class="ex-tabs" id="ex-tabs" role="tablist" aria-label="分類"></div>
+        <div class="ex-tabs" id="ex-tabs" role="tablist" aria-label="Menu categories"></div>
       </div>
 
       <p class="ex-section__count" style="margin-top:12px"><span id="ex-count">—</span></p>
       <div id="ex-menu" aria-live="polite"></div>
 
       <p class="ex-demo">
-        示範版本（Express Order demo）：可以加食物落購物籃、揀數量、行完成個結帳流程，
-        但<strong>未接真實付款</strong>，所以唔會收錢、亦唔會送出訂單。
+        Demo version: you can add items to the basket, change quantities and walk through
+        the whole checkout flow, but <strong>no real payment is connected</strong> — nothing is
+        charged and no order is sent to the kitchen.
       </p>
     </main>
 
     <!-- ===================================================== BASKET -->
-    <aside class="ex-basket" id="ex-basket" aria-label="購物籃">
+    <aside class="ex-basket" id="ex-basket" aria-label="Basket">
       <div class="ex-basket__head">
-        <h2>購物籃</h2>
-        <span class="ex-basket__count"><span data-basket-count>0</span> 件</span>
+        <h2>Your basket</h2>
+        <span class="ex-basket__count"><span data-basket-count>0</span> items</span>
       </div>
 
-      <div class="ex-toggle" role="group" aria-label="外送或自取">
-        <button type="button" data-mode="delivery" class="is-active">外送</button>
-        <button type="button" data-mode="collection">到店自取</button>
+      <div class="ex-toggle" role="group" aria-label="Delivery or collection">
+        <button type="button" data-mode="delivery" class="is-active">Delivery</button>
+        <button type="button" data-mode="collection">Collection</button>
       </div>
 
       <ul class="ex-basket__list" id="ex-basket-list"></ul>
       <div class="ex-sum" id="ex-summary"></div>
-      <button class="ex-cta" type="button" id="ex-checkout" disabled>購物籃係空</button>
-      <p class="ex-basket__note" id="ex-minhint">兩個英里內免費外送 · 約 25–40 分鐘送到。</p>
+      <button class="ex-cta" type="button" id="ex-checkout" disabled>Basket is empty</button>
+      <p class="ex-basket__note" id="ex-minhint">Free delivery within 2 miles · around 25–40 minutes.</p>
     </aside>
 
   </div>
 </div>
 
 <!-- ==================================================== MOBILE BAR -->
-<div class="ex-mobilebar" id="ex-mobilebar" role="button" tabindex="0" aria-label="打開購物籃">
-  <span><span data-basket-count>0</span> 件 · <strong data-basket-total>£0.00</strong></span>
-  <span class="ex-mobilebar__btn">睇購物籃</span>
+<div class="ex-mobilebar" id="ex-mobilebar" role="button" tabindex="0" aria-label="Open the basket">
+  <span><span data-basket-count>0</span> items · <strong data-basket-total>£0.00</strong></span>
+  <span class="ex-mobilebar__btn">View basket</span>
 </div>
 
 <!-- ======================================================== MODAL -->
@@ -130,8 +133,8 @@
   <div class="ex-modal__backdrop" data-close-modal></div>
   <div class="ex-modal__panel">
     <div class="ex-modal__head">
-      <h2 id="ex-modal-title">結帳</h2>
-      <button class="ex-modal__close" type="button" data-close-modal aria-label="關閉">×</button>
+      <h2 id="ex-modal-title">Checkout</h2>
+      <button class="ex-modal__close" type="button" data-close-modal aria-label="Close">×</button>
     </div>
     <div class="ex-modal__body" id="ex-modal-body"></div>
     <div class="ex-modal__foot" id="ex-modal-foot"></div>
@@ -151,13 +154,14 @@
     </div>
     <div>
       <h5>Visit</h5>
-      <!-- 29 Sep 2026：地址／電話／電郵之間用幼橫線分隔 -->
+      <!-- 29 Sep 2026: address, phone and email separated by thin rules -->
       <ul class="site-footer__visit">
         <li><a href="https://maps.app.goo.gl/vYhYXEfkkgfor3qBA?g_st=ic" target="_blank" rel="noopener">185 St Helens Rd</a><br /><a href="https://maps.app.goo.gl/vYhYXEfkkgfor3qBA?g_st=ic" target="_blank" rel="noopener">Bolton BL3 3PS</a></li>
         <li><a href="tel:+441204934467">01204 934 467</a></li>
         <li><a href="mailto:cafechico185@gmail.com">cafechico185@gmail.com</a></li>
       </ul>
-      <!-- 28 Sep 2026：營業時間改用傳統七行表格（每日一行、寫明開門同關門時間） -->
+      <!-- 28 Sep 2026: opening hours switched to a traditional seven-row table,
+           one row per day with explicit opening and closing times -->
       <table class="hours-table">
         <tbody>
           <tr data-day="Mon"><th scope="row">Monday</th><td class="closed">Closed</td></tr>
