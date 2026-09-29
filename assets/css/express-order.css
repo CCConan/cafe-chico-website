@@ -1,6 +1,6 @@
 /* =============================================================================
-   Café Chico — Express Order（直接落單 demo）
-   淺色「紙張」落單介面 + 品牌橄欖綠，配合主站深色 nav／footer
+   Café Chico — Express Order (order-direct demo)
+   Light "paper" ordering surface in the brand olive, paired with the site's dark nav/footer
    ============================================================================= */
 
 .express-page {
@@ -19,7 +19,7 @@
   min-height: 100vh;
 }
 
-/* 主站 nav 喺淺色底之上：確保文字睇得到 */
+/* Site nav sitting on the light background: keep the text legible */
 .express-page .site-nav { position: sticky; top: 0; z-index: 60; }
 
 /* ------------------------------------------------------------------ hero */
@@ -66,8 +66,9 @@
 .ex-search input:focus { outline: 2px solid var(--olive); outline-offset: 1px; }
 .ex-search svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--ink-soft); }
 
-.ex-tabs { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
-.ex-tabs::-webkit-scrollbar { display: none; }
+/* Wrap the category pills on desktop so all ten are visible at a glance; on
+   small screens fall back to a single swipeable row (see the mobile block). */
+.ex-tabs { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 4px; }
 .ex-tab {
   flex: 0 0 auto; padding: 8px 16px; border-radius: 999px;
   border: 1px solid var(--hairline); background: var(--paper-2); color: var(--ink-soft);
@@ -78,7 +79,10 @@
 .ex-tab.is-active { background: var(--ink); border-color: var(--ink); color: #fff; }
 
 /* ------------------------------------------------------------------ items */
-.ex-section { margin-top: var(--space-6); }
+/* The site-wide `section { padding: clamp(64px,9vw,128px) 0 }` rule is meant for
+   full-width marketing bands; inside the ordering column it would add ~115px of
+   dead space above and below every category, so cancel it here. */
+.ex-section { padding: 0; margin-top: var(--space-6); }
 .ex-section__head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
 .ex-section__head h2 { font-family: var(--font-display); font-size: 26px; margin: 0 0 4px; }
 .ex-section__count { font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
@@ -115,7 +119,7 @@
 .ex-add:hover { transform: translateY(-1px); background: #b7b757; }
 .ex-add:active { transform: scale(.97); }
 
-/* 數量控制（卡片上） */
+/* Quantity control (on the menu cards) */
 .ex-qty { display: inline-flex; align-items: center; gap: 4px; }
 .ex-qty button {
   width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--hairline);
@@ -177,7 +181,7 @@
 .ex-basket__empty { text-align: center; padding: 26px 8px; color: var(--ink-soft); }
 .ex-basket__empty svg { color: var(--olive); margin-bottom: 8px; }
 
-/* 手機：底部購物籃 bar */
+/* Mobile: sticky basket bar along the bottom */
 .ex-mobilebar {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
   display: none; align-items: center; justify-content: space-between; gap: 12px;
@@ -246,7 +250,7 @@
 .ex-cardform { display: none; }
 .ex-cardform.is-active { display: block; }
 
-/* 確認畫面 */
+/* Confirmation screen */
 .ex-done { text-align: center; padding: 12px 6px; }
 .ex-done__tick { width: 64px; height: 64px; margin: 0 auto 14px; }
 .ex-done h3 { font-family: var(--font-display); font-size: 26px; margin: 0 0 6px; }
@@ -255,7 +259,7 @@
 .ex-done__list div { display: flex; justify-content: space-between; gap: 12px; padding: 5px 0; font-size: 13.5px; }
 .ex-done__list div span:last-child { font-family: var(--font-mono); }
 
-/* demo 提示 */
+/* Demo notice */
 .ex-demo {
   margin: var(--space-6) 0 0; padding: 12px 16px; border-radius: 12px;
   background: var(--olive-soft); border: 1px dashed var(--olive);
@@ -279,6 +283,9 @@
   .ex-card { grid-template-columns: 74px minmax(0,1fr); }
   .ex-card__photo { width: 74px; height: 74px; }
   .ex-modal__panel { width: 100%; }
+  /* one swipeable row instead of several wrapped rows */
+  .ex-tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .ex-tabs::-webkit-scrollbar { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
