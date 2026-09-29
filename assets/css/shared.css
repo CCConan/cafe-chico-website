@@ -415,9 +415,12 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
   .nav-tabs::after { display: none; }
   .nav-tabs.has-indicator a.active::after { display: block; }
 
-  /* 手機：Event 下拉改成手風琴（冇 hover，所以撳一下展開） */
-  .nav-item--has-menu { width: 100%; }
-  .nav-item__toggle { width: 100%; justify-content: space-between; font-size: 13px; }
+  /* 手機：Event 下拉改成手風琴（冇 hover，所以撳一下展開）
+     29 Sep 2026：客人要求 EVENT 同其他選項一樣置中，展開嘅三個子項亦要置中。
+     原本 .nav-item--has-menu{width:100%} + toggle{justify-content:space-between}
+     會令 EVENT 撐滿一行、文字貼左，所以改成 flex 直向 + 內容置中。 */
+  .nav-item--has-menu { width: 100%; display: flex; flex-direction: column; align-items: center; }
+  .nav-item__toggle { width: auto; justify-content: center; font-size: 13px; }
   .nav-submenu {
     position: static;
     transform: none;
@@ -425,12 +428,13 @@ section { padding: clamp(64px, 9vw, 128px) 0; }
     visibility: visible;
     pointer-events: auto;
     display: none;
+    width: 100%;
     min-width: 0;
     margin: 6px 0 0;
-    padding: 4px 0 4px 14px;
+    padding: 4px 0;
+    text-align: center;
     background: transparent;
     border: 0;
-    border-left: 2px solid var(--accent);
     border-radius: 0;
     box-shadow: none;
   }
